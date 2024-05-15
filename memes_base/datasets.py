@@ -19,6 +19,9 @@ def get_chunk_indices(length, chunks):
     return chunk_indices
 
 class DummyDataset(Dataset):
+    #* This is a dummy dataset class that loads randomly generated data from a .csv file
+    #* But it does most of the stuff our actual dataset class will need to do, so hopefully we won't need to make a ton of changes
+
     #! Currently does not allow prebatching, which may be needed for faster loading
     def __init__(self, name, raw_file, save_dir=None, save=True, chunks=1, process_chunks=None, **kwargs):
         self.name = name
