@@ -1,0 +1,18 @@
+Model:
+  module: memes_base.models
+  class: MLP
+  args:
+    in_size: 10
+    hid_size: 64
+    out_size: 10
+    n_layers: 4
+    dropout: 0.1
+Dataset:
+  module: memes_base.datasets
+  class: DummyDataset
+  args:
+    name: test_dataset
+    raw_file: fake_data.csv
+    save_dir: dataset_saves/dummy_dataset
+    save: True
+    # chunks: 3
