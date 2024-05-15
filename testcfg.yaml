@@ -13,6 +13,6 @@ Dataset:
   args:
     name: test_dataset
     raw_file: fake_data.csv
-    save_dir: dataset_saves/dummy_dataset
+    save_dir: dataset_saves/dummy_dataset_chunked
     save: True
-    # chunks: 3
+    chunks: 10

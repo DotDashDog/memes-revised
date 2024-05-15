@@ -12,7 +12,8 @@ def save_file_name(dir, name, chunk=None):
     
 def get_chunk_indices(length, chunks):
     if chunks > 1:
-        chunk_indices = np.split(np.arange(length), np.arange(0, length, length//chunks))
+        split_borders = length//chunks * np.arange(1, chunks)
+        chunk_indices = np.split(np.arange(length), split_borders)
     else:
         chunk_indices = [np.arange(length)]
     return chunk_indices
@@ -89,6 +90,9 @@ class DummyDataset(Dataset):
             self.chunk_ys[chunk] = np.array(chunk_df['y'])
 
     def save(self):
+        if not os.path.exists(self.save_dir):
+            os.makedirs(self.save_dir)
+
         if self.chunks == 1:
             np.savez(save_file_name(self.save_dir, self.name), X=self.chunk_Xs[0], y=self.chunk_ys[0])
         else:
