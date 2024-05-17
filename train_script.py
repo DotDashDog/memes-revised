@@ -63,36 +63,42 @@ def main(pargs):
     from_sweep = pargs.from_sweep
     epochs_override = pargs.epochs_override
     save_epoch = pargs.save_epoch
+    use_wandb = not pargs.no_wandb
 
-    if runid is not None:
-        #* Resuming an existing run
-        run = wandb.init(project=project, id=runid, resume='must')
+    if use_wandb:
+        if runid is not None:
+            #* Resuming an existing run
+            run = wandb.init(project=project, id=runid, resume='must')
 
-        if 'full_config' in wandb.config:
-            config = wandb.config["full_config"]
-        else:
-            print("Full config for this run was not logged in W&B config. Loading from existing config. This may cause problems.")
-            if config_path is None:
-                print("Loading from base_config logged by W&B")
-                config = utils.load_config(wandb.config['base_config'])
+            if 'full_config' in wandb.config:
+                config = wandb.config["full_config"]
             else:
-                print("Loading from config path argument")
-                config = utils.load_config(config_path)
-            utils.build_agent_config(config, wandb.config, run)
-    elif from_sweep:
-        #* Making a new run as determined by a sweep
-        run = wandb.init()
+                print("Full config for this run was not logged in W&B config. Loading from existing config. This may cause problems.")
+                if config_path is None:
+                    print("Loading from base_config logged by W&B")
+                    config = utils.load_config(wandb.config['base_config'])
+                else:
+                    print("Loading from config path argument")
+                    config = utils.load_config(config_path)
+                utils.build_agent_config(config, wandb.config, run)
+        elif from_sweep:
+            #* Making a new run as determined by a sweep
+            run = wandb.init()
 
-        config = utils.load_config(wandb.config['base_config'])
-        utils.build_agent_config(config, wandb.config, run)
+            config = utils.load_config(wandb.config['base_config'])
+            utils.build_agent_config(config, wandb.config, run)
+        else:
+            #* This should mean we're manually starting a run directly from a specified config file
+            assert config_path is not None
+            config = utils.load_config(config_path)
+            run = wandb.init(project=project, config=utils.build_wandb_config(config, config_path))
+            config["Training_Directory"] += f"run_{run.id}/"
+
+        wandb.config.update({'full_config' : config})
     else:
-        #* This should mean we're manually starting a run directly from a specified config file
+        #* Not involving W&B at all
         assert config_path is not None
         config = utils.load_config(config_path)
-        run = wandb.init(project=project, config=utils.build_wandb_config(config, config_path))
-        config["Training_Directory"] += f"run_{run.id}/"
-
-    wandb.config.update({'full_config' : config})
 
 
     #* Unpacking the config parameters
@@ -150,11 +156,12 @@ def main(pargs):
         train_loss = train(model, train_dl, optimizer, loss, device)
         test_loss = test(model, test_dl, loss, device)
 
-        wandb.log({
-            'Train' : {'Loss' : train_loss},
-            'Test' : {'Loss' : test_loss},
-            'Other' : {}
-        }, step=epoch)
+        if use_wandb:
+            wandb.log({
+                'Train' : {'Loss' : train_loss},
+                'Test' : {'Loss' : test_loss},
+                'Other' : {}
+            }, step=epoch)
 
         
         #* Save every save_epoch epochs if it is specified. If it isn't, will only save at the end
@@ -184,6 +191,7 @@ if __name__ == "__main__":
     add_arg("--project", type=str, help="The W&B project that the run is in")
     add_arg("--epochs_override", type=int, help="Epochs to run for. Overrides the epochs parameter in the config.")
     add_arg("--save_epoch", type=int, default=None)
+    add_arg("--no_wandb", action="store_true", help="Don't use or log to W&B")
 
     pargs = parser.parse_args()
     
