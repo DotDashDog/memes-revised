@@ -9,6 +9,18 @@ import argparse
 import os
 
 def train(model, dataloader, optimizer, loss_fn, device):
+    """Runs one epoch of model training
+
+    Args:
+        model (torch.nn.Module): the model
+        dataloader (torch.utils.data.Dataloader): the training dataloaders
+        optimizer (torch.optim.Optimizer): the optimizer
+        loss_fn (torch.nn.Module): the loss function
+        device (string): the device to run on ("cuda" or "cpu")
+
+    Returns:
+        torch.tensor: the training loss (more metrics can be added)
+    """
 
     size = len(dataloader.dataset)
     model.train()
@@ -33,6 +45,17 @@ def train(model, dataloader, optimizer, loss_fn, device):
     return net_loss
 
 def test(model, dataloader, loss_fn, device):
+    """Evaluates the model on the provided dataloader
+
+    Args:
+        model (torch.nn.Module): the model
+        dataloader (torch.utils.data.Dataloader): the test dataloader
+        loss_fn (torch.nn.Model): the loss function
+        device (string): the device to run on ("cuda" or "cpu")
+
+    Returns:
+        torch.tensor: the testing loss (more metrics can be added)
+    """
     size = len(dataloader.dataset)
     # num_batches = len(dataloader)
     model.eval()
@@ -57,6 +80,12 @@ def test(model, dataloader, loss_fn, device):
     return loss.item()
 
 def main(pargs):
+    """Basically the whole training script, but a function
+
+    Args:
+        pargs (argparse.Namespace): The args passed from the command line
+    """
+
     runid = pargs.runid
     project = pargs.project
     config_path = pargs.config
@@ -81,13 +110,13 @@ def main(pargs):
                 else:
                     print("Loading from config path argument")
                     config = utils.load_config(config_path)
-                utils.build_agent_config(config, wandb.config, run)
+                utils.build_agent_config(config, wandb.config, runid)
         elif from_sweep:
             #* Making a new run as determined by a sweep
             run = wandb.init()
 
             config = utils.load_config(wandb.config['base_config'])
-            utils.build_agent_config(config, wandb.config, run)
+            utils.build_agent_config(config, wandb.config, run.id)
         else:
             #* This should mean we're manually starting a run directly from a specified config file
             assert config_path is not None

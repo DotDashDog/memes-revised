@@ -5,12 +5,31 @@ import pandas as pd
 import numpy as np
 
 def save_file_name(dir, name, chunk=None):
+    """Creates the path to a dataset save file
+
+    Args:
+        dir (string): the directory the file is to be stored in
+        name (string): the base name of the save file
+        chunk (int, optional): The chunk of the dataset to be stored in the file. Defaults to None, omitting the chunk number.
+
+    Returns:
+        string: the path to the file
+    """
     if chunk is None:
         return os.path.join(dir, name + ".npz") #! May want to save as other filetype???
     else:
         return os.path.join(dir, name + f"_{chunk}.npz") #! See above
     
 def get_chunk_indices(length, chunks):
+    """Get an array of arrays of indices. The ith element of the outer array is the set of indices that are in the ith chunk of the dataset
+
+    Args:
+        length (int): the length of the dataset
+        chunks (int): the number of chunks to split the dataset into
+
+    Returns:
+        list(np.array): The indices of each chunk. The last chunk may be smaller
+    """
     if chunks > 1:
         split_borders = length//chunks * np.arange(1, chunks)
         chunk_indices = np.split(np.arange(length), split_borders)
@@ -24,6 +43,16 @@ class DummyDataset(Dataset):
 
     #! Currently does not allow prebatching, which may be needed for faster loading
     def __init__(self, name, raw_file, save_dir=None, save=True, chunks=1, process_chunks=None, **kwargs):
+        """Intitializes the dataset, including processing, chunking, and creating save files
+
+        Args:
+            name (string): the name of the dataset (to be used in save files)
+            raw_file (string): the path to the file the raw data is coming from
+            save_dir (strinng, optional): the directory to save the processed data in. Defaults to None.
+            save (bool, optional): whether to save the dataset. Defaults to True.
+            chunks (int, optional): how many chunks to split the dataset into. Defaults to 1.
+            process_chunks (list, optional): which chunks should be included in this instance. Defaults to None.
+        """
         self.name = name
         self.raw_file = raw_file
         self.save_dir = save_dir
@@ -78,6 +107,8 @@ class DummyDataset(Dataset):
 
     #! WIP Functions. Really depend on how exactly our dataset is set up.
     def process(self):
+        """Loads and processes the raw data, keeps it in instance variables
+        """
         df = pd.read_csv(self.raw_file)
 
         chunk_indices = get_chunk_indices(len(df), self.chunks)
@@ -95,6 +126,8 @@ class DummyDataset(Dataset):
             self.chunk_ys[chunk] = torch.tensor(np.array(chunk_df[['y',]]), dtype=self.dtype)
 
     def save(self):
+        """Saves the processed data stored in the dataset's instance variables
+        """
         if not os.path.exists(self.save_dir):
             os.makedirs(self.save_dir)
 
@@ -105,6 +138,8 @@ class DummyDataset(Dataset):
                 np.savez(save_file_name(self.save_dir, self.name, chunk), X=self.chunk_Xs[chunk].numpy(), y=self.chunk_ys[chunk].numpy())
 
     def loadFromCache(self):
+        """Loads saved processed data from the dataset's save files
+        """
         self.chunk_Xs = {}
         self.chunk_ys = {}
         if self.chunks == 1:
