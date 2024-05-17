@@ -1,0 +1,47 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.11.3",
+    "heartbeatAt": "2024-05-16T19:14:09.122275",
+    "startedAt": "2024-05-16T19:14:08.563188",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--config",
+        "testcfg.yaml",
+        "--project",
+        "meme-dummy-test"
+    ],
+    "state": "running",
+    "program": "/Users/linusupson/Documents/VS Code Projects/memes-revised/train_script.py",
+    "codePath": "train_script.py",
+    "git": {
+        "remote": "https://github.com/DotDashDog/memes-revised.git",
+        "commit": "bf34a53aa190b58f31d224aaa53ca0d68c8ea267"
+    },
+    "email": "kit@upson.org",
+    "root": "/Users/linusupson/Documents/VS Code Projects/memes-revised",
+    "host": "linuss-mbp.lan",
+    "username": "linusupson",
+    "executable": "/Users/linusupson/anaconda3/envs/MemeML/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2300,
+        "min": 2300,
+        "max": 2300
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2300,
+            "min": 2300,
+            "max": 2300
+        }
+    ],
+    "disk": {
+        "total": 3727.0669898986816,
+        "used": 9.537223815917969
+    },
+    "memory": {
+        "total": 32.0
+    }
+}

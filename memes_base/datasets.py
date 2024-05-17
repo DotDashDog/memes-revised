@@ -31,6 +31,8 @@ class DummyDataset(Dataset):
         self.chunks = chunks
         self.process_chunks = process_chunks
 
+        self.dtype = torch.float32
+
         print("Unused arguments upon creation of dataset:", kwargs)
 
         if isinstance(self.process_chunks, int):
@@ -89,31 +91,31 @@ class DummyDataset(Dataset):
             chunk_df = df.loc[indices]
             #? I don't think I need to add a mask function for train-test splitting. torch.utils.data.random_split will do that for me
 
-            self.chunk_Xs[chunk] = np.array(chunk_df[['x0', 'x1', 'x2', 'x3', 'x4']])
-            self.chunk_ys[chunk] = np.array(chunk_df['y'])
+            self.chunk_Xs[chunk] = torch.tensor(np.array(chunk_df[['x0', 'x1', 'x2', 'x3', 'x4']]), dtype=self.dtype)
+            self.chunk_ys[chunk] = torch.tensor(np.array(chunk_df[['y',]]), dtype=self.dtype)
 
     def save(self):
         if not os.path.exists(self.save_dir):
             os.makedirs(self.save_dir)
 
         if self.chunks == 1:
-            np.savez(save_file_name(self.save_dir, self.name), X=self.chunk_Xs[0], y=self.chunk_ys[0])
+            np.savez(save_file_name(self.save_dir, self.name), X=self.chunk_Xs[0].numpy(), y=self.chunk_ys[0].numpy())
         else:
             for chunk in self.process_chunks:
-                np.savez(save_file_name(self.save_dir, self.name, chunk), X=self.chunk_Xs[chunk], y=self.chunk_ys[chunk])
+                np.savez(save_file_name(self.save_dir, self.name, chunk), X=self.chunk_Xs[chunk].numpy(), y=self.chunk_ys[chunk].numpy())
 
     def loadFromCache(self):
         self.chunk_Xs = {}
         self.chunk_ys = {}
         if self.chunks == 1:
             npzfile = np.load(save_file_name(self.save_dir, self.name))
-            self.chunk_Xs[0] = npzfile["X"]
-            self.chunk_ys[0] = npzfile["y"]
+            self.chunk_Xs[0] = torch.tensor(npzfile["X"], dtype=self.dtype)
+            self.chunk_ys[0] = torch.tensor(npzfile["y"], dtype=self.dtype)
         else:
             for chunk in self.process_chunks:
                 npzfile = np.load(save_file_name(self.save_dir, self.name, chunk))
-                self.chunk_Xs[chunk] = npzfile["X"]
-                self.chunk_ys[chunk] = npzfile["y"]
+                self.chunk_Xs[chunk] = torch.tensor(npzfile["X"], dtype=self.dtype)
+                self.chunk_ys[chunk] = torch.tensor(npzfile["y"], dtype=self.dtype)
 
     #* Functions needed for torch Dataset class
     def __len__(self):
