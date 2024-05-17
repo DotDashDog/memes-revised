@@ -183,7 +183,6 @@ def main(pargs):
         'optimizer_state_dict' : optimizer.state_dict()
     }, os.path.join(save_dir, f'model_epoch_{epoch}.pt'))
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     add_arg = parser.add_argument

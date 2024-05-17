@@ -1,6 +1,7 @@
 # Our files added to .gitignore
 dataset_saves/
 model_saves/
+# wandb/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
