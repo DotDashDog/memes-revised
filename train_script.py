@@ -64,6 +64,7 @@ def main(pargs):
     epochs_override = pargs.epochs_override
     save_epoch = pargs.save_epoch
     use_wandb = not pargs.no_wandb
+    restart = pargs.restart
 
     if use_wandb:
         if runid is not None:
@@ -132,14 +133,16 @@ def main(pargs):
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
-    latest_epoch, checkpoint = utils.latest_save(save_dir, device)
+    if not restart:
+        latest_epoch, checkpoint = utils.latest_save(save_dir, device)
 
-    if checkpoint is not None:
+        if checkpoint is not None:
+            model.load_state_dict(checkpoint['model_state_dict'])
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
-        model.load_state_dict(checkpoint['model_state_dict'])
-        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-
-        print(f'Loaded epoch {latest_epoch} from checkpoint')
+            print(f'Loaded epoch {latest_epoch} from checkpoint')
+    else:
+        latest_epoch, checkpoint = -1, None
 
     
     epoch_widgets = [
@@ -192,6 +195,7 @@ if __name__ == "__main__":
     add_arg("--epochs_override", type=int, help="Epochs to run for. Overrides the epochs parameter in the config.")
     add_arg("--save_epoch", type=int, default=None)
     add_arg("--no_wandb", action="store_true", help="Don't use or log to W&B")
+    add_arg("--restart", action="store_true", help="If passed, restart model's training")
 
     pargs = parser.parse_args()
     
