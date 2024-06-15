@@ -3,22 +3,6 @@ from torch.utils.data import Dataset
 import os
 import pandas as pd
 import numpy as np
-
-def save_file_name(dir, name, chunk=None):
-    """Creates the path to a dataset save file
-
-    Args:
-        dir (string): the directory the file is to be stored in
-        name (string): the base name of the save file
-        chunk (int, optional): The chunk of the dataset to be stored in the file. Defaults to None, omitting the chunk number.
-
-    Returns:
-        string: the path to the file
-    """
-    if chunk is None:
-        return os.path.join(dir, name + ".npz") #! May want to save as other filetype???
-    else:
-        return os.path.join(dir, name + f"_{chunk}.npz") #! See above
     
 def get_chunk_indices(length, chunks):
     """Get an array of arrays of indices. The ith element of the outer array is the set of indices that are in the ith chunk of the dataset
@@ -37,33 +21,31 @@ def get_chunk_indices(length, chunks):
         chunk_indices = [np.arange(length)]
     return chunk_indices
 
-class DummyDataset(Dataset):
-    #* This is a dummy dataset class that loads randomly generated data from a .csv file
-    #* But it does most of the stuff our actual dataset class will need to do, so hopefully we won't need to make a ton of changes
-
+class CachedDataset(Dataset):
+    #* A template class, with the common functions that all of our datasets should need.
     #! Currently does not allow prebatching, which may be needed for faster loading
-    def __init__(self, name, raw_file, save_dir=None, save=True, chunks=1, process_chunks=None, **kwargs):
+    def __init__(self, name, raw_files, save_dir=None, save=True, chunks=1, process_chunks=None, **kwargs):
         """Intitializes the dataset, including processing, chunking, and creating save files
 
         Args:
             name (string): the name of the dataset (to be used in save files)
-            raw_file (string): the path to the file the raw data is coming from
+            raw_files (string): the paths to the files the raw data is coming from
             save_dir (strinng, optional): the directory to save the processed data in. Defaults to None.
             save (bool, optional): whether to save the dataset. Defaults to True.
             chunks (int, optional): how many chunks to split the dataset into. Defaults to 1.
             process_chunks (list, optional): which chunks should be included in this instance. Defaults to None.
         """
         self.name = name
-        self.raw_file = raw_file
+        self.raw_files = raw_files
         self.save_dir = save_dir
         self.save_to_disk = save
         self.chunks = chunks
         self.process_chunks = process_chunks
 
-        self.dtype = torch.float32
-
         print("Unused arguments upon creation of dataset:", kwargs)
-
+        if isinstance(self.raw_files, str):
+            self.raw_files = [self.raw_files]
+        
         if isinstance(self.process_chunks, int):
             self.process_chunks = [self.process_chunks]
         elif self.process_chunks is None:
@@ -78,7 +60,22 @@ class DummyDataset(Dataset):
         else:
             self.process()
 
-    
+    def save_file_name(self, chunk=None, file_ext=".bin"):
+        """Creates the path to a dataset save file
+
+        Args:
+            dir (string): the directory the file is to be stored in
+            name (string): the base name of the save file
+            chunk (int, optional): The chunk of the dataset to be stored in the file. Defaults to None, omitting the chunk number.
+
+        Returns:
+            string: the path to the file
+        """
+        if chunk is None:
+            return os.path.join(self.save_dir, self.name + file_ext)
+        else:
+            return os.path.join(self.save_dir, self.name + f"_{chunk}{file_ext}")
+
     def hasCache(self):
         """Checks if the dataset already has a processed copy saved to disk
 
@@ -87,7 +84,7 @@ class DummyDataset(Dataset):
         """
         if self.chunks == 1:
             #* Simple case if there's only one chunk (aka not splitting the dataset into chunks)
-            file_path = save_file_name(self.save_dir, self.name)
+            file_path = self.save_file_name()
             if os.path.exists(file_path):
                 print(f"Cache of {self.name} found at {file_path}")
                 return True
@@ -97,19 +94,50 @@ class DummyDataset(Dataset):
         else:
             #* Check chunk-by-chunk. If any of the chunks that it is supposed to be processing don't exist, return False.
             for chunk in self.process_chunks:
-                file_path = save_file_name(self.save_dir, self.name, chunk)
+                file_path = self.save_file_name(chunk)
                 if os.path.exists(file_path):
                     print(f"Cache of {self.name}, chunk {chunk} found at {file_path}")
                 else:
                     print(f"Cache of {self.name}, chunk {chunk} not found at {file_path}")
                     return False
             return True
+    
+    #* Currently undefined functions
+    def process(self):
+        pass
+
+    def save(self):
+        pass
+
+    def loadFromCache(self):
+        pass
+
+    def __len__(self):
+        pass
+
+    def __getitem__(self):
+        pass
+
+class DummyDataset(CachedDataset):
+    #* This is a dummy dataset class that loads randomly generated data from a .csv file
+    #* But it does most of the stuff our actual dataset class will need to do, so hopefully we won't need to make a ton of changes
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.dtype = torch.float32
+        
+        if len(self.raw_files) != 1:
+            raise ValueError("Only one raw file is allowed for DummyDataset")
+
+    def save_file_name(self, chunk=None):
+        return super().save_file_name(chunk, ".npz")
 
     #! WIP Functions. Really depend on how exactly our dataset is set up.
     def process(self):
         """Loads and processes the raw data, keeps it in instance variables
         """
-        df = pd.read_csv(self.raw_file)
+        df = pd.read_csv(self.raw_files[0])
 
         chunk_indices = get_chunk_indices(len(df), self.chunks)
         self.chunk_Xs = {}
@@ -132,10 +160,10 @@ class DummyDataset(Dataset):
             os.makedirs(self.save_dir)
 
         if self.chunks == 1:
-            np.savez(save_file_name(self.save_dir, self.name), X=self.chunk_Xs[0].numpy(), y=self.chunk_ys[0].numpy())
+            np.savez(self.save_file_name(), X=self.chunk_Xs[0].numpy(), y=self.chunk_ys[0].numpy())
         else:
             for chunk in self.process_chunks:
-                np.savez(save_file_name(self.save_dir, self.name, chunk), X=self.chunk_Xs[chunk].numpy(), y=self.chunk_ys[chunk].numpy())
+                np.savez(self.save_file_name(chunk), X=self.chunk_Xs[chunk].numpy(), y=self.chunk_ys[chunk].numpy())
 
     def loadFromCache(self):
         """Loads saved processed data from the dataset's save files
@@ -143,12 +171,12 @@ class DummyDataset(Dataset):
         self.chunk_Xs = {}
         self.chunk_ys = {}
         if self.chunks == 1:
-            npzfile = np.load(save_file_name(self.save_dir, self.name))
+            npzfile = np.load(self.save_file_name())
             self.chunk_Xs[0] = torch.tensor(npzfile["X"], dtype=self.dtype)
             self.chunk_ys[0] = torch.tensor(npzfile["y"], dtype=self.dtype)
         else:
             for chunk in self.process_chunks:
-                npzfile = np.load(save_file_name(self.save_dir, self.name, chunk))
+                npzfile = np.load(self.save_file_name(chunk))
                 self.chunk_Xs[chunk] = torch.tensor(npzfile["X"], dtype=self.dtype)
                 self.chunk_ys[chunk] = torch.tensor(npzfile["y"], dtype=self.dtype)
 
@@ -169,3 +197,4 @@ class DummyDataset(Dataset):
                 current_idx -= chunk_length
             
             raise IndexError("Index out of bounds")
+        

@@ -17,7 +17,7 @@ Dataset:
   class: DummyDataset
   args:
     name: test_dataset
-    raw_file: fake_data.csv
+    raw_files: [fake_data.csv]
     save_dir: dataset_saves/dummy_dataset_chunked
     save: True
     chunks: 1
