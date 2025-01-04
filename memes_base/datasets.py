@@ -3,6 +3,7 @@ from torch.utils.data import Dataset
 import os
 import pandas as pd
 import numpy as np
+import progressbar
     
 def get_chunk_indices(length, chunks):
     """Get an array of arrays of indices. The ith element of the outer array is the set of indices that are in the ith chunk of the dataset
@@ -37,10 +38,17 @@ class CachedDataset(Dataset):
         """
         self.name = name
         self.raw_files = raw_files
-        self.save_dir = save_dir
+        self.save_dir = os.path.join(save_dir, self.name)
         self.save_to_disk = save
         self.chunks = chunks
         self.process_chunks = process_chunks
+
+        self.processing_widgets = [
+            '[Preprocessing: ', progressbar.Percentage(), ', ',
+            progressbar.Timer(), '] ',
+            progressbar.Bar('█', left='|', right='|'),
+            ' (', progressbar.AdaptiveETA(), ') '
+        ]
 
         print("Unused arguments upon creation of dataset:", kwargs)
         if isinstance(self.raw_files, str):
@@ -52,8 +60,11 @@ class CachedDataset(Dataset):
             self.process_chunks = list(range(self.chunks))
 
         if self.save_to_disk: 
-            if not self.hasCache():
-                self.process()
+            chunks_to_process = [chunk for chunk in self.process_chunks if not self.hasCache(chunk)]
+            
+            if len(chunks_to_process) != 0:
+                print("Processing input for chunks:", chunks_to_process)
+                self.process(chunks_to_process)
                 self.save()
             else:
                 self.loadFromCache()
@@ -76,12 +87,26 @@ class CachedDataset(Dataset):
         else:
             return os.path.join(self.save_dir, self.name + f"_{chunk}{file_ext}")
 
-    def hasCache(self):
+    def hasCache(self, chunk=None):
         """Checks if the dataset already has a processed copy saved to disk
+
+        Args:
+            chunk (int, optional): The chunk of the dataset to check for. Defaults to None, checking for the entire dataset.
 
         Returns:
             boolean: Whether a cache of the dataset already exists
         """
+        if chunk is not None:
+            file_path = self.save_file_name(chunk)
+            if os.path.exists(file_path):
+                print(f"Cache of {self.name}, chunk {chunk} found at {file_path}")
+                return True
+            else:
+                print(f"Cache of {self.name}, chunk {chunk} not found at {file_path}")
+                return False
+            
+        #* Otherwise, check all chunks and return False if any are missing
+            
         if self.chunks == 1:
             #* Simple case if there's only one chunk (aka not splitting the dataset into chunks)
             file_path = self.save_file_name()
@@ -103,11 +128,12 @@ class CachedDataset(Dataset):
             return True
     
     #* Currently undefined functions
-    def process(self):
+    def process(self, chunks=None):
         pass
 
     def save(self):
-        pass
+        if not os.path.exists(self.save_dir):
+            os.makedirs(self.save_dir)
 
     def loadFromCache(self):
         pass

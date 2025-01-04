@@ -1,0 +1,23 @@
+Training_Directory: model_saves/dummy_model/
+Model:
+  module: memes_base.models
+  class: MLP
+  args:
+    in_size: 5
+    hid_size: 64
+    out_size: 1
+    n_layers: 2
+    dropout: 0.1
+Training:
+  batch_size: 10000
+  learning_rate: 0.0001
+  epochs: 10
+Dataset:
+  module: memes_base.reddit_dataset
+  class: RedditDataset
+  args:
+    name: test_reddit_dataset
+    raw_files: [reddit_data/reddit/memes_submissions.zst]
+    save_dir: 'dataset_saves/reddit/'
+    save: True
+    chunks: 10
