@@ -243,7 +243,7 @@ class RedditEmbedDataset(CachedDataset):
         tracking = []
 
         embed_batches = []
-        max_length = 100 #! IMPORTANT: SWITCH BACK TO len(raw_dset)
+        max_length = len(raw_dset)
         for i in range(max_length): 
             post = raw_dset[i]
             print(f"Processing post {i}, url: {post['img_url']}")
