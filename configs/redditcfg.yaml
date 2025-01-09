@@ -14,7 +14,7 @@ Training:
   epochs: 10
 Dataset:
   module: memes_base.reddit_dataset
-  class: RedditDataset
+  class: RedditRawDataset
   args:
     name: test_reddit_dataset
     raw_files: [reddit_data/reddit/memes_submissions.zst]

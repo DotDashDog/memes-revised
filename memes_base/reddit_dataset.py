@@ -8,6 +8,12 @@ import numpy as np
 import pandas as pd
 from memes_base.datasets import CachedDataset
 import progressbar
+from transformers import CLIPProcessor, CLIPModel
+import torch
+from memes_base.image_processing import load_from_url, image_to_tensor, extract_text_from_image
+from memes_base.utils import buildFromConfig
+import requests
+
 
 def read_and_decode(reader, chunk_size, max_window_size, previous_chunk=None, bytes_read=0):
 	chunk = reader.read(chunk_size)
@@ -42,6 +48,14 @@ def in_bounds(i, process_chunks, chunk_bounds):
         
     return False
 
+def embed_text_and_images(texts, imgs, model, processor):
+
+    inputs = processor(text=texts, images=imgs, return_tensors="pt", padding=True, truncation=True)
+
+    outputs = model(**inputs)
+
+    return torch.cat((outputs.text_embeds, outputs.image_embeds), dim=1)
+
 class ZSTReader:
     def __init__(self, file_name):
         self.file_name = file_name
@@ -65,7 +79,7 @@ class ZSTReader:
 
         return lines[:-1], self.file_handle.tell()
     
-class RedditDataset(CachedDataset):
+class RedditRawDataset(CachedDataset):
     def __init__(self, name, raw_files, save_dir=None, save=True, chunks=1, process_chunks=None, **kwargs):
 
         super().__init__(name, raw_files, save_dir, save, chunks, process_chunks, **kwargs)
@@ -191,6 +205,107 @@ class RedditDataset(CachedDataset):
         for chunk in self.process_chunks:
             chunk_df = pd.read_parquet(self.save_file_name(chunk))
             self.df = pd.concat([self.df, chunk_df], ignore_index=True)
+    
+    def __len__(self):
+        return len(self.df)
+    
+    def __getitem__(self, idx):
+         return self.df.iloc[idx]
+
+class RedditEmbedDataset(CachedDataset):
+    def __init__(self, raw_dset_cfg, embedding_model="openai/clip-vit-base-patch32", embedding_batch_size=64, **kwargs):
+        #* Takes in a RedditRawDataset configuration, and extracts embeddings from it
+        self.raw_dset_cfg = raw_dset_cfg
+
+        self.embed_model = CLIPModel.from_pretrained(embedding_model)
+        self.embed_processor = CLIPProcessor.from_pretrained(embedding_model)
+
+        self.embedding_batch_size = embedding_batch_size
+
+        args = raw_dset_cfg["args"]
+        super().__init__(args['name'] + "_embeds", args['raw_files'], args['save_dir'], args['save'], **kwargs) #chunks, process_chunks,
+        #* 
+    
+    def save_file_name(self, chunk=None):
+        return super().save_file_name(chunk, ".pt")
+
+    def process(self, chunks_to_process=None):
+        raw_dset = buildFromConfig(self.raw_dset_cfg)
+
+        if chunks_to_process is None:
+            chunks_to_process = self.process_chunks
+
+        #! Maybe switch raw dataset to being an iterable??
+        #! NEED TO MAKE WORK WITH CHUNKS FOR LARGER DATASETS
+        text_batch = []
+        img_batch = []
+
+        tracking = []
+
+        embed_batches = []
+        max_length = 100 #! IMPORTANT: SWITCH BACK TO len(raw_dset)
+        for i in range(max_length): 
+            post = raw_dset[i]
+            print(f"Processing post {i}, url: {post['img_url']}")
+
+            process_post = True
+            #! Check what happens if there's no image, or image is inaccesible
+            try:
+                img = load_from_url(post['img_url'])
+            except requests.HTTPError as e:
+                print("HTTP Error:", e)
+                process_post = False
+            if img is None:
+                print("Invalid Image URL")
+                process_post = False
+
+            if process_post:
+                img_tensor = image_to_tensor(img)
+
+                body_text = post['text']
+                title_text = post['title']
+                image_text = extract_text_from_image(img)
+
+                #! Figure out best way to put text together
+                whole_text = f"{title_text}:\n{body_text}\nImage Caption: {image_text}"
+
+                text_batch.append(whole_text)
+                img_batch.append(img_tensor)
+                tracking.append(i)
+
+            if len(text_batch) != 0 and (len(text_batch) % self.embedding_batch_size == 0 or i == max_length-1):
+                #* Run embedding once every batch_size posts for speed
+                print(len(text_batch), "posts processed. Running Embedding")
+
+                # for w in text_batch:
+                #     print(w.replace("\n", " "))
+
+                embeds = embed_text_and_images(text_batch, img_batch, self.embed_model, self.embed_processor)
+
+                embed_batches.append(embeds)
+
+                text_batch = []
+                img_batch = []
+        
+        
+        self.tracking = torch.tensor(tracking)
+        self.embeddings = torch.cat(embed_batches, dim=0)
+
+
+    def save(self):
+        super().save()
+        torch.save({"embeddings": self.embeddings, "tracking": self.tracking}, self.save_file_name(0)) #! Change when chunking is added
+
+    def loadFromCache(self):
+        data = torch.load(self.save_file_name(0)) #! Change when chunking is added
+        self.embeddings = data["embeddings"]
+        self.tracking = data["tracking"]
+    
+    
+
+
+
+
 
 #%%
 
