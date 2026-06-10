@@ -4,6 +4,16 @@ model_saves/
 wandb/
 reddit_data/
 
+# Experiment run outputs (large/regeneratable; code lives in experiments/wp01, experiments/wp02)
+experiments/WP-01/
+experiments/WP-02/comparison-plots-001/
+experiments/WP-02/full-synthetic-001/
+experiments/WP-02/grid-sweep-001/
+experiments/WP-02/nuts-check-case-*/
+experiments/WP-02/nuts-smoke/
+experiments/WP-02/nuts-smoke-2/
+experiments/WP-02/smoke-test/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
