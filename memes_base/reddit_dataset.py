@@ -13,6 +13,11 @@ import torch
 from memes_base.image_processing import load_from_url, image_to_tensor, extract_text_from_image
 from memes_base.utils import buildFromConfig
 import requests
+import time
+from alive_progress import alive_bar, alive_it
+# from safetensors.torch import save_file, safe_open
+import lmdb
+import pickle
 
 
 def read_and_decode(reader, chunk_size, max_window_size, previous_chunk=None, bytes_read=0):
@@ -55,6 +60,53 @@ def embed_text_and_images(texts, imgs, model, processor):
     outputs = model(**inputs)
 
     return torch.cat((outputs.text_embeds, outputs.image_embeds), dim=1)
+
+
+def append_to_lmdb(lmdb_path, new_data):
+    # Open the existing LMDB file in write mode
+    env = lmdb.open(lmdb_path, map_size=1099511627776, create=True)
+    with env.begin(write=True) as txn:
+        for key in new_data:
+            tensor = new_data[key]
+            pickled = pickle.dumps(tensor)
+
+            if isinstance(key, str):
+                key = key.encode('utf-8')
+            elif isinstance(key, int):
+                key = str(key).encode('utf-8')
+            
+            txn.put(key, pickled)
+    env.close()
+
+
+def read_from_lmdb(lmdb_path, keys):
+    # Open the existing LMDB file in read mode
+    if not os.path.exists(lmdb_path):
+        raise FileNotFoundError(f"LMDB file {lmdb_path} not found")
+
+    env = lmdb.open(lmdb_path, readonly=True)
+    with env.begin() as txn:
+        cursor = txn.cursor()
+        for key in keys:
+            if isinstance(key, str):
+                key_binary = key.encode('utf-8')
+            elif isinstance(key, int):
+                key_binary = str(key).encode('utf-8')
+            elif isinstance(key, bytes):
+                key_binary = key
+
+            value = cursor.get(key_binary)
+            yield pickle.loads(value)
+
+def get_keys_from_lmdb(lmdb_path):
+    if not os.path.exists(lmdb_path):
+        raise FileNotFoundError(f"LMDB file {lmdb_path} not found")
+    
+    env = lmdb.open(lmdb_path, readonly=True)
+    with env.begin() as txn:
+        keys = list(txn.cursor().iternext(values=False))
+    return keys
+
 
 class ZSTReader:
     def __init__(self, file_name):
@@ -210,7 +262,7 @@ class RedditRawDataset(CachedDataset):
         return len(self.df)
     
     def __getitem__(self, idx):
-         return self.df.iloc[idx]
+         return self.df.loc[idx]
 
 class RedditEmbedDataset(CachedDataset):
     def __init__(self, raw_dset_cfg, embedding_model="openai/clip-vit-base-patch32", embedding_batch_size=64, **kwargs):
@@ -223,86 +275,127 @@ class RedditEmbedDataset(CachedDataset):
         self.embedding_batch_size = embedding_batch_size
 
         args = raw_dset_cfg["args"]
-        super().__init__(args['name'] + "_embeds", args['raw_files'], args['save_dir'], args['save'], **kwargs) #chunks, process_chunks,
-        #* 
-    
-    def save_file_name(self, chunk=None):
-        return super().save_file_name(chunk, ".pt")
+        #* Run initialization to set instance variables right, but want to override typical cache checking, chunking
+        super().__init__(args['name'] + "_embeds", args['raw_files'], save_dir=args['save_dir'], custom_save=True, **kwargs)
 
-    def process(self, chunks_to_process=None):
+        #* Do custom save and loading process, built into the process function
+        super().process()
+        self.process()
+        
+    
+    def save_file_name(self):
+        return super().save_file_name(file_ext=".lmbd")
+
+    def process(self):
         raw_dset = buildFromConfig(self.raw_dset_cfg)
 
-        if chunks_to_process is None:
-            chunks_to_process = self.process_chunks
+        dset_index = raw_dset.df.index
 
-        #! Maybe switch raw dataset to being an iterable??
-        #! NEED TO MAKE WORK WITH CHUNKS FOR LARGER DATASETS
+        super().save()
+
+        try:
+            existing_keys = [int(key) for key in get_keys_from_lmdb(self.save_file_name())]
+        except FileNotFoundError:
+            existing_keys = []
+
+        process_keys = [i for i in dset_index if i not in existing_keys]
+
         text_batch = []
         img_batch = []
+        tracking_batch = []
 
-        tracking = []
+        times = {"download": 0, "embed": 0, "OCR": 0, "save": 0}
+        download_failures = 0
+        HTTPErrors = 0
+        ConnectionErrors = 0
 
-        embed_batches = []
-        max_length = len(raw_dset)
-        for i in range(max_length): 
-            post = raw_dset[i]
-            print(f"Processing post {i}, url: {post['img_url']}")
+        process_start = time.time()
 
-            process_post = True
-            #! Check what happens if there's no image, or image is inaccesible
-            try:
-                img = load_from_url(post['img_url'])
-            except requests.HTTPError as e:
-                print("HTTP Error:", e)
-                process_post = False
-            if img is None:
-                print("Invalid Image URL")
-                process_post = False
+        with alive_bar(len(process_keys), title="Processing Reddit Posts", force_tty=True, spinner="dots_waves") as bar:
+            for i, key in enumerate(process_keys):
+                post = raw_dset[key]
+                # print(f"Processing post {i}, url: {post['img_url']}")
 
-            if process_post:
-                img_tensor = image_to_tensor(img)
+                process_post = True
+                #! Check what happens if there's no image, or image is inaccesible
+                try:
+                    startTime = time.time()
+                    # print(f"\nAttempting to download image from URL: {post['img_url']}")
+                    img = load_from_url(post['img_url'])
+                    times["download"] += time.time() - startTime
+                except (requests.HTTPError) as e:
+                    print(f"HTTP Error for URL {post['img_url']}: {str(e)}")
+                    process_post = False
+                    HTTPErrors += 1
+                except requests.exceptions.ConnectionError as e:
+                    print(f"Connection Error for URL {post['img_url']}: {str(e)}")
+                    process_post = False
+                    ConnectionErrors += 1
+                except Exception as e:
+                    print(f"Unexpected error for URL {post['img_url']}: {str(e)}")
+                    process_post = False
+                    HTTPErrors += 1
 
-                body_text = post['text']
-                title_text = post['title']
-                image_text = extract_text_from_image(img)
+                if img is None:
+                    print(f"Failed to load image from URL: {post['img_url']}. Post Link: reddit.com/{post['link']}")
+                    process_post = False
 
-                #! Figure out best way to put text together
-                whole_text = f"{title_text}:\n{body_text}\nImage Caption: {image_text}"
+                if process_post:
+                    img_tensor = image_to_tensor(img)
 
-                text_batch.append(whole_text)
-                img_batch.append(img_tensor)
-                tracking.append(i)
+                    body_text = post['text']
+                    title_text = post['title']
 
-            if len(text_batch) != 0 and (len(text_batch) % self.embedding_batch_size == 0 or i == max_length-1):
-                #* Run embedding once every batch_size posts for speed
-                print(len(text_batch), "posts processed. Running Embedding")
+                    startTime = time.time()
+                    image_text = extract_text_from_image(img)
+                    times["OCR"] += time.time() - startTime
 
-                # for w in text_batch:
-                #     print(w.replace("\n", " "))
+                    #! Figure out best way to put text together so that the embedding model understands it
+                    whole_text = f"{title_text}:\n{body_text}\nImage Caption: {image_text}"
 
-                embeds = embed_text_and_images(text_batch, img_batch, self.embed_model, self.embed_processor)
+                    text_batch.append(whole_text)
+                    img_batch.append(img_tensor)
+                    tracking_batch.append(key)
+                else:
+                    download_failures += 1
+                
+                bar()
+                bar.text(f"Successes: {i+1-download_failures}, Download Failures: {download_failures}/{i+1}, HTTP Errors: {HTTPErrors}, Connection Errors: {ConnectionErrors}")
 
-                embed_batches.append(embeds)
+                #* Running embedding every batch_size posts, or at the end of the process
+                if len(text_batch) != 0 and (len(text_batch) % self.embedding_batch_size == 0 or i == len(process_keys)-1):
+                    #* Run embedding once every batch_size posts for speed
+                    #* Then save to the LMDB file
 
-                text_batch = []
-                img_batch = []
-        
-        
-        self.tracking = torch.tensor(tracking)
-        self.embeddings = torch.cat(embed_batches, dim=0)
+                    startTime = time.time()
+                    #! Eventually, what if a post doesn't have an image? Will need to change embed_text_and_images, prob not concatenating but taking mean??
+                    embeds = embed_text_and_images(text_batch, img_batch, self.embed_model, self.embed_processor)
+                    times["embed"] += time.time() - startTime
 
+                    startTime = time.time()
 
-    def save(self):
-        super().save()
-        torch.save({"embeddings": self.embeddings, "tracking": self.tracking}, self.save_file_name(0)) #! Change when chunking is added
+                    save_dict = {tracking_batch[j]: embeds[j] for j in range(len(tracking_batch))}
+                    append_to_lmdb(self.save_file_name(), save_dict)
 
-    def loadFromCache(self):
-        data = torch.load(self.save_file_name(0)) #! Change when chunking is added
-        self.embeddings = data["embeddings"]
-        self.tracking = data["tracking"]
-    
-    
+                    times["save"] += time.time() - startTime
 
+                    text_batch = []
+                    img_batch = []
+                    tracking_batch = []
+                
+
+        print(f"Finished Processing in {time.time() - process_start}s. {download_failures}/{len(process_keys)} posts failed to download images.",
+              f"\nDownload Time: {times['download']}s, OCR Time: {times['OCR']}s, Embedding Time: {times['embed']}s, Save Time: {times['save']}s")
+
+    def __getitem__(self, indices):
+        #! MUCH FASTER IF ALL INDICES ARE PASSED AT ONCE
+
+        #* Check if multiple indices have been passed
+        if hasattr(indices, "__getitem__"):
+            return read_from_lmdb(self.save_file_name(), indices)
+        else:
+            return read_from_lmdb(self.save_file_name(), [indices])[0]
+            
 
 
 

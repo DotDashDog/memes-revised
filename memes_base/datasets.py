@@ -25,7 +25,7 @@ def get_chunk_indices(length, chunks):
 class CachedDataset(Dataset):
     #* A template class, with the common functions that all of our datasets should need.
     #! Currently does not allow prebatching, which may be needed for faster loading
-    def __init__(self, name, raw_files, save_dir=None, save=True, chunks=1, process_chunks=None, **kwargs):
+    def __init__(self, name, raw_files, save_dir=None, save=True, chunks=1, process_chunks=None, custom_save=False, **kwargs):
         """Intitializes the dataset, including processing, chunking, and creating save files
 
         Args:
@@ -42,6 +42,7 @@ class CachedDataset(Dataset):
         self.save_to_disk = save
         self.chunks = chunks
         self.process_chunks = process_chunks
+        self.custom_save = custom_save
 
         self.processing_widgets = [
             '[Preprocessing: ', progressbar.Percentage(), ', ',
@@ -59,17 +60,18 @@ class CachedDataset(Dataset):
         elif self.process_chunks is None:
             self.process_chunks = list(range(self.chunks))
 
-        if self.save_to_disk: 
-            chunks_to_process = [chunk for chunk in self.process_chunks if not self.hasCache(chunk)]
-            
-            if len(chunks_to_process) != 0:
-                print("Processing input for chunks:", chunks_to_process)
-                self.process(chunks_to_process)
-                self.save()
+        if not self.custom_save:
+            if self.save_to_disk: 
+                chunks_to_process = [chunk for chunk in self.process_chunks if not self.hasCache(chunk)]
+                
+                if len(chunks_to_process) != 0:
+                    print("Processing input for chunks:", chunks_to_process)
+                    self.process(chunks_to_process)
+                    self.save()
+                else:
+                    self.loadFromCache()
             else:
-                self.loadFromCache()
-        else:
-            self.process()
+                self.process()
 
     def save_file_name(self, chunk=None, file_ext=".bin"):
         """Creates the path to a dataset save file
@@ -149,9 +151,8 @@ class DummyDataset(CachedDataset):
     #* But it does most of the stuff our actual dataset class will need to do, so hopefully we won't need to make a ton of changes
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
         self.dtype = torch.float32
+        super().__init__(*args, **kwargs)
         
         if len(self.raw_files) != 1:
             raise ValueError("Only one raw file is allowed for DummyDataset")
@@ -160,16 +161,19 @@ class DummyDataset(CachedDataset):
         return super().save_file_name(chunk, ".npz")
 
     #! WIP Functions. Really depend on how exactly our dataset is set up.
-    def process(self):
+    def process(self, chunks_to_process=None):
         """Loads and processes the raw data, keeps it in instance variables
         """
+        if chunks_to_process is None:
+            chunks_to_process = self.process_chunks
+
         df = pd.read_csv(self.raw_files[0])
 
         chunk_indices = get_chunk_indices(len(df), self.chunks)
         self.chunk_Xs = {}
         self.chunk_ys = {}
 
-        for chunk in self.process_chunks:
+        for chunk in chunks_to_process:
             indices = chunk_indices[chunk]
             print(f"Processing chunk {chunk} from index {indices[0]} to {indices[-1]}")
 
