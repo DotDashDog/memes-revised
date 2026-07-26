@@ -34,6 +34,13 @@ dependencies = [
 dev = [
     "pytest>=9.0.3",
 ]
+# GPU-enabled JAX. Linux-gated: the CUDA wheels are Linux-only, so this
+# resolves to nothing on macOS and the laptop keeps a CPU JAX.
+# Native Windows has no JAX CUDA build at all -- run under WSL2.
+# Sync with: uv sync --group gpu
+gpu = [
+    "jax[cuda12]>=0.10.0 ; sys_platform == 'linux'",
+]
 
 [tool.uv]
 package = false

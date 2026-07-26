@@ -34,6 +34,7 @@ You do **not** need to manually activate the venv. `uv run` handles that.
 | Add a dev-only dependency                          | `uv add --dev <pkg>`                   |
 | Remove a dependency                                | `uv remove <pkg>`                      |
 | Sync env to lockfile                               | `uv sync`                              |
+| Sync env **with GPU JAX** (Linux/WSL2 only)        | `uv sync --group gpu`                  |
 | Update lockfile after manual `pyproject.toml` edit | `uv lock`                              |
 | Bump Python version                                | edit `.python-version`, then `uv sync` |
 | Quick REPL                                         | `uv run python`                        |
@@ -52,7 +53,36 @@ You do **not** need to manually activate the venv. `uv run` handles that.
 
 ## GPU / ML libraries
 
-Local hardware: NVIDIA 3090. PyTorch and JAX both ship CUDA-bundled wheels on PyPI (`torch`, `jax[cuda12]`). For most cases, `uv add torch` or `uv add 'jax[cuda12]'` is sufficient. The concrete framework choice for modeling is deferred to a later ADR; whichever is chosen, install via `uv add`.
+Hardware: an NVIDIA 3090, which lives in a **separate Windows desktop**, not the laptop this repo is usually edited on. Plan accordingly — the laptop is CPU-only.
+
+### The base `jax` dependency is CPU-only
+
+`pyproject.toml` pins plain `jax`. That is deliberate: the CUDA wheels are Linux-only, so a bare `jax` keeps the lockfile resolvable on macOS. **GPU JAX comes from the `gpu` dependency group**, which is Linux-gated:
+
+```sh
+uv sync --group gpu   # no-op on macOS; installs jax[cuda12] on Linux/WSL2
+```
+
+Running it on a non-Linux machine is harmless (it resolves to nothing), so it is safe to put in a setup script.
+
+### Platform support, and a silent-failure hazard
+
+| Platform | JAX on NVIDIA GPU |
+| --- | --- |
+| Linux x86_64 | Yes |
+| Windows WSL2 x86_64 | Experimental — but the only option on the Windows box |
+| **Windows (native)** | **No.** JAX's docs: these installs "do not work with Windows, and may fail silently" |
+| macOS | No (CPU only) |
+
+The 3090 machine runs Windows, so **all GPU work must happen inside WSL2**, with the NVIDIA driver installed on the Windows host only (never inside WSL) and just the CUDA toolkit in the distro. Keep the repo on the WSL ext4 filesystem (`~/`), not `/mnt/c/...` — the 9p mount is drastically slower for the many-small-files image I/O this project does.
+
+The hazard worth naming: a CPU-only JAX does not error. It produces correct-looking posteriors, just far slower. Per `method-discipline.md`, do not infer "the GPU is working" from a run completing. Check explicitly:
+
+```sh
+uv run python -c "import jax; print(jax.devices())"   # want CudaDevice, not CpuDevice
+```
+
+PyTorch, EasyOCR, and PaddleOCR do have native-Windows CUDA builds; it is specifically JAX (and therefore ADR 0013's primary numerical backend, WP-02, and WP-12) that forces WSL2.
 
 If a specific CUDA-version index is required, configure it in `pyproject.toml`:
 
@@ -87,6 +117,7 @@ Do not bypass uv with `uv pip install` for anything you want kept. If you find y
 
 ## Log
 
+- 2026-07-26 — Added the Linux-gated `gpu` dependency group (`jax[cuda12]`, resolving CUDA 12.9 wheels) after finding the base `jax` pin was CPU-only on every platform, so the 3090 would have gone unused by ADR 0013's primary backend. Documented that native Windows has no JAX CUDA build (confirmed by JAX's docs *and* by the resolved lockfile marker, which excludes `win32` and `darwin`), so the 3090 desktop must run the project under WSL2. No ADR: this implements accepted ADR 0013 rather than changing the framework choice.
 - 2026-05-19 — Added WP-02 runtime dependencies via uv: `jax`, `diffrax`, `numpyro`, `corner`, `matplotlib`, `scipy`; added dev dependency `pytest`. `uv.lock` is now part of the reproducible environment.
 - 2026-05-19 — Bootstrapped uv: `pyproject.toml` (empty deps), `.python-version` = 3.12. `uv.lock` will be created on first `uv sync`.
 
