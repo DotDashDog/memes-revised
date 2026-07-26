@@ -14,6 +14,11 @@ experiments/WP-02/nuts-smoke/
 experiments/WP-02/nuts-smoke-2/
 experiments/WP-02/smoke-test/
 
+# WP-12 outputs are flat rather than in run subdirs, so ignore by type.
+# The *.md reports are the written record and stay tracked (as WP-02/report.md is).
+experiments/WP-12/*.png
+experiments/WP-12/*.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -174,3 +179,9 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# macOS
+.DS_Store
+
+# Claude Code — personal, machine-local overrides (.claude/settings.json IS committed)
+.claude/settings.local.json
