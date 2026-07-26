@@ -84,6 +84,42 @@ uv run python -c "import jax; print(jax.devices())"   # want CudaDevice, not Cpu
 
 PyTorch, EasyOCR, and PaddleOCR do have native-Windows CUDA builds; it is specifically JAX (and therefore ADR 0013's primary numerical backend, WP-02, and WP-12) that forces WSL2.
 
+### Verified desktop setup (2026-07-26)
+
+Windows host `GAMING-PC` → WSL2 Ubuntu 26.04. 16 cores, 62 GB RAM, ~955 GB free.
+
+- **No CUDA toolkit is installed in WSL, and none is needed.** The `gpu` group's pip wheels (`nvidia-cublas-cu12`, `nvidia-cudnn-cu12`, `nvidia-cuda-nvcc-cu12`, …) supply the whole CUDA runtime. Only the Windows-host NVIDIA driver is required (591.86 here, CUDA 13.1-capable). Do not `apt install cuda-toolkit`; it is a multi-GB no-op and invites version conflicts.
+- **Nothing in the setup needs root.** `sudo` requires a password in this distro; uv installs to `~/.local/bin`.
+- Repo lives at `~/memes-revised` on the WSL ext4 filesystem, not `/mnt/c`.
+
+Setup, from a clean distro:
+
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+git clone https://github.com/DotDashDog/memes-revised.git ~/memes-revised
+cd ~/memes-revised && uv sync --group gpu
+```
+
+Verification, and what a healthy result looks like:
+
+```
+$ uv run python -c 'import jax; print(jax.default_backend()); print(jax.devices())'
+gpu
+[CudaDevice(id=0)]
+
+8192^3 matmul: 0.030s  -> 37.2 TFLOP/s      # ~fp32 peak for a 3090; CPU would be <1
+$ uv run pytest tests/                       # 4 passed
+```
+
+The throughput number is the point: `CudaDevice` alone only proves JAX *found* a GPU. A timed matmul proves it is *using* it. Prefer the measurement over the device list.
+
+**Ignore this warning** — it is a benign WSL2 quirk (the driver reports a version string JAX's parser rejects) and does not affect execution:
+
+```
+cuda_executor.cc:1526] Could not get kernel mode driver version:
+(INVALID_ARGUMENT: Version does not match the format X.Y.Z)
+```
+
 If a specific CUDA-version index is required, configure it in `pyproject.toml`:
 
 ```toml
@@ -117,6 +153,7 @@ Do not bypass uv with `uv pip install` for anything you want kept. If you find y
 
 ## Log
 
+- 2026-07-26 — Stood up the WSL2 desktop environment and **verified GPU JAX end to end**: `jax.default_backend()` = `gpu`, `CudaDevice(id=0)`, 8192³ matmul at ~37 TFLOP/s (fp32 peak for a 3090), `tests/` 4 passed. Corrected the earlier setup guidance: the apt CUDA toolkit is *not* required, since the `gpu` group's pip wheels carry the CUDA runtime; only the Windows-host driver matters. No root needed anywhere. Claude Code 2.1.220 installed in the distro.
 - 2026-07-26 — Added the Linux-gated `gpu` dependency group (`jax[cuda12]`, resolving CUDA 12.9 wheels) after finding the base `jax` pin was CPU-only on every platform, so the 3090 would have gone unused by ADR 0013's primary backend. Documented that native Windows has no JAX CUDA build (confirmed by JAX's docs *and* by the resolved lockfile marker, which excludes `win32` and `darwin`), so the 3090 desktop must run the project under WSL2. No ADR: this implements accepted ADR 0013 rather than changing the framework choice.
 - 2026-05-19 — Added WP-02 runtime dependencies via uv: `jax`, `diffrax`, `numpyro`, `corner`, `matplotlib`, `scipy`; added dev dependency `pytest`. `uv.lock` is now part of the reproducible environment.
 - 2026-05-19 — Bootstrapped uv: `pyproject.toml` (empty deps), `.python-version` = 3.12. `uv.lock` will be created on first `uv sync`.
