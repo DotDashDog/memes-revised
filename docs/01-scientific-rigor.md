@@ -1,6 +1,10 @@
-# Scientific Rigor Standards
+# Scientific Rigor Standards (project-specific)
 
 This is a research project, not a feature-shipping project. The goal is **a defensible answer to a scientific question**, not a working model at any cost. The standards below are non-negotiable; if you find yourself wanting to skip one, that is a signal to ask the user, not to skip it.
+
+> **This file holds the *project-specific* standards** (baselines, validation split, contamination, failure modes). The *general* "don't fool yourself" method discipline — identifiability as a precondition, matching the test to the claim, principled pre-registration, plots-before-metrics, the anti-cargo-cult debugging rules, surfacing assumptions — lives in [`method-discipline.md`](method-discipline.md) and is equally required reading.
+>
+> **Section numbers are preserved for citation stability.** The gaps below (no §4, §8, §9, §11) are intentional: those sections moved to `method-discipline.md`. Do not renumber.
 
 ## 1. Baselines are mandatory
 
@@ -27,11 +31,6 @@ Report all baselines on the same eval set, with the same metrics, alongside any 
 - Report training-set vs. evaluation-set metrics side by side. A large gap is a contamination signal even on otherwise clean splits.
 - Wherever feasible, run a *contamination probe*: predict spread parameters from the embedding *without showing the model the time-series data*. If accuracy is high, the embedding already encodes virality.
 
-## 4. Identifiability is checked before any claim about parameters
-
-- Before claiming a model predicts SIR parameters well, confirm those parameters are *identifiable* from the data being fit. See [WP-02](work-packages/WP-02-sir-identifiability-study.md).
-- If a parameter (or combination) is degenerate, do not report on it as if it were a target. Predict identifiable combinations only.
-
 ## 5. Uncertainty is reported, not hidden
 
 - Point estimates are insufficient. Every reported metric should include an uncertainty estimate: bootstrap CI over evaluation memes, posterior credible interval, or equivalent.
@@ -50,18 +49,6 @@ Report all baselines on the same eval set, with the same metrics, alongside any 
 - A failed experiment is a result. File it in the work package's log section.
 - A baseline that beats your model is the most important thing to report, not the thing to hide.
 - If you abandon an approach, write down *why* in the relevant ADR (mark `superseded`) or work package log so future agents don't repeat it.
-
-## 8. Quick-look plots before metrics
-
-- Before reporting any aggregate metric, look at:
-  - The distribution of the target (is it skewed? bimodal?).
-  - The residuals (any structure?).
-  - 5–10 concrete examples (best, worst, median prediction).
-- A 0.4 $R^2$ achieved by predicting one cluster of memes perfectly and ignoring everything else is not what we want.
-
-## 9. Surface assumptions
-
-When making any inference, make assumptions explicit, ideally with a comment in code or a note in the work-package log. "I am treating post count as proportional to true infections" is the kind of statement that should be visible.
 
 ## 10. Failure modes to actively watch for
 

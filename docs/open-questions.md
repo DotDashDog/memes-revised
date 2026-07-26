@@ -46,6 +46,12 @@ Owner: unowned. Status: open, will be a sub-decision when WP-10 starts.
 Context: Generate synthetic embeddings + SIR curves, pre-train, then fine-tune. Cheap data-efficiency win.
 Owner: unowned. Status: parked (try after baselines if v1 is data-starved).
 
+## Single-seed regime & extinction
+
+- **The mean-field / SIR description is weakest exactly in the single-seed (I₀=1) regime that real memes live in.**
+Context: WP-12 certified that the stochastic HawkesN simulator converges to the mean-field (≡ SIR) ODE — but **only with the initial fraction `I₀/N=ε₀` held fixed** as N→∞. Real cascades start from a single seed (I₀=1), where I₀/N→0 is a *different, harder* limit: large take-off-time jitter, a non-negligible probability of early **extinction**, and survival-conditioning bias. In that regime a per-cluster SIR/HawkesN fit is fitting a curve whose mean-field justification is much weaker, and the corpus is selected for survival (only memes that *didn't* go extinct are observed — directly the R2 endogeneity/selection problem). Likely recurring: extinction/survival selection will resurface in per-cluster fitting (WP-08), identifiability (WP-14), and any final-size or popularity prediction.
+Owner: unowned. Status: open. Touch points: WP-08, WP-14, R2 (selection), R5 (posts≠infections). Distilled evidence in `experiments/WP-12/report.md` §2 (Claim B) and `claimb_report.md`.
+
 ## Causal / selection
 
 - **Causal-inference framing for the endogeneity problem.**
@@ -75,8 +81,15 @@ Owner: unowned. Status: parked.
 ## Long-term / speculative
 
 - **Holistic spatio-temporal point-process model** (Cox / Hawkes process over the embedding × time space, with an SIR-style local prior as a soft constraint).
-Context: Discussed in `00-background.md` "Speculative directions." Cluster-based pipeline is the limiting case under specific assumptions. Worth keeping in peripheral vision so present-day pipeline choices don't preclude it.
-Owner: unowned. Status: parked. Note: keep raw timestamps + embeddings throughout the pipeline so this remains tractable later.
+Context: Discussed in `00-background.md` "Speculative directions." Cluster-based pipeline is the limiting case under specific assumptions. Worth keeping in peripheral vision so present-day pipeline choices don't preclude it. **Concepts/literature: `research-notes/hawkes-processes.md`. Critique + phased replication plan: `research-notes/hawkes-replication-plan.md`.**
+Owner: unowned. Status: **promoted to a phased track** — WP-12…WP-15, scoped by ADR 0014 (`proposed`). WP-12–14 run in parallel with WP-02; WP-15 stays gated on the cluster baseline. Note: keep raw timestamps + embeddings throughout the pipeline so this remains tractable later.
+
+### Sub-questions surfaced by the Hawkes replication plan (`research-notes/hawkes-replication-plan.md` §7)
+
+- **Per-meme forecast extraction:** what operator turns the holistic intensity $\lambda^*(t,\mathbf{x})$ into "meme $m$'s future trajectory," and is it well-posed when the spatial kernel doesn't cleanly localize memes? Status: open, tested in WP-15.
+- **Windowing — modeling assumption or approximation?** At what time/embedding radius does truncating influence change the fitted branching ratio by more than its posterior width? Status: open, measured in WP-14; gates the 5M+ feasibility extrapolation.
+- **Repost/deletion correction:** principled MNAR correction (thinning model, dedup prior) or only a robustness ablation? Status: open, ablation in WP-14.
+- **Mean-field equivalence under the real signal:** does cluster-SIR↔HawkesN hold under the ADR 0007 engagement signal, or only for raw counts? Status: open.
 - **Meme generation conditioned on target spread parameters.**
 Context: The aspirational long-term application. Out of scope until the prediction problem is solved.
 Owner: unowned. Status: parked.

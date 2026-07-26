@@ -16,7 +16,7 @@ Use a **UMAP → HDBSCAN** pipeline as the primary clustering approach, run at *
 
 - A **hand-labeled gold set** of ~50 known memes (~30 posts each) — built before clustering is finalized.
 - **Cluster purity** and **recall** measured against the gold set.
-- **Eyeball inspection** of random clusters at each granularity (see `01-scientific-rigor.md` §8).
+- **Eyeball inspection** of random clusters at each granularity (see `method-discipline.md` §5).
 
 Pick the granularity that maximizes a defined balance of purity, recall, and downstream signal strength. **Don't pick a single granularity blindly** — keep the multi-granularity ablation as part of the project.
 

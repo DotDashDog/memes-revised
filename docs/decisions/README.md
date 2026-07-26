@@ -50,6 +50,7 @@ Small implementation choices (variable names, file layout within a package) do n
 | [0011](0011-train-test-split.md) | Train/test/eval split strategy | proposed | embeddings + clusters exist |
 | [0012](0012-baselines.md) | Canonical baseline set for first model run | proposed | embeddings + targets exist |
 | [0013](0013-jax-primary.md) | JAX as the primary numerical backend | accepted | — |
+| [0014](0014-hawkes-track-scope.md) | Neural-Hawkes track: scope & architecture-critical decisions | proposed | informs WP-12…WP-15 |
 
 ## Template
 

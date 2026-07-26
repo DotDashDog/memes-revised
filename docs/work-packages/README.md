@@ -34,9 +34,15 @@ A work package is a **self-contained unit of work** with a clear "done" conditio
 | WP-09                                       | Baselines (B1–B5) implementation                                        | planned | WP-08               | first model claim              |
 | WP-10                                       | Predictor model v1 (embedding → params)                                 | planned | WP-08, WP-09        | success metric eval            |
 | WP-11                                       | Contamination probe (predict params from embedding without time-series) | planned | embeddings exist    | confidence in any model result |
+| [WP-12](WP-12-sir-hawkes-replication.md)    | SIR-Hawkes / HawkesN replication (anchor)                               | open    | ADR 0014            | WP-13, WP-14; bridges WP-02    |
+| [WP-13](WP-13-temporal-neural-tpp.md)       | Temporal-only neural TPP machinery + single-meme stream                 | open    | ADR 0014, WP-12     | WP-14, WP-15; §5 cost input    |
+| [WP-14](WP-14-hawkes-identifiability.md)    | Hawkes identifiability & endogeneity study (synthetic)                  | open    | ADR 0014, WP-12     | real-data Hawkes param claims  |
+| [WP-15](WP-15-marked-stpp-pilot.md)         | First marked STPP on a small embedding subset                           | open    | ADR 0014, WP-13/14, cluster baseline | holistic-track go/no-go |
 
 
 Planned packages are stubs until promoted to `open`; they may merge, split, or change shape.
+
+WP-12…WP-15 form the **neural-Hawkes track** (`../research-notes/hawkes-replication-plan.md`, scoped by ADR 0014). WP-12–14 are synthetic / single-stream and run in parallel with WP-02; only WP-15's real-embedding spatial work is gated on the cluster pipeline.
 
 ## Dependency graph (high level)
 
@@ -52,6 +58,14 @@ WP-11 ──► confidence check ───────────────�
 ```
 
 WP-01 and WP-02 have no gates and can be done in parallel.
+
+Neural-Hawkes track (parallel synthetic, gated only on ADR 0014):
+
+```
+ADR 0014 ──► WP-12 ──► WP-13 ──► WP-15 (also gated on cluster baseline)
+                 └────► WP-14 ──┘
+WP-02 ───────────────► (bridges into WP-12's mean-field check)
+```
 
 ## Template
 
