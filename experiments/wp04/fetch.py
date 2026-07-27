@@ -417,16 +417,19 @@ async def run(limit: int | None) -> None:
         if r.post_id in done:
             n_skip += 1
             continue
+        # pool host column is NaN (a float, and truthy!) where the URL regex
+        # didn't match — sanitize before it reaches the string index column
+        host = r.host if isinstance(r.host, str) else ""
         fetch_url, lane_name = normalize_url(r.img_url)
         if fetch_url is None:
-            res = Result(Job(r.img_url, "", r.host or "", [r.post_id]), "unsupported_url")
+            res = Result(Job(r.img_url, "", host, [r.post_id]), "unsupported_url")
             writer.add_failure(res)
             n_unsupported += 1
             continue
         if fetch_url in jobs_by_url:
             jobs_by_url[fetch_url].post_ids.append(r.post_id)
         else:
-            jobs_by_url[fetch_url] = Job(r.img_url, fetch_url, r.host or "",
+            jobs_by_url[fetch_url] = Job(r.img_url, fetch_url, host,
                                          [r.post_id], lane_name)
 
     lanes = {
