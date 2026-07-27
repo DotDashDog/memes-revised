@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import time
 from pathlib import Path
@@ -38,6 +39,14 @@ def _sample_lookup(wp01_root: Path) -> dict[str, dict[str, Any]]:
 
 
 def load_cached_items(wp01_root: Path, target_items: int, seed: int) -> list[dict[str, Any]]:
+    """Select items from the sample.json manifest, skipping byte-identical duplicates.
+
+    The item universe is the manifest, not the images/ directory: images/ can hold
+    orphan files from older sample generations, which have no metadata (their titles
+    would silently embed as empty — the clustering-large-001 defect). Byte-identical
+    files (reposts, or the same post drawn twice) are deduplicated so HDBSCAN density
+    is not inflated by exact copies; the first drawn member of each group is kept.
+    """
     lookup = _sample_lookup(wp01_root)
     image_paths = sorted((wp01_root / "images").glob("meme-*.jpg"))
     rng = np.random.default_rng(seed)
@@ -45,13 +54,23 @@ def load_cached_items(wp01_root: Path, target_items: int, seed: int) -> list[dic
     rng.shuffle(shuffled)
 
     items = []
+    n_orphans = 0
+    n_dups = 0
+    seen_digests: set[str] = set()
     for image_path in shuffled:
         item_id = image_path.stem
-        entry = dict(lookup.get(item_id, {}))
+        if item_id not in lookup:
+            n_orphans += 1
+            continue
+        digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
+        if digest in seen_digests:
+            n_dups += 1
+            continue
         image = cv2.imread(str(image_path))
         if image is None:
             continue
-        entry.setdefault("id", item_id)
+        seen_digests.add(digest)
+        entry = dict(lookup[item_id])
         entry.setdefault("title", "")
         entry.setdefault("post_text", "")
         entry.setdefault("stratum", "cached")
@@ -61,6 +80,11 @@ def load_cached_items(wp01_root: Path, target_items: int, seed: int) -> list[dic
         items.append(entry)
         if len(items) >= target_items:
             break
+    print(
+        f"Item selection: kept {len(items)}, skipped {n_orphans} orphans "
+        f"(not in sample.json) and {n_dups} byte-identical duplicates",
+        flush=True,
+    )
     return items
 
 
