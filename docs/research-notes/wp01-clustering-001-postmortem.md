@@ -1,7 +1,7 @@
 # Postmortem: the `clustering-large-001` item-set contamination
 
 **Date:** 2026-07-26
-**Status:** findings verified at code/data level; qualitative re-grade of the corrected run pending user verdict
+**Status:** findings verified at code/data level; corrected run graded by the user — see Outcome
 **Artifacts:** `experiments/WP-01/clustering-large-001/` (invalid), `experiments/WP-01/clustering-large-002/` (corrected re-run)
 
 ## How it was caught
@@ -61,6 +61,20 @@ kept **63 items** — 68 manifest-backed images minus 5 repost twins — with 10
 coverage and 0 duplicates. Resulting structure: `p_ocr` 2 clusters + 22% noise, `p_vlm` 3 + 33%,
 `p_vlm_only` 4 + 30%. The re-run is rendered for inspection on the same artifact page as the
 original; the qualitative verdict is the user's to render.
+
+## Outcome: user verdict on the corrected run (2026-07-26)
+
+The user inspected `clustering-large-002` and found **no significant semantic difference
+between the clusters** in any pipeline. The earlier mildly-promising recollection ("clusters
+that formed were internally coherent") therefore does **not** survive re-inspection on clean
+data — it was at least partly an artifact of exact-duplicate pairs co-clustering. Standing
+qualitative support for the ADR 0006 pipeline's *clustering* ability at this scale: none.
+
+Note this does not by itself reopen ADR 0006, which was accepted on text-fidelity and
+OCR-quality evidence with cluster-quality evidence explicitly excluded (n=24 clustering was
+already inconclusive). What it does do is remove any temptation to cite small-n clustering as
+corroboration, and it makes the properly-powered audit — 500–1000 posts, family-stratified,
+hand-labeled (open-questions §"Cluster evaluation") — the only path to a cluster-quality claim.
 
 ## Method note
 
