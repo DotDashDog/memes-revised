@@ -486,9 +486,9 @@ def _looks_like_ocr_junk(text: str, confidence: Optional[float]) -> bool:
     return False
 
 
-def run_easyocr_boxed_filtered(image: np.ndarray) -> OcrResult:
+def run_easyocr_boxed_filtered(image: np.ndarray, batch_size: int = 1) -> OcrResult:
     reader = EasyOcrEngine.get(("en",))
-    results = reader.readtext(image, detail=1, paragraph=False)
+    results = reader.readtext(image, detail=1, paragraph=False, batch_size=batch_size)
     if not results:
         return OcrResult(text="")
 
@@ -511,6 +511,7 @@ def run_pipeline(
     pipeline_name: str,
     apply_preprocess: bool = False,
     preprocess_mode: str = "white_text",
+    batch_size: int = 1,
 ) -> OcrResult:
     pipeline_name = pipeline_name.lower()
     input_image = image
@@ -524,7 +525,7 @@ def run_pipeline(
     if pipeline_name in {"easyocr", "craft"}:
         return run_easyocr_craft(input_image)
     if pipeline_name in {"easyocr_filtered", "easyocr_boxed", "easyocr_boxed_filtered"}:
-        return run_easyocr_boxed_filtered(input_image)
+        return run_easyocr_boxed_filtered(input_image, batch_size=batch_size)
     if pipeline_name in {"tesseract", "tess"}:
         return run_tesseract_sparse(input_image)
 
