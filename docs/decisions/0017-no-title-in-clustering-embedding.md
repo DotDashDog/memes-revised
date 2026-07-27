@@ -1,7 +1,8 @@
 # 0017 — Exclude post title/body from the clustering embedding
 
-**Status:** proposed
+**Status:** accepted
 **Date:** 2026-07-26
+**Accepted:** 2026-07-26 — user, citing r/memes posting norms ("titles don't belong in the embedding")
 **Amends:** [0006-ocr-vs-vlm.md](0006-ocr-vs-vlm.md) (scopes its "post text signal" out of the clustering path)
 **Informs:** WP-04 (audit pipeline), WP-05 (pipeline build), 0009 (clustering), WP-10 (predictor inputs)
 
