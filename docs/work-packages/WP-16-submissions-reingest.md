@@ -1,9 +1,22 @@
 # WP-16 — Full submissions re-ingest
 
-**Status:** active
+**Status:** complete (2026-07-26) — outcome UNCERTIFIED, awaiting user review of `experiments/WP-16/report.md`
 **Date opened:** 2026-07-26
 **Owner:** unassigned
 **Gates:** ~~the 2025-12 archive download~~ done 2026-07-26; ~~coverage-completeness gate~~ **PASSED** 2026-07-26
+
+## Outcome
+
+**11,782,247 submissions ingested, 0 dropped, spanning 2008-07-11 → 2025-12-31** — 2.86× the previous run, which covered 4,121,376 rows ending 2020-03-11. Output: `dataset_saves/reddit/submissions-2025-12/submissions.parquet` (586 MB). Full report: `experiments/WP-16/report.md`.
+
+Reconciliation is exact and independently corroborated: the ingester asserts `rows_in == rows_out + rows_dropped`; the total matches the count established earlier by a separate streaming decompress; and re-counting submissions-per-month *from the parquet* against a raw byte-scan of the `.zst` gives **188 months compared, 0 mismatched**.
+
+Two findings that go beyond the stated goal:
+
+- **`created_utc` drifts three ways, not two** — `int`, `str` (2014–15) *and* `float` (2023+), mixed within 2015 and 2023. A parser branching on year rather than value type would still break.
+- **Link rot is a much smaller problem than WP-17 was scoped for.** 10,346,214 image rows (88% of the corpus) are `i.redd.it`; imgur totals 251,442 across all time, concentrated in pre-2018 years that hold 0.6% of the corpus.
+
+Per `AGENTS.md` §"Verifying scientific claims" this outcome is **proposed, not certified** — the agent produced it, so the user is the grader.
 **Unlocks:** WP-05, WP-06, WP-07; a corpus-wide view for the ADR 0011 split and the ADR 0009 clustering granularity question
 
 ## Goal
@@ -67,6 +80,43 @@ A bonus datapoint: 2026-07-20 sits at **287 posts/day**, *below* Aug 2025's 378 
 
 **But the measurement surfaces a different problem, which is arguably worse for the project.** r/memes has declined **97.4%** from its Aug 2020 peak (415,953/month) to Dec 2025 (10,796/month). 2024 and 2025 together hold 450,082 submissions against 4.3M in 2020 alone. The post-training-cutoff eval window ADR 0004 needs therefore *exists but is thin*, and thin in a way that compounds: fewer posts per meme means noisier $I(t)$, fewer clusters reaching the size where an SIR fit is identifiable at all (cf. WP-02's low-count failure regime), and a much smaller viral tail to learn from. ADR 0011 should choose its split with this volume profile in hand rather than assuming recent years resemble 2020.
 
+## Step 1 result (2026-07-26): the truncation is diagnosed, and the legacy ingester is not reusable
+
+The 2020-03-11 stop was **not** a deliberate partial run, an OOM, or a schema change. It is reproduced exactly by replaying the legacy block-splitting logic (`experiments/wp16/diagnose_truncation.py`):
+
+- The archive is **235 blocks** of `2**27` decompressed bytes, **11,332,165 rows** — the reader itself is sound and matches the independent count.
+- `chunk_bounds(235, 10)` = `[0, 24, 48, 72, 96, 120, 143, 166, 189, 212, 235]`.
+- Processing only input chunks **0, 1, 2** yields blocks 1–71 minus the boundary blocks, = **4,121,367 rows spanning 2017-02-13 → 2020-03-11**. The existing parquet holds **4,121,376 rows over exactly that range** — a 9-row delta from line-splitting at block edges.
+
+Two independent defects combined to produce it:
+
+**Defect 1 — `in_bounds` uses strict inequalities on both sides** (`reddit_dataset.py:48-54`), so any block index equal to a chunk boundary is silently skipped. That drops **10 blocks / 537,197 rows / 4.74% of the archive on every run**, no matter what else happens:
+
+| Block | Rows | Date range |
+| ---: | ---: | --- |
+| 0 | 121,615 | 2008-07-11 → 2017-02-13 |
+| 24 | 61,302 | 2019-05-28 → 2019-06-04 |
+| 48 | 57,012 | 2019-11-04 → 2019-11-10 |
+| 72 | 55,086 | 2020-03-11 → 2020-03-15 |
+| 96 | 54,055 | 2020-06-27 → 2020-07-01 |
+| 120 | 32,780 | 2020-09-19 → 2020-09-22 |
+| 143 | 36,496 | 2020-12-10 → 2020-12-13 |
+| 166 | 37,142 | 2021-03-19 → 2021-03-24 |
+| 189 | 37,932 | 2021-07-31 → 2021-08-08 |
+| 212 | 43,777 | 2022-04-09 → 2022-04-27 |
+
+Blocks 24 and 48 are directly visible in the parquet as missing-row runs of exactly 61,302 and 57,012 — measured before the mechanism was known, so this is a confirmation rather than a fit.
+
+**Defect 2 — the cache check and the save partition use different notions of "chunk."** `CachedDataset.__init__` reprocesses only chunks lacking a cache file (`chunks_to_process = [c for c in process_chunks if not self.hasCache(c)]`), but `RedditRawDataset.save()` then splits the **in-memory result** into `self.chunks` equal row ranges and writes *all* of them. So a partial reprocess overwrites complete cache files with an even split of partial data. The ten existing files each hold exactly 412,138 rows — an even tenth of the partial result, not ten tenths of the archive. This is why the truncation left no trace of failure.
+
+**Decision: rewrite, do not debug** (the choice WP-16's Risks section left open). The two defects above are fixable, but three more are structural:
+
+3. The whole archive is accumulated as a list of DataFrames and then `pd.concat`-ed (`reddit_dataset.py:166,233,239`). At 31.5 GB decompressed this cannot complete regardless of correctness.
+4. `int(obj["created_utc"])` (`:196`) raises `ValueError` on the string-float form `"1704067195.0"` — the exact schema drift WP-16 §Method 2 flags — and only `json.JSONDecodeError` is caught.
+5. `index = np.arange(line_num, line_num + len(block))` (`:227`) sizes the index by `len(block)` while `processed_lines` may be shorter, so the first malformed JSON line in a block raises a shape mismatch.
+
+Underlying all five: **the run reported success having captured 36% of the archive.** Row-count reconciliation is therefore a required deliverable below, not a nicety.
+
 ## Definition of done
 
 1. A complete parquet dataset covering the full archive, with row count reconciled against the 11,332,165 records counted in the raw stream — any shortfall explained, not merely noted.
@@ -110,5 +160,7 @@ A bonus datapoint: 2026-07-20 sits at **287 posts/day**, *below* Aug 2025's 378 
 
 <!-- Newest at top. -->
 
+- 2026-07-26 — **Ingest complete.** 11,782,247 rows in / out / 0 dropped, exactly reconciled and cross-verified month-by-month against an independent byte-scan. Legacy ingester rewritten as `experiments/wp16/ingest.py` after step 1 diagnosed the truncation. Schema drift probe (`probe_schema.py`) found a third `created_utc` type and 14,843 null `url`s. Report at `experiments/WP-16/report.md`; outcome UNCERTIFIED pending user review.
+- 2026-07-26 — **Step 1 done: truncation fully diagnosed.** Not OOM, not deliberate — input chunks 0–2 of 10 were processed and `save()` split that partial result into all ten files. Replay reproduces the existing parquet to within 9 rows. Also found a strict-inequality bug dropping 10 blocks / 537,197 rows (4.74%) on *every* run. Decision: rewrite, not debug.
 - 2026-07-26 — **Coverage gate PASSED (user-certified).** Cross-check numbers replaced with exact full-day counts (1.00 / 1.00, superseding the sampled 1.07 / 0.81); the "decline has flattened" claim withdrawn. Package moved to `active`; ingest started.
 - 2026-07-26 — Package opened. Archive verified complete by full streaming decompress; partial ingestion identified.

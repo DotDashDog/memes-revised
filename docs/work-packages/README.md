@@ -29,7 +29,7 @@ A work package is a **self-contained unit of work** with a clear "done" conditio
 | WP-04                                       | Gold-set construction (~50 hand-labeled memes)                          | planned | —                   | ADR 0009 validation            |
 | WP-05                                       | Full embedding pipeline (chosen model + multimodal combine)             | planned | ADR 0006            | clustering                     |
 | WP-06                                       | Clustering pipeline + multi-granularity eval                            | planned | WP-05               | ADR 0009                       |
-| WP-07                                       | Engagement-signal construction + sub-activity normalization             | planned | data ingest         | ADR 0007                       |
+| WP-07                                       | Engagement-signal construction + sub-activity normalization             | planned | ~~data ingest~~ unblocked | ADR 0007                 |
 | WP-08                                       | SIR fitter on real cluster data + identifiability check on real fits    | planned | WP-06, WP-07, WP-02 | predictor training             |
 | WP-09                                       | Baselines (B1–B5) implementation                                        | planned | WP-08               | first model claim              |
 | WP-10                                       | Predictor model v1 (embedding → params)                                 | planned | WP-08, WP-09        | success metric eval            |
@@ -38,7 +38,7 @@ A work package is a **self-contained unit of work** with a clear "done" conditio
 | [WP-13](WP-13-temporal-neural-tpp.md)       | Temporal-only neural TPP machinery + single-meme stream                 | open    | ADR 0014, WP-12     | WP-14, WP-15; §5 cost input    |
 | [WP-14](WP-14-hawkes-identifiability.md)    | Hawkes identifiability & endogeneity study (synthetic)                  | open    | ADR 0014, WP-12     | real-data Hawkes param claims  |
 | [WP-15](WP-15-marked-stpp-pilot.md)         | First marked STPP on a small embedding subset                           | open    | ADR 0014, WP-13/14, cluster baseline | holistic-track go/no-go |
-| [WP-16](WP-16-submissions-reingest.md)      | Full submissions re-ingest (recover the un-processed 7.2M rows)         | open    | —                   | WP-05, WP-06, WP-07; ADR 0011 |
+| [WP-16](WP-16-submissions-reingest.md)      | Full submissions re-ingest (11.78M rows, 2008–2025)                     | **complete** | —              | WP-05, WP-06, WP-07; ADR 0011 |
 | WP-17                                       | Image corpus fetch into ADR 0015 shards                                 | planned | WP-16, 2025-12 archive cut | WP-05                   |
 
 
