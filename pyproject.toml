@@ -9,6 +9,7 @@ dependencies = [
     "easyocr>=1.7.2",
     "hdbscan>=0.8.43",
     "jax>=0.10.0",
+    "libtorrent>=2.0.13",
     "matplotlib>=3.10.9",
     "numpyro>=0.21.0",
     "open-clip-torch>=3.3.0",
@@ -28,6 +29,7 @@ dependencies = [
     "tqdm>=4.67.3",
     "transformers>=5.8.1",
     "umap-learn>=0.5.12",
+    "zstandard>=0.25.0",
 ]
 
 [dependency-groups]

@@ -92,6 +92,37 @@ Windows host `GAMING-PC` → WSL2 Ubuntu 26.04. 16 cores, 62 GB RAM, ~955 GB fre
 - **Nothing in the setup needs root.** `sudo` requires a password in this distro; uv installs to `~/.local/bin`.
 - Repo lives at `~/memes-revised` on the WSL ext4 filesystem, not `/mnt/c`.
 
+### Storage: two tiers, measured (2026-07-26)
+
+Two devices, with very different characteristics. **Numbers below are measured on this box, not vendor claims.**
+
+| Device | Path | Filesystem | Capacity | Free |
+| --- | --- | --- | --- | --- |
+| Samsung 970 EVO 1 TB (NVMe) | `/` → `~/memes-revised` | ext4 (native) | 1007 GB | 931 GB |
+| Seagate Portable 4 TB (USB, 5400 rpm) | `/mnt/d` | NTFS over 9p/drvfs | 3726 GB | 3725 GB |
+
+Benchmarked with the real WP-01 image cache (2296 JPEGs, 392 MB, 175 KB/image avg):
+
+| Operation | Portable (`/mnt/d`) | NVMe (`/`) | Penalty |
+| --- | --- | --- | --- |
+| Sequential write, 2 GiB (`conv=fdatasync`) | 95 MB/s | 1.4 GB/s | 15× |
+| Write 2296 small files | 15.5 s (148 files/s) | 0.33 s (~7000 files/s) | **47×** |
+| Read 2296 small files | 9.1 s (252 files/s) | 0.02 s (page-cached) | — |
+| Re-read, second pass | 9.1 s — **no improvement** | — | — |
+
+Three conclusions that constrain pipeline design:
+
+1. **95 MB/s sequential confirms a spinning platter.** The drive is a 5400 rpm 2.5" HDD behind a USB bridge (Windows reports `MediaType: Unspecified` because the bridge doesn't pass it through — infer it from the throughput, not the label).
+2. **drvfs reads are not page-cached.** The second read pass was no faster than the first (9.12 s → 9.08 s), so a training loop over loose files on `/mnt/d` pays the full per-file cost *every epoch*. This is different from ext4, where the second pass is essentially free.
+3. **Reformatting to ext4 would not fix the small-file case.** At 5400 rpm, truly random small reads are seek-bound at roughly 100 IOPS regardless of filesystem. The measured 252 files/s is already *better* than the platter's random ceiling only because the test files had just been written and were laid out contiguously — so treat 252 files/s as a **best case**, not a typical one. The bottleneck is the disk, not 9p; converting to ext4 would cost cross-platform readability and buy little.
+
+Extrapolating to a 1M-image corpus (≈175 GB; the 3.7 TB drive holds ~21M images, so capacity is not the constraint):
+
+- As **loose files** on `/mnt/d`: ~1.9 h of pure filesystem overhead to write, and ~66 min per read pass at the optimistic 252 files/s — realistically several hours once files are scattered, every epoch.
+- As **packed shards** streamed sequentially at 95 MB/s: ~31 min per pass, predictable, and the 47× write penalty disappears.
+
+So the portable drive is a good **archive and shard store** and a bad **working set**. See ADR 0015 for the resulting layout decision.
+
 Setup, from a clean distro:
 
 ```sh
@@ -153,6 +184,8 @@ Do not bypass uv with `uv pip install` for anything you want kept. If you find y
 
 ## Log
 
+- 2026-07-26 — Added `zstandard` (reading the archive dumps) and `libtorrent` (fetching new archive cuts). `libtorrent` is a **tooling** dependency, not a runtime one: no torrent client exists on this machine and installing one needs root, so the Python bindings are how new Academic Torrents cuts get pulled — see `experiments/wp16/fetch_archive.py`. Kept rather than removed because further cuts are planned; `uv remove libtorrent` is a one-liner if that changes. Raw archives now live at `/mnt/d/reddit_archive/` per ADR 0015; download to the NVMe first, since torrent clients write pieces out of order and random writes on the platter over 9p are punishing.
+- 2026-07-26 — Mounted the 4 TB Seagate portable drive at `/mnt/d` (`mount -t drvfs D: /mnt/d -o metadata,uid=1000,gid=1000`; needs a password, so it is a user step, and WSL only auto-mounts drives attached before it starts) and **benchmarked both storage tiers with the real WP-01 image cache**. Headline: small-file writes are 47× slower on the portable drive, and drvfs reads get no page-cache benefit on a second pass, so loose-file image storage there costs full price every epoch. Sequential throughput (95 MB/s) identifies it as a 5400 rpm HDD; that also means reformatting to ext4 would not rescue random small reads, since the platter caps them near 100 IOPS. Table and extrapolations above. Feeds ADR 0015 (storage layout).
 - 2026-07-26 — Stood up the WSL2 desktop environment and **verified GPU JAX end to end**: `jax.default_backend()` = `gpu`, `CudaDevice(id=0)`, 8192³ matmul at ~37 TFLOP/s (fp32 peak for a 3090), `tests/` 4 passed. Corrected the earlier setup guidance: the apt CUDA toolkit is *not* required, since the `gpu` group's pip wheels carry the CUDA runtime; only the Windows-host driver matters. No root needed anywhere. Claude Code 2.1.220 installed in the distro.
 - 2026-07-26 — Added the Linux-gated `gpu` dependency group (`jax[cuda12]`, resolving CUDA 12.9 wheels) after finding the base `jax` pin was CPU-only on every platform, so the 3090 would have gone unused by ADR 0013's primary backend. Documented that native Windows has no JAX CUDA build (confirmed by JAX's docs *and* by the resolved lockfile marker, which excludes `win32` and `darwin`), so the 3090 desktop must run the project under WSL2. No ADR: this implements accepted ADR 0013 rather than changing the framework choice.
 - 2026-05-19 — Added WP-02 runtime dependencies via uv: `jax`, `diffrax`, `numpyro`, `corner`, `matplotlib`, `scipy`; added dev dependency `pytest`. `uv.lock` is now part of the reproducible environment.

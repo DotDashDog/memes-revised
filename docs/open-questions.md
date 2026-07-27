@@ -22,6 +22,32 @@ Owner: unowned. Status: parked (low-priority research direction).
 Context: `01-scientific-rigor.md` §3 mandates this. Concrete plan needed. Likely promoted to WP-11.
 Owner: unowned. Status: open.
 
+## Data ingestion
+
+- **Re-ingest the submissions archive: 63% of it was never processed.** *(Resolved question, actionable work — kept here until it has a WP.)*
+Context: The raw `memes_submissions.zst` is verified complete (clean zstd stream, 31.5 GB decompressed, **11,332,165 submissions, 2008-07-11 → 2023-12-31**), but the ingested parquet holds only 4,121,376 rows ending 2020-03-11. **~7.2M submissions covering 2020-03 → 2023-12 are already on disk and simply unprocessed.** Re-ingestion needs no download. A briefly-raised worry that the 2020 ceiling would leave ADR 0004 without a post-cutoff eval window is **withdrawn** — it was an artifact of the partial ingestion; data through 2023-12 postdates OpenCLIP's LAION-2B crawl. Open sub-decisions for the re-ingest: output format (per ADR 0015, shards not loose files), whether to keep the `chunks=10` chronological split, and whether to filter to image posts at ingest time or later.
+Owner: unowned. Status: open, high value, cheap. Touch points: ADR 0004, ADR 0011, ADR 0015, WP-05.
+
+- ~~Should we pull the newer Academic Torrents release?~~ **Done 2026-07-26.** The 2025-12 cut (`3e3f64de…`) is downloaded, verified, and is now WP-16's input. It is a faithful superset of the 2023-12 release. Fetcher kept at `experiments/wp16/fetch_archive.py` for the next cut.
+
+- **The recent data is clean but thin — how should ADR 0011 split a corpus whose volume fell 97.4%?**
+Context: r/memes went from 415,953 submissions/month (Aug 2020) to 10,796 (Dec 2025); 2024+2025 hold 450,082 submissions against 4.3M in 2020 alone. This creates a direct tension the project has not yet faced: **ADR 0004 wants the eval window as late as possible (past the embedder's training cutoff), while statistical power wants it as early as possible (where the data is).** They point in opposite directions, and more data cannot resolve it — the recent posts simply do not exist in the earlier volume. Compounding factors: fewer posts per meme means noisier $I(t)$; fewer clusters reach the size where an SIR fit is identifiable at all (WP-02 established that low-count regimes are exactly where fits fail); and the viral tail — the phenomenon of interest — shrinks fastest. Options not yet weighed: accept a small eval set and report wide uncertainty; use a *contamination-controlled* embedder instead (already an open question above) so the cutoff constraint relaxes; or broaden to sibling subreddits (ADR 0003 sub-question) to recover volume in recent years.
+Owner: unowned. Status: open, **blocks ADR 0011**. Touch points: ADR 0004, ADR 0011, ADR 0003, WP-02 (low-count identifiability), WP-16.
+
+- **`memes_comments.zst` has never been ingested — and it is much bigger than the submissions side.**
+Context: Verified complete: **100,181,097 comments, 125.7 GB decompressed, 2009-07-09 → 2023-12-31** — ~8.8 comments per submission. The ingested parquet has zero rows flagged `is_comment`. Whether to ingest them at all depends on the unresolved question above about comments-as-signal vs. comments-as-content, and that decision should be made deliberately rather than inherited from a 2025 run that only touched submissions. Scale is not prohibitive — 100M mostly-short-text rows should land in the low tens of GB as parquet, which fits the NVMe — but it is large enough that the decision should precede the work. Note the `created_utc` string-vs-float inconsistency across the archive's history.
+Owner: unowned. Status: open. Touch points: ADR 0007, ADR 0015, WP-05.
+
+- **The image corpus does not exist yet, and fetching it is the real scaling cost.**
+Context: All 11.3M submissions carry an `img_url`, but only 2296 images have ever been downloaded. Building the corpus means millions of network fetches, which is network- and rate-limit-bound rather than disk-bound — a different bottleneck from the one ADR 0015 addresses, and probably the single most expensive step in the project. Two things need deciding: how far back to fetch (link rot is severe on pre-2018 posts that point at external hosts like imgur, far milder on Reddit-hosted `i.redd.it`), and what the retry/failure accounting is, since silently dropping dead links biases the corpus toward surviving — i.e. more-viral — posts, which is the R2 selection problem arriving through the back door.
+Owner: unowned. Status: open. Touch points: ADR 0015, R2 (selection), WP-05.
+
+## Cluster evaluation
+
+- **How large, and how sampled, must a cluster-quality evaluation set be before its metrics mean anything?**
+Context: The 90-image WP-01 clustering check produced weak purity/silhouette, which was initially logged as a property of the embedding pipeline. It is not — at n=90 randomly drawn from a corpus of hundreds of meme families, nearly every true cluster is a singleton, so the metrics are uninformative by construction and would look the same for a perfect embedder. Two things need deciding before the next clustering audit: (a) the minimum sample size, derived from the actual family-size distribution rather than picked by feel; (b) whether to keep sampling uniformly at random or to **sample by family** (e.g. dhash-seeded near-duplicate expansion, so each drawn meme brings its siblings) — the latter gets within-cluster support at far lower cost but biases the cluster-size distribution, which is itself one of the reported metrics. Applies to the pending stronger-text-embedding audit and to WP-04's gold set.
+Owner: unowned. Status: open. Touch points: WP-01 (closed but reinterpreted), WP-04, WP-09/ADR 0009.
+
 ## Signal construction
 
 - **Best functional form for upvote weighting $w(u, c)$ in the engagement signal?**
@@ -69,9 +95,10 @@ Owner: unowned. Status: open.
 
 ## Scope & data
 
-- **Add other meme-style subs (r/dankmemes, r/wholesomememes)?**
-Context: Broadens coverage at the cost of mixing community styles.
-Owner: unowned. Status: open, sub-decision in ADR 0003.
+- **Add other meme-style subs?** — **now backed by measurement, still undecided.**
+Context: Broadens coverage at the cost of mixing community styles. Researched 2026-07-26 against the torrent manifest and live Arctic Shift counts; full data in `research-notes/supplement-subreddits.md`. Headline: pooling ten general image-meme subs gives **~5.4×** r/memes' current image-post volume, but still leaves recent years ~8× below the 2020 baseline. Note the two names this open question originally proposed both score poorly — **r/dankmemes has collapsed harder than r/memes** (3,608 → 77 posts/day, −97.9%) and **r/wholesomememes is at 9 posts/day**. The strong current candidates are r/whenthe, r/shitposting, r/196, r/meirl, r/meme. **The decision is not "pick the biggest," though:** activity migrated rather than vanished, so the largest subs today (r/whenthe, r/196) barely existed in 2020, which would confound "year" with "community" precisely inside the eval window. Subs that span the whole period (r/meirl, r/dankmemes, r/comedyheaven) are weaker on volume but sounder for a time-split comparison. Unresolved before any ADR: cross-posting overlap (measurable now with `experiments/wp01/dhash.py`), and that pooling breaks ADR 0005's normalized single-population $S(0)=1-I(0)$.
+**2026-07-26 update — now carried into a proposed ADR.** `decisions/0016-multi-subreddit-corpus.md` (`proposed`) resolves the "which subs" part as a **backbone** (r/memes, r/dankmemes, r/meirl, r/comedyheaven — span the whole period, composition-matched) plus a held-out **extension** (r/whenthe, r/196, r/shitposting) used only for community-generalization eval, with Tier 2 topic-locked subs excluded from v1. It also carries the mitigations for heterogeneous community size: $N_{c,t}$ as an exposure term (preserving rather than breaking ADR 0005), hierarchical partial pooling, and a factorial split amending ADR 0011. Three preconditions are unrun: per-community-month unique-author counts, dhash cross-post overlap, and a community-shortcut audit.
+Owner: unowned. Status: open, sub-decision in ADR 0003; **proposed resolution in ADR 0016**; interacts with ADR 0011 and ADR 0005.
 - **Which non-meme control subs?** (Cf. ADR 0008.)
 Owner: unowned. Status: open, sub-decision in ADR 0008.
 - **Cross-platform spread (Twitter/TikTok/Discord) data sources.**

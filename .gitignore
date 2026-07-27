@@ -19,6 +19,14 @@ experiments/WP-02/smoke-test/
 experiments/WP-12/*.png
 experiments/WP-12/*.json
 
+# WP-16: ingested parquet and any raw archive copies are large and regeneratable.
+# submissions_per_month.png is deliberately NOT ignored — it is the gate artifact
+# the WP-16 coverage-completeness finding rests on, and at ~125 KB it is cheap to keep.
+experiments/WP-16/*.parquet
+experiments/WP-16/parquet/
+reddit_dl/
+reddit_archive/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

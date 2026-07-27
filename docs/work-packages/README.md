@@ -38,6 +38,8 @@ A work package is a **self-contained unit of work** with a clear "done" conditio
 | [WP-13](WP-13-temporal-neural-tpp.md)       | Temporal-only neural TPP machinery + single-meme stream                 | open    | ADR 0014, WP-12     | WP-14, WP-15; §5 cost input    |
 | [WP-14](WP-14-hawkes-identifiability.md)    | Hawkes identifiability & endogeneity study (synthetic)                  | open    | ADR 0014, WP-12     | real-data Hawkes param claims  |
 | [WP-15](WP-15-marked-stpp-pilot.md)         | First marked STPP on a small embedding subset                           | open    | ADR 0014, WP-13/14, cluster baseline | holistic-track go/no-go |
+| [WP-16](WP-16-submissions-reingest.md)      | Full submissions re-ingest (recover the un-processed 7.2M rows)         | open    | —                   | WP-05, WP-06, WP-07; ADR 0011 |
+| WP-17                                       | Image corpus fetch into ADR 0015 shards                                 | planned | WP-16, 2025-12 archive cut | WP-05                   |
 
 
 Planned packages are stubs until promoted to `open`; they may merge, split, or change shape.
