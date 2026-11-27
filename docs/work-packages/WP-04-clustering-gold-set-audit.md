@@ -158,6 +158,14 @@ grades from the plots; no self-certified pass (AGENTS.md).
 
 <!-- Newest at top. -->
 
+- 2026-07-27 — **Pre-registered pool window (Method §1), before any fetching:** calendar year
+  **2019 UTC** (`created_utc ∈ [1546300800, 1577836800)`), uniform draw of **N₀ = 50,000**
+  image posts from all hosts (host recorded; restricting to i.redd.it would bake host
+  selection into the pool definition), seed 42, dedup by `post_id`. Rationale from the WP-16
+  parquet: 2019 has 2.96M image posts (2nd-highest year), 93% i.redd.it, and only 8% flagged
+  `removed_by_category` — vs 58% in 2020 and 51% in 2021, whose removal-correlated link rot
+  would distort the family-size distribution. The 2018–2020 range in Method §1 was an
+  example, not a registration; this entry is the registration.
 - 2026-07-26 — Package drafted, replacing the ~50-meme stub, from the `clustering-large-001`
   postmortem fallout. Gated on ADR 0017 acceptance.
 

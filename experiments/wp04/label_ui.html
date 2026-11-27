@@ -1,0 +1,142 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>WP-04 blind labeling</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; font:14px/1.45 system-ui, sans-serif; background:#14161a; color:#e8e8e8;
+         display:grid; grid-template-columns: 1fr 420px; height:100vh; }
+  #left { padding:16px; overflow:auto; display:flex; flex-direction:column; gap:10px; }
+  #right { border-left:1px solid #333; padding:14px; overflow:auto; }
+  #meme { max-width:100%; max-height:62vh; object-fit:contain; background:#000; border-radius:6px; }
+  #ocr { white-space:pre-wrap; background:#1d2026; padding:10px; border-radius:6px; color:#c9d4e3; }
+  #bar { display:flex; gap:14px; align-items:baseline; color:#9aa4b2; }
+  #pass.relabel { color:#e8b34b; font-weight:600; }
+  h3 { margin:8px 0 4px; }
+  #layerName { color:#7cc4ff; }
+  input { width:100%; box-sizing:border-box; background:#1d2026; color:#e8e8e8;
+          border:1px solid #444; border-radius:5px; padding:8px; font-size:14px; }
+  .row { display:flex; gap:8px; align-items:center; padding:6px; border-radius:6px; cursor:pointer; }
+  .row.sel { background:#2a3d55; outline:1px solid #4a80c0; }
+  .row img { width:44px; height:44px; object-fit:cover; border-radius:4px; }
+  .row .snip { color:#9aa4b2; font-size:12px; overflow:hidden; text-overflow:ellipsis;
+               display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+  #sugg { background:#20261d; border:1px solid #3c4a33; border-radius:6px; padding:8px; }
+  #sugg img { width:54px; height:54px; object-fit:cover; border-radius:4px; margin-right:6px; }
+  kbd { background:#2a2e35; border-radius:4px; padding:1px 6px; font-size:12px; }
+  #keys { color:#7f8894; font-size:12px; }
+  #done { font-size:22px; padding:40px; }
+</style>
+<div id="left">
+  <div id="bar">
+    <span id="progress"></span><span id="pass"></span>
+    <span id="keys"><kbd>Enter</kbd> assign selected &nbsp; <kbd>Ctrl+N</kbd> new group
+      &nbsp; <kbd>Ctrl+U</kbd> unique &nbsp; <kbd>Ctrl+A</kbd> accept suggestion
+      &nbsp; <kbd>↑↓</kbd> select</span>
+  </div>
+  <img id="meme">
+  <div><b>OCR text</b> (the only text you may use):</div>
+  <div id="ocr"></div>
+</div>
+<div id="right">
+  <h3>Assign <span id="layerName"></span></h3>
+  <div id="layerHelp"></div>
+  <div id="sugg" style="display:none"></div>
+  <input id="search" placeholder="search existing groups (id or OCR substring)..." autocomplete="off">
+  <div id="list"></div>
+</div>
+<script>
+let unit=null, pass=null, layer=null, catalog={}, filtered=[], sel=0, sugg=[];
+const LAYER_HELP = {
+  template: "Appearance lineage: same base image / format. dhash suggestion allowed.",
+  family: "MEANING: same meme as a spread phenomenon. Same joke across different " +
+          "templates = one family; same template, unrelated jokes = different families. " +
+          "No suggestions here on purpose — search your memory of what you've seen."
+};
+
+async function next() {
+  const r = await (await fetch('/api/next')).json();
+  document.getElementById('progress').textContent =
+    `${r.progress.main_done}/${r.progress.total} labeled`;
+  if (r.done) {
+    document.body.innerHTML = '<div id="done">All passes complete. ' +
+      `${r.progress.main_done}/${r.progress.total} units labeled. You can close this.</div>`;
+    return;
+  }
+  unit = r.unit; pass = r.pass; sugg = r.template_suggestion || [];
+  const passEl = document.getElementById('pass');
+  passEl.textContent = pass === 'relabel' ? 'RELABEL PASS (self-agreement)' : 'main pass';
+  passEl.className = pass;
+  document.getElementById('meme').src = '/img/' + unit.post_id;
+  document.getElementById('ocr').textContent = r.ocr_text || '— no OCR text —';
+  layer = r.already.template === undefined ? 'template' : 'family';
+  await setupLayer();
+}
+
+async function setupLayer() {
+  document.getElementById('layerName').textContent =
+    layer === 'template' ? 'template_id (appearance)' : 'family_id (meaning)';
+  document.getElementById('layerHelp').textContent = LAYER_HELP[layer];
+  catalog = await (await fetch('/api/catalog?layer=' + layer)).json();
+  const sEl = document.getElementById('sugg');
+  if (layer === 'template' && sugg.length) {
+    const tid = sugg[0].template_id;
+    sEl.style.display = '';
+    sEl.innerHTML = `<b>dhash suggestion:</b> ${tid} &nbsp;<kbd>Ctrl+A</kbd><br>` +
+      sugg.map(s => `<img src="/img/${s.post_id}">`).join('');
+    sEl.dataset.tid = tid;
+  } else { sEl.style.display = 'none'; delete sEl.dataset.tid; }
+  const box = document.getElementById('search');
+  box.value = ''; box.focus();
+  refilter();
+}
+
+function refilter() {
+  const q = document.getElementById('search').value.toLowerCase();
+  filtered = Object.entries(catalog)
+    .map(([label, members]) => ({label, members}))
+    .filter(g => !q || g.label.toLowerCase().includes(q) ||
+      g.members.some(m => (m.ocr_text||'').toLowerCase().includes(q)))
+    .slice(0, 40);
+  sel = 0; render();
+}
+
+function render() {
+  document.getElementById('list').innerHTML = filtered.map((g, i) =>
+    `<div class="row ${i===sel?'sel':''}" onclick="sel=${i};assign()">
+       <img src="/img/${g.members[0].post_id}">
+       <div><b>${g.label}</b> (${g.members.length})
+         <div class="snip">${(g.members[0].ocr_text||'').slice(0,120)}</div></div>
+     </div>`).join('');
+}
+
+function newLabel() {
+  const prefix = layer === 'template' ? 't' : 'f';
+  const nums = Object.keys(catalog).filter(l => l.startsWith(prefix))
+    .map(l => parseInt(l.slice(1))).filter(Number.isFinite);
+  return prefix + String((nums.length ? Math.max(...nums) : 0) + 1).padStart(4, '0');
+}
+
+async function post(label) {
+  await fetch('/api/label', {method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({unit_id:unit.unit_id, post_id:unit.post_id, layer, label, pass})});
+  if (layer === 'template' && pass !== 'skip') { layer = 'family'; await setupLayer(); }
+  else await next();
+}
+
+function assign() { if (filtered[sel]) post(filtered[sel].label); }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowDown') { sel = Math.min(sel+1, filtered.length-1); render(); e.preventDefault(); }
+  else if (e.key === 'ArrowUp') { sel = Math.max(sel-1, 0); render(); e.preventDefault(); }
+  else if (e.key === 'Enter') { assign(); e.preventDefault(); }
+  else if (e.ctrlKey && e.key.toLowerCase() === 'n') { post(newLabel()); e.preventDefault(); }
+  else if (e.ctrlKey && e.key.toLowerCase() === 'u') { post('unique'); e.preventDefault(); }
+  else if (e.ctrlKey && e.key.toLowerCase() === 'a') {
+    const t = document.getElementById('sugg').dataset.tid;
+    if (t && layer === 'template') post(t);
+    e.preventDefault();
+  }
+});
+document.getElementById('search').addEventListener('input', refilter);
+next();
+</script>

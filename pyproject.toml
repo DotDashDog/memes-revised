@@ -4,6 +4,7 @@ version = "0.0.0"
 description = "Predicting internet meme spread dynamics from content embeddings."
 requires-python = ">=3.12"
 dependencies = [
+    "aiohttp>=3.14.3",
     "corner>=2.2.3",
     "diffrax>=0.7.2",
     "easyocr>=1.7.2",

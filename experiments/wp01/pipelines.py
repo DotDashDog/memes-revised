@@ -24,6 +24,8 @@ PIPELINES = {
     "p_vlm": PipelineSpec("p_vlm", use_image=True, use_post_text=True, use_ocr_text=False),
     "p_vlm_only": PipelineSpec("p_vlm_only", use_image=True, use_post_text=False, use_ocr_text=False),
     "p_ocr": PipelineSpec("p_ocr", use_image=True, use_post_text=True, use_ocr_text=True),
+    # ADR 0017: the clustering/meme-identity composition — image + OCR, no post text
+    "p_img_ocr": PipelineSpec("p_img_ocr", use_image=True, use_post_text=False, use_ocr_text=True),
 }
 
 
@@ -61,7 +63,7 @@ def embed_pipeline(
                         preprocess_mode=ocr_preprocess,
                     )
                     ocr = result.text or ""
-            combined = _combine_text(post, ocr) if pipeline.use_ocr_text else post
+            combined = _combine_text(post if pipeline.use_post_text else "", ocr)
             if not combined.strip():
                 combined = "[empty]"
             text_inputs.append(combined)
