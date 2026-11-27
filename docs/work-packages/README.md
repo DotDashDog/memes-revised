@@ -24,7 +24,7 @@ up without holding the whole project in mind.
 | [WP-01](WP-01-ocr-vs-vlm-benchmark.md)      | OCR vs. VLM-native embedding benchmark                                  | done    | —                   | ADR 0006                       |
 | [WP-02](WP-02-sir-identifiability-study.md) | SIR identifiability on synthetic data                                   | active  | —                   | ADR 0010                       |
 | WP-03                                       | Embedding-model survey (incl. contamination-controlled candidates)      | planned | —                   | ADR 0006 (refines)             |
-| [WP-04](WP-04-clustering-gold-set-audit.md) | Gold-set construction + powered clustering audit                        | open    | ADR 0015, ADR 0017  | ADR 0009 validation, WP-06     |
+| [WP-04](WP-04-clustering-gold-set-audit.md) | Gold-set construction + powered clustering audit                        | active  | ADR 0015, ADR 0017  | ADR 0009 validation, WP-06     |
 | WP-05                                       | Full embedding pipeline (chosen model + multimodal combine)             | planned | ADR 0006            | clustering                     |
 | WP-06                                       | Clustering pipeline + multi-granularity eval                            | planned | WP-05               | ADR 0009                       |
 | WP-07                                       | Engagement-signal construction + sub-activity normalization             | planned | ~~data ingest~~ unblocked | ADR 0007                 |

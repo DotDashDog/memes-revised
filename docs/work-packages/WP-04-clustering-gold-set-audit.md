@@ -1,6 +1,6 @@
 # WP-04 — Gold-set construction and powered clustering audit
 
-**Status:** open
+**Status:** active
 **Date opened:** 2026-07-26
 **Owner:** unassigned
 **Gates:** ADR 0017 (accepted 2026-07-26); ADR 0015 storage protocol for the fetch; image access for the sampled posts (WP-17 shards if available, else the self-contained fetch in Method §1)
@@ -157,6 +157,62 @@ grades from the plots; no self-certified pass (AGENTS.md).
 ## Log
 
 <!-- Newest at top. -->
+
+- 2026-11-27 — **Scoring plan and expectations, written while labelling is in progress and
+  before any label or cluster has been compared.**
+  *Claim under test:* clustering the embedding recovers meme families as judged by meaning,
+  beyond what matching pictures already gives.
+  *Arms:* image plus extracted text (the accepted composition) and image only, each
+  clustered across a sweep from fine to coarse (agglomerative, average linkage on cosine
+  distance, threshold swept; HDBSCAN across `min_cluster_size` shown alongside). Reference
+  points: every item alone, and perceptual-hash groups at radii 0 to 10.
+  *Primary number, fixed now:* on the family (meaning) layer, the share of same-family pairs
+  kept together (B-cubed recall over items whose gold family has two or more members) at the
+  sweep setting where B-cubed precision is 0.90, with a 95% interval from resampling gold
+  families. Reported pooled and for the background stratum alone. Precision 0.90 is an
+  operating point, not a pass mark: each cluster will later be treated as one meme's spread
+  curve, so roughly one foreign post in ten is the most contamination worth considering; the
+  whole precision-recall curve is plotted so the reader is not tied to it.
+  *What success looks like:* in the background stratum the embedding's curve sits above the
+  hash curve by more than the interval; image plus text beats image only on the family layer;
+  and the embedding does better against family labels than a pure template matcher would.
+  In the contingency plot, gold families map onto single clusters.
+  *What failure looks like:* the embedding's family-layer curve is within the interval of the
+  hash curve; or its clusters line up with templates and split or mix families (high score
+  against template labels, low against family labels); or adding text makes no difference.
+  *What this cannot detect:* families the labellers missed entirely (guarded only by the
+  user's random-pair check); performance on the 42% of 2019 posts whose images are gone;
+  anything about other years. With an unknown and probably small number of multi-member
+  meaning families in 797 items, the interval may be too wide to separate the arms; that
+  would be reported as "not enough families to tell", not as a tie.
+
+- 2026-11-27 — **Work resumed; labelling plan and sample design changed before any label
+  existed.** (1) *Who labels:* the user decided agents label the whole gold set and the user
+  validates a subsample as same/different pairs. The frozen protocol, including the
+  agreement criterion fixed in advance, is `experiments/wp04/labeling_protocol.md`; it
+  replaces Method §4's labeller and the catalogue UI, not its two label layers or its
+  blindness rules. (2) *Pool:* the 50,000-post fetch finished in July: 26,134 images
+  retrieved (26,096 distinct), 21,020 links dead (42%), 2,794 not direct images. (3) *Hash
+  radius = 4,* chosen by eye from contact sheets (`experiments/WP-04/radius-check/`): the
+  groups that appear at radius 4 are all the same base image with different captions; at
+  radius 6 one of eight sampled new groups merged unrelated images and a junk group of
+  near-blank images doubled. The groups are templates, not reposts, which is what the
+  template layer needs. (4) *The July sample-size simulation answered the wrong question.*
+  `derive_n.py` reported a ±0.03 interval at 300 items, but its simulated "poor" clusterer
+  still scored 0.89: with 91% of posts in no group, the pooled score is carried by
+  singletons that are trivially correct, the same failure as the 90-image check. The
+  informative quantity is how well multi-member families are kept together, and its
+  precision depends on the number of such families in the sample (uniform seeding yields
+  about 9 per 100 seeds). (5) *Sample frozen* (`experiments/WP-04/sample-001`, seed 42): 100
+  seeds drawn one per multi-member hash group with groups equally likely, each bringing up
+  to 6 members (297 images), plus 500 uniform background images; 797 in total. How many
+  meaning-level families the background holds cannot be known before labelling; the
+  interval actually achieved will be reported, and if it is too wide the sample will be
+  extended on the basis of family counts alone, before any clustering score is looked at.
+  (6) *Scoring changes that follow:* precision and recall are reported separately, recall
+  over items in gold families of two or more, each per stratum, next to two reference
+  points: every item alone, and hash groups. Hash groups are a fair baseline only in the
+  background stratum, since the family stratum was built from them.
 
 - 2026-07-27 — **Pre-registered pool window (Method §1), before any fetching:** calendar year
   **2019 UTC** (`created_utc ∈ [1546300800, 1577836800)`), uniform draw of **N₀ = 50,000**

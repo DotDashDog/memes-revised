@@ -46,16 +46,14 @@ N_BOOT = 400  # bootstrap resamples per simulated set
 
 def bcubed_f1(truth: np.ndarray, pred: np.ndarray) -> float:
     n = len(truth)
-    df = pd.DataFrame({"t": truth, "p": pred})
-    joint = df.groupby(["t", "p"]).size()
-    t_sizes = df.groupby("t").size()
-    p_sizes = df.groupby("p").size()
-    prec = rec = 0.0
-    for (t, p), c in joint.items():
-        prec += c * c / p_sizes[p]
-        rec += c * c / t_sizes[t]
-    prec /= n
-    rec /= n
+    _, t = np.unique(truth, return_inverse=True)
+    _, p = np.unique(pred, return_inverse=True)
+    t_sizes = np.bincount(t)
+    p_sizes = np.bincount(p)
+    pairs, c = np.unique(t.astype(np.int64) * len(p_sizes) + p, return_counts=True)
+    jt, jp = pairs // len(p_sizes), pairs % len(p_sizes)
+    prec = float((c * c / p_sizes[jp]).sum()) / n
+    rec = float((c * c / t_sizes[jt]).sum()) / n
     return 2 * prec * rec / (prec + rec) if prec + rec else 0.0
 
 

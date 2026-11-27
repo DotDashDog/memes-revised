@@ -90,6 +90,8 @@ The user reads updates between other work, months of context away from the detai
   the snapshot in `docs/02-state.md` if it changed, and add a line or two to
   `docs/changelog.md`. Record negative results and dead ends too. Questions you cannot
   settle go in `docs/open-questions.md`.
+- **Subagents run on Opus 5.5** unless a task clearly needs a stronger model; many
+  top-tier subagents use up the user's allowance quickly.
 - **Python goes through uv.** `uv run` for every invocation, `uv add` / `uv remove` for
   dependencies, so that results stay reproducible from the lockfile.
 - **`.env` holds `OPENAI_API_KEY`.** Keep its contents out of output, files, and commits.

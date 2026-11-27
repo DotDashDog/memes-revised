@@ -42,6 +42,9 @@ def main() -> None:
     ap.add_argument("--n-bg", type=int, required=True)
     ap.add_argument("--cap", type=int, required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--seed-mode", choices=["posts", "families"], default="posts",
+                    help="posts: seeds uniform over posts (original design); "
+                         "families: seeds uniform over multi-member dhash components")
     args = ap.parse_args()
 
     out = Path(args.out)
@@ -52,13 +55,22 @@ def main() -> None:
     fam = pd.read_parquet(WP04 / "families.parquet")
     col = f"fam_t{args.radius}"
     fam = fam[["post_id", "sha256", col]].rename(columns={col: "dhash_component"})
+    fam = fam.drop_duplicates("sha256").reset_index(drop=True)
 
     rng = np.random.default_rng(SEED)
     n = len(fam)
     members_by_comp = fam.groupby("dhash_component").indices
 
     chosen: dict[int, int] = {}  # row index -> stratum (0 family, 1 background)
-    seeds = rng.choice(n, size=args.n_seed, replace=False)
+    if args.seed_mode == "posts":
+        seeds = rng.choice(n, size=args.n_seed, replace=False)
+    else:
+        # One seed per multi-member dhash component, components equally likely.
+        # Uniform-over-posts seeding lands on singletons ~91% of the time, which
+        # leaves too few multi-member families to estimate recall on.
+        multi = sorted(c for c, ix in members_by_comp.items() if len(ix) >= 2)
+        comps = rng.choice(multi, size=args.n_seed, replace=False)
+        seeds = [int(rng.choice(members_by_comp[c])) for c in comps]
     for s in seeds:
         comp = fam.iloc[s].dhash_component
         idxs = list(members_by_comp[comp])
@@ -90,6 +102,7 @@ def main() -> None:
         "n_seed": args.n_seed,
         "n_bg": args.n_bg,
         "cap": args.cap,
+        "seed_mode": args.seed_mode,
         "n_units_total": len(rows),
         "n_family_stratum": int((rows.stratum == "family").sum()),
         "n_background": int((rows.stratum == "background").sum()),
