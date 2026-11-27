@@ -1,54 +1,95 @@
-# Meme Spread Project — Agent Protocol
+# Meme Spread Project
 
-This is a long-running research project. The source of truth for project state, design decisions, and active work is in `docs/`, **not** in code or scratch files.
+A long-running research project: predict how memes spread on Reddit from their content
+(embeddings → SIR-style curve summaries, plus a neural-Hawkes track). The goal is a
+defensible answer to a scientific question, not a model that works at any cost.
 
-This file is the entry point for any AI agent (Cursor, Claude Code, Codex, etc.) working on this codebase. It is intentionally short; everything substantive lives in `docs/`.
+## Where things are
 
-## Before doing substantive work
+`docs/` is the project record. Read what the task needs; nothing here has to be read
+front to back.
 
-You MUST read, in this order:
+| Path | What it is |
+|---|---|
+| `docs/00-background.md` | What we are trying to do and why |
+| `docs/02-state.md` | Current snapshot, and the list of things waiting on the user. Start here |
+| `docs/changelog.md` | History, newest first |
+| `docs/work-packages/` | Units of work (`WP-NN`), with status table and per-package logs |
+| `docs/decisions/` | Design decisions (ADRs) and their status |
+| `docs/open-questions.md` | Unresolved questions |
+| `docs/01-scientific-rigor.md`, `docs/method-discipline.md` | The experimental standards for this project. Read both before running or evaluating an experiment |
+| `docs/03-environment.md` | uv, GPU/WSL2 setup, measured storage characteristics |
+| `docs/research-notes/` | Background research; informative, not binding |
+| `experiments/wpNN/` (lowercase) | Experiment **code**, tracked |
+| `experiments/WP-NN/` (uppercase) | Experiment **output**, mostly gitignored. A different directory from the one above |
+| `memes_base/`, loose scripts at the repo root | The 2023–2024 iteration. Read before reusing; several bugs have been found in it |
+| `rigor-port/` | A template for exporting these standards to other projects. Not in force here |
 
-1. `docs/README.md` — navigation
-2. `docs/00-background.md` — what we're trying to do and why
-3. `docs/01-scientific-rigor.md` — non-negotiable project-specific experimental standards
-4. `docs/method-discipline.md` — general anti-cargo-cult method discipline (how not to fool yourself); high priority
-5. `docs/02-state.md` — current snapshot, active focus
-6. `docs/03-environment.md` — Python/uv conventions (skim if you're already familiar)
-7. The specific work package you're picking up in `docs/work-packages/`
-8. Any decision records cited by that work package in `docs/decisions/`
+## How we work
 
-If `docs/` does not exist or is malformed, stop and surface the problem.
+The user has little time for this project and supervises it lightly. Agents are trusted to
+run it day to day, which makes two things matter more than they otherwise would: the science
+has to be checked by someone other than its author, and what reaches the user has to be
+readable cold.
 
-## Hard rules
+### Who decides what
 
-- **Do not make big design decisions unilaterally.** A "big decision" is any of:
-  - A choice that affects another work package's scope, interface, or assumptions.
-  - A choice of model, framework, dataset, embedding pipeline, or hyperparameter regime not already specified by a `status: accepted` decision record.
-  - Any change to the project's success metric, validation strategy, or evaluation set.
-  - Anything that would invalidate existing experimental results.
+The user decides anything project-critical:
 
-  For a big decision, draft a new ADR with `status: proposed` in `docs/decisions/`, then stop and ask the user. Do not implement until the ADR is marked `accepted`.
+- the research question, the success metric, the evaluation set and train/test split;
+- the model family, the dataset, and other choices recorded as ADRs;
+- anything that would invalidate or reinterpret results already in the record;
+- anything that costs a lot: roughly, more than a couple of hours of machine time, tens of
+  GB of download or disk, any paid API spend, or a meaningful amount of the user's own time;
+- anything hard to undo (deleting data, merging to `main`, publishing).
 
-- **Stay in scope.** Work on one package at a time. If your work suggests changes to another package, log them as open questions or propose a new ADR — do not silently expand scope.
+Everything else is yours: implementation, tooling, experiment details, thresholds you can
+derive, how to sequence the work. Decide, and note the reasoning in the work-package log
+where a later reader would otherwise wonder.
 
-- **Update state as you go.** When you complete a work package or substep, update `docs/02-state.md` and the work package's status header. When you discover new open questions, add them to `docs/open-questions.md`.
+When a decision is the user's, add it to "Waiting on the user" in `docs/02-state.md` with
+the options, the evidence, your recommendation, and what it blocks. For a design decision
+also draft the ADR as `proposed`. Then carry on with whatever does not depend on the answer.
+A whole session spent waiting is the outcome to avoid; so is a decision quietly made
+because asking was inconvenient.
 
-- **Scientific rigor is non-negotiable.** Follow `docs/01-scientific-rigor.md` (project standards) **and** `docs/method-discipline.md` (anti-cargo-cult method discipline). In particular: define and run baselines, report uncertainty, fix and record random seeds, file negative results, match the test to the claim, and pre-register principled (not ritual) thresholds.
+### Checking results
 
-- **Don't trust embeddings or models silently.** Treat embedding contamination, identifiability, and selection bias as live concerns at every step, not afterthoughts.
+Whoever produced a result is the worst-placed to grade it. A false "pass" has been recorded
+on this project before (the WP-12 bridge check: an arbitrary threshold on a metric that hid
+a disagreement the plot showed plainly). The standards in `docs/01-scientific-rigor.md` and
+`docs/method-discipline.md` exist because of failures like that one, and reduced
+supervision is the situation they were written for.
 
-- **Python is run through `uv`.** Every Python invocation goes through `uv run`. Every dependency goes through `uv add` / `uv remove`. Never invoke system `python` or `pip` directly, never `uv pip install` outside the lockfile. See `docs/03-environment.md`.
+- Before a run whose result will enter the record, write in the work-package log what you
+  expect to see, what would count as failure, and why that criterion tests the claim.
+- Afterwards, have the result checked by a reviewer who did not produce it: a fresh agent
+  given the claim, the criterion, the plots, and the raw numbers, and asked to find what is
+  wrong. Give it the artifacts, not your conclusion.
+- Record the result with who has checked it: `UNCERTIFIED` (author only),
+  `agent-reviewed`, or `user-reviewed`. Results that settle an ADR or that the project's
+  headline claim rests on need the user; the rest can stand as `agent-reviewed`.
+- A number that passes while the plot disagrees is an open finding. So is a reviewer's
+  objection you could not resolve. Report both as they are.
 
-## Verifying scientific claims (anti-self-certification)
+### Reporting to the user
 
-An agent can follow the letter of `docs/01-scientific-rigor.md` — even perform its pre-registration ritual — and still certify a bogus result. The author of a test is the worst-placed party to grade it. These rules are structural for that reason.
+The user reads updates between other work, months of context away from the details.
 
-- **No self-certified passes.** An execution agent may compute metrics and *propose* a verdict, but must not write a PASS / CONFIRMED conclusion into the project record (`docs/02-state.md`, a work-package Outcome, or an ADR). The verdict is rendered by the orchestrating/planning agent or a separate review agent **after inspecting the underlying artifact** (the plot and raw numbers), not the summary.
+- Lead with what was found and what, if anything, is needed from them.
+- Write for someone who has not seen the internal labels: say "the clustering audit" and
+  what it is for, with the `WP-04` tag only as a reference. Define any term the project
+  coined. Give numbers with units and with what they are being compared to.
+- Show a plot wherever a result has a shape. Say what the plot would look like if things
+  were fine, and what it actually shows.
+- State how much confidence the result deserves and who has checked it.
 
-- **Surface the criterion before the expensive run** whenever a diagnostic's result will enter the project record or inform a substantial planning choice. State the metric, the threshold, and *why that threshold would falsify the claim*, and stop for approval before computing. A threshold you cannot derive is not a test. (This gate does not apply to throwaway exploratory checks that won't be recorded or relied on.)
+### Housekeeping
 
-- **Make the result legible to the grader, and prefer plots.** A plot carries far more context than a scalar; a numerical diagnostic must clear a high bar before it is trusted over what a plot would show. For any recorded diagnostic, produce a plot and — *before the result is known* — write what it should look like if the hypothesis is true and what failure looks like. Route the plot plus that description to the user or a stronger review agent for the verdict. A number that "passes" while the plot disagrees is an open finding, not a pass. Be realistic about an agent's ability to read plots: when there is any doubt, escalate the plot to a human or a more capable reviewer rather than self-grading.
-
-## When asking the user
-
-When you need approval on a proposed decision, present (a) the decision under consideration, (b) the alternatives considered, (c) the evidence so far, and (d) what would change if the decision goes the other way. Don't ask vague questions.
+- **Keep the record current.** When work lands, update the work package's status and log,
+  the snapshot in `docs/02-state.md` if it changed, and add a line or two to
+  `docs/changelog.md`. Record negative results and dead ends too. Questions you cannot
+  settle go in `docs/open-questions.md`.
+- **Python goes through uv.** `uv run` for every invocation, `uv add` / `uv remove` for
+  dependencies, so that results stay reproducible from the lockfile.
+- **`.env` holds `OPENAI_API_KEY`.** Keep its contents out of output, files, and commits.

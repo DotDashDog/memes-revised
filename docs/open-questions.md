@@ -45,6 +45,9 @@ Owner: unowned. Status: open. Touch points: ADR 0015, R2 (selection), WP-05.
 - **How large, and how sampled, must a cluster-quality evaluation set be before its metrics mean anything?**
 Context: The 90-image WP-01 clustering check produced weak purity/silhouette, which was initially logged as a property of the embedding pipeline. It is not — at n=90 randomly drawn from a corpus of hundreds of meme families, nearly every true cluster is a singleton, so the metrics are uninformative by construction and would look the same for a perfect embedder. Two things need deciding before the next clustering audit: (a) the minimum sample size, derived from the actual family-size distribution rather than picked by feel; (b) whether to keep sampling uniformly at random or to **sample by family** (e.g. dhash-seeded near-duplicate expansion, so each drawn meme brings its siblings) — the latter gets within-cluster support at far lower cost but biases the cluster-size distribution, which is itself one of the reported metrics. Applies to the pending stronger-text-embedding audit and to WP-04's gold set.
 Owner: unowned. Status: open. Touch points: WP-01 (closed but reinterpreted), WP-04, WP-09/ADR 0009.
+- **Should post title/body enter the *clustering* embedding at all (vs. predictor input only)?**
+Context: ADR 0006's hybrid embeds title+body alongside OCR. Verified consequence (see `research-notes/wp01-clustering-001-postmortem.md`): the same image reposted under a different title embeds differently and can land in a different cluster — clustering identity is title-sensitive, feeding R4 (cluster ≠ meme). Options: amend ADR 0006 to exclude post text from the clustering embedding (keep it for the predictor), or keep it and measure title-sensitivity in the WP-04/WP-06 audit.
+Owner: unowned. Status: open; needs a decision before WP-05/WP-06.
 
 ## Signal construction
 

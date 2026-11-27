@@ -17,3 +17,5 @@ Notes are not binding. They do not authorize work. When a note matures into a de
 |---|---|---|---|
 | [hawkes-processes.md](hawkes-processes.md) | Hawkes & neural spatio-temporal point processes; relation to SIR and to the holistic rate-field idea | speculative | `open-questions.md` → "Holistic spatio-temporal point-process model" |
 | [hawkes-replication-plan.md](hawkes-replication-plan.md) | Critique of the Hawkes note + phased replication plan (WP-12…WP-15); 5M+ feasibility gate | plan drafted (→ ADR 0014, WP-12…15) | same open question; builds on `hawkes-processes.md` |
+| [supplement-subreddits.md](supplement-subreddits.md) | Candidate subreddits for a multi-community corpus | informing ADR 0016 | ADR 0016 |
+| [meme-ocr-survey.md](meme-ocr-survey.md) | Unreviewed Gemini Deep Research survey of OCR options for memes | background | WP-01, ADR 0006 |

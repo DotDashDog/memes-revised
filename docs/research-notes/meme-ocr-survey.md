@@ -1,8 +1,7 @@
----
-description: 
-globs: 
-alwaysApply: false
----
+# Meme OCR survey (Gemini Deep Research output)
+
+**Status:** background; unreviewed machine-generated survey.
+
 This is the output of Gemini Deep Research when asked about the options for high-quality OCR run on memes.
 
 Advanced Optical Character Recognition Strategies for Meme Text Extraction in Python

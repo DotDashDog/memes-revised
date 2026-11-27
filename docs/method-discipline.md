@@ -1,6 +1,6 @@
 # Method Discipline (general / anti-cargo-cult)
 
-**Required reading, high priority.** This file is the project's *general* research-method discipline — the standards for not fooling yourself when evaluating a method, metric, model, or inference procedure. It is transferable beyond this project. The *project-specific* rigor rules (baselines, contamination, validation split, failure modes) live in [`01-scientific-rigor.md`](01-scientific-rigor.md); read both.
+This file is the project's *general* research-method discipline — the standards for not fooling yourself when evaluating a method, metric, model, or inference procedure. It is transferable beyond this project. The *project-specific* rigor rules (baselines, contamination, validation split, failure modes) live in [`01-scientific-rigor.md`](01-scientific-rigor.md); read both.
 
 The governing idea (Feynman, *Cargo Cult Science*): **you are the easiest person to fool.** Following the letter of a rigor checklist — even performing the pre-registration ritual below — does not protect you if the test itself is mis-specified. The sections below exist because that has already happened on this project (a mean-field-bridge "PASS" was certified against an arbitrary RMSE threshold that masked a structured disagreement the plot showed plainly).
 

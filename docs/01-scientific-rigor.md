@@ -1,8 +1,8 @@
 # Scientific Rigor Standards (project-specific)
 
-This is a research project, not a feature-shipping project. The goal is **a defensible answer to a scientific question**, not a working model at any cost. The standards below are non-negotiable; if you find yourself wanting to skip one, that is a signal to ask the user, not to skip it.
+This is a research project, not a feature-shipping project. The goal is **a defensible answer to a scientific question**, not a working model at any cost. If one of the standards below seems wrong for the case at hand, raise it with the user instead of skipping it.
 
-> **This file holds the *project-specific* standards** (baselines, validation split, contamination, failure modes). The *general* "don't fool yourself" method discipline — identifiability as a precondition, matching the test to the claim, principled pre-registration, plots-before-metrics, the anti-cargo-cult debugging rules, surfacing assumptions — lives in [`method-discipline.md`](method-discipline.md) and is equally required reading.
+> **This file holds the *project-specific* standards** (baselines, validation split, contamination, failure modes). The *general* "don't fool yourself" method discipline — identifiability as a precondition, matching the test to the claim, principled pre-registration, plots-before-metrics, the anti-cargo-cult debugging rules, surfacing assumptions — lives in [`method-discipline.md`](method-discipline.md).
 >
 > **Section numbers are preserved for citation stability.** The gaps below (no §4, §8, §9, §11) are intentional: those sections moved to `method-discipline.md`. Do not renumber.
 

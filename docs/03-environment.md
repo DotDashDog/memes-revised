@@ -46,7 +46,7 @@ You do **not** need to manually activate the venv. `uv run` handles that.
 - `**uv.lock` is committed.** It is part of the project state. Regenerate it (`uv lock`) only when intentionally bumping versions, and commit the resulting diff.
 - `**.python-version` pins the interpreter.** Bump deliberately; do not let it drift.
 - `**.venv/` is never committed.** Already in `.gitignore`.
-- `**uv run` for every Python invocation.** Scripts, notebooks, ad-hoc REPLs — all go through uv. This is a non-negotiable rule (see `/AGENTS.md`).
+- `**uv run` for every Python invocation.** Scripts, notebooks, ad-hoc REPLs — all go through uv.
 - **Pin within a sensible range.** Prefer `uv add 'numpy>=2.0,<3'` style for libraries with known major-version churn. For most things, `uv add numpy` is fine and `uv.lock` does the pinning.
 - **Optional / experimental dependency groups.** For deps tied to a specific work package (e.g., a JAX vs. PyTorch choice not yet made), use `[dependency-groups]`. Install on demand with `uv sync --group <name>`. Document in the relevant work package.
 - **Pre-existing code in the repo predates this setup.** If you run something from `memes_base/` or any legacy script and hit `ModuleNotFoundError`, add the dep via `uv add` and log what you added (and why) in the current work package. Do not assume legacy code's deps are still the right ones.

@@ -1,19 +1,17 @@
 # Work Packages
 
-A work package is a **self-contained unit of work** with a clear "done" condition. Anyone — agent or human — should be able to pick up an open work package, read it, and execute it without holding the whole project in working memory.
+A work package is a unit of work with a clear "done" condition, written so it can be picked
+up without holding the whole project in mind.
 
-## Rules
-
-- One agent works one package at a time. Stay in scope.
-- Update the package's `Status:` header whenever it changes.
-- Log results, surprises, and dead ends in the package's **Log** section. Negative results are part of the deliverable.
-- If a package spawns new work, draft a new work package (status `open`) and cross-reference. **Do not silently expand scope.**
-- If a package requires a design decision not already covered by an `accepted` ADR, draft a `proposed` ADR and stop until the user accepts.
+- Keep the `Status:` header current, and log results, surprises, and dead ends in the
+  package's **Log** section. Negative results are part of the deliverable.
+- Work that falls outside the package becomes a new package (status `open`) or an entry in
+  `../open-questions.md`, so the user can see scope changing.
 
 ## Status values
 
 - **open** — not yet started.
-- **active** — currently being worked on (only one per agent).
+- **active** — currently being worked on.
 - **blocked** — waiting on an external decision, person, or other package.
 - **done** — completed, results documented, ADRs updated.
 - **superseded** — replaced; preserved for history.
@@ -26,7 +24,7 @@ A work package is a **self-contained unit of work** with a clear "done" conditio
 | [WP-01](WP-01-ocr-vs-vlm-benchmark.md)      | OCR vs. VLM-native embedding benchmark                                  | done    | —                   | ADR 0006                       |
 | [WP-02](WP-02-sir-identifiability-study.md) | SIR identifiability on synthetic data                                   | active  | —                   | ADR 0010                       |
 | WP-03                                       | Embedding-model survey (incl. contamination-controlled candidates)      | planned | —                   | ADR 0006 (refines)             |
-| WP-04                                       | Gold-set construction (~50 hand-labeled memes)                          | planned | —                   | ADR 0009 validation            |
+| [WP-04](WP-04-clustering-gold-set-audit.md) | Gold-set construction + powered clustering audit                        | open    | ADR 0015, ADR 0017  | ADR 0009 validation, WP-06     |
 | WP-05                                       | Full embedding pipeline (chosen model + multimodal combine)             | planned | ADR 0006            | clustering                     |
 | WP-06                                       | Clustering pipeline + multi-granularity eval                            | planned | WP-05               | ADR 0009                       |
 | WP-07                                       | Engagement-signal construction + sub-activity normalization             | planned | ~~data ingest~~ unblocked | ADR 0007                 |
@@ -96,7 +94,7 @@ Copy into a new file `WP-NN-short-slug.md`:
 
 ## Method
 
-<Step-by-step plan, at the level a less-capable agent could follow.>
+<The approach, and the reasoning behind the choices that are not obvious.>
 
 ## Risks and ambiguities
 
