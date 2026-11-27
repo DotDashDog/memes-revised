@@ -1,0 +1,26 @@
+{
+ "family_id": {
+  "n_items_in_groups": 223,
+  "image + text": {
+   "nearest_neighbour_same_group": 0.5919282511210763,
+   "any_of_5_nearest_same_group": 0.7488789237668162
+  },
+  "image only": {
+   "nearest_neighbour_same_group": 0.5067264573991032,
+   "any_of_5_nearest_same_group": 0.6905829596412556
+  },
+  "chance_nearest": 0.008393987876602746
+ },
+ "template_id": {
+  "n_items_in_groups": 376,
+  "image + text": {
+   "nearest_neighbour_same_group": 0.6648936170212766,
+   "any_of_5_nearest_same_group": 0.8085106382978723
+  },
+  "image only": {
+   "nearest_neighbour_same_group": 0.8191489361702128,
+   "any_of_5_nearest_same_group": 0.8936170212765957
+  },
+  "chance_nearest": 0.0040628675291350365
+ }
+}

@@ -1,0 +1,602 @@
+[
+ {
+  "a": "beovqk",
+  "b": "amir2o",
+  "stratum": "random",
+  "pair_id": "p000"
+ },
+ {
+  "a": "bwe487",
+  "b": "clbs7d",
+  "stratum": "hard_ref",
+  "pair_id": "p001"
+ },
+ {
+  "a": "egw0u5",
+  "b": "egy18t",
+  "stratum": "same",
+  "pair_id": "p002"
+ },
+ {
+  "a": "cexjoj",
+  "b": "cbbey1",
+  "stratum": "same",
+  "pair_id": "p003"
+ },
+ {
+  "a": "bu0icr",
+  "b": "ajd0po",
+  "stratum": "hard_tpl",
+  "pair_id": "p004"
+ },
+ {
+  "a": "ajkggl",
+  "b": "c5sjr0",
+  "stratum": "same",
+  "pair_id": "p005"
+ },
+ {
+  "a": "bp6udr",
+  "b": "bzwy3v",
+  "stratum": "hard_ref",
+  "pair_id": "p006"
+ },
+ {
+  "a": "dxl2gq",
+  "b": "czhzsk",
+  "stratum": "random",
+  "pair_id": "p007"
+ },
+ {
+  "a": "ddcvgd",
+  "b": "bx4ef2",
+  "stratum": "same",
+  "pair_id": "p008"
+ },
+ {
+  "a": "cdtiio",
+  "b": "b542u3",
+  "stratum": "hard_tpl",
+  "pair_id": "p009"
+ },
+ {
+  "a": "bab0at",
+  "b": "bi3ihz",
+  "stratum": "hard_tpl",
+  "pair_id": "p010"
+ },
+ {
+  "a": "azbtlr",
+  "b": "aipz2m",
+  "stratum": "same",
+  "pair_id": "p011"
+ },
+ {
+  "a": "cysniw",
+  "b": "bu0icr",
+  "stratum": "hard_ref",
+  "pair_id": "p012"
+ },
+ {
+  "a": "bm8p01",
+  "b": "clo1g5",
+  "stratum": "hard_tpl",
+  "pair_id": "p013"
+ },
+ {
+  "a": "cok5ru",
+  "b": "bxu2r1",
+  "stratum": "hard_tpl",
+  "pair_id": "p014"
+ },
+ {
+  "a": "bwe487",
+  "b": "bvhibs",
+  "stratum": "same",
+  "pair_id": "p015"
+ },
+ {
+  "a": "dkqnov",
+  "b": "anyce6",
+  "stratum": "hard_tpl",
+  "pair_id": "p016"
+ },
+ {
+  "a": "db8w23",
+  "b": "edna1c",
+  "stratum": "same",
+  "pair_id": "p017"
+ },
+ {
+  "a": "ecl6e6",
+  "b": "d4orjl",
+  "stratum": "random",
+  "pair_id": "p018"
+ },
+ {
+  "a": "ea0m4v",
+  "b": "bw0r8h",
+  "stratum": "random",
+  "pair_id": "p019"
+ },
+ {
+  "a": "dk8w3u",
+  "b": "aqncun",
+  "stratum": "hard_tpl",
+  "pair_id": "p020"
+ },
+ {
+  "a": "b7vk6n",
+  "b": "d381p7",
+  "stratum": "same",
+  "pair_id": "p021"
+ },
+ {
+  "a": "duvu2u",
+  "b": "dhv0c0",
+  "stratum": "random",
+  "pair_id": "p022"
+ },
+ {
+  "a": "bf7hnf",
+  "b": "eca1gf",
+  "stratum": "hard_ref",
+  "pair_id": "p023"
+ },
+ {
+  "a": "bpy5di",
+  "b": "b7wr3b",
+  "stratum": "hard_tpl",
+  "pair_id": "p024"
+ },
+ {
+  "a": "cplcck",
+  "b": "dl9s8s",
+  "stratum": "same",
+  "pair_id": "p025"
+ },
+ {
+  "a": "azbtlr",
+  "b": "aj30zy",
+  "stratum": "same",
+  "pair_id": "p026"
+ },
+ {
+  "a": "d86on7",
+  "b": "be5pxa",
+  "stratum": "random",
+  "pair_id": "p027"
+ },
+ {
+  "a": "ddcgz6",
+  "b": "bwp7am",
+  "stratum": "hard_ref",
+  "pair_id": "p028"
+ },
+ {
+  "a": "ee7nqs",
+  "b": "bab0at",
+  "stratum": "hard_tpl",
+  "pair_id": "p029"
+ },
+ {
+  "a": "asg8o5",
+  "b": "akmhw3",
+  "stratum": "same",
+  "pair_id": "p030"
+ },
+ {
+  "a": "aw5643",
+  "b": "d381p7",
+  "stratum": "hard_ref",
+  "pair_id": "p031"
+ },
+ {
+  "a": "dofdw1",
+  "b": "d86on7",
+  "stratum": "hard_tpl",
+  "pair_id": "p032"
+ },
+ {
+  "a": "d1w7wd",
+  "b": "cbevs8",
+  "stratum": "random",
+  "pair_id": "p033"
+ },
+ {
+  "a": "e88zwf",
+  "b": "ccryie",
+  "stratum": "hard_tpl",
+  "pair_id": "p034"
+ },
+ {
+  "a": "b26oo8",
+  "b": "cqf2au",
+  "stratum": "random",
+  "pair_id": "p035"
+ },
+ {
+  "a": "ckrhea",
+  "b": "cpoxpm",
+  "stratum": "random",
+  "pair_id": "p036"
+ },
+ {
+  "a": "cmsbgn",
+  "b": "dn0y63",
+  "stratum": "same",
+  "pair_id": "p037"
+ },
+ {
+  "a": "ag3hra",
+  "b": "bnj50o",
+  "stratum": "same",
+  "pair_id": "p038"
+ },
+ {
+  "a": "d0o3zv",
+  "b": "btseyp",
+  "stratum": "hard_ref",
+  "pair_id": "p039"
+ },
+ {
+  "a": "cwqeoe",
+  "b": "cltpbo",
+  "stratum": "random",
+  "pair_id": "p040"
+ },
+ {
+  "a": "afuu25",
+  "b": "amijb8",
+  "stratum": "hard_tpl",
+  "pair_id": "p041"
+ },
+ {
+  "a": "bempof",
+  "b": "beryil",
+  "stratum": "same",
+  "pair_id": "p042"
+ },
+ {
+  "a": "cdu5e5",
+  "b": "dzd9x4",
+  "stratum": "random",
+  "pair_id": "p043"
+ },
+ {
+  "a": "c9g1hf",
+  "b": "c3e0k3",
+  "stratum": "same",
+  "pair_id": "p044"
+ },
+ {
+  "a": "co041n",
+  "b": "clbs7d",
+  "stratum": "hard_tpl",
+  "pair_id": "p045"
+ },
+ {
+  "a": "e0yuon",
+  "b": "b69o7i",
+  "stratum": "same",
+  "pair_id": "p046"
+ },
+ {
+  "a": "c3k0kh",
+  "b": "c5sjr0",
+  "stratum": "same",
+  "pair_id": "p047"
+ },
+ {
+  "a": "cf2nl0",
+  "b": "ds16xn",
+  "stratum": "same",
+  "pair_id": "p048"
+ },
+ {
+  "a": "busxwd",
+  "b": "com6wj",
+  "stratum": "random",
+  "pair_id": "p049"
+ },
+ {
+  "a": "bo9us6",
+  "b": "dk8w3u",
+  "stratum": "hard_ref",
+  "pair_id": "p050"
+ },
+ {
+  "a": "e75jfa",
+  "b": "ccryie",
+  "stratum": "hard_tpl",
+  "pair_id": "p051"
+ },
+ {
+  "a": "cexjoj",
+  "b": "cft7tx",
+  "stratum": "same",
+  "pair_id": "p052"
+ },
+ {
+  "a": "e2w9x0",
+  "b": "dzmpuv",
+  "stratum": "same",
+  "pair_id": "p053"
+ },
+ {
+  "a": "dolnm6",
+  "b": "becs6d",
+  "stratum": "hard_tpl",
+  "pair_id": "p054"
+ },
+ {
+  "a": "bm5xbf",
+  "b": "bgao93",
+  "stratum": "random",
+  "pair_id": "p055"
+ },
+ {
+  "a": "cn73zz",
+  "b": "coyyj0",
+  "stratum": "same",
+  "pair_id": "p056"
+ },
+ {
+  "a": "b6vbxh",
+  "b": "chuy5g",
+  "stratum": "same",
+  "pair_id": "p057"
+ },
+ {
+  "a": "cdyr09",
+  "b": "bnnuud",
+  "stratum": "hard_ref",
+  "pair_id": "p058"
+ },
+ {
+  "a": "d66jfw",
+  "b": "di4i9y",
+  "stratum": "hard_ref",
+  "pair_id": "p059"
+ },
+ {
+  "a": "bab0at",
+  "b": "d66jfw",
+  "stratum": "random",
+  "pair_id": "p060"
+ },
+ {
+  "a": "c8r2pc",
+  "b": "cet20f",
+  "stratum": "same",
+  "pair_id": "p061"
+ },
+ {
+  "a": "chq72g",
+  "b": "b4m8by",
+  "stratum": "random",
+  "pair_id": "p062"
+ },
+ {
+  "a": "ed2p1c",
+  "b": "dpjvoj",
+  "stratum": "same",
+  "pair_id": "p063"
+ },
+ {
+  "a": "ebcf94",
+  "b": "dw66fq",
+  "stratum": "hard_ref",
+  "pair_id": "p064"
+ },
+ {
+  "a": "bat4zf",
+  "b": "chuy5g",
+  "stratum": "same",
+  "pair_id": "p065"
+ },
+ {
+  "a": "ag4kjv",
+  "b": "dpp4jh",
+  "stratum": "random",
+  "pair_id": "p066"
+ },
+ {
+  "a": "e6ks2q",
+  "b": "eesky2",
+  "stratum": "same",
+  "pair_id": "p067"
+ },
+ {
+  "a": "b5wwkb",
+  "b": "crigrs",
+  "stratum": "hard_ref",
+  "pair_id": "p068"
+ },
+ {
+  "a": "c0zpns",
+  "b": "cku6l4",
+  "stratum": "hard_tpl",
+  "pair_id": "p069"
+ },
+ {
+  "a": "cx9llt",
+  "b": "dsw57y",
+  "stratum": "hard_tpl",
+  "pair_id": "p070"
+ },
+ {
+  "a": "dzd9x4",
+  "b": "e6ump2",
+  "stratum": "same",
+  "pair_id": "p071"
+ },
+ {
+  "a": "dq3wrj",
+  "b": "atri9q",
+  "stratum": "random",
+  "pair_id": "p072"
+ },
+ {
+  "a": "c7ffnu",
+  "b": "c8pb79",
+  "stratum": "hard_tpl",
+  "pair_id": "p073"
+ },
+ {
+  "a": "bnnuud",
+  "b": "cw5qjp",
+  "stratum": "hard_ref",
+  "pair_id": "p074"
+ },
+ {
+  "a": "cgtrjc",
+  "b": "cjsq8v",
+  "stratum": "hard_tpl",
+  "pair_id": "p075"
+ },
+ {
+  "a": "cguc5s",
+  "b": "d5ohty",
+  "stratum": "hard_ref",
+  "pair_id": "p076"
+ },
+ {
+  "a": "cptt9v",
+  "b": "dl6az7",
+  "stratum": "hard_tpl",
+  "pair_id": "p077"
+ },
+ {
+  "a": "bppwti",
+  "b": "bprhpd",
+  "stratum": "same",
+  "pair_id": "p078"
+ },
+ {
+  "a": "ck7z4n",
+  "b": "azgcjc",
+  "stratum": "same",
+  "pair_id": "p079"
+ },
+ {
+  "a": "ad5n4l",
+  "b": "afuu25",
+  "stratum": "hard_tpl",
+  "pair_id": "p080"
+ },
+ {
+  "a": "bp6udr",
+  "b": "e0yuon",
+  "stratum": "same",
+  "pair_id": "p081"
+ },
+ {
+  "a": "bb8qta",
+  "b": "csaqzc",
+  "stratum": "random",
+  "pair_id": "p082"
+ },
+ {
+  "a": "bldhrj",
+  "b": "bf7hnf",
+  "stratum": "same",
+  "pair_id": "p083"
+ },
+ {
+  "a": "dhefwp",
+  "b": "dhikwq",
+  "stratum": "same",
+  "pair_id": "p084"
+ },
+ {
+  "a": "crtfno",
+  "b": "cnsdd1",
+  "stratum": "random",
+  "pair_id": "p085"
+ },
+ {
+  "a": "b590p6",
+  "b": "edp8ig",
+  "stratum": "hard_tpl",
+  "pair_id": "p086"
+ },
+ {
+  "a": "bv2ulz",
+  "b": "c3ki77",
+  "stratum": "hard_ref",
+  "pair_id": "p087"
+ },
+ {
+  "a": "decbxj",
+  "b": "c0ltin",
+  "stratum": "same",
+  "pair_id": "p088"
+ },
+ {
+  "a": "e9tx3o",
+  "b": "b1g3wp",
+  "stratum": "hard_tpl",
+  "pair_id": "p089"
+ },
+ {
+  "a": "brc1c6",
+  "b": "ajvyir",
+  "stratum": "same",
+  "pair_id": "p090"
+ },
+ {
+  "a": "czh5rl",
+  "b": "cdtiio",
+  "stratum": "same",
+  "pair_id": "p091"
+ },
+ {
+  "a": "bbi4fb",
+  "b": "cv4z3x",
+  "stratum": "random",
+  "pair_id": "p092"
+ },
+ {
+  "a": "b8jl7v",
+  "b": "avwbqd",
+  "stratum": "hard_tpl",
+  "pair_id": "p093"
+ },
+ {
+  "a": "d3lpf3",
+  "b": "dgxy4g",
+  "stratum": "same",
+  "pair_id": "p094"
+ },
+ {
+  "a": "e4lv26",
+  "b": "e2w9x0",
+  "stratum": "same",
+  "pair_id": "p095"
+ },
+ {
+  "a": "cpoxpm",
+  "b": "cf7ctz",
+  "stratum": "same",
+  "pair_id": "p096"
+ },
+ {
+  "a": "c024sz",
+  "b": "crtfno",
+  "stratum": "same",
+  "pair_id": "p097"
+ },
+ {
+  "a": "dvyp6z",
+  "b": "cok5ru",
+  "stratum": "hard_tpl",
+  "pair_id": "p098"
+ },
+ {
+  "a": "b52sgq",
+  "b": "ased99",
+  "stratum": "same",
+  "pair_id": "p099"
+ }
+]

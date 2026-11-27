@@ -1,0 +1,798 @@
+[
+ {
+  "id": "bppwti",
+  "text": "SO MANY REASONS TO BE GRUMPY / SO LITTLE TIME",
+  "template": "Grumpy Cat",
+  "referents": [
+   "Grumpy Cat"
+  ],
+  "premise": "Grumpy Cat twists the 'so many X, so little time' saying into having too many reasons to be grumpy.",
+  "notes": ""
+ },
+ {
+  "id": "dhefwp",
+  "text": "FORTNITE / Thank you for playing this game! Sadly, this is The End! We are grateful for all of your support during the years! / UNINSTALL / QUIT",
+  "template": "none",
+  "referents": [
+   "Fortnite The End event",
+   "Fortnite black hole"
+  ],
+  "premise": "A fake Fortnite shutdown screen suggests the game is ending for good, playing on the black-hole 'The End' event.",
+  "notes": "Appears to be an edited/fake game screen rather than a captioned meme."
+ },
+ {
+  "id": "d294a0",
+  "text": "IF REDDIT ADS A FEATURE TO SEE WHO SCREENSHOTS YOUR POST IT COULD ELIMINATE ALL THIEVERY OF MEMES",
+  "template": "Lisa Simpson presentation",
+  "referents": [
+   "meme stealing",
+   "reposting"
+  ],
+  "premise": "Lisa proposes that Reddit add screenshot notifications so meme thieves could be caught.",
+  "notes": ""
+ },
+ {
+  "id": "ddcvgd",
+  "text": "communism / everyone in school / me with gums",
+  "template": "Patrick pouring pumpkin into SpongeBob's funnel",
+  "referents": [],
+  "premise": "When you have gum at school everyone forces a 'shared property' demand on you, as if gum were communist property.",
+  "notes": ""
+ },
+ {
+  "id": "bm8p01",
+  "text": "Social instability / Having friends / Redditors / Lie back down.",
+  "template": "It's Always Sunny Dennis at the pool 'Lie back down'",
+  "referents": [],
+  "premise": "Redditors dismiss having friends because they are content with social instability.",
+  "notes": ""
+ },
+ {
+  "id": "d12vsn",
+  "text": "FINE... / YOU WIN",
+  "template": "Long-snouted borzoi dog lying on couch",
+  "referents": [
+   "Squidward's nose",
+   "long borzoi dog"
+  ],
+  "premise": "Squidward measures the borzoi's long snout with a ruler and concedes it beats his nose.",
+  "notes": ""
+ },
+ {
+  "id": "clbs7d",
+  "text": "ifueatmeurgay / It's a simple spell but quite unbreakable.",
+  "template": "Doctor Strange 'It's a simple spell but quite unbreakable'",
+  "referents": [
+   "Agar.io",
+   "Avengers: Infinity War"
+  ],
+  "premise": "An Agar.io player named 'ifueatmeurgay' protects themselves with a name nobody will want to eat.",
+  "notes": ""
+ },
+ {
+  "id": "bsl7h4",
+  "text": "The Grumpy Guide to [handwritten K] Life / Observations by Grumpy Cat",
+  "template": "none",
+  "referents": [
+   "Grumpy Cat",
+   "Grumpy Cat death"
+  ],
+  "premise": "A photo of a worn Grumpy Cat book, with a handwritten K added to the title, likely posted as a tribute.",
+  "notes": "Photo of a physical book; the joke of the handwritten K is unclear; no explicit caption."
+ },
+ {
+  "id": "bycjty",
+  "text": "When you see a MEME on a Telegram chan and think of stealing it and posting it on Reddit / YEAH. YEAH, I THINK I WILL.",
+  "template": "Comic hero in goggles 'Yeah, I think I will'",
+  "referents": [
+   "Telegram meme channels",
+   "meme stealing"
+  ],
+  "premise": "Seeing a meme on a Telegram channel, you gleefully decide to steal it and post it on Reddit.",
+  "notes": ""
+ },
+ {
+  "id": "ased99",
+  "text": "<MusicMaster1000> OH MY GOD / <MusicMaster1000> THEY ADDED / <MusicMaster1000> FUCKING / <MusicMaster1000> OH MY GOD / <Honiahaka> ? / <MusicMaster1000> THEY CHANGED THE DOGS IN MINECRAFT / MusicMaster1000 was slain by Polar Bear",
+  "template": "none",
+  "referents": [
+   "Minecraft update"
+  ],
+  "premise": "A Minecraft player is so excited about the changed dogs in an update that he gets killed by a polar bear mid-message.",
+  "notes": "Screenshot of in-game chat."
+ },
+ {
+  "id": "cmijv5",
+  "text": "8 year olds haircuts now / My haircut when I was 8",
+  "template": "none",
+  "referents": [
+   "bowl cut"
+  ],
+  "premise": "Kids today get stylish fades while the poster had an embarrassing bowl cut at the same age.",
+  "notes": ""
+ },
+ {
+  "id": "avr7o6",
+  "text": "Me: I'm gonna start eating healthy / Me 5 minutes later: / @CabbageCatMemes",
+  "template": "Lit cigarette held on a plastic fork",
+  "referents": [],
+  "premise": "Right after resolving to eat healthily, you 'eat' a cigarette with a fork.",
+  "notes": ""
+ },
+ {
+  "id": "af9r4s",
+  "text": "Recommended for you / Infinite Pain.. / 3.9 / Te... / 4.5",
+  "template": "none",
+  "referents": [
+   "Infinite Painter app"
+  ],
+  "premise": "The app store truncates 'Infinite Painter' to 'Infinite Pain' and recommends it to you.",
+  "notes": "Screenshot of app store."
+ },
+ {
+  "id": "deir8x",
+  "text": "ROGERS LTE 8:27 AM 88% / u/pichu100 / 12 Karma / 69 d Reddit age / My profile / Reddit Coins 0 Coins / Reddit Premium Ad-free browsing / Saved / History / Pending Posts / Settings",
+  "template": "none",
+  "referents": [
+   "69 (sex number)",
+   "Reddit account age"
+  ],
+  "premise": "The user's Reddit account is exactly 69 days old.",
+  "notes": "Screenshot of Reddit app profile menu."
+ },
+ {
+  "id": "btseyp",
+  "text": "When you're done mining, but you get lost in the cave's system / These are confusing times",
+  "template": "Smart Hulk 'These are confusing times'",
+  "referents": [
+   "Minecraft",
+   "Avengers: Endgame"
+  ],
+  "premise": "After mining in Minecraft you get lost in the cave system, confused like Smart Hulk.",
+  "notes": ""
+ },
+ {
+  "id": "blieex",
+  "text": "Snip-snap! Snip-snap! Snip-snap!",
+  "template": "Michael Scott 'Snip-snap' (The Office)",
+  "referents": [
+   "The Office"
+  ],
+  "premise": "A bare reaction frame of Michael Scott saying 'snip-snap', with no added caption.",
+  "notes": "No added caption; joke context unclear (possibly a Thanos snap reference)."
+ },
+ {
+  "id": "clihd2",
+  "text": "LAZY UPVOTE / I made this meme, it's not reposted / I DON'T KNOW IF THAT'S TRUE / BUT I'M TOO LAZY TO CHECK, SO... / SRGRAFO",
+  "template": "SrGrafo presenter and crowd comic",
+  "referents": [
+   "reposting",
+   "SrGrafo"
+  ],
+  "premise": "Redditors upvote a claimed-original meme because they are too lazy to check whether it is a repost.",
+  "notes": ""
+ },
+ {
+  "id": "ctizbn",
+  "text": "This meme will be dead in one week, even comic sans can't save it / and that's a fact / Made using MS Paint",
+  "template": "PewDiePie 'and that's a fact' pointing at TV",
+  "referents": [
+   "Binging with Babish easel meme",
+   "Comic Sans",
+   "PewDiePie"
+  ],
+  "premise": "PewDiePie points to a Babish easel meme declaring that the format will be dead within a week.",
+  "notes": "Meme nested inside another meme."
+ },
+ {
+  "id": "by8dsk",
+  "text": "me and the boys bout to cum",
+  "template": "Me and the boys",
+  "referents": [],
+  "premise": "The boys grinning together as they are about to climax.",
+  "notes": ""
+ },
+ {
+  "id": "dmxhyi",
+  "text": "",
+  "template": "Crying cat",
+  "referents": [],
+  "premise": "A bare crying-cat reaction image with no caption.",
+  "notes": "No text; plain reaction image."
+ },
+ {
+  "id": "ds8bg0",
+  "text": "POWDER FLAVOR PACKET / SOUP BASE",
+  "template": "Drake Hotline Bling",
+  "referents": [
+   "instant ramen"
+  ],
+  "premise": "Drake rejects the powdered ramen flavour packet and prefers the liquid soup base packet.",
+  "notes": "Hand-drawn pencil version of the template."
+ },
+ {
+  "id": "d8uaj4",
+  "text": "People who can actually post to r/memes / Everybody else",
+  "template": "Anime girl T-posing over girl lying on floor",
+  "referents": [
+   "r/memes posting restrictions",
+   "Doki Doki Literature Club"
+  ],
+  "premise": "Those who can still post to r/memes lord it over everyone else who is blocked from posting.",
+  "notes": ""
+ },
+ {
+  "id": "clr1zi",
+  "text": "DS3 PvP / LAG / Is this META?",
+  "template": "Is this a pigeon?",
+  "referents": [
+   "Dark Souls 3 PvP"
+  ],
+  "premise": "Dark Souls 3 PvP is so laggy that lag looks like the meta.",
+  "notes": ""
+ },
+ {
+  "id": "dwhpyh",
+  "text": "Right hand to left hand while masturbating / Apes together strong.",
+  "template": "Apes together strong",
+  "referents": [],
+  "premise": "Switching hands while masturbating is framed as apes cooperating.",
+  "notes": ""
+ },
+ {
+  "id": "ea0mr8",
+  "text": "KNOW THE WORK RULES / APPROPRIATE / YouTube grandma telling you you're handsome / AWWW, YOU'RE SWEET. / INAPPROPRIATE / the stranger on the bus calling you handsome / hello police? Id like to report a rapist. ?!",
+  "template": "Know the work rules appropriate/inappropriate comic",
+  "referents": [
+   "YouTube grandma comments"
+  ],
+  "premise": "A compliment from a YouTube-comment grandma is sweet but the same from a stranger on a bus is alarming.",
+  "notes": ""
+ },
+ {
+  "id": "dgxy4g",
+  "text": "when the TV isnt working so you hit it hard once or twice and then it works / THE ENGINEER",
+  "template": "TF2 'The Engineer' promotional image",
+  "referents": [
+   "Team Fortress 2"
+  ],
+  "premise": "Fixing a TV by hitting it makes you an engineer like the TF2 class who fixes things with a wrench.",
+  "notes": ""
+ },
+ {
+  "id": "ck7z4n",
+  "text": "When my FBI agent just found my 3To \"homework\" folders / fuck",
+  "template": "Kazoo Kid",
+  "referents": [
+   "FBI agent watching me",
+   "homework folder"
+  ],
+  "premise": "Your FBI agent discovering your 3TB of porn disguised as 'homework' folders.",
+  "notes": ""
+ },
+ {
+  "id": "c6uivg",
+  "text": "MINECRAFT VS FORTNITE / KEANU REEVES VS ELON MUSK",
+  "template": "Street brawl vs. calm round-table meeting",
+  "referents": [
+   "Minecraft versus Fortnite",
+   "Keanu Reeves",
+   "Elon Musk"
+  ],
+  "premise": "The Minecraft-versus-Fortnite debate is a brawl, while Keanu Reeves versus Elon Musk is a respectful debate between two admired figures.",
+  "notes": ""
+ },
+ {
+  "id": "e27sd8",
+  "text": "Noah removed Noah from the conversation. Today 3:55 PM / Noah / Noah",
+  "template": "Trust nobody, not even yourself",
+  "referents": [],
+  "premise": "A chat notification shows Noah removing himself from a conversation, as if betraying himself.",
+  "notes": ""
+ },
+ {
+  "id": "di11sq",
+  "text": "Please give me back my glasses man / Haha how can you see in these",
+  "template": "Crying man and man in yellow glasses",
+  "referents": [],
+  "premise": "The template is read literally: the yellow-glasses man has stolen the crying man's glasses.",
+  "notes": ""
+ },
+ {
+  "id": "axcsjv",
+  "text": "What if You / Wanted to go to Heaven / But god said / NEW COOL FREE BONG",
+  "template": "What if you wanted to go to heaven but God said",
+  "referents": [],
+  "premise": "God's denial is replaced by an image of a 'New Cool Free Bong' logo as the absurd punchline.",
+  "notes": "Punchline image is an unclear logo-style graphic; reference not identified."
+ },
+ {
+  "id": "bzbf4n",
+  "text": "LIVE / PEW NEWS / BREAKING NEWS / PETA TO ACCEPT CHILDREN AS MEMBERS / 19:48 \"WE HAVE TO TEACH THEM TO BE ASSHOLES FROM A SMALL AGE\" SAYS PETA CEO / REDDIT: / HAIL SATAN ABORT EVERYONE",
+  "template": "PewDiePie Pew News breaking news",
+  "referents": [
+   "Pew News",
+   "PETA",
+   "Reddit edgy atheism"
+  ],
+  "premise": "A fake news story says PETA will indoctrinate children to be assholes, and Reddit's equivalent is a child holding a 'Hail Satan abort everyone' sign.",
+  "notes": "Two images stacked (fake news screen plus protest photo)."
+ },
+ {
+  "id": "bm1cek",
+  "text": "Me: posts a minion meme / Middle aged women:",
+  "template": "Excited laughing Minions",
+  "referents": [
+   "Minion memes"
+  ],
+  "premise": "Middle-aged women go wild for minion memes.",
+  "notes": ""
+ },
+ {
+  "id": "eg1vfb",
+  "text": "A própria planta come carne e você aí vegano KKKKKKKKK",
+  "template": "none",
+  "referents": [
+   "veganism"
+  ],
+  "premise": "Even plants eat meat (a Venus flytrap eating a fly), yet you choose to be vegan.",
+  "notes": "Text in Portuguese."
+ },
+ {
+  "id": "clo1g5",
+  "text": "funny memes on reddit / memes about 69, 420 and normies / me / Lie back down.",
+  "template": "It's Always Sunny Dennis at the pool 'Lie back down'",
+  "referents": [
+   "69 (sex number)",
+   "420",
+   "normies"
+  ],
+  "premise": "The poster wants funny Reddit memes and dismisses the overdone 69, 420 and normie memes.",
+  "notes": ""
+ },
+ {
+  "id": "cpoxpm",
+  "text": "When your grandfather tells you that your too reliant on technology so you unplug his life support. / Get nae nae'd",
+  "template": "Get nae nae'd low-poly frog",
+  "referents": [
+   "Nae Nae"
+  ],
+  "premise": "You prove your grandfather wrong about technology dependence by unplugging his life support.",
+  "notes": ""
+ },
+ {
+  "id": "b1tdl8",
+  "text": "People who use this meme format / Me, an intellectual, who knows that Tom gets defeated by Jerry in this episode",
+  "template": "Buff Tom and tiny Jerry",
+  "referents": [
+   "Tom and Jerry"
+  ],
+  "premise": "A meta joke that the format's 'strong vs weak' framing ignores that Jerry beats buff Tom in the episode.",
+  "notes": ""
+ },
+ {
+  "id": "ea6khd",
+  "text": "When youre arguing with your mom and she starts yelling curse words / u/zioodo / You son of a bitch, [censored]",
+  "template": "Rick and Morty 'You son of a bitch, I'm in'",
+  "referents": [],
+  "premise": "When mom calls you a son of a bitch she is insulting herself.",
+  "notes": "End of subtitle blacked out."
+ },
+ {
+  "id": "c64lp0",
+  "text": "Britain in every other history book / Britain in British history books",
+  "template": "Friendly golden retriever next to snarling werewolf",
+  "referents": [
+   "British Empire"
+  ],
+  "premise": "British history books portray Britain as benign while other countries' books portray it as a monstrous empire.",
+  "notes": ""
+ },
+ {
+  "id": "bkdi61",
+  "text": "Sarah: when you hug a guy and you smell his colon / tayLORD.: When you can still smell his colon on your pillows even though he's not there >>>>> / @RichOrb: I love when I can smell a guy's colon as he walks by / jen: after you hug a boy and you smell like his colon <33 / Stylish Sweetheart: I smell like his colon now",
+  "template": "none",
+  "referents": [
+   "colon / cologne misspelling"
+  ],
+  "premise": "Several tweets misspell 'cologne' as 'colon', making them about smelling a guy's colon.",
+  "notes": "Compilation of tweet screenshots."
+ },
+ {
+  "id": "cma8s2",
+  "text": "Me 0.1 seconds after everyone leaves the house / Gonna touch myself doodle-y-do",
+  "template": "Cyanide & Happiness 'Gonna touch myself doodle-y-do'",
+  "referents": [
+   "Cyanide & Happiness"
+  ],
+  "premise": "As soon as everyone leaves, you head off to masturbate.",
+  "notes": ""
+ },
+ {
+  "id": "ctv6ea",
+  "text": "The Media / Video game cause violence / The amazon rain forest burning",
+  "template": "Couple arguing on couch with crying person edited between them",
+  "referents": [
+   "Amazon rainforest fires",
+   "video games cause violence"
+  ],
+  "premise": "The media focus on blaming video games for violence while the Amazon rainforest burns ignored.",
+  "notes": ""
+ },
+ {
+  "id": "d0o3zv",
+  "text": "The Telegraph › uk / The Queen retires: why the music industry won't miss Nicki Minaj / I don't even know who you are.",
+  "template": "Thanos 'I don't even know who you are'",
+  "referents": [
+   "Nicki Minaj retirement",
+   "Avengers: Endgame"
+  ],
+  "premise": "A headline about Nicki Minaj retiring is met with Thanos saying he doesn't know who she is.",
+  "notes": ""
+ },
+ {
+  "id": "bwlwm7",
+  "text": "Say Retard / Instagrammers / Same thing / made with mematic",
+  "template": "Dad asks newborn to say a word comic",
+  "referents": [
+   "Instagram meme pages"
+  ],
+  "premise": "Asked to say 'retard', the baby says 'Instagrammers', which the dad accepts as the same thing.",
+  "notes": ""
+ },
+ {
+  "id": "dn0y63",
+  "text": "ah yes / enslaved boomers",
+  "template": "Ah yes, enslaved [X] (Meme Man)",
+  "referents": [
+   "boomers on Facebook"
+  ],
+  "premise": "Facebook is reframed as a place of enslaved boomers.",
+  "notes": ""
+ },
+ {
+  "id": "dq3wrj",
+  "text": "When you try to tell your parents a joke but it turns into a lecture",
+  "template": "Bored boy resting cheek on hand in classroom",
+  "referents": [],
+  "premise": "Telling your parents a joke backfires into a boring lecture.",
+  "notes": ""
+ },
+ {
+  "id": "d3okv3",
+  "text": "Big Red gum wrapper / My Forehead / made with mematic",
+  "template": "Phil Swift Flex Tape",
+  "referents": [
+   "Flex Tape",
+   "Big Red gum"
+  ],
+  "premise": "A Big Red gum wrapper sticks to your forehead like Flex Tape.",
+  "notes": ""
+ },
+ {
+  "id": "c8ni9w",
+  "text": "Makes first meme / Unsupportive friends / Kind redditors / made with mematic",
+  "template": "Toothless dancing for the Light Fury (How to Train Your Dragon 3)",
+  "referents": [
+   "How to Train Your Dragon: The Hidden World"
+  ],
+  "premise": "Your friends are unimpressed by your first meme, but kind redditors cheer you on.",
+  "notes": ""
+ },
+ {
+  "id": "e6uh6l",
+  "text": "BANANA DUCT-TAPED TO A WALL SELLS FOR $120,000 AT ART BASEL MIAMI / Every day. We stray further from god.",
+  "template": "Perry the Platypus 'Every day we stray further from God'",
+  "referents": [
+   "Comedian (duct-taped banana)",
+   "Art Basel Miami"
+  ],
+  "premise": "A banana taped to a wall selling for $120,000 shows humanity straying from God.",
+  "notes": ""
+ },
+ {
+  "id": "b4u61o",
+  "text": "9: *exists* / 7: / I'm about to end this man's whole career",
+  "template": "I'm about to end this man's whole career",
+  "referents": [
+   "seven ate nine"
+  ],
+  "premise": "Referencing the 'seven eight nine' pun, 7 gets ready to eat 9.",
+  "notes": ""
+ },
+ {
+  "id": "c70dbc",
+  "text": "Me and the boys after we teamed up / We did it boys, Spider-man is no more.",
+  "template": "Madagascar penguins 'We did it boys, X is no more'",
+  "referents": [
+   "Me and the boys",
+   "Spider-Man leaving the MCU"
+  ],
+  "premise": "The 'me and the boys' villains, pasted onto the penguins, celebrate that Spider-Man is gone.",
+  "notes": "Combines two templates (Me and the boys faces on the penguins)."
+ },
+ {
+  "id": "dqcnkr",
+  "text": "Me / Grated cheese at 3am",
+  "template": "Jack and Rose embrace (Titanic)",
+  "referents": [],
+  "premise": "The poster's tender late-night romance with eating grated cheese.",
+  "notes": ""
+ },
+ {
+  "id": "dxkpc8",
+  "text": "ENJOYING YOUR MEAT? MURDERER! / OH GEEZ... / Can't we have just one dinner date where she doesn't mention the time I shot her mom?",
+  "template": "none",
+  "referents": [],
+  "premise": "A vegan date's 'murderer' accusation is literal: the hunter really did shoot her mother.",
+  "notes": "Single-panel comic."
+ },
+ {
+  "id": "d7nvty",
+  "text": "Joe came down with ligma, updog / What's ligma?! / Who's joe? / What's up dog / Oh, yeah. It's all coming together.",
+  "template": "Kronk 'Oh yeah, it's all coming together'",
+  "referents": [
+   "Ligma",
+   "Updog",
+   "Joe Mama"
+  ],
+  "premise": "A single text sets up three prank jokes at once (ligma, Joe mama, updog) and the friend falls for all of them.",
+  "notes": "Text-message screenshot plus reaction image."
+ },
+ {
+  "id": "crhazs",
+  "text": "Come closer... / I need... / I need... / Foreskin",
+  "template": "SpongeBob fish whispering 'Come closer... I need...'",
+  "referents": [],
+  "premise": "The dying-request SpongeBob scene ends with the absurd demand 'foreskin'.",
+  "notes": ""
+ },
+ {
+  "id": "chwktf",
+  "text": "Finishing projects / Abandoning projects / Starting a new project before finishing the / Continuously coming up with new ideas without doing anything",
+  "template": "Expanding brain",
+  "referents": [],
+  "premise": "Ever-worse habits of never finishing projects are ranked as increasingly enlightened.",
+  "notes": ""
+ },
+ {
+  "id": "e6mkfe",
+  "text": "NEW RECIPE / HOT ROCKETS brand sandwiches / 2 SANDWICHES / Vietnam Flashbacks / *screams in the distance* / Extra vivid",
+  "template": "Hot Pockets box parody",
+  "referents": [
+   "Hot Pockets",
+   "Vietnam flashbacks"
+  ],
+  "premise": "A Hot Pockets parody box sells 'Vietnam flashbacks' flavour, playing on the meme of traumatic flashbacks.",
+  "notes": ""
+ },
+ {
+  "id": "d3hx36",
+  "text": "3:22 / Bird Doesn't Care About Being Eaten / Daily Dose Of Internet · 854K views · 4 hours ago / DEPRESSION 100",
+  "template": "Skyrim skill level up '[skill] 100'",
+  "referents": [
+   "Daily Dose of Internet",
+   "Skyrim"
+  ],
+  "premise": "A seagull that doesn't care about being eaten by a beluga has maxed-out depression.",
+  "notes": ""
+ },
+ {
+  "id": "dkcng7",
+  "text": "VADER-\"I AM JOE\" LUKE- \"JOE WHO?\" VADER-\"JOE FATHAAAAAA\" / NOOOOOOOOOOOOOOOO / imgflip.com",
+  "template": "Darth Vader 'I am your father' / Luke 'Nooo'",
+  "referents": [
+   "Joe Mama",
+   "Star Wars"
+  ],
+  "premise": "Vader turns the 'I am your father' reveal into a 'Joe father' prank.",
+  "notes": ""
+ },
+ {
+  "id": "aizzma",
+  "text": "Good Morning my Reddit peasants",
+  "template": "Lord Farquaad in bed with martini (Shrek)",
+  "referents": [],
+  "premise": "The poster greets Reddit users as his peasants like a smug lord.",
+  "notes": ""
+ },
+ {
+  "id": "bkndfy",
+  "text": "When you start your pc / Hippity hop Your computer's Gonna stop",
+  "template": "Hippity hoppity creature",
+  "referents": [
+   "Discord",
+   "Skype",
+   "Spotify",
+   "Steam"
+  ],
+  "premise": "Startup apps (Discord, Skype, Spotify, Steam) combine into a creature that freezes your PC on boot.",
+  "notes": ""
+ },
+ {
+  "id": "cuczd0",
+  "text": "Anybody: Knocks on door. / My Dogs: / Now this is an Avengers level threat",
+  "template": "Mysterio 'Now this is an Avengers level threat'",
+  "referents": [
+   "Spider-Man: Far From Home"
+  ],
+  "premise": "Dogs treat any knock on the door as an Avengers-level threat.",
+  "notes": ""
+ },
+ {
+  "id": "ak0l72",
+  "text": "Sure, white people can't say the \"n word\" but at least we can say phrases like, \"Thanks for the warning, Officer\" and, \"Hey Dad.\" / Wait. That's racist",
+  "template": "Halo Spartan 'Wait, that's racist'",
+  "referents": [
+   "n-word"
+  ],
+  "premise": "A smug white kid's quip relies on racist stereotypes about police and absent fathers.",
+  "notes": ""
+ },
+ {
+  "id": "c323hh",
+  "text": "Zac Efron lookin dude hanging out / female lifeguards / my drowning ass",
+  "template": "Reporters crowding one spot while lone player sits ignored (NBA Draft)",
+  "referents": [
+   "Zac Efron"
+  ],
+  "premise": "Female lifeguards ignore you drowning to crowd around an attractive guy.",
+  "notes": ""
+ },
+ {
+  "id": "dpjlu8",
+  "text": "Men discussing what's better between Tits and ass / Men finding a univocal definition for 'cute girls'",
+  "template": "Street brawl vs. calm round-table meeting",
+  "referents": [
+   "tits or ass debate"
+  ],
+  "premise": "Men brawl over tits versus ass but calmly agree on what counts as a cute girl.",
+  "notes": ""
+ },
+ {
+  "id": "ag4kjv",
+  "text": "LBL2240 / 1,5L / Be a cool bunny and recycle me. / LBL2239",
+  "template": "none",
+  "referents": [],
+  "premise": "A juice bottle label features a sunglasses-wearing bunny urging you to recycle.",
+  "notes": "Photo of a product label with no added caption; found humour."
+ },
+ {
+  "id": "by97a2",
+  "text": "this meme is underused / and that's a fact",
+  "template": "PewDiePie 'and that's a fact' pointing at TV",
+  "referents": [
+   "PewDiePie"
+  ],
+  "premise": "PewDiePie declares this very meme format underused.",
+  "notes": ""
+ },
+ {
+  "id": "ci4ez5",
+  "text": "was it worth it? / NO! / am i gonna do it again? again? / PROBABLY!",
+  "template": "Was it worth it? No. Am I gonna do it again? Probably (kid in sunglasses)",
+  "referents": [],
+  "premise": "Admitting something wasn't worth it while planning to do it again anyway.",
+  "notes": "No situational caption; standalone template image."
+ },
+ {
+  "id": "d17hv1",
+  "text": "No Service 9:45 PM 19% / GamePigeon / DevyDev15 / Roberto / mosdoz / CRAZY 8 / Phatboi_E / Jean Routong / 6 9 4 0 0 +2 5 / Chat",
+  "template": "none",
+  "referents": [
+   "GamePigeon",
+   "69 (sex number)",
+   "420"
+  ],
+  "premise": "A GamePigeon Crazy 8 hand appears to spell out '69' and '4-0' numbers.",
+  "notes": "Screenshot with no caption; joke not explicit and inferred."
+ },
+ {
+  "id": "cfotkb",
+  "text": "Me karma whoring while it's not my cake day / I see no God up here / Other than ME",
+  "template": "Cat on a pole 'I see no God up here, other than me'",
+  "referents": [
+   "karma whoring",
+   "Reddit cake day"
+  ],
+  "premise": "Karma whoring without the cake-day excuse makes the poster feel godlike.",
+  "notes": ""
+ },
+ {
+  "id": "d8v85s",
+  "text": "69,325 / 69",
+  "template": "none",
+  "referents": [
+   "69 (sex number)"
+  ],
+  "premise": "A game's currency counters both show 69.",
+  "notes": "Cropped game UI screenshot with no caption; game not identified."
+ },
+ {
+  "id": "dpg8gf",
+  "text": "Boomer / Read! / Ok boomer / Boomer / *screaming* NOOOOOO!",
+  "template": "The Boondocks man forced to read a book",
+  "referents": [
+   "OK boomer"
+  ],
+  "premise": "A boomer is forced to read the words 'Ok boomer' and screams in horror.",
+  "notes": ""
+ },
+ {
+  "id": "bnre55",
+  "text": "\"You can achieve anything, you have a tiger in you\" / The tiger in me :",
+  "template": "Fat tiger lying on concrete",
+  "referents": [],
+  "premise": "The poster's inner tiger is a lazy, obese one.",
+  "notes": ""
+ },
+ {
+  "id": "b590p6",
+  "text": "making self aware memes adding onto the last self aware meme / Woah. / This is worthless!",
+  "template": "Gravity Falls 'This is worthless!'",
+  "referents": [
+   "self-aware memes"
+  ],
+  "premise": "Self-aware memes building on the previous self-aware meme are worthless.",
+  "notes": ""
+ },
+ {
+  "id": "clpuwp",
+  "text": "ah,yes. / enslaved Nut",
+  "template": "Ah yes, enslaved [X] (Meme Man)",
+  "referents": [
+   "Jif peanut butter"
+  ],
+  "premise": "Peanut butter is reframed as 'enslaved nut', with a sexual double meaning.",
+  "notes": ""
+ },
+ {
+  "id": "c7h8p7",
+  "text": "Your crush most likely had sex yesterday and is going to text you \"Sorry, I fell asleep\" in the morning Just focus on yourself",
+  "template": "none",
+  "referents": [],
+  "premise": "Your crush's 'sorry, I fell asleep' excuse probably hides that they were having sex, so focus on yourself.",
+  "notes": "Plain-text post screenshot."
+ },
+ {
+  "id": "ecxebi",
+  "text": "L M N O P / Lemon / Elmo / Pee",
+  "template": "Woman yelling at cat",
+  "referents": [
+   "alphabet song LMNOP"
+  ],
+  "premise": "The cat mishears the 'L M N O P' part of the alphabet as 'lemon, Elmo, pee'.",
+  "notes": ""
+ },
+ {
+  "id": "bg0w4z",
+  "text": "3rd grade kids when they finish classwork early and the teacher gives them more work to do / DJ KHALED SUFFERING FROM SUCCESS",
+  "template": "DJ Khaled 'Suffering From Success'",
+  "referents": [],
+  "premise": "Finishing early gets kids punished with more work, so they suffer from their own success.",
+  "notes": ""
+ },
+ {
+  "id": "efmx00",
+  "text": "Junichi Masuda / Pokemon / PokeTubers",
+  "template": "SpongeBob and Patrick attacking frozen Squidward (Christmas Who?)",
+  "referents": [
+   "Junichi Masuda",
+   "Dexit",
+   "Pokémon Sword and Shield",
+   "Surprised Pikachu"
+  ],
+  "premise": "Game Freak's Masuda and Pokémon YouTubers both beat up the Pokémon franchise around the Sword and Shield controversy.",
+  "notes": ""
+ },
+ {
+  "id": "c5wet2",
+  "text": "When I pull up to stay the night at my rich friends house / RATES 25¢",
+  "template": "Fresh Prince arriving in cab with camera",
+  "referents": [
+   "The Fresh Prince of Bel-Air"
+  ],
+  "premise": "Staying over at a rich friend's house makes you as starstruck as Will arriving in Bel-Air.",
+  "notes": ""
+ }
+]

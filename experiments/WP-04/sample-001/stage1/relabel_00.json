@@ -1,0 +1,821 @@
+[
+ {
+  "id": "akmhw3",
+  "text": "KEEP SCROLLING / I WANT TO GO UP",
+  "template": "man in beige raincoat holding blue plastic bags in elevator",
+  "referents": [],
+  "premise": "The man in the elevator asks the viewer to keep scrolling because, like an elevator, he wants to go up the screen.",
+  "notes": ""
+ },
+ {
+  "id": "c3e0k3",
+  "text": "pornhub videos / pornhub comments",
+  "template": "crowd of men brawling above, formal round-table meeting below",
+  "referents": [
+   "Pornhub comments"
+  ],
+  "premise": "Pornhub videos are rough and chaotic while the comment section is oddly civil and wholesome like a diplomatic summit.",
+  "notes": ""
+ },
+ {
+  "id": "e73phv",
+  "text": "My family and the guests / 5 year old me reciting the alphabet",
+  "template": "politicians applauding at White House desk signing",
+  "referents": [
+   "Baby Yoda"
+  ],
+  "premise": "Adults applauded wildly when you as a small child did something trivial like reciting the alphabet.",
+  "notes": "Yoda figure edited into a photo of a bill-signing ceremony."
+ },
+ {
+  "id": "efom89",
+  "text": "6,044 Karma / 6m 9d Reddit age",
+  "template": "none",
+  "referents": [
+   "Reddit karma"
+  ],
+  "premise": "Screenshot of a Reddit profile showing karma and account age, with no evident joke.",
+  "notes": "Not a meme: just a screenshot of Reddit profile stats; joke, if any, depends on the post title."
+ },
+ {
+  "id": "beevfa",
+  "text": "Feeling cute, might banish you to the Shadow Realm later, idk",
+  "template": "Feeling cute, might delete later",
+  "referents": [
+   "Yu-Gi-Oh!",
+   "Shadow Realm"
+  ],
+  "premise": "Yami Marik from Yu-Gi-Oh! posts a casual selfie caption threatening to banish you to the Shadow Realm.",
+  "notes": ""
+ },
+ {
+  "id": "czqpbb",
+  "text": "you know what, i'm about to say it / i'm glad u exist and woke up today i know it's not easy sometimes but i'm proud of u",
+  "template": "boy in yellow shirt pointing at camera surrounded by heart emojis",
+  "referents": [],
+  "premise": "A wholesome message telling the viewer the poster is glad they exist and proud of them.",
+  "notes": ""
+ },
+ {
+  "id": "ci4ez5",
+  "text": "was it worth it? NO! / am i gonna do it again? again? PROBABLY!",
+  "template": "smug boy in blue sunglasses with crossed arms, rainbow gradient background",
+  "referents": [],
+  "premise": "Admitting a bad decision was not worth it while cheerfully planning to repeat it.",
+  "notes": ""
+ },
+ {
+  "id": "e2tpt1",
+  "text": "BEING THANKFUL ALL YEAR / BEING THANKFUL ON THE LAST THURSDAY OF NOVEMBER",
+  "template": "Drake Hotline Bling",
+  "referents": [
+   "Thanksgiving"
+  ],
+  "premise": "People only bother being thankful on Thanksgiving rather than all year.",
+  "notes": ""
+ },
+ {
+  "id": "e88zwf",
+  "text": "DUDE... OK... / literaly anithing on r / memes / the redditors / SRGRAFO",
+  "template": "SrGrafo 'Dude... ok' reluctant upvote comic",
+  "referents": [
+   "r/memes",
+   "Reddit upvotes",
+   "SrGrafo"
+  ],
+  "premise": "Redditors reluctantly upvote literally anything posted on r/memes.",
+  "notes": ""
+ },
+ {
+  "id": "b49vbx",
+  "text": "pakalu papito @pakalupapito / life is soup, i am fork / Speaking words of wisdom",
+  "template": "Paul McCartney 'Speaking words of wisdom' (Let It Be)",
+  "referents": [
+   "Pakalu Papito",
+   "Let It Be"
+  ],
+  "premise": "A nonsensical tweet about being a fork in the soup of life is presented as profound wisdom.",
+  "notes": "Tweet screenshot combined with a captioned video still."
+ },
+ {
+  "id": "cyoabg",
+  "text": "C.E.O / How is it going, Tony? / Developer / I have this headache that comes and goes / Project manager / *Steve walks in* Hi, Tony / Developer / There it is again",
+  "template": "Tony Stark 'There it is again' headache",
+  "referents": [
+   "Captain America: Civil War"
+  ],
+  "premise": "A developer's headache returns the moment the project manager walks in.",
+  "notes": ""
+ },
+ {
+  "id": "dnkn3l",
+  "text": "Chicken nuggets only imply the existence of a whole chicken",
+  "template": "JoJo's Bizarre Adventure character crying in horror close-up",
+  "referents": [],
+  "premise": "A shower thought that chicken nuggets merely imply a chicken existed is treated as existentially horrifying.",
+  "notes": ""
+ },
+ {
+  "id": "d5ke5k",
+  "text": "THIS SUB MAKES ME WISH THERE WAS A HOLOCAUST FOR REDDITORS",
+  "template": "none",
+  "referents": [
+   "r/memes",
+   "Holocaust"
+  ],
+  "premise": "Hostile plain-text post saying the subreddit is so bad the poster wishes Redditors were exterminated.",
+  "notes": "Plain text on white, no image; offensive rant rather than a conventional meme."
+ },
+ {
+  "id": "dpagkl",
+  "text": "BILLY! WHAT HAVE YOU DONE?! / u/stealthobloxykat / I send death threats to kids for playing Fortnite",
+  "template": "Billy, what have you done?",
+  "referents": [
+   "Fortnite"
+  ],
+  "premise": "Billy shot a man who sends death threats to kids for playing Fortnite, so the dad grabs a shotgun to join in rather than scold him.",
+  "notes": ""
+ },
+ {
+  "id": "ahpqk2",
+  "text": "when u ignore the main quest for a sidequest",
+  "template": "delivery man walking with tube as Twin Towers burn",
+  "referents": [
+   "9/11"
+  ],
+  "premise": "A delivery man calmly carrying on with his job while the World Trade Center burns is compared to a video game player ignoring the main quest.",
+  "notes": ""
+ },
+ {
+  "id": "d7i6r3",
+  "text": "How everyone expected the Area 51 raid to take place / What actually happened",
+  "template": "Expectation vs reality; King of the Hill men standing by fence",
+  "referents": [
+   "Area 51 raid",
+   "Warhammer 40,000",
+   "King of the Hill"
+  ],
+  "premise": "The Area 51 raid was imagined as an epic battle but in reality people just stood around outside.",
+  "notes": ""
+ },
+ {
+  "id": "ctcjvw",
+  "text": "My Plan: 1. Have kids 2. Make them watch the movie '2012' 3. Tell them that I survived this / 2012",
+  "template": "none",
+  "referents": [
+   "2012 (film)",
+   "2012 apocalypse"
+  ],
+  "premise": "Trick your future kids into believing you survived the disaster from the movie 2012.",
+  "notes": ""
+ },
+ {
+  "id": "dig79z",
+  "text": "Next earthquake I'm for real putting my pussy on the ground and using the earth as a vibrator / 1,721 21.1K 125K / Noah? / Get the boat.",
+  "template": "God 'Noah, get the boat'",
+  "referents": [
+   "Noah's Ark"
+  ],
+  "premise": "A crude tweet about using earthquakes as a vibrator makes God decide to flood the world again.",
+  "notes": "Tweet screenshot combined with a two-panel template."
+ },
+ {
+  "id": "ciw9av",
+  "text": "Me: Turns the handle 1 mm to the side / My shower head:",
+  "template": "WWII soldier firing flamethrower",
+  "referents": [],
+  "premise": "The tiniest turn of the shower handle makes the water scalding hot.",
+  "notes": ""
+ },
+ {
+  "id": "drhpxz",
+  "text": "Are you going to Joe's party? / Who's Joe / Joe Seph Stalin / I have achieved Communism",
+  "template": "I have achieved comedy (Stalin variant)",
+  "referents": [
+   "Joe mama",
+   "Joseph Stalin",
+   "Communism memes"
+  ],
+  "premise": "A 'Who's Joe' setup is answered with 'Joe Seph Stalin', and Stalin with glowing eyes declares he has achieved communism.",
+  "notes": "Chat screenshot combined with a template image."
+ },
+ {
+  "id": "dcq171",
+  "text": "Me / Person I am talking bad about",
+  "template": "Greta Thunberg glaring at Donald Trump",
+  "referents": [
+   "Greta Thunberg",
+   "Donald Trump",
+   "UN Climate Action Summit"
+  ],
+  "premise": "You are talking trash about someone who is standing right behind you, glaring.",
+  "notes": ""
+ },
+ {
+  "id": "efckmv",
+  "text": "Fools / Read! / Die Hard is a Christmas Movie / Fools / *screaming* NOOOOOO!",
+  "template": "The Boondocks 'Read!' book forced into face",
+  "referents": [
+   "Die Hard is a Christmas movie"
+  ],
+  "premise": "People who deny that Die Hard is a Christmas movie are forced to confront the claim and scream in horror.",
+  "notes": ""
+ },
+ {
+  "id": "ctizbn",
+  "text": "This meme will be dead in one week, even comic sans can't save it / and that's a fact / Made using MS Paint",
+  "template": "PewDiePie pointing at TV 'and that's a fact'",
+  "referents": [
+   "PewDiePie",
+   "Comic Sans",
+   "flip chart presenter meme"
+  ],
+  "premise": "PewDiePie declares as fact that the newly popular flip-chart presenter meme will be dead within a week.",
+  "notes": "Meme within a meme: a flip-chart presenter template is shown on the TV inside the PewDiePie template."
+ },
+ {
+  "id": "cma8s2",
+  "text": "Me 0.1 seconds after everyone leaves the house / Gonna touch myself doodle-y-do",
+  "template": "Cyanide & Happiness 'Gonna touch myself doodle-y-do'",
+  "referents": [
+   "Cyanide & Happiness"
+  ],
+  "premise": "The moment you are home alone you start masturbating.",
+  "notes": ""
+ },
+ {
+  "id": "bkndfy",
+  "text": "When you start your pc / Hippity hop Your computer's Gonna stop",
+  "template": "Hippity hoppity",
+  "referents": [
+   "Discord",
+   "Skype",
+   "Spotify",
+   "Steam",
+   "Hippity hoppity"
+  ],
+  "premise": "All the startup apps launching when you boot your PC combine into a creature that freezes the computer.",
+  "notes": ""
+ },
+ {
+  "id": "aqncun",
+  "text": "I BET HE'S THINKING ABOUT OTHER WOMEN / IF MAGIN BUU SPLIT INTO GOOD AND EVIL AND EVIL BUU ATE GOOD BUU TO TURN INTO SUPER BUU, AND WHEN THEY TOOK OUT GOOD BUU INSIDE SUPER BUU TURNING HIM INTO KID BUU, SHOULDN'T KID BUU AND EVIL BUU BE THE SAME?",
+  "template": "I bet he's thinking about other women",
+  "referents": [
+   "Dragon Ball Z",
+   "Majin Buu"
+  ],
+  "premise": "While his partner suspects infidelity, the man is puzzling over Majin Buu's transformations in Dragon Ball Z.",
+  "notes": ""
+ },
+ {
+  "id": "b69o7i",
+  "text": "We had some trouble getting to Reddit. / Let me in. / We had some trouble getting to Reddit. / LET ME IIIIIIIIIIN!",
+  "template": "Eric Andre 'Let me in'",
+  "referents": [
+   "Reddit outage"
+  ],
+  "premise": "Desperately trying to get onto Reddit while the site is down.",
+  "notes": ""
+ },
+ {
+  "id": "b8wwqj",
+  "text": "OMG THEY MADE THE FORTNITE CANNON INTO A REAL THING",
+  "template": "none",
+  "referents": [
+   "Fortnite"
+  ],
+  "premise": "Ironically mocking young Fortnite players who think real historical objects like cannons were copied from Fortnite.",
+  "notes": "Image heavily noise-filtered/deep-fried."
+ },
+ {
+  "id": "cjzelt",
+  "text": "gen-z-culture-is FOLLOW / Gen Z culture is debating if it's milk before cereal or vice versa in class and then having that one kid come in and go \"I put my bleach before cereal\" and then dabbing as the rest of the class laughs and goes \"same\" while your gen X teacher looks horrified. / #gen z #culture #submission / 1,321 notes",
+  "template": "none",
+  "referents": [
+   "Gen Z culture is",
+   "milk before cereal",
+   "dabbing",
+   "drinking bleach jokes"
+  ],
+  "premise": "Gen Z humor is absurd and dark, like joking about bleach in cereal while a Gen X teacher is horrified.",
+  "notes": "Screenshot of a Tumblr post."
+ },
+ {
+  "id": "bfbmy5",
+  "text": "Plan the Biggest kahoot Game / Get everyone Hyped / Code fails / Code fails",
+  "template": "Gru's Plan",
+  "referents": [
+   "Kahoot"
+  ],
+  "premise": "You plan a huge Kahoot game, hype everyone up, and then the game code fails.",
+  "notes": ""
+ },
+ {
+  "id": "bgao93",
+  "text": "Working on updates 100% complete Don't turn off your computer",
+  "template": "none",
+  "referents": [
+   "Windows Update"
+  ],
+  "premise": "A photo of a laptop stuck on a Windows update screen at 100% complete with a magenta-tinted display.",
+  "notes": "Plain photo of a screen with no caption; joke, if any, depends on the post title."
+ },
+ {
+  "id": "d75m0c",
+  "text": "",
+  "template": "Mike Wazowski Sulley face swap",
+  "referents": [
+   "Monsters, Inc."
+  ],
+  "premise": "A group photo of kids with their faces replaced by the Sulley/Mike Wazowski face-swap images.",
+  "notes": "No text; real photo of kids with faces covered by edited cartoon faces."
+ },
+ {
+  "id": "d5e99l",
+  "text": "Apple: / Reddit: / Thomas had never seen such bullshit before",
+  "template": "Thomas had never seen such bullshit before",
+  "referents": [
+   "iPhone 11 Pro",
+   "iPhone 11 triple camera"
+  ],
+  "premise": "Reddit reacts with disgust to the iPhone 11 Pro's triple-camera design.",
+  "notes": ""
+ },
+ {
+  "id": "ba7kc9",
+  "text": "YOU: A KID / YOUR PARENT: LET'S YOU SCRATCH LOTTERY TICKET / YOU: WINS FIVE DOLLARS / ALSO YOU:",
+  "template": "man in red hood with head-mounted goggles confronted by older man",
+  "referents": [
+   "scratch-off lottery tickets"
+  ],
+  "premise": "Winning five dollars on a scratch ticket as a kid sets you on the path to a gambling addiction.",
+  "notes": "Still frame from a video or GIF; the reaction is hard to read from the single frame."
+ },
+ {
+  "id": "eh331x",
+  "text": "Ew, I stepped in shit. / PEDOPHILES WHO THINK THEY'RE IN THE LGBT COMMUNITY",
+  "template": "Ew, I stepped in shit",
+  "referents": [
+   "LGBT community",
+   "MAP pedophile LGBT inclusion trolling"
+  ],
+  "premise": "Pedophiles who claim to belong to the LGBT community are filth stuck to the community's shoe.",
+  "notes": ""
+ },
+ {
+  "id": "clpuwp",
+  "text": "ah,yes. / enslaved Nut",
+  "template": "Ah yes, enslaved (Meme Man)",
+  "referents": [
+   "Jif peanut butter"
+  ],
+  "premise": "A jar of peanut butter is literally described as enslaved nuts.",
+  "notes": ""
+ },
+ {
+  "id": "dn0y63",
+  "text": "ah yes / enslaved boomers",
+  "template": "Ah yes, enslaved (Meme Man)",
+  "referents": [
+   "Facebook",
+   "Boomers on Facebook"
+  ],
+  "premise": "Facebook is described as a place that holds boomers captive.",
+  "notes": ""
+ },
+ {
+  "id": "d6gtw8",
+  "text": "Parents / Me / My plan is simple. / Get into college / Pick a major that I like / Get my degree / Be 50k-100k in student debt / Be 50k-100k in student debt",
+  "template": "Gru's Plan",
+  "referents": [
+   "student debt"
+  ],
+  "premise": "The plan to go to college and study what you like ends with realizing you will be deep in student debt.",
+  "notes": ""
+ },
+ {
+  "id": "c04wr0",
+  "text": "Me and the boys when we noclip out of reality, and start smelling the stink of old moist carpet and hearing the buzzing sound of fluorescent lights",
+  "template": "Me and the boys",
+  "referents": [
+   "The Backrooms",
+   "noclip"
+  ],
+  "premise": "The boys excitedly end up in the Backrooms after noclipping out of reality.",
+  "notes": ""
+ },
+ {
+  "id": "di4i9y",
+  "text": "r/Area_51_Raid_Prep • u/tuteret • 10h / Shit / r/dankmemes • AjLajkMims • 1m / Shit / Shit / u/iiawesomeperson • Now / Shit / r/ontheledgeandshit • 2d • u/Titancctk / Shit / Shit / r/EmKay • u/EmGeoMedia • 4h / Shit / This photo is cursed! As soon as you see this you only have 1 minute repost or he will come after you and kil you with in a week.",
+  "template": "none",
+  "referents": [
+   "cursed image chain posts",
+   "reposting"
+  ],
+  "premise": "A cursed-image chain message has been reposted inside reposts so many times it forms a recursive stack of screenshots all titled 'Shit'.",
+  "notes": "Nested screenshots; inner text is very small and partly unreadable."
+ },
+ {
+  "id": "blty82",
+  "text": "Poor people / Rich people / People who tell you what's on the test because they have the class before you",
+  "template": "plain wooden coffins versus golden pharaoh sarcophagus",
+  "referents": [],
+  "premise": "Classmates who leak test contents from an earlier class deserve a pharaoh's burial.",
+  "notes": ""
+ },
+ {
+  "id": "ck7z4n",
+  "text": "When my FBI agent just found my 3To \"homework\" folders / fuck",
+  "template": "Kazoo Kid 'fuck'",
+  "referents": [
+   "FBI agent meme",
+   "homework folder"
+  ],
+  "premise": "The FBI agent watching you has discovered your terabytes of porn disguised as homework folders.",
+  "notes": ""
+ },
+ {
+  "id": "asg8o5",
+  "text": "KEEP SCROLLING / I WANT TO GO UP",
+  "template": "man in beige raincoat holding blue plastic bags in elevator",
+  "referents": [],
+  "premise": "The man in the elevator asks the viewer to keep scrolling because, like an elevator, he wants to go up the screen.",
+  "notes": ""
+ },
+ {
+  "id": "antgos",
+  "text": "There can't be a 1% if everyone is poor",
+  "template": "Roll Safe (Think About It)",
+  "referents": [
+   "communism",
+   "the 1%"
+  ],
+  "premise": "Communism eliminates the rich 1% by simply making everyone poor.",
+  "notes": "Soviet flag overlay on the template."
+ },
+ {
+  "id": "dixx1t",
+  "text": "When the BK lady handing over your ice cream calls you gordo",
+  "template": "fat crying cat lying on pillow",
+  "referents": [
+   "Burger King"
+  ],
+  "premise": "It hurts when the Burger King worker calls you fat while handing you ice cream.",
+  "notes": ""
+ },
+ {
+  "id": "ar4l63",
+  "text": "Look at this meme / I saw that earlier (repeated in nested screenshots)",
+  "template": "none",
+  "referents": [],
+  "premise": "A friend always claims to have seen your meme earlier, recursively, as the meme itself keeps being sent.",
+  "notes": "Recursive nested text-message screenshots."
+ },
+ {
+  "id": "bm9up5",
+  "text": "BREAKING: Disney announces live-action Lilo and Stitch",
+  "template": "none",
+  "referents": [
+   "Disney live-action remakes",
+   "Lilo & Stitch"
+  ],
+  "premise": "A live-action Disney remake of Lilo and Stitch would turn Stitch into a horrifying realistic creature.",
+  "notes": ""
+ },
+ {
+  "id": "bhw5ta",
+  "text": "",
+  "template": "none",
+  "referents": [],
+  "premise": "The back of a bald man's neck folds look like a face, edited with a conical straw hat and buck teeth.",
+  "notes": "No text; one-off photo edit relying on an East Asian racial caricature."
+ },
+ {
+  "id": "c5hxzq",
+  "text": "Me staying in my room for 3 days at a time / My family / My cs:go and minecraft friends",
+  "template": "Toothless dancing for Light Fury, Hiccup thumbs up",
+  "referents": [
+   "How to Train Your Dragon: The Hidden World",
+   "CS:GO",
+   "Minecraft"
+  ],
+  "premise": "Holing up in your room for days gaming bewilders your family while your gaming friends cheer you on.",
+  "notes": ""
+ },
+ {
+  "id": "c0ltin",
+  "text": "When you wake up from your winter sleep but it's not spooktober yet",
+  "template": "Spooky scary skeleton",
+  "referents": [
+   "Spooktober"
+  ],
+  "premise": "The spooky skeleton wakes up raring to go but it's not October yet.",
+  "notes": ""
+ },
+ {
+  "id": "axcsjv",
+  "text": "What if You / Wanted to go to Heaven / But god said / NEW COOL FREE B O NG",
+  "template": "What if you wanted to go to Heaven",
+  "referents": [],
+  "premise": "God's answer to wanting to go to heaven is an odd 'BONG' graphic made of New/Cool/Free labels.",
+  "notes": "Punchline image is unclear; the reference behind the 'BONG' graphic is not evident."
+ },
+ {
+  "id": "d87t84",
+  "text": "Jesus: What is hell for? / God: / It's a surprise tool that will help us later",
+  "template": "Mickey Mouse 'It's a surprise tool that will help us later'",
+  "referents": [
+   "Hell"
+  ],
+  "premise": "God cagily tells Jesus that hell is a surprise tool for later.",
+  "notes": ""
+ },
+ {
+  "id": "dqwvn8",
+  "text": "When I finally have decide to go outside / outside:",
+  "template": "animatronic figure standing in dark street under streetlights",
+  "referents": [
+   "Five Nights at Freddy's"
+  ],
+  "premise": "The one time you go outside, it's dark and a creepy animatronic is waiting.",
+  "notes": ""
+ },
+ {
+  "id": "b590p6",
+  "text": "making self aware memes adding onto the last self aware meme / Woah. / This is worthless!",
+  "template": "Gravity Falls 'This is worthless!'",
+  "referents": [
+   "self-aware memes"
+  ],
+  "premise": "Chain self-aware memes piling onto each other are worthless.",
+  "notes": ""
+ },
+ {
+  "id": "dk8w3u",
+  "text": "he's probably thinking about how potatoes look like they have eyes / man I hate my girlfriend that girl Karen seems nice",
+  "template": "I bet he's thinking about other women",
+  "referents": [
+   "Karen"
+  ],
+  "premise": "Inverting the usual format, the girlfriend assumes harmless random thoughts while he actually is thinking about another woman.",
+  "notes": ""
+ },
+ {
+  "id": "dxl2gq",
+  "text": "Cody Bondarchuk @codybondarchuk / I worked at McDonald's for two and a half years and I put 11 nuggets in almost every 10-piece I made / 7:27 PM · 11/15/19 · Twitter for iPhone / 585 Retweets 10K Likes / Me opening reddit for the first time today / u/Jbxxcy / 6.4k / 32 / Share / r/memes / Posted by u/Wipi03 • 4h • i.redd.it / You are a good man, thank you! / Cody Bondarchuk @codybondarchuk / I worked at McDonald's for two and a half years and I put 11 nuggets in almost every 10-piece I made",
+  "template": "Rainbow Six Siege operator leaping over crawling woman",
+  "referents": [
+   "Cody Bondarchuk 11 nuggets tweet",
+   "McDonald's",
+   "reposts"
+  ],
+  "premise": "The same tweet about secretly giving 11 nuggets in a 10-piece is flooding Reddit, leaping at you as soon as you open the app.",
+  "notes": "Composite of several screenshots: a meme, a Reddit post bar, and the tweet repeated."
+ },
+ {
+  "id": "dwj2gy",
+  "text": "Come closer... / I need... / I need... / To stop seeing reposts",
+  "template": "SpongeBob 'Come closer... I need...'",
+  "referents": [
+   "reposts"
+  ],
+  "premise": "SpongeBob's dying wish is to stop seeing reposts.",
+  "notes": ""
+ },
+ {
+  "id": "e4ft62",
+  "text": "MY OPINION / Woah. / REDDITT / This is worthless! / MY OPINION",
+  "template": "Gravity Falls 'This is worthless!'",
+  "referents": [
+   "Reddit"
+  ],
+  "premise": "Reddit treats your opinion as worthless.",
+  "notes": ""
+ },
+ {
+  "id": "b3tweh",
+  "text": "Mediocre action movie director: \"We need an actor to play the main charac-..\" / Dwayne Johnson:",
+  "template": "Simpsons character crashing through window",
+  "referents": [
+   "Dwayne Johnson"
+  ],
+  "premise": "Dwayne Johnson jumps at every mediocre action movie lead role before the director finishes the sentence.",
+  "notes": "Image appears cropped; only the top of the Simpsons panel is visible."
+ },
+ {
+  "id": "dqehtb",
+  "text": "even thought it No Nut Novembr you can still masterbate just cant nut",
+  "template": "dog in bow tie presenting at whiteboard",
+  "referents": [
+   "No Nut November"
+  ],
+  "premise": "A dog explains a loophole in No Nut November: masturbating is allowed as long as you don't finish.",
+  "notes": ""
+ },
+ {
+  "id": "czh5rl",
+  "text": "Area 51 guards / Area 51 memes / Area 51 memes in September",
+  "template": "Moe throws Barney out of the bar",
+  "referents": [
+   "Area 51 raid"
+  ],
+  "premise": "Area 51 memes get thrown out but come right back when the raid date in September arrives.",
+  "notes": ""
+ },
+ {
+  "id": "dw561r",
+  "text": "When the FAA is going to let you fly again: / *Happy 737-Max Noises* / u/eamon5555 / Also: BoeingGang",
+  "template": "none",
+  "referents": [
+   "Boeing 737 MAX grounding",
+   "FAA"
+  ],
+  "premise": "The grounded Boeing 737 MAX makes happy noises at the thought of being allowed to fly again.",
+  "notes": ""
+ },
+ {
+  "id": "ebn66m",
+  "text": "u/suppsh2nd / You guys always act like you're better than me!",
+  "template": "Family Guy Meg 'You guys always act like you're better than me'",
+  "referents": [
+   "Instagram",
+   "Twitter",
+   "YouTube",
+   "Reddit"
+  ],
+  "premise": "Instagram complains that Twitter, YouTube, and Reddit look down on it as posh elites.",
+  "notes": ""
+ },
+ {
+  "id": "cc678f",
+  "text": "Area 51 / Reddit / Let me in. / Reddit / LET ME IIIIIIIIIIN!",
+  "template": "Eric Andre 'Let me in'",
+  "referents": [
+   "Area 51 raid"
+  ],
+  "premise": "Reddit is desperate to break into Area 51.",
+  "notes": ""
+ },
+ {
+  "id": "cbx3jm",
+  "text": "NPCs when I kill a random hooker in GTA: / Holy shit you fucking killed her dude",
+  "template": "JonTron 'Holy shit you killed her dude'",
+  "referents": [
+   "Grand Theft Auto"
+  ],
+  "premise": "GTA bystanders react with exaggerated shock when you kill a random NPC.",
+  "notes": ""
+ },
+ {
+  "id": "da6xyc",
+  "text": "",
+  "template": "none",
+  "referents": [],
+  "premise": "A blurry photo of a long-haired person lunging toward the camera, with no evident joke on its own.",
+  "notes": "No text; blurry personal photo; joke, if any, depends on the post title."
+ },
+ {
+  "id": "e1cfi4",
+  "text": "The \"literally too angry to die\" squad",
+  "template": "The ___ squad (four-image character grid)",
+  "referents": [
+   "The Punisher",
+   "Darth Maul",
+   "Doom Slayer",
+   "Theodore Roosevelt"
+  ],
+  "premise": "Characters and people who survived through sheer rage, including Teddy Roosevelt, who gave a speech after being shot.",
+  "notes": ""
+ },
+ {
+  "id": "e8p2cv",
+  "text": "I think something went wrong with the subtitles / Night night Dipshit.",
+  "template": "none",
+  "referents": [
+   "Teletubbies"
+  ],
+  "premise": "Teletubbies subtitles render 'Dipsy' as 'Dipshit'.",
+  "notes": ""
+ },
+ {
+  "id": "cv0xta",
+  "text": "Minecraft Players: We want a cave update / Minecraft: / Can I offer you a nice Bee in this trying time?",
+  "template": "Can I offer you a nice egg in this trying time?",
+  "referents": [
+   "Minecraft Buzzy Bees update",
+   "Minecraft cave update"
+  ],
+  "premise": "Players ask for a cave update and Minecraft gives them bees instead.",
+  "notes": ""
+ },
+ {
+  "id": "bi3ihz",
+  "text": "THEM: YOU KNOW THAT'S PERMANENT RIGHT? / ME:",
+  "template": "Surprised Pikachu",
+  "referents": [],
+  "premise": "A tattoo of the Surprised Pikachu meme about being surprised the tattoo is permanent.",
+  "notes": "Photo of a real tattoo."
+ },
+ {
+  "id": "b9xq2b",
+  "text": "When you have a nightmare but you don't wanna wake up your parents / I HAVE NO MOUTH, AND I MUST SCREAM",
+  "template": "I Have No Mouth, and I Must Scream cover art",
+  "referents": [
+   "I Have No Mouth, and I Must Scream"
+  ],
+  "premise": "Having a nightmare but not wanting to wake your parents means silently wanting to scream.",
+  "notes": ""
+ },
+ {
+  "id": "aymizb",
+  "text": "Feminists: Who runs the world? / GILRS!! / ILLUMINATI: / Am I a joke to you?",
+  "template": "Triggered feminist; Am I a joke to you?",
+  "referents": [
+   "Run the World (Girls)",
+   "Illuminati"
+  ],
+  "premise": "Feminists claim girls run the world, and the Illuminati is offended at being overlooked.",
+  "notes": "Two templates stacked."
+ },
+ {
+  "id": "c956vh",
+  "text": "What about Thor? / Offworld. / Captain Marvel? / Unavailable. / Wojtal777 / Last online 9 years ago",
+  "template": "Spider-Man Far From Home 'What about Thor? Offworld'",
+  "referents": [
+   "Spider-Man: Far From Home"
+  ],
+  "premise": "The only person who could help, an obscure forum user named Wojtal777, was last online nine years ago.",
+  "notes": "'Wojtal777' appears to reference a specific forum user; the reference is not evident from the image."
+ },
+ {
+  "id": "anyce6",
+  "text": "ME / What've you got for me? / u/lisey / Idk what the fuck that is but i'll take it / inkyrickshaw.com / @inkyrickshaw",
+  "template": "inkyrickshaw 'What've you got for me?' trenchcoat dealer comic",
+  "referents": [
+   "Reddit",
+   "recursive memes"
+  ],
+  "premise": "Reddit hands you an incomprehensible recursive copy of the very comic you are in, and you take it anyway.",
+  "notes": "Recursive: the comic contains a smaller copy of itself."
+ },
+ {
+  "id": "dlmv14",
+  "text": "Me trying to sleep at 3am / Cringy things I did as a kid / R/PUMPDADDYG",
+  "template": "Moe throws Barney out of the bar",
+  "referents": [],
+  "premise": "You push away cringy childhood memories when trying to sleep but they keep coming back.",
+  "notes": ""
+ },
+ {
+  "id": "bzjmyz",
+  "text": "Nintendo Switch rot-blau für 0€* einmali... / 0 € / +9,90 € Versand / 1und1.de",
+  "template": "none",
+  "referents": [
+   "Nintendo Switch"
+  ],
+  "premise": "A German online ad offers a Nintendo Switch for 0 euros plus 9.90 euros shipping.",
+  "notes": "Not a meme: a screenshot of an ad with no caption; joke, if any, depends on the post title."
+ },
+ {
+  "id": "chuy5g",
+  "text": "My laptop is missing a key / Reddit: / Its_Mogo • 2d • Pro Normie / F / 453 / yeetthecatpng • 2d • r/memes fan / F / 117 / Stakitawoof • 2d / F / 86 / DIESEL6Turbo • 2d / F / 74",
+  "template": "none",
+  "referents": [
+   "Press F to pay respects"
+  ],
+  "premise": "The laptop's missing key is F, and Reddit reflexively responds with a chain of 'F' comments.",
+  "notes": "Photo combined with a Reddit comment screenshot."
+ },
+ {
+  "id": "ecdxvw",
+  "text": "#TEAMTREES / Help us plant 20 million trees around the globe by January 1st, 2020. / 19,659,489 TREES PLANTED / JOIN #TEAMTREES • GIFT #TEAMTREES / $1 PLANTS A TREE / We ARE this close",
+  "template": "Director Krennic 'We were this close'",
+  "referents": [
+   "#TeamTrees",
+   "Rogue One"
+  ],
+  "premise": "#TeamTrees is just short of its 20 million tree goal.",
+  "notes": ""
+ },
+ {
+  "id": "bm8p01",
+  "text": "Social instability / Having friends / Redditors / Lie back down.",
+  "template": "It's Always Sunny Dennis 'Lie back down'",
+  "referents": [],
+  "premise": "Redditors dismiss the prospect of having friends.",
+  "notes": ""
+ },
+ {
+  "id": "e2w9x0",
+  "text": "DUDE... OK... / Baby Yoda Meme / *Redditors* / *Redditors* / SRGRAFO",
+  "template": "SrGrafo 'Dude... ok' reluctant upvote comic",
+  "referents": [
+   "Baby Yoda",
+   "SrGrafo",
+   "Reddit upvotes"
+  ],
+  "premise": "Redditors reluctantly but inevitably upvote any Baby Yoda meme.",
+  "notes": ""
+ }
+]

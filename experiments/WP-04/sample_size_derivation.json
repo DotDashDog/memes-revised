@@ -1,0 +1,107 @@
+{
+  "radius": 4,
+  "w_target_proposed": 0.05,
+  "cap": 12,
+  "designs": [
+    {
+      "n_seed": 150,
+      "n_bg": 150,
+      "good": {
+        "mean_f1": 0.983,
+        "half_width_pooled": 0.0099,
+        "half_width_family_stratum": 0.014
+      },
+      "mid": {
+        "mean_f1": 0.941,
+        "half_width_pooled": 0.0201,
+        "half_width_family_stratum": 0.0297
+      },
+      "poor": {
+        "mean_f1": 0.897,
+        "half_width_pooled": 0.0292,
+        "half_width_family_stratum": 0.0441
+      },
+      "mean_n_labeled": 364.3
+    },
+    {
+      "n_seed": 250,
+      "n_bg": 250,
+      "good": {
+        "mean_f1": 0.983,
+        "half_width_pooled": 0.008,
+        "half_width_family_stratum": 0.012
+      },
+      "mid": {
+        "mean_f1": 0.94,
+        "half_width_pooled": 0.0162,
+        "half_width_family_stratum": 0.0238
+      },
+      "poor": {
+        "mean_f1": 0.89,
+        "half_width_pooled": 0.0239,
+        "half_width_family_stratum": 0.0363
+      },
+      "mean_n_labeled": 612.8
+    },
+    {
+      "n_seed": 400,
+      "n_bg": 300,
+      "good": {
+        "mean_f1": 0.981,
+        "half_width_pooled": 0.0075,
+        "half_width_family_stratum": 0.0104
+      },
+      "mid": {
+        "mean_f1": 0.94,
+        "half_width_pooled": 0.0138,
+        "half_width_family_stratum": 0.019
+      },
+      "poor": {
+        "mean_f1": 0.891,
+        "half_width_pooled": 0.0209,
+        "half_width_family_stratum": 0.0292
+      },
+      "mean_n_labeled": 861.4
+    },
+    {
+      "n_seed": 600,
+      "n_bg": 400,
+      "good": {
+        "mean_f1": 0.982,
+        "half_width_pooled": 0.0059,
+        "half_width_family_stratum": 0.0078
+      },
+      "mid": {
+        "mean_f1": 0.939,
+        "half_width_pooled": 0.0115,
+        "half_width_family_stratum": 0.0151
+      },
+      "poor": {
+        "mean_f1": 0.889,
+        "half_width_pooled": 0.017,
+        "half_width_family_stratum": 0.0234
+      },
+      "mean_n_labeled": 1221.1
+    },
+    {
+      "n_seed": 900,
+      "n_bg": 500,
+      "good": {
+        "mean_f1": 0.982,
+        "half_width_pooled": 0.005,
+        "half_width_family_stratum": 0.0065
+      },
+      "mid": {
+        "mean_f1": 0.939,
+        "half_width_pooled": 0.0096,
+        "half_width_family_stratum": 0.0124
+      },
+      "poor": {
+        "mean_f1": 0.89,
+        "half_width_pooled": 0.0146,
+        "half_width_family_stratum": 0.0187
+      },
+      "mean_n_labeled": 1701.5
+    }
+  ]
+}

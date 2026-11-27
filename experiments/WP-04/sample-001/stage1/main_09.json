@@ -1,0 +1,738 @@
+[
+ {
+  "id": "cyoabg",
+  "text": "C.E.O / How is it going, Tony? / Developer / I have this headache that comes and goes / Project manager / *Steve walks in* Hi, Tony / Developer / There it is again",
+  "template": "Tony Stark headache \"There it is again\" (Captain America: Civil War)",
+  "referents": [],
+  "premise": "A developer's recurring headache turns out to be the project manager walking in.",
+  "notes": ""
+ },
+ {
+  "id": "ed2p1c",
+  "text": "#TEAMTREES / We did it! But that doesn't mean we're done. Come back anytime you feel like planting a tree! / 20,162,720 TREES PLANTED / LET'S KEEP GOING / THANK YOU!",
+  "template": "none",
+  "referents": [
+   "Team Trees"
+  ],
+  "premise": "Celebrates the Team Trees campaign passing its 20 million tree goal.",
+  "notes": "Not a meme; a screenshot of the Team Trees website announcement."
+ },
+ {
+  "id": "ectt8p",
+  "text": "Less then 20 days till a new decade / Less then 200,000 trees left / made with mematic",
+  "template": "SpongeBob unimpressed then smugly pointing (two-panel reaction)",
+  "referents": [
+   "Team Trees",
+   "new decade 2020"
+  ],
+  "premise": "The poster is unexcited about the new decade but excited that Team Trees is close to its 20 million goal.",
+  "notes": ""
+ },
+ {
+  "id": "b52sgq",
+  "text": "<MusicMaster1000> OH MY GOD / <MusicMaster1000> THEY ADDED / <MusicMaster1000> FUCKING / <MusicMaster1000> OH MY GOD / <Honiahaka> ? / <MusicMaster1000> THEY CHANGED THE DOGS IN MINECRAFT / MusicMaster1000 was slain by Polar Bear",
+  "template": "none",
+  "referents": [
+   "Minecraft"
+  ],
+  "premise": "A Minecraft player gets so excited about the changed dogs in an update that he is killed by a polar bear mid-message.",
+  "notes": "Screenshot of Minecraft in-game chat."
+ },
+ {
+  "id": "effprw",
+  "text": "Me / 2020 / F**k",
+  "template": "Dwight Schrute startled by Angela at arcade (The Office)",
+  "referents": [
+   "new decade 2020"
+  ],
+  "premise": "The arrival of 2020 sneaks up on me and startles me.",
+  "notes": ""
+ },
+ {
+  "id": "ayk35c",
+  "text": "me listening to songs about leaving a lost lover even though I've never been in a relationship",
+  "template": "Crying Cat",
+  "referents": [],
+  "premise": "I get emotional over breakup songs despite never having been in a relationship.",
+  "notes": ""
+ },
+ {
+  "id": "c471n6",
+  "text": "CEO's / People who work for less money than they deserve",
+  "template": "Chief Wiggum riding in wagon pulled by cops on tandem bicycle (The Simpsons)",
+  "referents": [],
+  "premise": "Underpaid workers do the pedalling while CEOs ride along in comfort behind them.",
+  "notes": ""
+ },
+ {
+  "id": "bsrbzp",
+  "text": "DOGMEAT / EVERY FALLOUT PLAYER EVER",
+  "template": "dead dog photo over blurred man clutching head with red laser eyes",
+  "referents": [
+   "Fallout",
+   "Dogmeat"
+  ],
+  "premise": "Every Fallout player goes into a rage when their dog companion Dogmeat dies.",
+  "notes": ""
+ },
+ {
+  "id": "e0ktfg",
+  "text": "Any other content / Me / Hazbin hotel pilot / Any other content / Me / Hazbin hotel pilot / made with mematic",
+  "template": "Elmo choosing cocaine over fruit",
+  "referents": [
+   "Hazbin Hotel pilot"
+  ],
+  "premise": "I ignore all other content and binge the Hazbin Hotel pilot obsessively.",
+  "notes": ""
+ },
+ {
+  "id": "alum1v",
+  "text": "XXXTentacion / Loud music / Domestic violence / Pre-teens",
+  "template": "Gordon Ramsay pouring sauces into Patrick Star's mouth",
+  "referents": [
+   "XXXTentacion"
+  ],
+  "premise": "XXXTentacion's appeal to pre-teens was a mix of loud music and domestic violence.",
+  "notes": ""
+ },
+ {
+  "id": "av0l3n",
+  "text": "I LOVE AMERICA, I LOVE THE AMERICAN LIFESTYLE.",
+  "template": "woman driving with subtitle over photo of person on mobility bed at McDonald's drive-thru",
+  "referents": [],
+  "premise": "The 'American lifestyle' is shown as someone so immobile they go through a McDonald's drive-thru lying on a motorised bed.",
+  "notes": ""
+ },
+ {
+  "id": "e9636h",
+  "text": "When you still connected to the wifi and you accidentally pressed \"update and shutdown\"",
+  "template": "Jake the Dog panicking, motion-blurred (Adventure Time)",
+  "referents": [
+   "Windows update"
+  ],
+  "premise": "Accidentally choosing 'update and shutdown' while online causes panic because the update will take forever.",
+  "notes": ""
+ },
+ {
+  "id": "bneqjl",
+  "text": "AIN'T THAT A BITCH?",
+  "template": "none",
+  "referents": [
+   "Red vs. Blue"
+  ],
+  "premise": "A Red vs. Blue cast shot captioned with the line 'Ain't that a bitch?'.",
+  "notes": "Appears to be a captioned still from Red vs. Blue with no clear setup; joke unclear."
+ },
+ {
+  "id": "dim1pw",
+  "text": "r/wholesomememes Posted by u/BigRedHawk42 / Wholesome redditors / r/AskReddit / What is the best compliment you've ever received? / never received one... / I like your name it's cool / the best compliment I've ever received was from BigRedHawk42 who said my name is cool to help cure my depression / u/BigRedHawk42 / u/BigRedHawk42",
+  "template": "Obama awarding himself a medal",
+  "referents": [],
+  "premise": "A redditor reposts a thread in which he was praised for complimenting someone, effectively awarding himself.",
+  "notes": "Screenshot of a Reddit thread embedded above the template."
+ },
+ {
+  "id": "cggo75",
+  "text": "White girls / A normal conversation / I'm gonna kill myself",
+  "template": "Flex Tape (Phil Swift)",
+  "referents": [],
+  "premise": "White girls interrupt any normal conversation by saying 'I'm gonna kill myself'.",
+  "notes": ""
+ },
+ {
+  "id": "dpwy3d",
+  "text": "When it's the middle of no nut November and you still haven't nutted / DJ KHALED SUFFERING FROM SUCCESS",
+  "template": "DJ Khaled Suffering From Success",
+  "referents": [
+   "No Nut November"
+  ],
+  "premise": "Succeeding at No Nut November halfway through the month is a form of suffering.",
+  "notes": ""
+ },
+ {
+  "id": "ds16xn",
+  "text": "Ew, I stepped in shit. / Minecraft fortnite mod / made with mematic",
+  "template": "\"Ew, I stepped in shit\" comic",
+  "referents": [
+   "Minecraft versus Fortnite"
+  ],
+  "premise": "A Fortnite mod for Minecraft is something disgusting you'd step in.",
+  "notes": ""
+ },
+ {
+  "id": "c4t0tp",
+  "text": "Making a meme in Inecraft doesn't make it funny",
+  "template": "SpongeBob hand holding up paper sign, then Minecraft sponge block next to fire",
+  "referents": [
+   "Minecraft memes"
+  ],
+  "premise": "A message that Minecraft memes aren't automatically funny is answered by a Minecraft sponge burning the sign.",
+  "notes": "Template recreated in Minecraft blocks; typo 'Inecraft' in image."
+ },
+ {
+  "id": "ddna3b",
+  "text": "reddit when instagramers steal redditors memes / reddit when redditors steal redditors memes",
+  "template": "Bloons TD dart monkey popping balloon vs ignoring camo balloon",
+  "referents": [
+   "meme stealing",
+   "Instagram reposts"
+  ],
+  "premise": "Reddit attacks Instagram users who steal memes but ignores redditors who steal from each other.",
+  "notes": ""
+ },
+ {
+  "id": "ayb7uu",
+  "text": "You guys always act like..",
+  "template": "Meg Griffin 'You guys always act like you're better than me' (Family Guy)",
+  "referents": [
+   "Internet Explorer"
+  ],
+  "premise": "Internet Explorer complains that other browsers (Opera, Firefox, Chrome) act superior to it.",
+  "notes": ""
+ },
+ {
+  "id": "ckbwvl",
+  "text": "Adriatic Sea / Bosnia / Croatia / Bosnia / serbia / imgflip.com",
+  "template": "Man stopped by friend from approaching woman (bro not cool)",
+  "referents": [
+   "Bosnia's Adriatic coastline"
+  ],
+  "premise": "Croatia blocks Bosnia from reaching the Adriatic Sea, while Serbia looks on.",
+  "notes": ""
+ },
+ {
+  "id": "b8wwqj",
+  "text": "OMG THEY MADE THE FORTNITE CANNON INTO A REAL THING 😂😂😂",
+  "template": "none",
+  "referents": [
+   "Fortnite"
+  ],
+  "premise": "Mocks kids who think a real old cannon is a copy of the Fortnite cannon.",
+  "notes": "Ironic post, heavily noise-filtered / deep-fried photo of an antique cannon."
+ },
+ {
+  "id": "db04m7",
+  "text": "5 year old me: asks my mom to buy a toy / My mom: / Well yes, but actually no / made with mematic",
+  "template": "Well yes, but actually no (Pirates! pirate captain)",
+  "referents": [],
+  "premise": "A mom's answer to buying a toy is a non-committal no.",
+  "notes": ""
+ },
+ {
+  "id": "czhzsk",
+  "text": "Windows 10 when you download a virus / Windows 10 when you don't update",
+  "template": "Weak SpongeBob vs Buff SpongeBob",
+  "referents": [
+   "Windows 10 updates"
+  ],
+  "premise": "Windows 10 reacts mildly to viruses but aggressively when you don't update.",
+  "notes": ""
+ },
+ {
+  "id": "alnzti",
+  "text": "When the dog bites you, but then you bite the dog. / Modern problems require modern solutions",
+  "template": "Modern problems require modern solutions (Dave Chappelle)",
+  "referents": [],
+  "premise": "Biting a dog back is an absurd 'modern solution'.",
+  "notes": ""
+ },
+ {
+  "id": "bympns",
+  "text": "WHAT GIVES PEOPLE FEELINGS OF POWER / MONEY / STATUS / Diamond Sword Sharpness V",
+  "template": "What gives people feelings of power (bar chart)",
+  "referents": [
+   "Minecraft"
+  ],
+  "premise": "Having a Sharpness V diamond sword in Minecraft feels more powerful than money or status.",
+  "notes": ""
+ },
+ {
+  "id": "dofdw1",
+  "text": "my sister saying all her lego is gone / my brother saying he has no idea where they went / my mom wishing she never had children / me with 27 lego bricks up my butthole / bearboob",
+  "template": "Woman Yelling at Cat, four-panel version with Pauly D and crying gamer with headset",
+  "referents": [],
+  "premise": "The family argues about missing Lego while I sit calmly with the Lego hidden up my butt.",
+  "notes": ""
+ },
+ {
+  "id": "cek8d5",
+  "text": "AP NEWS / Germany introducing mandatory measles vaccination for kids / today / carefully, he's a hero",
+  "template": "\"Carefully, he's a hero\" (Spider-Man 2 train scene)",
+  "referents": [
+   "Germany mandatory measles vaccination",
+   "anti-vaxxers"
+  ],
+  "premise": "Germany mandating measles vaccines is treated as a hero being carried by the crowd.",
+  "notes": ""
+ },
+ {
+  "id": "cg3dnp",
+  "text": "MINECRAFT",
+  "template": "none",
+  "referents": [
+   "Minecraft"
+  ],
+  "premise": "Just the Minecraft logo.",
+  "notes": "Not a meme; only the Minecraft logo with no added text."
+ },
+ {
+  "id": "b4infk",
+  "text": "\"just one more video\" / me",
+  "template": "Kermit hugging bleach bottle",
+  "referents": [],
+  "premise": "Watching 'just one more video' is something I embrace despite it being bad for me.",
+  "notes": ""
+ },
+ {
+  "id": "ckrhea",
+  "text": "If you live in a building with an elevator and have a dog, probably when you take him to a walk he thinks that the elevator is a portal to a different universe",
+  "template": "Spider-Man giving presentation in auditorium",
+  "referents": [],
+  "premise": "A dog must think an elevator is a portal to another universe.",
+  "notes": ""
+ },
+ {
+  "id": "b26oo8",
+  "text": "My friend: The surprised pikachu meme is dead, leave it alone / Me: Naaaah I'll just spice it up a little / Meme: *is shit and I only receive 7 directional sticks* / Me:",
+  "template": "tiny green caterpillar with surprised face on fingertip",
+  "referents": [
+   "Surprised Pikachu"
+  ],
+  "premise": "Trying to revive the dead Surprised Pikachu meme gets few upvotes, and I act surprised, as the template itself predicts.",
+  "notes": "'7 directional sticks' presumably means 7 upvotes."
+ },
+ {
+  "id": "egrau5",
+  "text": "6-year old me / I fear no man. / But that thing... / it scares me.",
+  "template": "I fear no man... But that thing, it scares me (TF2 Heavy)",
+  "referents": [
+   "Disney's Fast Play"
+  ],
+  "premise": "As a child the Disney Fast Play DVD intro scared me.",
+  "notes": ""
+ },
+ {
+  "id": "cd3an6",
+  "text": "Time traveller: I'm from late September 2019 / Me: Will the Area 51 storm succeed? / Time traveller: Where did you think I got this time travel device from? / Me:",
+  "template": "Shaquille O'Neal surprised face (Hot Ones)",
+  "referents": [
+   "Area 51 raid"
+  ],
+  "premise": "A time traveller implies the Area 51 raid succeeded and yielded alien technology.",
+  "notes": ""
+ },
+ {
+  "id": "bqwldo",
+  "text": "Joseph_5talin 11 months ago / You ever just be watching porn, and then all of he sudden, you accidentally execute 700,000 people? / 193 Reply / V-sauce 10 months ago / Or did you? *Jake Chudnow music kicks in* / 14 Reply",
+  "template": "Pornhub comments",
+  "referents": [
+   "Joseph Stalin",
+   "Vsauce",
+   "Pornhub comments"
+  ],
+  "premise": "A 'Stalin' commenter mentions accidental mass executions and a 'Vsauce' commenter replies with his signature 'or did you?'.",
+  "notes": "Screenshot of comments with no reused image base."
+ },
+ {
+  "id": "bfhv1g",
+  "text": "caffeine caffeine caffeine / CAFFEEEEEEEINE",
+  "template": "Dolly Parton singing Jolene",
+  "referents": [
+   "Jolene"
+  ],
+  "premise": "Begging for caffeine to the tune of Dolly Parton's 'Jolene'.",
+  "notes": ""
+ },
+ {
+  "id": "ee0cjc",
+  "text": "KNOW THE WORK RULES / APPROPRIATE / *aual meme / AWWW, YOU'RE SWEET. / INAPPROPRIATE / ReDdIt CoInS iF uPvOtE / HELLO, HUMAN RESOURCES?!",
+  "template": "Know the work rules: appropriate vs inappropriate comic",
+  "referents": [
+   "Reddit coins",
+   "upvote begging"
+  ],
+  "premise": "Posting an actual meme is welcome, but begging for upvotes and Reddit coins is creepy.",
+  "notes": "'*aual meme' is likely meant as 'actual meme'."
+ },
+ {
+  "id": "cdyr09",
+  "text": "Area 51 warning: Man shot dead for trying to enter military base / NELLIS BOMBING AND GUNNERY RANGE RESTRICTED AREA NO TRESPASSING BEYOND THIS POINT WARNING PHOTOGRAPHY IS PROHIBITED / Whatever it takes",
+  "template": "Captain America \"Whatever it takes\" (Avengers: Endgame)",
+  "referents": [
+   "Area 51 raid",
+   "Avengers: Endgame"
+  ],
+  "premise": "Despite news of a man shot at Area 51, the raiders resolve to storm it anyway.",
+  "notes": ""
+ },
+ {
+  "id": "eg0icx",
+  "text": "r/PewdiepieSubmissions / Do it. You know you want to / Keep it moving / Keep it moving / r/meme / Keep it moving / When I see a meme posted 1hr ago with no upvotes / Now this looks like a job for me",
+  "template": "Eminem \"Now this looks like a job for me\"",
+  "referents": [
+   "Keep it moving repost chain",
+   "r/PewdiepieSubmissions"
+  ],
+  "premise": "A meme about upvoting unloved posts has been screenshot-reposted over and over with 'keep it moving'.",
+  "notes": "Many nested phone screenshots stacked on top of each other; some text overlapping and partly unreadable."
+ },
+ {
+  "id": "e7jtfs",
+  "text": "Me / Reddit / Bad memes / made with mematic",
+  "template": "Flex Tape (Phil Swift)",
+  "referents": [],
+  "premise": "I patch Reddit by slapping my bad memes onto it.",
+  "notes": "Meaning of the labelling is ambiguous."
+ },
+ {
+  "id": "bg1qtl",
+  "text": "Woah. / This is worthless! / u/BoredRedditor101",
+  "template": "Dipper \"This is worthless\" (Gravity Falls)",
+  "referents": [
+   "Minecraft diamond hoe"
+  ],
+  "premise": "A diamond hoe in Minecraft looks impressive but is useless.",
+  "notes": ""
+ },
+ {
+  "id": "aelu14",
+  "text": "Real life / What I learned in school",
+  "template": "Small domino toppling giant domino (man placing tiny domino)",
+  "referents": [],
+  "premise": "The tiny amount learned in school is supposed to prepare you for the enormity of real life.",
+  "notes": ""
+ },
+ {
+  "id": "c0zpns",
+  "text": "NYPD / TRUMP THE ART OF THE DEAL / stonks",
+  "template": "Spider-Man pointing at Spider-Man",
+  "referents": [
+   "Stonks",
+   "Donald Trump"
+  ],
+  "premise": "Trump's 'Art of the Deal' and the Stonks meme man are the same thing.",
+  "notes": ""
+ },
+ {
+  "id": "dl9s8s",
+  "text": "When the violin solo is so damn lit you just become a bagel",
+  "template": "medieval manuscript fiddler with man bent backwards into a circle",
+  "referents": [],
+  "premise": "A violin solo is so good it contorts a listener into a bagel shape.",
+  "notes": ""
+ },
+ {
+  "id": "cwqeoe",
+  "text": "Me scrolling through Reddit / Me 40 minutes later on Reddit / Me looking at the exact same memes as before / Me looking At the Exact same Memes As before",
+  "template": "Gru's Plan",
+  "referents": [
+   "reposts"
+  ],
+  "premise": "After scrolling Reddit for a long time you end up seeing the same memes again.",
+  "notes": ""
+ },
+ {
+  "id": "breite",
+  "text": "Skipper, / I would like to award you the highest honor I can bestow. / N word / The N word pass",
+  "template": "Carl awards Russell the Ellie badge (Up)",
+  "referents": [
+   "N-word pass"
+  ],
+  "premise": "The highest honour one can give a friend is the N-word pass.",
+  "notes": ""
+ },
+ {
+  "id": "cqf2au",
+  "text": "WESTERN WORLD: CHINA IS TYRANNY, GOVERNMENT TREAT PROTESTORS AS CRIMINALS / FRANCE",
+  "template": "Monkey Puppet looking away",
+  "referents": [
+   "Hong Kong protests",
+   "Yellow vest protests"
+  ],
+  "premise": "The West criticises China for treating protestors as criminals while France awkwardly does the same.",
+  "notes": ""
+ },
+ {
+  "id": "egkfx7",
+  "text": "[first day on the job as a drug dealer] / *giggles* / \"We don't have coke, is Pepsi ok?\" / *gets stabbed*",
+  "template": "none",
+  "referents": [],
+  "premise": "A new drug dealer makes the waiter 'is Pepsi ok' joke about coke and gets stabbed.",
+  "notes": "Text post (Tumblr/Twitter style) with a stock photo of paramedics loading an ambulance."
+ },
+ {
+  "id": "e8x1h9",
+  "text": "\"I'm a mod that's not gay\" / NOT SCIENTIFICALLY POSSIBLE! / imgflip.com",
+  "template": "Professor Membrane \"Not scientifically possible!\" (Invader Zim)",
+  "referents": [
+   "Reddit mods"
+  ],
+  "premise": "A non-gay Reddit moderator is so unlikely that it is called scientifically impossible.",
+  "notes": ""
+ },
+ {
+  "id": "dwj2gy",
+  "text": "Come closer... / I need... / I need... / To stop seeing reposts",
+  "template": "SpongeBob \"Come closer... I need...\" in crowd",
+  "referents": [
+   "reposts"
+  ],
+  "premise": "A dying plea to stop seeing reposts.",
+  "notes": ""
+ },
+ {
+  "id": "eae278",
+  "text": "ON THE WAY TO THE CLUB / ON THE WAY BACK HOME",
+  "template": "young versus older spiky-haired punk singer comparison photos",
+  "referents": [],
+  "premise": "You look fresh going to the club and wrecked coming home.",
+  "notes": "Photos appear to be Sum 41's Deryck Whibley years apart."
+ },
+ {
+  "id": "bo46if",
+  "text": "James Charles seconds after meeting his straight waiter / He's gay / YOU DON'T KNOW THAT! / I'm the only one that knows that",
+  "template": "Thanos \"I'm the only one who knows that\" (Avengers: Infinity War)",
+  "referents": [
+   "James Charles"
+  ],
+  "premise": "James Charles insists a straight man is secretly gay.",
+  "notes": ""
+ },
+ {
+  "id": "devcnx",
+  "text": "r/PewdiepieSubmissions u/ringedfalls 23h / Hmm... something's not right / The Last photo before death / 20.1k 185 Share / r/AskReddit u/Taetatannie 25m / Something's wrong, I can feel it",
+  "template": "Eminem \"Something's wrong, I can feel it\"",
+  "referents": [
+   "Last photo before death"
+  ],
+  "premise": "A creepy photo of a figure outside the window behind a man at his PC is met with Eminem's 'Something's wrong, I can feel it'.",
+  "notes": "Screenshots of Reddit posts stacked; reaction attached as a separate post."
+ },
+ {
+  "id": "ajd0po",
+  "text": "On Feb 1 we are going to flood the Fortnite subreddit with Minecraft memes",
+  "template": "Lisa Simpson presentation",
+  "referents": [
+   "Minecraft versus Fortnite"
+  ],
+  "premise": "A plan to flood the Fortnite subreddit with Minecraft memes on 1 February.",
+  "notes": ""
+ },
+ {
+  "id": "dobf42",
+  "text": "Ass / America's ass / China's ass",
+  "template": "donkey, Captain America's butt, Winnie the Pooh stuck vertical comparison",
+  "referents": [
+   "America's ass",
+   "Winnie the Pooh Xi Jinping"
+  ],
+  "premise": "Pun ladder: a donkey is an ass, Captain America's butt is America's ass, and Winnie the Pooh (Xi Jinping) is China's ass.",
+  "notes": ""
+ },
+ {
+  "id": "d6eosx",
+  "text": "when you spend hours making a crossover meme / only For It to end up dying in new. / Reality is often disappointing",
+  "template": "Thanos \"Reality is often disappointing\" (Avengers: Infinity War)",
+  "referents": [
+   "sorting by new"
+  ],
+  "premise": "After hours of making an elaborate crossover meme, it dies in the new queue.",
+  "notes": "Collage of many meme images sliced into strips and a mosaic; text built from clipped captions."
+ },
+ {
+  "id": "btte7l",
+  "text": "women / chances of them sleeping with me",
+  "template": "3D white figure inspecting with magnifying glass",
+  "referents": [],
+  "premise": "Women need a magnifying glass to see my tiny chances with them.",
+  "notes": ""
+ },
+ {
+  "id": "braua1",
+  "text": "Read 8:42 PM",
+  "template": "Emoji with sunglasses and thumbs up",
+  "referents": [],
+  "premise": "Sending the cool thumbs-up emoji and being left on read.",
+  "notes": "No caption beyond 'Read'; joke context unclear."
+ },
+ {
+  "id": "b3gqnt",
+  "text": "When you take your sleeping pill with coffee",
+  "template": "Forest Whitaker side-eye",
+  "referents": [],
+  "premise": "Taking a sleeping pill with coffee leaves you half asleep and half alert.",
+  "notes": ""
+ },
+ {
+  "id": "ajkggl",
+  "text": "\"For those who don't know\" sounds a little too informal. Not the biggest thing but we want the shit to go down the sink nice and smooth, like my father's departure from my childhood",
+  "template": "Hide the Pain Harold",
+  "referents": [],
+  "premise": "A pedantic note about wording ends with a casual reference to the writer's father abandoning him.",
+  "notes": "Text looks pasted from a comment; its original context is unclear."
+ },
+ {
+  "id": "ajp2lh",
+  "text": "Let's see what people from different part of world have to say today / I'm the only ... / You can heal yourself anyway! / SHUT UP! / 10 9 Share",
+  "template": "anime girl \"Let's see what people from different part of world have to say today\"",
+  "referents": [],
+  "premise": "Checking what people online are posting leads to despair, ending with a hanging figure.",
+  "notes": "Part of the drawn panel's text is unreadable; includes suicide imagery; screenshot of a post embedded."
+ },
+ {
+  "id": "cribna",
+  "text": "baby pigeon remains you to take a break for a bit / you may now continue",
+  "template": "baby pigeon with wings spread on paper towel",
+  "referents": [],
+  "premise": "An ugly baby pigeon interrupts your scrolling to tell you to take a break.",
+  "notes": "'remains' is presumably 'reminds'."
+ },
+ {
+  "id": "dlliib",
+  "text": "PS1 Hagrid / Have a picture of ps1 Hagrid to brighten your day",
+  "template": "PS1 Hagrid",
+  "referents": [
+   "PS1 Hagrid"
+  ],
+  "premise": "Offering the low-poly PS1 Hagrid as a mood booster.",
+  "notes": ""
+ },
+ {
+  "id": "b18718",
+  "text": "When you find out what your real life friend's Reddit username is: / Ha, Gotcha.",
+  "template": "Jordan Peterson \"Ha, Gotcha\"",
+  "referents": [],
+  "premise": "Discovering a friend's Reddit username gives you leverage over them.",
+  "notes": ""
+ },
+ {
+  "id": "dc450d",
+  "text": "Spooktober / October",
+  "template": "3D skeleton running down hallway with hanging skeleton behind",
+  "referents": [
+   "Spooktober"
+  ],
+  "premise": "Plain October and Spooktober are depicted as two different skeletons in a hallway.",
+  "notes": "Meaning of the labelling is unclear."
+ },
+ {
+  "id": "edfw9w",
+  "text": "AND THEN THEY SAID JUST UPVOTE... / YOU'LL GET FREE COINS!!!!!! / imgflip.com",
+  "template": "Michael Jordan and Scottie Pippen laughing",
+  "referents": [
+   "Reddit coins",
+   "upvote begging"
+  ],
+  "premise": "Posts promising free coins in exchange for upvotes are laughable.",
+  "notes": ""
+ },
+ {
+  "id": "e3j6ev",
+  "text": "American government / Donald trump",
+  "template": "Baby Yoda edited in at presidential bill signing with applauding officials",
+  "referents": [
+   "Baby Yoda",
+   "Donald Trump"
+  ],
+  "premise": "Government officials applaud Trump as if he were a baby doing something cute.",
+  "notes": ""
+ },
+ {
+  "id": "b542u3",
+  "text": "OH YEAH, BABY! TELL ME WHAT YOU WANT! / TALK TO ME LIKE YOU'RE A FUCKING IDIOT! / MUELLER WAS COMPROMISED BY THE RUSSIANS. / THAT'S PERFECT! / Cyanide and Happiness © Explosm.net",
+  "template": "none",
+  "referents": [
+   "Mueller investigation"
+  ],
+  "premise": "Asked to talk like an idiot in bed, a man says Mueller was compromised by the Russians.",
+  "notes": "Cyanide and Happiness comic, not a reused template."
+ },
+ {
+  "id": "ed0r4l",
+  "text": "r/Showerthoughts Posted by u/timidGO 6h / You have probably made eye contact with someone who imagined their entire life together with you and have no idea who they are / 2.0k 80 Share Award / NOT SCIENTIFICALLY POSSIBLE!",
+  "template": "Professor Membrane \"Not scientifically possible!\" (Invader Zim)",
+  "referents": [],
+  "premise": "The idea that someone imagined a life with me is scientifically impossible.",
+  "notes": "Screenshot of a Showerthoughts post overlaid on the template."
+ },
+ {
+  "id": "bdjgd0",
+  "text": "",
+  "template": "blurry close-up selfie of boy with glasses",
+  "referents": [],
+  "premise": "",
+  "notes": "No text; a blurry close-up face photo, joke unclear; possibly a reaction image."
+ },
+ {
+  "id": "broaeg",
+  "text": "Kids when they first started learning about sharing in school / Я вижу это как абсолютную победу!",
+  "template": "\"I see this as an absolute win\" (Soviet communist version)",
+  "referents": [
+   "communism memes",
+   "I see this as an absolute win"
+  ],
+  "premise": "Children learning to share are portrayed as celebrating communism.",
+  "notes": ""
+ },
+ {
+  "id": "bvnvgs",
+  "text": "",
+  "template": "close-up of man with pursed lips and red collar",
+  "referents": [],
+  "premise": "",
+  "notes": "No text; cropped close-up face only, meaning unclear."
+ },
+ {
+  "id": "c0ltin",
+  "text": "When you wake up from your winter sleep but it's not spooktober yet",
+  "template": "Spooky Scary Skeleton (angry cartoon skeleton)",
+  "referents": [
+   "Spooktober"
+  ],
+  "premise": "The spooky skeleton wakes up early and is angry it isn't October yet.",
+  "notes": ""
+ },
+ {
+  "id": "edgi07",
+  "text": "Imagine still having 4 cameras / This post was made by Android gang",
+  "template": "\"Imagine still having X\" / \"This post was made by X gang\" phone comparison",
+  "referents": [
+   "iPhone 11 Pro",
+   "Xiaomi Mi Note 10",
+   "Android versus iPhone"
+  ],
+  "premise": "Android users mock the iPhone's camera count with a phone with even more cameras.",
+  "notes": ""
+ },
+ {
+  "id": "aj30zy",
+  "text": "People who sort by new have a big peen / and that's a fact",
+  "template": "PewDiePie pointing at TV \"and that's a fact\"",
+  "referents": [
+   "sorting by new",
+   "PewDiePie"
+  ],
+  "premise": "Flattering people who sort by new, to get upvotes.",
+  "notes": ""
+ },
+ {
+  "id": "b6qjid",
+  "text": "Anything over there? / r/dankmemes / r/memes / europeans / No, we're good!",
+  "template": "masked helmeted guards, one missing ninja behind wall",
+  "referents": [
+   "European redditors"
+  ],
+  "premise": "r/memes fails to notice Europeans sneaking in and posting while Americans sleep.",
+  "notes": ""
+ },
+ {
+  "id": "dveh34",
+  "text": "Me / Moder music / Hamilton / made with mematic",
+  "template": "Elmo choosing cocaine over fruit",
+  "referents": [
+   "Hamilton"
+  ],
+  "premise": "I ignore modern music and binge Hamilton.",
+  "notes": ""
+ }
+]

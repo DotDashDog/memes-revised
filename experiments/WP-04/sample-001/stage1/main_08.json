@@ -1,0 +1,785 @@
+[
+ {
+  "id": "ctnxqk",
+  "text": "When you get back from Area 51 and you about to clap some one-eyed alien ass",
+  "template": "Futurama Fry and Leela relaxing in lounge chairs",
+  "referents": [
+   "Area 51 raid",
+   "Futurama"
+  ],
+  "premise": "After raiding Area 51 you get to have sex with an alien, here the one-eyed Leela.",
+  "notes": ""
+ },
+ {
+  "id": "eaz4b5",
+  "text": "Yeet / Xeet",
+  "template": "Yeet baby (cartoon woman throwing baby in air)",
+  "referents": [
+   "Yeet"
+  ],
+  "premise": "Swapping the Y in \"Yeet\" for an X, which looks like a tilted Y, comes with the baby-throwing image rotated sideways.",
+  "notes": ""
+ },
+ {
+  "id": "ei3oq6",
+  "text": "What are they celebrating? / they celebrate that their planet has made full circle around the sun / hahahaha lol",
+  "template": "two grey aliens talking",
+  "referents": [],
+  "premise": "Aliens observing humans find it ridiculous that we celebrate birthdays, which are just the planet completing an orbit.",
+  "notes": ""
+ },
+ {
+  "id": "edaw5y",
+  "text": "Come closer... / I need... / I need... / More people talking about Team Trees making it to 20 mil",
+  "template": "SpongeBob \"Come closer, I need...\" (dying fish whispering)",
+  "referents": [
+   "Team Trees"
+  ],
+  "premise": "The poster sarcastically begs for even more posts about Team Trees reaching its 20 million tree goal, which were flooding the subreddit.",
+  "notes": ""
+ },
+ {
+  "id": "e73phv",
+  "text": "My family and the guests / 5 year old me reciting the alphabet",
+  "template": "Baby Yoda photoshopped dabbing at presidential desk as politicians applaud",
+  "referents": [
+   "Baby Yoda"
+  ],
+  "premise": "As a small child, the family applauded you wildly for the trivial feat of reciting the alphabet.",
+  "notes": "Base photo is a White House signing ceremony with Yoda edited in place of the president."
+ },
+ {
+  "id": "ebwia8",
+  "text": "Doctor: There is heroine in 69% of your blood / Patient: Nice / Doctor: Your going to die / Patient: Nice",
+  "template": "doctor talking to patient across desk (stock photo)",
+  "referents": [
+   "69 nice"
+  ],
+  "premise": "The patient reflexively says \"nice\" to anything involving the number 69, even news that he will die.",
+  "notes": ""
+ },
+ {
+  "id": "b70l4x",
+  "text": "r/shittysuperpowers • thatgayguy881 • 11 h / You can kill furrys with a simple picture / Each Time This is Reposted, a furry dies painfully. / For The good of The world / It's fur a greater cause / Nice / Kill em",
+  "template": "none",
+  "referents": [
+   "Furries",
+   "Repost chain"
+  ],
+  "premise": "A picture claiming a furry dies each time it is reposted has been screenshotted and reposted many times over, stacking layers of reposts.",
+  "notes": "Screenshot of many overlapping layered reposts; much of the text is illegible."
+ },
+ {
+  "id": "afuu25",
+  "text": "some egg / Kylie Jenner with a networth of 800m and pathetic 18m likes",
+  "template": "Buff Tom and tiny Jerry (Tom and Jerry)",
+  "referents": [
+   "World Record Egg",
+   "Kylie Jenner"
+  ],
+  "premise": "A plain egg photo on Instagram dwarfs Kylie Jenner's most-liked post despite her wealth.",
+  "notes": ""
+ },
+ {
+  "id": "ddq1ec",
+  "text": "reddit when instagramers steal redditors memes / reddit when redditors steal redditors memes",
+  "template": "Bloons Tower Defense monkey ignoring camo balloon",
+  "referents": [
+   "Bloons Tower Defense",
+   "Reposts",
+   "Instagram meme theft"
+  ],
+  "premise": "Reddit attacks Instagram users who steal its memes but doesn't notice or care when redditors repost each other's memes.",
+  "notes": ""
+ },
+ {
+  "id": "bwng96",
+  "text": "10 year old me when I went to the bathroom without asking permission or signing the bathroom log / I'm not afraid of prison.",
+  "template": "Vsauce Michael \"I'm not afraid of prison\"",
+  "referents": [
+   "Vsauce"
+  ],
+  "premise": "As a kid, going to the bathroom without permission felt like a daring criminal act.",
+  "notes": ""
+ },
+ {
+  "id": "da6xyc",
+  "text": "",
+  "template": "blurry photo of long-haired teen leaning toward camera",
+  "referents": [],
+  "premise": "No caption; a motion-blurred candid photo of a person lunging at the camera, presumably funny on its own.",
+  "notes": "No text; the joke, if any, is not evident from the image alone."
+ },
+ {
+  "id": "d13ei9",
+  "text": "When you've been in bed for 20 years and your grandson gets a golden ticket / IGHT IMMA HEAD OUT",
+  "template": "SpongeBob \"Ight imma head out\"",
+  "referents": [
+   "Charlie and the Chocolate Factory",
+   "Grandpa Joe"
+  ],
+  "premise": "Grandpa Joe, bedridden for decades, suddenly gets up the moment Charlie finds a golden ticket.",
+  "notes": ""
+ },
+ {
+  "id": "dvpa5k",
+  "text": "OH YEAH, BABY! TELL ME WHAT YOU WANT! / TALK TO ME LIKE YOU'RE A FUCKING IDIOT! / I LIKED SONIC BETTER BEFORE IT WAS RE-DESIGNED / THAT'S PERFECT!",
+  "template": "Cyanide and Happiness comic",
+  "referents": [
+   "Sonic movie redesign"
+  ],
+  "premise": "Saying you preferred the original Sonic movie design before its redesign is the stupidest thing a person could say.",
+  "notes": "Edited Cyanide and Happiness strip."
+ },
+ {
+  "id": "cku6l4",
+  "text": "Colour Receptors / Taste buds for your eyes",
+  "template": "Spider-Man pointing at Spider-Man",
+  "referents": [],
+  "premise": "Colour receptors and \"taste buds for your eyes\" are the same thing.",
+  "notes": ""
+ },
+ {
+  "id": "clmzff",
+  "text": "When you open a room in Area 51 and find one of the boys who went missing a few years back:",
+  "template": "Green Goblin chained to bed in cell (1960s Spider-Man cartoon)",
+  "referents": [
+   "Area 51 raid"
+  ],
+  "premise": "Raiders of Area 51 find a long-missing friend captive there, rendered as the Green Goblin chained to a cot.",
+  "notes": ""
+ },
+ {
+  "id": "asg8o5",
+  "text": "KEEP SCROLLING / I WANT TO GO UP",
+  "template": "Thom Yorke standing in elevator holding shopping bags",
+  "referents": [],
+  "premise": "Scrolling down moves the image up, so the man in the elevator asks you to keep scrolling.",
+  "notes": ""
+ },
+ {
+  "id": "dmzii6",
+  "text": "TI-84 Plus / Texas Instruments",
+  "template": "none",
+  "referents": [
+   "Sans (Undertale)",
+   "TI-84 graphing calculator"
+  ],
+  "premise": "Someone graphed Sans's skull face on a TI-84 graphing calculator.",
+  "notes": "Photo of a calculator screen; no caption."
+ },
+ {
+  "id": "egl169",
+  "text": "I AM A CASHIER AND I JUST WANT TO / FUCKING DIE",
+  "template": "First World Problems (crying woman)",
+  "referents": [],
+  "premise": "Working as a cashier is miserable.",
+  "notes": ""
+ },
+ {
+  "id": "edna1c",
+  "text": "Saving up to get my other sleeve done",
+  "template": "cat with only one tabby-striped leg",
+  "referents": [],
+  "premise": "A white cat with one striped leg looks like it has a tattoo sleeve on one arm and is saving up for the other.",
+  "notes": ""
+ },
+ {
+  "id": "drvvyo",
+  "text": "296 d / Reddit age / Nice.",
+  "template": "Bob Ross \"Nice\"",
+  "referents": [
+   "Reddit account age"
+  ],
+  "premise": "The poster finds their Reddit account age of 296 days \"nice\", probably for containing 69 reversed.",
+  "notes": "Why 296 counts as nice is unclear."
+ },
+ {
+  "id": "bf7hnf",
+  "text": "Rick Astley For Prime Minister / He will NEVER / Give you Up / Let you down / Run around / Desert you / Make you cry / Say goodbye / Tell a lie / Hurt you",
+  "template": "none",
+  "referents": [
+   "Never Gonna Give You Up",
+   "Rickroll",
+   "Brexit"
+  ],
+  "premise": "A protest sign nominates Rick Astley for Prime Minister on the strength of the promises in his song lyrics.",
+  "notes": "Photo of a real-world protest sign; EU stars suggest a Brexit protest."
+ },
+ {
+  "id": "b6nh0b",
+  "text": "If sewers are underground then the Earth is full of crap",
+  "template": "husky in glasses and bow tie in front of whiteboard",
+  "referents": [],
+  "premise": "A pseudo-profound shower thought: since sewers are underground, the Earth is literally full of crap.",
+  "notes": ""
+ },
+ {
+  "id": "amir2o",
+  "text": "The four Minecraft Airpods",
+  "template": "none",
+  "referents": [
+   "AirPods",
+   "Minecraft"
+  ],
+  "premise": "The pixel-art Minecraft boots of leather, iron, diamond and gold look like AirPods, presented like the four elements.",
+  "notes": ""
+ },
+ {
+  "id": "b25fnj",
+  "text": "ME AT 6 YRS OLD / team spirit! / ME A TEENAGER / I have decided that I want to die.",
+  "template": "Vsauce Michael \"I have decided that I want to die\"",
+  "referents": [
+   "Vsauce"
+  ],
+  "premise": "You are cheerful as a child and suicidal as a teenager.",
+  "notes": ""
+ },
+ {
+  "id": "d571s4",
+  "text": "raiding area 51 / a gorilla dying at the Cincinnati zoo",
+  "template": "Domino effect (man setting up growing dominoes)",
+  "referents": [
+   "Area 51 raid",
+   "Harambe"
+  ],
+  "premise": "The death of Harambe at the Cincinnati Zoo set off a chain of escalating internet events ending in the Area 51 raid.",
+  "notes": ""
+ },
+ {
+  "id": "d6u0if",
+  "text": "What the live stream raiders promise / What the live stream raiders deliver / IGHT IMMA HEAD OUT",
+  "template": "SpongeBob \"Ight imma head out\"",
+  "referents": [
+   "Area 51 raid"
+  ],
+  "premise": "People who promised to livestream storming Area 51 talked like a special-forces team but just went home.",
+  "notes": "Top panel is a photo of armed soldiers stacking at a door."
+ },
+ {
+  "id": "bcotq6",
+  "text": "In the battle of Pelusium (525 BC) Persian soldiers used cats as shields as Egyptian religion forbade harm towards cats. / ANCIENT problems require ANCIENT solutions",
+  "template": "Dave Chappelle \"Modern problems require modern solutions\"",
+  "referents": [
+   "Battle of Pelusium"
+  ],
+  "premise": "The Persians' trick of using cats as shields against cat-revering Egyptians is an ancient version of a clever modern workaround.",
+  "notes": ""
+ },
+ {
+  "id": "e4lv26",
+  "text": "10 years old me waiting for my grandma to arrive knowing she will give me ice-cream money",
+  "template": "Baby Yoda looking up",
+  "referents": [
+   "Baby Yoda"
+  ],
+  "premise": "As a kid you eagerly awaited grandma because she would give you ice-cream money.",
+  "notes": ""
+ },
+ {
+  "id": "ealrr4",
+  "text": "Me and the boys on our way to get dem cheddar",
+  "template": "Me and the boys (flying turtles over city skyline)",
+  "referents": [
+   "Me and the boys"
+  ],
+  "premise": "A group of small turtles photoshopped flying over a city are the boys heading out to get money.",
+  "notes": ""
+ },
+ {
+  "id": "cmo78r",
+  "text": "MY FACE WHEN MOM FINDS THE POOP SOCK",
+  "template": "blobfish face",
+  "referents": [
+   "Poop sock"
+  ],
+  "premise": "The horrified face when your mom finds the sock you defecated in to avoid leaving your gaming session.",
+  "notes": ""
+ },
+ {
+  "id": "dk68uk",
+  "text": "Good Grades / Me / Loads of useless hws / Me",
+  "template": "Guy getting stopped by friend (Get Out / \"Not today\" man holding back)",
+  "referents": [],
+  "premise": "You try to chase good grades but are held back by piles of pointless homework.",
+  "notes": ""
+ },
+ {
+  "id": "cs0f4l",
+  "text": "Those 2 kids in 5th grade who sang; \"Jingle Bells. Batman Smells\": / Welcome to downtown Coolsville. / Population: us.",
+  "template": "\"Welcome to downtown Coolsville. Population: us\" (Recess kid)",
+  "referents": [
+   "Jingle Bells, Batman Smells"
+  ],
+  "premise": "The kids who sang the \"Batman smells\" parody of Jingle Bells thought they were the coolest people around.",
+  "notes": ""
+ },
+ {
+  "id": "dk8w3u",
+  "text": "he's probably thinking about how potatoes look like they have eyes / man I hate my girlfriend that girl Karen seems nice",
+  "template": "I bet he's thinking about other women",
+  "referents": [
+   "Karen"
+  ],
+  "premise": "Reversing the usual format: she assumes he's thinking something random, but he really is thinking about another woman.",
+  "notes": ""
+ },
+ {
+  "id": "bymeps",
+  "text": "02-21-89 / 19:36:45",
+  "template": "man in glasses pursing lips on 1989 TV broadcast",
+  "referents": [],
+  "premise": "No caption; a reaction-image still of a man making a skeptical pursed-lips face.",
+  "notes": "No caption text; the joke is not evident from the image alone."
+ },
+ {
+  "id": "db8w23",
+  "text": "Saving up to get my other sleeve done",
+  "template": "cat with only one tabby-striped leg",
+  "referents": [],
+  "premise": "A white cat with one striped leg looks like it has a tattoo sleeve on one arm and is saving up for the other.",
+  "notes": "Same image as edna1c."
+ },
+ {
+  "id": "efbf0g",
+  "text": "My Mom / My Dad Who Called Me A Son Of A B**** / Me",
+  "template": "two girls fighting while shirtless guy hits bong",
+  "referents": [],
+  "premise": "When dad calls you a son of a bitch he has insulted mom, so your parents fight while you relax unbothered.",
+  "notes": ""
+ },
+ {
+  "id": "bw0r8h",
+  "text": "Me and the boys / At the dog park / This is me and the boys",
+  "template": "Me and the boys (dogs at dog park)",
+  "referents": [
+   "Me and the boys"
+  ],
+  "premise": "A pack of dogs posing at a dog park is the \"me and the boys\" crew.",
+  "notes": "Appears to be a reposted screenshot with an extra caption underneath."
+ },
+ {
+  "id": "egy18t",
+  "text": "ME BLADE IS ONLY FER KILLIN' MONSTERS / WHAT ABOUT THE GUY YOU JUST KILLED 10 SECONDS AGO? / HE WAS THE WORST MONSTER OF ALL! / 10 SECONDS AGO: / I post reddit memes on Insta and don't give credit to OP or the sub / SWORDS CCCLIII / SWORDSCOMIC.COM",
+  "template": "Swords comic \"worst monster of all\"",
+  "referents": [
+   "Instagram meme theft"
+  ],
+  "premise": "Someone who reposts Reddit memes on Instagram without credit is the worst monster of all and deserved to be killed.",
+  "notes": "Edited webcomic strip."
+ },
+ {
+  "id": "byr9cu",
+  "text": "me when i was 10 pretending i was dead in the pool to see if anyone would care",
+  "template": "Goofy floating face down in pool",
+  "referents": [],
+  "premise": "As a child you floated face-down in the pool pretending to be dead to see if anyone cared.",
+  "notes": ""
+ },
+ {
+  "id": "becs6d",
+  "text": "Me: *Makes surprised Chungus meme* / Reddit: *disregards the meme* / Me:",
+  "template": "Surprised Big Chungus",
+  "referents": [
+   "Big Chungus",
+   "Surprised Pikachu"
+  ],
+  "premise": "A Surprised Pikachu-style meme using Big Chungus, being shocked that Reddit ignored a surprised Chungus meme.",
+  "notes": ""
+ },
+ {
+  "id": "czhcup",
+  "text": "When you make a meme in mematic. / say sike right now / made with mematic",
+  "template": "\"Say sike right now\" (Piranha Plant)",
+  "referents": [
+   "Mematic watermark",
+   "Say sike right now"
+  ],
+  "premise": "Memes made in the Mematic app get mocked for the app's visible watermark.",
+  "notes": ""
+ },
+ {
+  "id": "dvxap4",
+  "text": "HE'S MY WHOLE ENTIRE WORLD / He's your 4th world in the past 2 months, you creating your own universe?",
+  "template": "Woman yelling at cat",
+  "referents": [],
+  "premise": "Someone calling each new boyfriend her whole world has had so many she is building a universe.",
+  "notes": ""
+ },
+ {
+  "id": "cmc7vs",
+  "text": "I'M GOING TO BE REAL HONEST WITH YOU / YOU SHOULD HAVE WASHED THIS MOTHERFUCKER BEFORE COMING HERE",
+  "template": "gynecologist looking up from patient in stirrups",
+  "referents": [],
+  "premise": "A gynecologist bluntly tells the patient she should have washed before her appointment.",
+  "notes": ""
+ },
+ {
+  "id": "d5mvce",
+  "text": "",
+  "template": "Barney costume hugging child",
+  "referents": [
+   "Barney"
+  ],
+  "premise": "No caption; a low-quality photo of someone in a Barney costume hugging a child.",
+  "notes": "No text; the joke is not evident from the image alone, possibly a reaction image."
+ },
+ {
+  "id": "dxxbo1",
+  "text": "American English / British English / Singlish",
+  "template": "two girls fighting while shirtless guy hits bong",
+  "referents": [
+   "Singlish",
+   "American versus British English"
+  ],
+  "premise": "While American and British English fight over which is correct, Singlish relaxes on the side unbothered.",
+  "notes": ""
+ },
+ {
+  "id": "bpy5di",
+  "text": "",
+  "template": "Crying screaming cat",
+  "referents": [],
+  "premise": "No caption; a bare reaction image of a cat with teary eyes screaming.",
+  "notes": "No text; bare reaction image with no joke beyond the picture."
+ },
+ {
+  "id": "c8pb79",
+  "text": "Apple introducing swipe typing for IOS / Apple users / Android users happy that they came up with it first",
+  "template": "Toothless dancing to impress Light Fury (How to Train Your Dragon 3)",
+  "referents": [
+   "iOS 13 swipe keyboard",
+   "Apple versus Android"
+  ],
+  "premise": "Apple users are impressed by iOS swipe typing while Android users, who had it years earlier, smugly look on.",
+  "notes": ""
+ },
+ {
+  "id": "dg9djx",
+  "text": "MY MATE DAVE @ChamberlainUK / Having a smoke outside the pub last night and some dude in a wheelchair said \"Why do you smoke when you don't have to?\" I looked at him and asked \"Why the fuck are you wearing shoes?\"",
+  "template": "none",
+  "referents": [],
+  "premise": "A smoker retorts to a wheelchair user's question with the equally pointless question of why he wears shoes.",
+  "notes": "Screenshot of a tweet."
+ },
+ {
+  "id": "bpuwzp",
+  "text": "Kids with the LEGO brick separator tool / Kids with airpods",
+  "template": "Buff Tom and tiny Jerry (Tom and Jerry)",
+  "referents": [
+   "AirPods",
+   "LEGO brick separator"
+  ],
+  "premise": "As a child, owning the LEGO brick separator was a far bigger status symbol than AirPods are for kids today.",
+  "notes": ""
+ },
+ {
+  "id": "at6swa",
+  "text": "I'm thirsty / I'm hungry for wet",
+  "template": "Drake Hotline Bling",
+  "referents": [],
+  "premise": "Drake prefers the absurd phrasing \"I'm hungry for wet\" over simply saying \"I'm thirsty\".",
+  "notes": ""
+ },
+ {
+  "id": "bzjmyz",
+  "text": "Nintendo Switch rot-blau für 0€* einmali... / 0 € / +9,90 € Versand / 1und1.de",
+  "template": "none",
+  "referents": [
+   "Nintendo Switch"
+  ],
+  "premise": "A German shopping ad offers a Nintendo Switch for 0 euros (with a contract), presumably shown as a suspicious or too-good deal.",
+  "notes": "Screenshot of a shopping ad with no caption; not clearly a meme."
+ },
+ {
+  "id": "cmsbgn",
+  "text": "ah,yes. / enslaved Cardi B",
+  "template": "Meme Man \"Ah yes, enslaved ___\"",
+  "referents": [
+   "Cardi B"
+  ],
+  "premise": "A garbage bin is labeled \"enslaved Cardi B\", calling Cardi B trash.",
+  "notes": ""
+ },
+ {
+  "id": "c8qxdz",
+  "text": "DUDE... OK... / whatsapp and instagram dont work now / karma grinders / SRGRAFO",
+  "template": "SrGrafo \"Dude... OK\" reluctant upvote",
+  "referents": [
+   "2019 WhatsApp and Instagram outage",
+   "Karma farming"
+  ],
+  "premise": "Karma farmers reluctantly upvote news of the WhatsApp and Instagram outage because they can post about it.",
+  "notes": "Meaning of the edited label is somewhat unclear."
+ },
+ {
+  "id": "efom89",
+  "text": "6,044 Karma / 6m 9d Reddit age",
+  "template": "none",
+  "referents": [
+   "69 nice",
+   "Reddit account age"
+  ],
+  "premise": "The poster's Reddit account age is 6 months 9 days, i.e. 69.",
+  "notes": "Plain screenshot of a Reddit profile stat bar; no caption."
+ },
+ {
+  "id": "bt0i1o",
+  "text": "I killed a man, and you? / I make memes with mematic / made with mematic",
+  "template": "Prison \"I killed a man, and you?\" (scared big inmate)",
+  "referents": [
+   "Mematic watermark"
+  ],
+  "premise": "Making memes with the Mematic app is so shameful it scares a murderer, and this meme is itself made with Mematic.",
+  "notes": ""
+ },
+ {
+  "id": "aqbx33",
+  "text": "Teacher: What are you laughing about ? / Me: Nothing / My brain: / Juulius Caesar",
+  "template": "\"Teacher: what are you laughing at? Me: nothing. My brain:\"",
+  "referents": [
+   "Juul",
+   "Julius Caesar"
+  ],
+  "premise": "A pun image of a Juul vape wrapped in a Julius Caesar statue, \"Juulius Caesar\", is what you were secretly laughing at in class.",
+  "notes": ""
+ },
+ {
+  "id": "c9v7qc",
+  "text": "Surprise mechanics / Let's see what EA is really up to! / Loot Crates",
+  "template": "Scooby-Doo unmasking (Fred pulls off ghost mask)",
+  "referents": [
+   "EA surprise mechanics",
+   "Loot boxes"
+  ],
+  "premise": "EA's term \"surprise mechanics\" is just loot boxes under a new name.",
+  "notes": ""
+ },
+ {
+  "id": "brc1c6",
+  "text": "Breaking News: Woman gives speech about poverty in front of golden piano.",
+  "template": "none",
+  "referents": [
+   "Queen Elizabeth II Christmas speech",
+   "Golden piano"
+  ],
+  "premise": "The Queen's Christmas message mentioning hardship was filmed in front of a gold piano, an obvious hypocrisy.",
+  "notes": "Captioned news photo, not a reused template."
+ },
+ {
+  "id": "defbv2",
+  "text": "Ew, I stepped in shit. / People who repost / made with mematic",
+  "template": "\"Ew, I stepped in shit\" comic",
+  "referents": [
+   "Reposts"
+  ],
+  "premise": "People who repost memes are like the shit stuck on your shoe.",
+  "notes": ""
+ },
+ {
+  "id": "dvhddv",
+  "text": "What you see VS what she sees",
+  "template": "What you see vs what she sees",
+  "referents": [
+   "Minecraft"
+  ],
+  "premise": "A Minecraft dispenser with a lever under it looks, from below, like a tall figure with a penis.",
+  "notes": ""
+ },
+ {
+  "id": "bzwy3v",
+  "text": "you and your controller / big brother",
+  "template": "Thanos pulling Mind Stone from Vision's forehead",
+  "referents": [
+   "Avengers: Infinity War"
+  ],
+  "premise": "Big brother forcibly taking your game controller is like Thanos ripping out Vision's stone.",
+  "notes": ""
+ },
+ {
+  "id": "ckhpf9",
+  "text": "Don't say you love the anime / If you haven't read the manga / THE Communist Manifesto / KARL MARX & FREDERICK ENGELS",
+  "template": "\"Don't say you love the anime if you haven't read the manga\"",
+  "referents": [
+   "Soviet Union",
+   "The Communist Manifesto"
+  ],
+  "premise": "The Soviet Union is the anime adaptation and the Communist Manifesto is its source manga.",
+  "notes": ""
+ },
+ {
+  "id": "czqpbb",
+  "text": "you know what, i'm about to say it / i'm glad u exist and woke up today i know it's not easy sometimes but i'm proud of u",
+  "template": "kid in yellow shirt pointing, surrounded by heart emojis",
+  "referents": [
+   "Wholesome memes"
+  ],
+  "premise": "A wholesome message telling the viewer the poster is proud of them for getting through the day.",
+  "notes": ""
+ },
+ {
+  "id": "bh1kef",
+  "text": "IF THIS MEME WAS REMEMBERED / I'D BE SO HAPPY",
+  "template": "Craig \"I would be so happy\" (South Park)",
+  "referents": [
+   "Dead memes"
+  ],
+  "premise": "The poster wishes the old Craig \"I'd be so happy\" meme were still remembered.",
+  "notes": ""
+ },
+ {
+  "id": "ehev7o",
+  "text": "Girlfriend: Aw you googled how to get a girlfriend / Girlfriend: Wait you googled this 5 minutes ago / Me:",
+  "template": "Monkey puppet looking away (awkward side-eye)",
+  "referents": [],
+  "premise": "Your girlfriend notices you googled how to get a girlfriend only five minutes ago, revealing she's not your only one or not real.",
+  "notes": ""
+ },
+ {
+  "id": "darsi3",
+  "text": "Displacement / Correct answer / displacement / hmm / yes / the floor here is made out of floor",
+  "template": "\"Hmm yes, the floor here is made out of floor\" (long-neck Buzz Lightyear)",
+  "referents": [
+   "Google Forms quiz"
+  ],
+  "premise": "An online quiz marks \"Displacement\" wrong because the correct answer is \"displacement\" in lowercase, an absurdly pedantic judgment.",
+  "notes": ""
+ },
+ {
+  "id": "bjuy9x",
+  "text": "*Any minor inconvenience that happens* / Me: / Mom come pick me up I'm scared",
+  "template": "Patrick \"Mom come pick me up I'm scared\"",
+  "referents": [],
+  "premise": "The slightest inconvenience makes you want your mom to come rescue you.",
+  "notes": ""
+ },
+ {
+  "id": "e918d4",
+  "text": "u/DipstickMofo / 69 Karma / 7 d Reddit age / My profile / Reddit Coins 0 Coins / Reddit Premium Ad-free browsing",
+  "template": "none",
+  "referents": [
+   "69 nice"
+  ],
+  "premise": "The poster's account has exactly 69 karma.",
+  "notes": "Plain screenshot of a Reddit profile menu; no caption."
+ },
+ {
+  "id": "dpagkl",
+  "text": "BILLY! WHAT HAVE YOU DONE?! / u/stealthobloxykat / I send death threats to kids for playing Fortnite",
+  "template": "Billy, what have you done?",
+  "referents": [
+   "Fortnite hate"
+  ],
+  "premise": "Billy's victim turns out to have sent death threats to kids for playing Fortnite, so dad joins in.",
+  "notes": ""
+ },
+ {
+  "id": "avcgjg",
+  "text": "Phoenix (D:)",
+  "template": "none",
+  "referents": [
+   "Phoenix Wright"
+  ],
+  "premise": "A drive named Phoenix with the letter D: looks like Phoenix making the shocked D: emoticon face.",
+  "notes": "Tiny Windows drive icon screenshot; the intended reference is uncertain."
+ },
+ {
+  "id": "dw66fq",
+  "text": "Mom: Do the dishes! / Me: But mom i did them yesterda... / Mom: / I have spoken",
+  "template": "Kuiil \"I have spoken\" (The Mandalorian)",
+  "referents": [
+   "The Mandalorian"
+  ],
+  "premise": "Mom cuts off any argument about doing the dishes with a final \"I have spoken\".",
+  "notes": ""
+ },
+ {
+  "id": "e4qx6d",
+  "text": "blue light from my computer screen / me / Configuring update for Windows 10 0% complete Do not turn off your computer",
+  "template": "Todoroki bathed in blue light (My Hero Academia)",
+  "referents": [
+   "Windows 10 updates"
+  ],
+  "premise": "The blue glow on your face at night turns out to be a Windows 10 update stuck at 0%.",
+  "notes": ""
+ },
+ {
+  "id": "bzfnv8",
+  "text": "Me Making Cheesy Ass Memes / The Rest of Reddit / My Four Followers",
+  "template": "Toothless dancing to impress Light Fury (How to Train Your Dragon 3)",
+  "referents": [],
+  "premise": "Most of Reddit is unimpressed by your cheesy memes, but your four followers cheer you on.",
+  "notes": ""
+ },
+ {
+  "id": "e2m70q",
+  "text": "The urge To break NNN / Me",
+  "template": "man yanked through doorway by his hoodie in hotel hallway",
+  "referents": [
+   "No Nut November"
+  ],
+  "premise": "The urge to break No Nut November forcibly drags you in.",
+  "notes": ""
+ },
+ {
+  "id": "bprhpd",
+  "text": "SO MANY REASONS TO BE GRUMPY / SO LITTLE TIME",
+  "template": "Grumpy Cat",
+  "referents": [
+   "Grumpy Cat"
+  ],
+  "premise": "Grumpy Cat has too many reasons to be grumpy and not enough time.",
+  "notes": "Old-style image macro."
+ },
+ {
+  "id": "cfl3co",
+  "text": "na$.? @NasMaraj / I threw Doug a party and none of the other owners showed up with their dogs.",
+  "template": "Tweet with John Wick reloading gun reaction",
+  "referents": [
+   "John Wick",
+   "Doug the dog party tweet"
+  ],
+  "premise": "Nobody coming to a sad bulldog's party warrants a John Wick-style revenge, since Wick avenges dogs.",
+  "notes": "Tweet screenshot plus a reaction image."
+ },
+ {
+  "id": "ci85xd",
+  "text": "Making memes in Vegas is better than photoshop",
+  "template": "Robin from Stranger Things 3 holding blank sign",
+  "referents": [
+   "Sony Vegas",
+   "Stranger Things 3"
+  ],
+  "premise": "The poster claims making memes in the Vegas video editor beats Photoshop, shown as a meme being made in Vegas.",
+  "notes": "Screenshot of Vegas Pro editing window containing the meme."
+ },
+ {
+  "id": "bgzgc3",
+  "text": "What is this, a desktop for ants???",
+  "template": "Zoolander \"What is this, a center for ants?\"",
+  "referents": [
+   "Zoolander"
+  ],
+  "premise": "A tiny browser window on a huge desktop prompts Zoolander's line, reworded for desktops.",
+  "notes": ""
+ },
+ {
+  "id": "cguc5s",
+  "text": "You took everything from me / Tony Stark killed your parents, Ultron shot your brother, I just took a fucking stone from a worthless sex doll and I'm the one to blame?! / Stupid witch ass ungrateful thot",
+  "template": "Scarlet Witch \"You took everything from me\" / Thanos \"I don't even know who you are\" (Avengers: Endgame)",
+  "referents": [
+   "Avengers: Endgame",
+   "Scarlet Witch"
+  ],
+  "premise": "Thanos points out that others actually caused Wanda's losses and he only killed Vision, so her blame is unfair.",
+  "notes": ""
+ },
+ {
+  "id": "du26eb",
+  "text": "How To Open a Door / 709K views / GummyBear_Gamer • 2 years ago / Yay, I can finally get out of my room. I've been stuck in here since the \"how to close a door\" video. / 823 / 8",
+  "template": "none",
+  "referents": [],
+  "premise": "A commenter on a how-to-open-a-door video has been trapped since watching the how-to-close-a-door video.",
+  "notes": "Screenshot of a YouTube comment."
+ }
+]

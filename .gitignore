@@ -196,3 +196,12 @@ cython_debug/
 
 # Git worktrees created by Claude Code sessions are not project content.
 .claude/worktrees/
+
+# Clustering audit (WP-04): keep labels, scores, plots and small tables; ignore images and embeddings
+experiments/WP-04/sample-001/images/
+experiments/WP-04/sample-001/label_images/
+experiments/WP-04/sample-001/user_check/img/
+experiments/WP-04/sample-001/*.npy
+experiments/WP-04/sample-001/stage2/work_*/
+experiments/WP-04/sample-001/ocr_embed.log
+experiments/WP-04/derive_n_t4.log

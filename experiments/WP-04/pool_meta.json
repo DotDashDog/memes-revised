@@ -1,0 +1,29 @@
+{
+  "registration": "WP-04 Log 2026-07-27",
+  "window_utc": [
+    1546300800,
+    1577836800
+  ],
+  "window_label": "calendar year 2019 UTC",
+  "population_filter": "img_url non-null and non-empty; dedup by post_id",
+  "population_size": 2958995,
+  "population_rows_before_dedup": 2958995,
+  "pool_size": 50000,
+  "seed": 42,
+  "source_parquet": "/home/linus/memes-revised/dataset_saves/reddit/submissions-2025-12/submissions.parquet",
+  "pool_sha256": "810d174651034eda1c4474c5e54dcf5e802d0406fd4a7374f00dce0ca5db6fa3",
+  "drawn_at": "2026-07-27T16:28:44.565907+00:00",
+  "host_counts_top10": {
+    "i.redd.it": 46294,
+    "www.reddit.com": 2085,
+    "i.imgur.com": 683,
+    "imgur.com": 287,
+    "v.redd.it": 177,
+    "youtu.be": 123,
+    "www.youtube.com": 92,
+    "imgflip.com": 45,
+    "gagmemes.tumblr.com": 14,
+    "mamg.makeameme.org": 12
+  },
+  "n_removed_flagged": 4185
+}

@@ -1,0 +1,109 @@
+<title>Meme Pair Check</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: one pair per screen, two images side by side (stacked on phones), two questions under them, progress on top. */
+:root{--bg:#f6f7f9;--surface:#ffffff;--fg:#1b2230;--muted:#5d6779;--line:#d9dee7;--accent:#2f5fd0;--accent-fg:#ffffff;--yes:#1f7a4d;--no:#a8382f;
+--display:"Space Grotesk",system-ui,sans-serif;--body:Inter,system-ui,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#12151b;--surface:#1b2029;--fg:#e7eaf0;--muted:#9aa4b5;--line:#2e3542;--accent:#7ea2ff;--accent-fg:#0d1220;--yes:#5ac48f;--no:#ef8a80;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12151b;--surface:#1b2029;--fg:#e7eaf0;--muted:#9aa4b5;--line:#2e3542;--accent:#7ea2ff;--accent-fg:#0d1220;--yes:#5ac48f;--no:#ef8a80;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:980px;margin:0 auto;padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:16px}
+h1{font-family:var(--display);font-size:22px;font-weight:600;margin:0;text-wrap:balance}
+.lede{color:var(--muted);margin:0;max-width:65ch}
+details{color:var(--muted);max-width:70ch}
+details summary{cursor:pointer;color:var(--fg);font-weight:500}
+.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.track{flex:1;min-width:120px;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.fill{height:100%;background:var(--accent);width:0}
+.count{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;min-height:200px;min-width:0;padding:6px}
+.pair img{max-width:100%;max-height:62vh;display:block}
+@media (max-width:620px){.pair{grid-template-columns:1fr}.pair img{max-height:44vh}}
+.q{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px}
+.q p{margin:0;min-width:0;flex:1 1 260px}
+.q small{display:block;color:var(--muted)}
+.opts{display:flex;gap:8px}
+button{font:inherit;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:6px;padding:8px 16px;cursor:pointer;min-width:74px}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button[aria-pressed="true"][data-v="yes"]{background:var(--yes);border-color:var(--yes);color:var(--bg)}
+button[aria-pressed="true"][data-v="no"]{background:var(--no);border-color:var(--no);color:var(--bg)}
+button[aria-pressed="true"][data-v="unsure"]{background:var(--muted);border-color:var(--muted);color:var(--bg)}
+.nav{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.nav .primary{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.status{color:var(--muted);font-size:13px;min-height:1.5em}
+kbd{font:inherit;font-size:12px;border:1px solid var(--line);border-radius:4px;padding:0 5px;background:var(--surface)}
+</style>
+<div class="wrap">
+  <h1>Are these two the same meme?</h1>
+  <p class="lede">100 pairs of r/memes posts from 2019. Two yes/no questions per pair. Your answers are saved as you go and are compared against labels made by agents, which you are not shown. About 20 minutes; you can stop and come back.</p>
+  <details><summary>What the two questions mean</summary>
+    <p><strong>Same template</strong>: both are built on the same base image or visual format, whatever the caption says. Two Drake "no / yes" posts are the same template.</p>
+    <p><strong>Same meme by meaning</strong>: both are instances of the same specific joke, trend, event or catchphrase, so that seeing one you would say "that meme again", whatever the picture. Two "storm Area 51" jokes on different formats are the same meme. Two posts that only share a broad subject (school, gaming, Reddit) are not. Two posts on the same template with unrelated jokes are not.</p>
+    <p>Answer from your own judgment. Use "Unsure" when you could argue it either way.</p>
+    <p>Keys: <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> answer the template question (yes, no, unsure), <kbd>q</kbd> <kbd>w</kbd> <kbd>e</kbd> the meaning question, <kbd>&larr;</kbd> <kbd>&rarr;</kbd> move between pairs.</p>
+  </details>
+  <div class="bar"><div class="track"><div class="fill" id="fill"></div></div><span class="count" id="count">Loading saved answers…</span></div>
+  <div class="pair"><figure><img id="imgA" alt="First meme of the pair"></figure><figure><img id="imgB" alt="Second meme of the pair"></figure></div>
+  <div class="q"><p>Same template?<small>Same base image or format, ignoring the caption</small></p>
+    <div class="opts" id="optsT"><button id="t-yes" data-q="template" data-v="yes">Yes</button><button id="t-no" data-q="template" data-v="no">No</button><button id="t-unsure" data-q="template" data-v="unsure">Unsure</button></div></div>
+  <div class="q"><p>Same meme by meaning?<small>Same specific joke, trend or event, whatever the picture</small></p>
+    <div class="opts" id="optsF"><button id="f-yes" data-q="family" data-v="yes">Yes</button><button id="f-no" data-q="family" data-v="no">No</button><button id="f-unsure" data-q="family" data-v="unsure">Unsure</button></div></div>
+  <div class="nav"><button id="prev">Back</button><span class="status" id="status"></span><button id="next" class="primary">Next</button></div>
+</div>
+<script id="pairs" type="application/json">[{"id": "p000", "a": "beovqk", "b": "amir2o"}, {"id": "p001", "a": "bwe487", "b": "clbs7d"}, {"id": "p002", "a": "egw0u5", "b": "egy18t"}, {"id": "p003", "a": "cexjoj", "b": "cbbey1"}, {"id": "p004", "a": "bu0icr", "b": "ajd0po"}, {"id": "p005", "a": "ajkggl", "b": "c5sjr0"}, {"id": "p006", "a": "bp6udr", "b": "bzwy3v"}, {"id": "p007", "a": "dxl2gq", "b": "czhzsk"}, {"id": "p008", "a": "ddcvgd", "b": "bx4ef2"}, {"id": "p009", "a": "cdtiio", "b": "b542u3"}, {"id": "p010", "a": "bab0at", "b": "bi3ihz"}, {"id": "p011", "a": "azbtlr", "b": "aipz2m"}, {"id": "p012", "a": "cysniw", "b": "bu0icr"}, {"id": "p013", "a": "bm8p01", "b": "clo1g5"}, {"id": "p014", "a": "cok5ru", "b": "bxu2r1"}, {"id": "p015", "a": "bwe487", "b": "bvhibs"}, {"id": "p016", "a": "dkqnov", "b": "anyce6"}, {"id": "p017", "a": "db8w23", "b": "edna1c"}, {"id": "p018", "a": "ecl6e6", "b": "d4orjl"}, {"id": "p019", "a": "ea0m4v", "b": "bw0r8h"}, {"id": "p020", "a": "dk8w3u", "b": "aqncun"}, {"id": "p021", "a": "b7vk6n", "b": "d381p7"}, {"id": "p022", "a": "duvu2u", "b": "dhv0c0"}, {"id": "p023", "a": "bf7hnf", "b": "eca1gf"}, {"id": "p024", "a": "bpy5di", "b": "b7wr3b"}, {"id": "p025", "a": "cplcck", "b": "dl9s8s"}, {"id": "p026", "a": "azbtlr", "b": "aj30zy"}, {"id": "p027", "a": "d86on7", "b": "be5pxa"}, {"id": "p028", "a": "ddcgz6", "b": "bwp7am"}, {"id": "p029", "a": "ee7nqs", "b": "bab0at"}, {"id": "p030", "a": "asg8o5", "b": "akmhw3"}, {"id": "p031", "a": "aw5643", "b": "d381p7"}, {"id": "p032", "a": "dofdw1", "b": "d86on7"}, {"id": "p033", "a": "d1w7wd", "b": "cbevs8"}, {"id": "p034", "a": "e88zwf", "b": "ccryie"}, {"id": "p035", "a": "b26oo8", "b": "cqf2au"}, {"id": "p036", "a": "ckrhea", "b": "cpoxpm"}, {"id": "p037", "a": "cmsbgn", "b": "dn0y63"}, {"id": "p038", "a": "ag3hra", "b": "bnj50o"}, {"id": "p039", "a": "d0o3zv", "b": "btseyp"}, {"id": "p040", "a": "cwqeoe", "b": "cltpbo"}, {"id": "p041", "a": "afuu25", "b": "amijb8"}, {"id": "p042", "a": "bempof", "b": "beryil"}, {"id": "p043", "a": "cdu5e5", "b": "dzd9x4"}, {"id": "p044", "a": "c9g1hf", "b": "c3e0k3"}, {"id": "p045", "a": "co041n", "b": "clbs7d"}, {"id": "p046", "a": "e0yuon", "b": "b69o7i"}, {"id": "p047", "a": "c3k0kh", "b": "c5sjr0"}, {"id": "p048", "a": "cf2nl0", "b": "ds16xn"}, {"id": "p049", "a": "busxwd", "b": "com6wj"}, {"id": "p050", "a": "bo9us6", "b": "dk8w3u"}, {"id": "p051", "a": "e75jfa", "b": "ccryie"}, {"id": "p052", "a": "cexjoj", "b": "cft7tx"}, {"id": "p053", "a": "e2w9x0", "b": "dzmpuv"}, {"id": "p054", "a": "dolnm6", "b": "becs6d"}, {"id": "p055", "a": "bm5xbf", "b": "bgao93"}, {"id": "p056", "a": "cn73zz", "b": "coyyj0"}, {"id": "p057", "a": "b6vbxh", "b": "chuy5g"}, {"id": "p058", "a": "cdyr09", "b": "bnnuud"}, {"id": "p059", "a": "d66jfw", "b": "di4i9y"}, {"id": "p060", "a": "bab0at", "b": "d66jfw"}, {"id": "p061", "a": "c8r2pc", "b": "cet20f"}, {"id": "p062", "a": "chq72g", "b": "b4m8by"}, {"id": "p063", "a": "ed2p1c", "b": "dpjvoj"}, {"id": "p064", "a": "ebcf94", "b": "dw66fq"}, {"id": "p065", "a": "bat4zf", "b": "chuy5g"}, {"id": "p066", "a": "ag4kjv", "b": "dpp4jh"}, {"id": "p067", "a": "e6ks2q", "b": "eesky2"}, {"id": "p068", "a": "b5wwkb", "b": "crigrs"}, {"id": "p069", "a": "c0zpns", "b": "cku6l4"}, {"id": "p070", "a": "cx9llt", "b": "dsw57y"}, {"id": "p071", "a": "dzd9x4", "b": "e6ump2"}, {"id": "p072", "a": "dq3wrj", "b": "atri9q"}, {"id": "p073", "a": "c7ffnu", "b": "c8pb79"}, {"id": "p074", "a": "bnnuud", "b": "cw5qjp"}, {"id": "p075", "a": "cgtrjc", "b": "cjsq8v"}, {"id": "p076", "a": "cguc5s", "b": "d5ohty"}, {"id": "p077", "a": "cptt9v", "b": "dl6az7"}, {"id": "p078", "a": "bppwti", "b": "bprhpd"}, {"id": "p079", "a": "ck7z4n", "b": "azgcjc"}, {"id": "p080", "a": "ad5n4l", "b": "afuu25"}, {"id": "p081", "a": "bp6udr", "b": "e0yuon"}, {"id": "p082", "a": "bb8qta", "b": "csaqzc"}, {"id": "p083", "a": "bldhrj", "b": "bf7hnf"}, {"id": "p084", "a": "dhefwp", "b": "dhikwq"}, {"id": "p085", "a": "crtfno", "b": "cnsdd1"}, {"id": "p086", "a": "b590p6", "b": "edp8ig"}, {"id": "p087", "a": "bv2ulz", "b": "c3ki77"}, {"id": "p088", "a": "decbxj", "b": "c0ltin"}, {"id": "p089", "a": "e9tx3o", "b": "b1g3wp"}, {"id": "p090", "a": "brc1c6", "b": "ajvyir"}, {"id": "p091", "a": "czh5rl", "b": "cdtiio"}, {"id": "p092", "a": "bbi4fb", "b": "cv4z3x"}, {"id": "p093", "a": "b8jl7v", "b": "avwbqd"}, {"id": "p094", "a": "d3lpf3", "b": "dgxy4g"}, {"id": "p095", "a": "e4lv26", "b": "e2w9x0"}, {"id": "p096", "a": "cpoxpm", "b": "cf7ctz"}, {"id": "p097", "a": "c024sz", "b": "crtfno"}, {"id": "p098", "a": "dvyp6z", "b": "cok5ru"}, {"id": "p099", "a": "b52sgq", "b": "ased99"}]</script>
+<script>
+const PAIRS = JSON.parse(document.getElementById("pairs").textContent);
+const answers = {};            // pair id -> {template, family}
+let i = 0, db = null, canSave = false, saving = Promise.resolve();
+const $ = id => document.getElementById(id);
+function done(id){ const a = answers[id]; return !!(a && a.template && a.family); }
+function render(){
+  const p = PAIRS[i];
+  $("imgA").src = "img/" + p.a + ".jpg"; $("imgB").src = "img/" + p.b + ".jpg";
+  const a = answers[p.id] || {};
+  document.querySelectorAll("button[data-q]").forEach(b => b.setAttribute("aria-pressed", String(a[b.dataset.q] === b.dataset.v)));
+  const n = PAIRS.filter(x => done(x.id)).length;
+  $("fill").style.width = (100 * n / PAIRS.length) + "%";
+  $("count").textContent = "Pair " + (i + 1) + " of " + PAIRS.length + " · " + n + " answered";
+  $("prev").disabled = i === 0;
+  $("next").textContent = i === PAIRS.length - 1 ? "Done" : "Next";
+  if (n === PAIRS.length) $("status").textContent = "All 100 answered and saved. Thank you, that is everything.";
+}
+function answer(q, v){
+  const p = PAIRS[i];
+  const a = answers[p.id] = Object.assign({}, answers[p.id], {[q]: v});
+  render();
+  if (!canSave){ $("status").textContent = "Not saved: open this page signed in to claude.ai to record answers."; return; }
+  const body = {a: p.a, b: p.b, template: a.template || null, family: a.family || null};
+  saving = saving.then(() => db.doc("answers/" + p.id).set(body)).then(
+    () => { if (PAIRS.filter(x => done(x.id)).length < PAIRS.length) $("status").textContent = "Saved."; },
+    e => { $("status").textContent = "Could not save this answer (" + (e && e.code || "error") + "). Try answering again."; });
+  if (done(p.id) && i < PAIRS.length - 1) setTimeout(() => { if (PAIRS[i].id === p.id){ i++; render(); } }, 250);
+}
+document.querySelectorAll("button[data-q]").forEach(b => b.addEventListener("click", () => answer(b.dataset.q, b.dataset.v)));
+$("prev").addEventListener("click", () => { if (i > 0){ i--; render(); } });
+$("next").addEventListener("click", () => { if (i < PAIRS.length - 1){ i++; render(); } });
+document.addEventListener("keydown", e => {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const m = {"1":["template","yes"],"2":["template","no"],"3":["template","unsure"],"q":["family","yes"],"w":["family","no"],"e":["family","unsure"]}[e.key.toLowerCase()];
+  if (m) answer(m[0], m[1]);
+  else if (e.key === "ArrowLeft") $("prev").click();
+  else if (e.key === "ArrowRight") $("next").click();
+});
+render();
+(async () => {
+  const timer = setTimeout(() => { $("status").textContent = "Saved answers have not loaded yet; you can start, earlier answers will appear when they arrive."; }, 10000);
+  try {
+    db = await (window.claude && window.claude.use ? window.claude.use("db") : null);
+    if (!db){ clearTimeout(timer); $("status").textContent = "Answers cannot be saved in this view. Open the page signed in to claude.ai."; return; }
+    const snap = await db.collection("answers").limit(200).get();
+    snap.docs.forEach(d => { const x = d.data() || {}; if (!answers[d.id]) answers[d.id] = {template: x.template || undefined, family: x.family || undefined}; });
+    canSave = true; clearTimeout(timer); $("status").textContent = "";
+    const first = PAIRS.findIndex(p => !done(p.id));
+    i = first < 0 ? PAIRS.length - 1 : first;
+    render();
+  } catch (e) { clearTimeout(timer); $("status").textContent = "Saved answers could not be loaded (" + (e && e.code || "error") + "). Reload to try again."; }
+})();
+</script>

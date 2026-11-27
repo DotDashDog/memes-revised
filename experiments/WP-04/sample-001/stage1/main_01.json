@@ -1,0 +1,790 @@
+[
+ {
+  "id": "brnv5s",
+  "text": "school makes me / school makes me depressed / school makes me suicidal / school makes me anxious / school makes me cry / school makes me feel stupid / school makes me sick / school makes me so tired / school makes me sad / school makes me tired / school makes me so stressed / The school system / Well boys, we did it. the next generation is no more.",
+  "template": "Well boys, we did it, X is no more (Madagascar penguins)",
+  "referents": [
+   "Google autocomplete"
+  ],
+  "premise": "Google autocomplete suggestions show school makes kids miserable, so the school system celebrates having ruined the next generation.",
+  "notes": "Two-part image: Google search screenshot on top, penguins meme below."
+ },
+ {
+  "id": "e712v5",
+  "text": "When you find out everyone in the class passes with an A if a student dies during an exam / Hey Ferb, I know what we're gonna do today!",
+  "template": "Hey Ferb, I know what we're gonna do today (cursed 3D Phineas)",
+  "referents": [
+   "Exam death automatic A myth"
+  ],
+  "premise": "Learning the rumour that a student dying in an exam gives everyone an A inspires a dark plan.",
+  "notes": "Base image is a stock-photo-watermarked 3D model of Phineas."
+ },
+ {
+  "id": "dolnm6",
+  "text": "quiet kid:stay home tommorow / Me:can I join in on the fun? / quiet kid:",
+  "template": "Surprised Pikachu",
+  "referents": [
+   "Quiet kid school shooter joke"
+  ],
+  "premise": "Asking the quiet kid, who warned you to stay home, if you can join in on the implied school shooting shocks him.",
+  "notes": ""
+ },
+ {
+  "id": "bvha4e",
+  "text": "WILL YOU PRESS THE BUTTON? / You're offered $50,000 / but / The person you hate gets $100,000 / Yes why wouldn't I want $150,000?",
+  "template": "Will you press the button",
+  "referents": [],
+  "premise": "Someone answers the button dilemma implying they are the person they hate, so they'd get both sums.",
+  "notes": "Includes a screenshot of a tweet reply with the account redacted."
+ },
+ {
+  "id": "dsc7kc",
+  "text": "When you find a question on the test the teacher told you won't be coming. / made with mematic",
+  "template": "Blurry Kermit grimacing",
+  "referents": [],
+  "premise": "Seeing a test question the teacher promised would not appear causes panicked disbelief.",
+  "notes": ""
+ },
+ {
+  "id": "beoo0d",
+  "text": "Me drunk at 3 a.m. / Shredded cheese out of the bag / My dog hoping I drop some",
+  "template": "Jon Snow and Daenerys kissing while Drogon stares",
+  "referents": [
+   "Game of Thrones season 8"
+  ],
+  "premise": "While you eat shredded cheese straight from the bag drunk at 3 a.m., your dog stares hoping you drop some, like Drogon watching Jon and Daenerys.",
+  "notes": ""
+ },
+ {
+  "id": "b10pbc",
+  "text": "r/dankmemes / Posted by u/Quitypop • 2h • i.redd.it / Hard hitting math / Redditors: I got 1500 upvotes so I must have 1500 karma / Reddit: / BEST I CAN DO IS 20 KARMA / r/memes / Posted by u/marekjpg • 5h • i.redd.it / Wakanda forever",
+  "template": "Pawn Stars Best I can do",
+  "referents": [
+   "Reddit karma"
+  ],
+  "premise": "Reddit awards far less karma than the number of upvotes a post receives.",
+  "notes": "Phone screenshot of a Reddit feed showing an r/dankmemes post containing the meme."
+ },
+ {
+  "id": "af95cv",
+  "text": "Youtube: You can skip this ad in 5 seconds. / Me: *blocks the ad in 3 sec and feels like a boss* / SAY IT AGAIN, SAY IT",
+  "template": "Samuel L. Jackson Pulp Fiction Say what again",
+  "referents": [
+   "YouTube ads"
+  ],
+  "premise": "Getting rid of a YouTube ad faster than the skip countdown feels like defiantly daring YouTube to repeat itself.",
+  "notes": ""
+ },
+ {
+  "id": "eaur74",
+  "text": "When you're in the middle of mercilessly defending the freedom of the Gorgonites, but there's always time for kitties.",
+  "template": "Small Soldiers Archer nuzzling a cat",
+  "referents": [
+   "Small Soldiers"
+  ],
+  "premise": "Even Archer, the warrior leader of the Gorgonites, stops fighting to nuzzle a cat.",
+  "notes": ""
+ },
+ {
+  "id": "aje41h",
+  "text": "when you're from Alabama and your sister catches you with a non relative / This.. / has turned into a difficult situation.",
+  "template": "Kizuna AI This has turned into a difficult situation",
+  "referents": [
+   "Alabama incest jokes"
+  ],
+  "premise": "In stereotypical Alabama, being caught by your sister with someone who isn't a relative is the awkward betrayal.",
+  "notes": ""
+ },
+ {
+  "id": "eccfyg",
+  "text": "14 yrs old girls: *say they're depressed* / Everyone: Omg are you okay / 14 yr old boys: damn life's hard sometimes / Everyone: / NOBODY GIVES A SHIT / made with mematic",
+  "template": "Imagination SpongeBob",
+  "referents": [],
+  "premise": "Teenage girls get sympathy for being sad while teenage boys get none.",
+  "notes": ""
+ },
+ {
+  "id": "c3k0kh",
+  "text": "me: *wins lottery* / my dad that has been missing for 20 years:",
+  "template": "Stalin as Warhammer 40k primarch in red armour",
+  "referents": [
+   "Absent father jokes",
+   "Communism jokes"
+  ],
+  "premise": "Your long-missing father reappears after your lottery win, ready to claim it as our money like a communist.",
+  "notes": ""
+ },
+ {
+  "id": "cckrsv",
+  "text": "Me trying out that sweet alien tech after storming Area 51 / National Guard / Area 51 personnel / U.s special forces",
+  "template": "Person in white marshmallow-like suit attacking kids in library",
+  "referents": [
+   "Area 51 raid"
+  ],
+  "premise": "After the Area 51 raid you would use captured alien tech to beat up the military and staff.",
+  "notes": ""
+ },
+ {
+  "id": "d6rhpx",
+  "text": "Look what I found at Area 51 boys! Ain't nobody messing with me anymore",
+  "template": "Man in blue suit with arms spread in studio",
+  "referents": [
+   "Area 51 raid"
+  ],
+  "premise": "Someone shows off a hammer weapon found at Area 51, though it is flying toward his head.",
+  "notes": "Hammer appears edited in; unclear whether it references Mjolnir."
+ },
+ {
+  "id": "bj942t",
+  "text": "That feeling you get when you can finally post on r/memes / \"Sweet, sweet, sweet victory! Yeah!\"",
+  "template": "SpongeBob Sweet Victory",
+  "referents": [
+   "r/memes posting restrictions"
+  ],
+  "premise": "Finally being allowed to post on r/memes feels like a triumphant victory.",
+  "notes": ""
+ },
+ {
+  "id": "eei9vv",
+  "text": "When someone asks you how your night went / Didn't get much sleep, but I did get a few hours of anxiety in",
+  "template": "Michael Scott The Office subtitled screenshot",
+  "referents": [],
+  "premise": "Instead of sleeping you spent the night anxious.",
+  "notes": ""
+ },
+ {
+  "id": "cexjoj",
+  "text": "My reaction to all the Area 51 posts. / I'M SKEPTICAL THAT YOU COULD, YET INTRIGUED THAT YOU MAY.",
+  "template": "Dale Gribble skeptical yet intrigued",
+  "referents": [
+   "Area 51 raid"
+  ],
+  "premise": "The flood of Area 51 raid posts leaves you doubtful it will happen but curious if it does.",
+  "notes": ""
+ },
+ {
+  "id": "d7q9ac",
+  "text": "Core corruption: 100% / Please replace core with uncorrupted backup / *jumps affirmatively* / Are they talkin about me? / I think they're talkin about me",
+  "template": "Wheatley Are they talking about me",
+  "referents": [
+   "Portal 2"
+  ],
+  "premise": "Wheatley eagerly assumes he is the uncorrupted backup core being called for, though he is anything but.",
+  "notes": ""
+ },
+ {
+  "id": "dcj7n4",
+  "text": "Girl's: Boys never drop hints! / Boys hints: / I find you highly attractive but im too nervous to tell you so i made this meme",
+  "template": "Plankton holding heart valentine",
+  "referents": [],
+  "premise": "Boys hint at their feelings by sending memes that literally say they like you.",
+  "notes": ""
+ },
+ {
+  "id": "cljx5d",
+  "text": "Nobody: / Absolutely nobody: / My sexuality: / It's a 50/50 thing / Chris Higgins",
+  "template": "Nobody: / Absolutely nobody: format",
+  "referents": [
+   "Bisexuality"
+  ],
+  "premise": "A book titled It's a 50/50 thing describes being bisexual.",
+  "notes": "Image is a photo of a real book cover."
+ },
+ {
+  "id": "ecok3f",
+  "text": "House of Representatives impeaches President Donald Trump / By Jeremy Herb and Manu Raju, CNN / Updated 10:06 PM ET, Wed December 18, 2019 / Well boys, we did it. / Evil is no more",
+  "template": "Well boys, we did it, X is no more (Madagascar penguins)",
+  "referents": [
+   "Trump impeachment"
+  ],
+  "premise": "The House impeaching Trump is celebrated as having defeated evil.",
+  "notes": "Two-part image: CNN headline screenshot on top, penguins meme below."
+ },
+ {
+  "id": "bejf6c",
+  "text": "Just found out about racism...damn that shit sucks...",
+  "template": "Teen boy in heart T-shirt posing in front of red car",
+  "referents": [],
+  "premise": "A vapid-looking teen solemnly announces he just discovered racism exists.",
+  "notes": ""
+ },
+ {
+  "id": "cls72p",
+  "text": "RIP / When you try to revive a dead meme",
+  "template": "Hooded figure attaching jumper cables to a grave",
+  "referents": [
+   "Dead memes"
+  ],
+  "premise": "Trying to revive a dead meme is like jump-starting a corpse in a grave.",
+  "notes": ""
+ },
+ {
+  "id": "cbevs8",
+  "text": "Flying Dutchman :\"I give you 3 wishes\" / Patrick :\"No give us 5 wishes\" / Flying Dutchman :\"Ok I'll give you 5 wishes\" / Patrick :\"No give us 3 wishes,take it or leave it\" / Flying Dutchman : / WE HAD A DEAL!!",
+  "template": "George Costanza We had a deal",
+  "referents": [
+   "SpongeBob Shanghaied episode"
+  ],
+  "premise": "Patrick haggles the Flying Dutchman down to fewer wishes, leaving the Dutchman exasperated.",
+  "notes": ""
+ },
+ {
+  "id": "aqjsfz",
+  "text": "IF YOU'RE SAD ABOUT BEING ALONE ON VALENTINE'S DAY, JUST REMEMBER... / NO ONE LOVES YOU ON THE OTHER DAYS OF THE YEAR EITHER",
+  "template": "Grumpy Cat",
+  "referents": [
+   "Valentine's Day"
+  ],
+  "premise": "Being alone on Valentine's Day is no different from being unloved every other day.",
+  "notes": ""
+ },
+ {
+  "id": "cjyen7",
+  "text": "carefully hes a hero / r/FortNiteBR / Posted by u/taweryawer / Season X Teaser #3! / FORTNITE / BEST COMMENTS / diggerliger69 • Now / Fortnite bad minecraft good / Add a comment / made with mematic",
+  "template": "Carefully, he's a hero",
+  "referents": [
+   "Minecraft versus Fortnite",
+   "Fortnite Season X"
+  ],
+  "premise": "Someone commenting Fortnite bad minecraft good on a Fortnite subreddit post is hailed as a hero.",
+  "notes": "Screenshot of a Reddit post and comment."
+ },
+ {
+  "id": "czi3pd",
+  "text": "abcdefghijklmnopqrstuvwxyz / zyxwvutsrqponmlkjihgfedcba / 14 year old girls:",
+  "template": "Crying cat",
+  "referents": [],
+  "premise": "Highlighted letters in the alphabet spell out boys lie, which makes 14-year-old girls cry.",
+  "notes": "Hidden message: highlighted letters spell 'boy' and 'lie'."
+ },
+ {
+  "id": "dw561r",
+  "text": "When the FAA is going to let you fly again: / *Happy 737-Max Noises* / u/eamon5555 / Also: BoeingGang",
+  "template": "none",
+  "referents": [
+   "Boeing 737 MAX grounding"
+  ],
+  "premise": "The grounded Boeing 737 MAX is imagined as happy at the prospect of being allowed to fly again.",
+  "notes": ""
+ },
+ {
+  "id": "ajrzvx",
+  "text": "",
+  "template": "Smiling anime girl next to greyscale close-up with drawn blue tear",
+  "referents": [],
+  "premise": "An anime girl appears happy on the surface but is crying inside.",
+  "notes": "No text; meaning unclear."
+ },
+ {
+  "id": "d5twwf",
+  "text": "When the teacher asks you to grade yourself",
+  "template": "North Korean generals covered in medals",
+  "referents": [],
+  "premise": "Given the chance to grade yourself, you award yourself absurdly excessive honours.",
+  "notes": ""
+ },
+ {
+  "id": "ait6je",
+  "text": "What if You / But Youtube said / You Tube / Wanted to watch a youtube video / Hey its Rosalia,check out my new album El Mal Querer in the youtube music app",
+  "template": "What if you wanted to go to Heaven, but God said",
+  "referents": [
+   "YouTube Music ads",
+   "Rosalia El Mal Querer"
+  ],
+  "premise": "Trying to watch a YouTube video gets interrupted by the ubiquitous Rosalia YouTube Music ad.",
+  "notes": ""
+ },
+ {
+  "id": "e8p2cv",
+  "text": "I think something went wrong with the subtitles / Night night Dipshit.",
+  "template": "none",
+  "referents": [
+   "Teletubbies"
+  ],
+  "premise": "Teletubbies subtitles render Night night Dipsy as Night night Dipshit.",
+  "notes": "Screenshot of a TV broadcast with subtitles."
+ },
+ {
+  "id": "b6j55p",
+  "text": "Me: how do you say black in Spanish? / Duolingo: / negro, that's all you had to say / Oui oui",
+  "template": "Samuel L. Jackson on phone, that's all you had to say",
+  "referents": [
+   "Duolingo"
+  ],
+  "premise": "Asking how to say black in Spanish gets the answer negro, echoing the Samuel L. Jackson line, followed by unrelated French.",
+  "notes": "The first word of the caption is covered by a red scribble."
+ },
+ {
+  "id": "agkwyj",
+  "text": "China / Some leaves in hot water / Britain",
+  "template": "Man opening glowing box, onlooker amazed",
+  "referents": [
+   "British tea"
+  ],
+  "premise": "Britain is awestruck by China offering it tea, which is just leaves in hot water.",
+  "notes": ""
+ },
+ {
+  "id": "clvv6c",
+  "text": "ah,yes. / enslaved",
+  "template": "Ah yes, Meme Man",
+  "referents": [],
+  "premise": "A racist ah-yes pun labels a smiling Black man's face as enslaved.",
+  "notes": "Offensive racial joke; the wordplay is unclear."
+ },
+ {
+  "id": "cv1dl7",
+  "text": "TikTok / BIIIIII",
+  "template": "Dad unplugging smiling kid's life support",
+  "referents": [
+   "TikTok"
+  ],
+  "premise": "A parent tearfully pulls the plug on a child who says TikTok.",
+  "notes": ""
+ },
+ {
+  "id": "afn7ti",
+  "text": "The look you make when Karen takes the kids / u/FrostbitSeven",
+  "template": "Venom with googly eyes",
+  "referents": [
+   "Karen took the kids"
+  ],
+  "premise": "The divorced-man meme about Karen taking the kids is applied to a goofy googly-eyed Venom.",
+  "notes": ""
+ },
+ {
+  "id": "di4i9y",
+  "text": "r/Area_51_Raid_Prep • u/tuteret • 10h / Shit / r/dankmemes • AjLajkMims • 1 m / Shit / Shit / u/iiawesomeperson • Now / Shit / r/ontheledgeandshit • 2d • u/Titancctk / Shit / Shit / r/EmKay • u/EmGeoMedia • 4h / Shit / This photo is cursed! As soon as you see this you only have 1 minute repost or he will come after you and kill you with in a week.",
+  "template": "none",
+  "referents": [
+   "Cursed image chain posts",
+   "Area 51 raid"
+  ],
+  "premise": "A chain-letter cursed image has been reposted through so many nested screenshots titled Shit that it is barely visible.",
+  "notes": "Many nested phone screenshots; small text partly unreadable; not a conventional meme."
+ },
+ {
+  "id": "ed0u5x",
+  "text": "#TEAMTREES / THANK YOU! / We did it! But that doesn't mean we're done. Come back anytime you feel like planting a tree! / 20,150,595 TREES PLANTED / LET'S KEEP GOING",
+  "template": "none",
+  "referents": [
+   "Team Trees"
+  ],
+  "premise": "The Team Trees campaign announces it passed its 20 million tree goal.",
+  "notes": "Not a meme; a screenshot of the Team Trees website."
+ },
+ {
+  "id": "denk92",
+  "text": "you ready for spooktober? / spooky memes aren't even funny / wtf you mean? this is tradition! we do this every year! / they're just used by karma whores on Reddit! / I WILL STEAL YOUR FUCKING CALCIUM!",
+  "template": "American Chopper argument",
+  "referents": [
+   "Spooktober",
+   "Reddit karma",
+   "Spooky skeleton memes"
+  ],
+  "premise": "An argument over whether spooky October memes are karma-farming ends with a skeleton-meme threat to steal calcium.",
+  "notes": ""
+ },
+ {
+  "id": "cmaq7s",
+  "text": "ah,yes. / entitled / idiots",
+  "template": "Ah yes, Meme Man",
+  "referents": [
+   "Reddit versus Instagram"
+  ],
+  "premise": "Meme Man is labelled entitled and the Instagram logo idiots, calling Instagram users idiots.",
+  "notes": ""
+ },
+ {
+  "id": "dn1mj8",
+  "text": "#MICHA / MOROCCAN SARCASTIC TROLLS",
+  "template": "Three men sipping tea on a sofa",
+  "referents": [],
+  "premise": "Three men calmly sip tea, a reaction image of watching drama unfold.",
+  "notes": "No caption; appears to be a reaction image from a Moroccan meme page with logos; joke unclear."
+ },
+ {
+  "id": "bpqap6",
+  "text": "Minecraft but Every Block Is Misaligned / Phoenix SC / 221K views · 2 days ago / 4:09 / *confused screaming*",
+  "template": "Confused screaming flower",
+  "referents": [
+   "Phoenix SC Minecraft but videos"
+  ],
+  "premise": "A YouTube video of Minecraft with misaligned blocks provokes confused screaming.",
+  "notes": ""
+ },
+ {
+  "id": "dqehtb",
+  "text": "even thought it No Nut Novembr you can still masterbate just cant nut",
+  "template": "Dog in bow tie sitting beside whiteboard",
+  "referents": [
+   "No Nut November"
+  ],
+  "premise": "A loophole: No Nut November only forbids finishing, not masturbating.",
+  "notes": ""
+ },
+ {
+  "id": "co310m",
+  "text": "",
+  "template": "none",
+  "referents": [
+   "Reddit upvotes"
+  ],
+  "premise": "A row of painted concrete blocks with upward arrows looks like a line of Reddit upvote buttons.",
+  "notes": "No text; photo of real objects; joke inferred."
+ },
+ {
+  "id": "bvn3ak",
+  "text": "Instagram normies stealing from reddit / reddit gods stealing from Instagram",
+  "template": "Expanding brain",
+  "referents": [
+   "Reddit versus Instagram",
+   "Meme stealing"
+  ],
+  "premise": "Redditors complain about Instagram stealing memes but stealing from Instagram is presented as the enlightened move.",
+  "notes": ""
+ },
+ {
+  "id": "d2e4rf",
+  "text": "AHOY / Sherlock Holmes is the most powerful man, 'cause he is Iron-man and Doctor Strange / Dr. John Watson is that FBI agent from Black Panther, so they with Sherlock Holmes, they are powerful af / My FBI agent / INTERESTING.",
+  "template": "iCarly Interesting",
+  "referents": [
+   "FBI agent watching you meme",
+   "Marvel Cinematic Universe",
+   "Sherlock Holmes"
+  ],
+  "premise": "Your FBI agent is intrigued by your theories about Sherlock Holmes actors also playing Marvel heroes.",
+  "notes": "Combines Stranger Things Robin holding sign and Spider-Man presentation templates above the iCarly panel."
+ },
+ {
+  "id": "dzt5vb",
+  "text": "Me / I'm going to jump! / College / Do a flip!",
+  "template": "The Office I'm going to jump, Do a flip",
+  "referents": [],
+  "premise": "When you are suicidal, college just demands more of you.",
+  "notes": ""
+ },
+ {
+  "id": "e88zwf",
+  "text": "DUDE... OK... / literaly anithing on r / memes / the redditors / SRGRAFO",
+  "template": "SrGrafo reluctant upvote",
+  "referents": [
+   "Reddit upvotes"
+  ],
+  "premise": "Redditors reluctantly upvote anything posted on r/memes.",
+  "notes": ""
+ },
+ {
+  "id": "al2u8w",
+  "text": "HIDDEN / DETECTED / Made by reddit Not for instagram normies / White person killing another person / Refugee/black person killing another person",
+  "template": "Hidden / Detected stealth indicator",
+  "referents": [
+   "Media bias"
+  ],
+  "premise": "Killings by white people go unnoticed while those by refugees or Black people are highlighted.",
+  "notes": ""
+ },
+ {
+  "id": "e9lgnp",
+  "text": "THIS IS / DE WAE",
+  "template": "Ugandan Knuckles",
+  "referents": [
+   "The Mandalorian",
+   "This is the way",
+   "Do you know de wae"
+  ],
+  "premise": "Ugandan Knuckles in a Mandalorian helmet merges This is the way with Do you know de wae.",
+  "notes": ""
+ },
+ {
+  "id": "d75m0c",
+  "text": "",
+  "template": "Mike Wazowski Sulley face swap",
+  "referents": [],
+  "premise": "A group of kids with their faces covered by Mike Wazowski Sulley face swaps.",
+  "notes": "No text; photo of real children with faces covered by edits."
+ },
+ {
+  "id": "bnnuud",
+  "text": "You suck times infinity / You suck times infinity plus one",
+  "template": "Thanos and Iron Man snap (Avengers Endgame)",
+  "referents": [
+   "Avengers Endgame"
+  ],
+  "premise": "The climactic Endgame snaps are rewritten as a childish insult contest.",
+  "notes": ""
+ },
+ {
+  "id": "dfugib",
+  "text": "Amber Guyger: *opens door* / Botham Jean:",
+  "template": "Man in green shirt eating at red table, looking up",
+  "referents": [
+   "Botham Jean shooting"
+  ],
+  "premise": "A dark joke about Botham Jean eating in his own apartment when Amber Guyger entered and shot him.",
+  "notes": ""
+ },
+ {
+  "id": "cg6lpx",
+  "text": "Tony Perkins, the leader of an anti-LGBT hate group, who claimed that God uses natural disasters such as hurricanes and flooding to punish homosexuals and their supporters, had his own house destroyed by a flood. / I dunno man, seems kinda gay to me",
+  "template": "Pink Guy I dunno man, seems kinda gay to me",
+  "referents": [
+   "Tony Perkins flood"
+  ],
+  "premise": "By his own logic, the anti-gay preacher whose house flooded must be gay.",
+  "notes": ""
+ },
+ {
+  "id": "d5ke5k",
+  "text": "THIS SUB MAKES ME WISH THERE WAS A HOLOCAUST FOR REDDITORS",
+  "template": "none",
+  "referents": [
+   "The Holocaust"
+  ],
+  "premise": "An exasperated user says the subreddit is so bad Redditors deserve extermination.",
+  "notes": "Plain text only on white background; offensive."
+ },
+ {
+  "id": "bj4c6n",
+  "text": "Reddit / My fancy font and stock photo",
+  "template": "Woman in silver suit and visor holding corn cob",
+  "referents": [
+   "Fancy font stock photo memes"
+  ],
+  "premise": "Reddit is shown admiring a meme in fancy script font on a stock photo, mocking the trend while using it.",
+  "notes": ""
+ },
+ {
+  "id": "bm9up5",
+  "text": "BREAKING: Disney announces live-action Lilo and Stitch",
+  "template": "none",
+  "referents": [
+   "Disney live-action remakes",
+   "Lilo and Stitch"
+  ],
+  "premise": "A realistic Stitch would look horrifying, mocking Disney's live-action remakes.",
+  "notes": "Screenshot of a post with a realistic Stitch render."
+ },
+ {
+  "id": "ceusei",
+  "text": "The normal Drake format / Spongebob memes / made with mematic",
+  "template": "SpongeBob Drake format",
+  "referents": [
+   "Drake Hotline Bling"
+  ],
+  "premise": "Uses the SpongeBob version of the Drake format to say it prefers SpongeBob memes over the normal Drake format.",
+  "notes": ""
+ },
+ {
+  "id": "d695u1",
+  "text": "Verizon 3G 12:40 AM 94% / Why did the chicken cross the road? / BECAUSE HE'S GOT WARRANTS / That's why.",
+  "template": "Demotivational poster",
+  "referents": [
+   "Why did the chicken cross the road"
+  ],
+  "premise": "The chicken crossed the road to flee a police officer because it has outstanding warrants.",
+  "notes": "Phone screenshot of an older demotivational-style image."
+ },
+ {
+  "id": "dixx1t",
+  "text": "When the BK lady handing over your ice cream calls you gordo",
+  "template": "Crying fat cat on pillow",
+  "referents": [
+   "Burger King"
+  ],
+  "premise": "Being called fat in Spanish by the Burger King worker as she hands you ice cream is crushing.",
+  "notes": ""
+ },
+ {
+  "id": "bbi4fb",
+  "text": "Meme / Meme about karma / Meme about memes about karma / You get the point",
+  "template": "Expanding brain",
+  "referents": [
+   "Reddit karma"
+  ],
+  "premise": "Increasingly meta memes about karma-farming are mocked as supposedly smarter.",
+  "notes": ""
+ },
+ {
+  "id": "ea6uh8",
+  "text": "MESSAGES now / Dad / Why is the FBI here? / How to get shriek 5 early / made with mematic",
+  "template": "Dad: Why is the FBI here? Google search",
+  "referents": [
+   "Shrek 5",
+   "FBI agent watching you meme"
+  ],
+  "premise": "Searching how to get Shrek 5 early brings the FBI to your house.",
+  "notes": ""
+ },
+ {
+  "id": "bu0icr",
+  "text": "PETITION TO MAKE FORTNITE MORE VIOLENT SO THAT PEOPLE CAN PLAY THE GAME WITHOUT BEING JUDGED BECAUSE THERE ARE NO CHILDREN BEING ALLOWED TO PLAY IT",
+  "template": "Lisa Simpson presentation",
+  "referents": [
+   "Fortnite"
+  ],
+  "premise": "Making Fortnite more violent would keep kids out so others could play it without being mocked.",
+  "notes": ""
+ },
+ {
+  "id": "eesky2",
+  "text": "Just arguing about meme of the decade / making a survey to see what everyone thinks (comments)",
+  "template": "Drake Hotline Bling",
+  "referents": [
+   "Meme of the decade"
+  ],
+  "premise": "Rather than argue about the meme of the decade, poll everyone in the comments.",
+  "notes": ""
+ },
+ {
+  "id": "dask9h",
+  "text": "Super hero's / Well boys, we did it. We saved the world / The world / Corrupt Save Game / Your save game is corrupted. The game can attempt to restore a backup. Do you want to proceed? / [RETUR] RESTORE SAVE DATA / [ESC] CANCEL",
+  "template": "Well boys, we did it, X is no more (Madagascar penguins)",
+  "referents": [],
+  "premise": "The superheroes claim they saved the world, but the world's save file is corrupted.",
+  "notes": ""
+ },
+ {
+  "id": "br11hy",
+  "text": "Captain Marvel: *exists* / Insecure Men: / Is that like a personal attack or something?",
+  "template": "Brie Larson Is that like a personal attack or something",
+  "referents": [
+   "Captain Marvel",
+   "Captain Marvel backlash"
+  ],
+  "premise": "Insecure men treat the mere existence of Captain Marvel as a personal attack.",
+  "notes": ""
+ },
+ {
+  "id": "dpjvoj",
+  "text": "Asia & Pacific / In Pakistan, an ambitious effort to plant 10 billion trees takes root / Young trees planted as part of a Pakistani government reforestation campaign stand among older ones along the hilly road between Islamabad and Khyber-Pakhtunkhwa province. (Pamela Constable/The Washington Post)",
+  "template": "none",
+  "referents": [
+   "Pakistan 10 billion trees",
+   "Team Trees"
+  ],
+  "premise": "Pakistan's 10 billion tree plan dwarfs the 20 million tree campaign.",
+  "notes": "Not a meme; a news article screenshot with no added caption; the Team Trees comparison is inferred."
+ },
+ {
+  "id": "cg7wnu",
+  "text": "But sire, they already know how the first panel is supposed to go / Just do it",
+  "template": "Thanos and Corvus Glaive But sire",
+  "referents": [
+   "Avengers Endgame"
+  ],
+  "premise": "The first panel of the meme is left blank because everyone already knows how the template goes.",
+  "notes": "Meta-meme with a deliberately empty first panel."
+ },
+ {
+  "id": "bsm6kq",
+  "text": "SOLO was a better movie than Avatar. / #MakeSolo2Happen",
+  "template": "Lisa Simpson presentation",
+  "referents": [
+   "Solo: A Star Wars Story",
+   "Make Solo sequel campaign",
+   "Avatar"
+  ],
+  "premise": "Solo was better than Avatar so it deserves a sequel.",
+  "notes": ""
+ },
+ {
+  "id": "aek2yo",
+  "text": "TURNED ON THE SEAT WARMERS IN MY JEEP / THEY'RE TOO HOT AND BURNED MY ASS / made with mematic",
+  "template": "First World Problems",
+  "referents": [],
+  "premise": "Complaining that your Jeep's seat warmers are too hot is a trivial privileged problem.",
+  "notes": ""
+ },
+ {
+  "id": "bempof",
+  "text": "Our friend Bob Graham, a Marine raider during WWII, has passed away at 97. Bob didn't have any family left - please help us spread the word so we can give him the sendoff he deserves. His funeral will be at 10am on Friday, 4/26 at 1377 E Main St, Shrub Oak, NY 10588. / Are we blind? Deploy the reposts",
+  "template": "Krennic Are we blind? Deploy the garrison",
+  "referents": [
+   "Bob Graham veteran funeral",
+   "Reddit reposts"
+  ],
+  "premise": "The funeral appeal for a lone WWII veteran is something Reddit should spread with mass reposts.",
+  "notes": ""
+ },
+ {
+  "id": "eejjqt",
+  "text": "When you want to watch a film on netflix but you find out it's been removed / CARTOON NETWORK / DIARY / Dear diary, you ain't never gonna believe what I am about to write down on yous.",
+  "template": "Dear diary, you ain't never gonna believe (Cow and Chicken)",
+  "referents": [
+   "Netflix removing titles"
+  ],
+  "premise": "Finding a film removed from Netflix is outrageous enough to rant about in a diary.",
+  "notes": ""
+ },
+ {
+  "id": "cytmnq",
+  "text": "I am sped",
+  "template": "Off-brand Lightning McQueen kiddie ride",
+  "referents": [
+   "I am speed"
+  ],
+  "premise": "A goofy knock-off Lightning McQueen ride says I am sped instead of I am speed, punning on a slang slur for special-ed.",
+  "notes": "Photo of a real fairground ride."
+ },
+ {
+  "id": "cewbh3",
+  "text": "When you convert to Buddhism before the Area 51 raid so you can respawn when you die / Yeah, this is big brain time.",
+  "template": "Markiplier big brain time",
+  "referents": [
+   "Area 51 raid",
+   "Reincarnation in Buddhism"
+  ],
+  "premise": "Converting to Buddhism so you can reincarnate after dying in the Area 51 raid is a big-brain plan.",
+  "notes": ""
+ },
+ {
+  "id": "d835an",
+  "text": "The \"I don't have anything to contribute to the conversation but I still want to make a comment\" starterpack / bruh / same / omg / this / outstanding move / F",
+  "template": "Starter pack",
+  "referents": [
+   "Roblox oof",
+   "Press F to pay respects",
+   "Outstanding move"
+  ],
+  "premise": "Low-effort reply comments such as bruh, same, this and F make up the starter pack of people with nothing to add.",
+  "notes": ""
+ },
+ {
+  "id": "e9zd7s",
+  "text": "10 year old me trying to look my dad in the eyes while he's yelling at me for getting bad grades:",
+  "template": "Baby Yoda looking up",
+  "referents": [
+   "Baby Yoda",
+   "The Mandalorian"
+  ],
+  "premise": "A child looks up at a yelling parent with innocent Baby Yoda eyes.",
+  "notes": ""
+ },
+ {
+  "id": "b7rde2",
+  "text": "Me: *shoots a rabid wolf* / Everyone else at the furry convention: / MoreJackets",
+  "template": "Unsettled Tom",
+  "referents": [
+   "Furries"
+  ],
+  "premise": "Shooting a wolf at a furry convention unsettles everyone because it may have been a person in costume.",
+  "notes": ""
+ },
+ {
+  "id": "cwfkxc",
+  "text": "Death / Remaining a legend after death",
+  "template": "Chess board with pawn, rook and black knight",
+  "referents": [],
+  "premise": "A laughing lizard faces death on one side and staying a legend after death on the other.",
+  "notes": "Laughing bearded dragon face pasted on a black knight; meaning unclear."
+ },
+ {
+  "id": "azbmnk",
+  "text": "We can watch a movie in class / We can watch a movie in class / But you have to take notes",
+  "template": "Darth Maul double-bladed lightsaber",
+  "referents": [],
+  "premise": "A teacher's offer to watch a movie in class turns out to have a hidden catch: you must take notes.",
+  "notes": ""
+ }
+]

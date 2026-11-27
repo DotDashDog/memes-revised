@@ -1,0 +1,809 @@
+[
+ {
+  "id": "bmw2t2",
+  "text": "Gym member from 2 years but hardly went for 20 days. When my friend ask me a gym related question... / \"Point to your delts, Jake.\" / @Brooklyn_Nine_9",
+  "template": "Brooklyn Nine-Nine Terry asks Jake to point, Jake points confidently",
+  "referents": [
+   "Brooklyn Nine-Nine"
+  ],
+  "premise": "Someone who barely goes to the gym is asked a gym question and confidently fakes knowledge, like Jake pointing at the wrong spot.",
+  "notes": ""
+ },
+ {
+  "id": "cok5ru",
+  "text": "In the battle of Pelusium (525 BC) Persian soldiers used cats as shields as Egyptian religion forbade harm towards cats. / ANCIENT problems require ANCIENT solutions",
+  "template": "Modern problems require modern solutions (Dave Chappelle)",
+  "referents": [
+   "Battle of Pelusium"
+  ],
+  "premise": "The Persians using cats as shields against cat-revering Egyptians is framed as an 'ancient problems require ancient solutions' move.",
+  "notes": ""
+ },
+ {
+  "id": "ddhqt8",
+  "text": "I fancy the same girl As you / BIIIIII",
+  "template": "Man unplugging hospital patient's life support",
+  "referents": [],
+  "premise": "When the hospitalized friend admits liking the same girl, the man pulls the plug on his life support.",
+  "notes": "Bazaart watermark."
+ },
+ {
+  "id": "bvhibs",
+  "text": "The other three panels",
+  "template": "Thanos close-up in orange light (Avengers: Infinity War)",
+  "referents": [
+   "Avengers: Infinity War",
+   "Thanos"
+  ],
+  "premise": "Thanos is labelled 'the other three panels', implying the other panels of a multi-panel meme were wiped out by his snap.",
+  "notes": "Single panel that seems to refer to a missing multi-panel context; joke unclear."
+ },
+ {
+  "id": "d1t8n7",
+  "text": "your crush proposed your bestfriend / you to your bestfriend: / NOKIA",
+  "template": "none",
+  "referents": [
+   "Nokia"
+  ],
+  "premise": "After your crush proposes to your best friend, you ask the friend \"NOKIA\", read as a pun on Hindi \"na kiya?\" (\"did you say no?\").",
+  "notes": "Pun probably relies on Hindi; interpretation uncertain."
+ },
+ {
+  "id": "bat4zf",
+  "text": "I'm sorry for your loss / Oof / F",
+  "template": "Tuxedo Winnie the Pooh (three-tier, with monocle and top hat)",
+  "referents": [
+   "Press F to pay respects",
+   "Oof"
+  ],
+  "premise": "Offering condolences escalates in 'sophistication' from a sincere phrase to 'Oof' to just 'F'.",
+  "notes": ""
+ },
+ {
+  "id": "djehx3",
+  "text": "AH YES BACK IN MY DAY WE GAVE KIDS WITH ALLERGIES WHAT THEY WERE ALLERGIC TO, HOW DARE THEY WANT TO PREVENT FROM CHOKING TO DEATH / HONEY PLEASE PASS THE G E N D E R N E U T R A L C A N D Y / Do you have gluten-free treats, lady? / I'm lactose intolerant... / I can't eat nuts / I am caramel-phobic! / D'you have vegan chocolate? / I have a nougat allergy / Gender neutral candy? / Organic only!",
+  "template": "none",
+  "referents": [
+   "Halloween",
+   "Boomer comics"
+  ],
+  "premise": "A boomer comic mocking picky trick-or-treaters with allergies is mocked back for treating real allergies as fussiness and for the absurd 'gender neutral candy' line.",
+  "notes": "Screenshot of a text post captioning a newspaper comic."
+ },
+ {
+  "id": "bqo2ht",
+  "text": "Creating a funny meme but not being able to come up with a decent title. / Is this really worth it?",
+  "template": "Is this a pigeon?",
+  "referents": [
+   "Reddit post titles"
+  ],
+  "premise": "Making a funny meme feels not worth it when you can't think of a good title for the post.",
+  "notes": ""
+ },
+ {
+  "id": "dma41h",
+  "text": "When someone screenshots my post / peace was never an option",
+  "template": "Untitled Goose Game goose with knife (peace was never an option)",
+  "referents": [
+   "Untitled Goose Game",
+   "Reposting"
+  ],
+  "premise": "The poster turns violent when someone screenshots their post to repost it.",
+  "notes": ""
+ },
+ {
+  "id": "c14hzq",
+  "text": "We did it, we time traveled! / But to what year? / Let me ask that guy over there / What's the current meme? / This one / We're in 2020",
+  "template": "Sr. Grafo time travel comic with Internet Explorer",
+  "referents": [
+   "Internet Explorer is slow"
+  ],
+  "premise": "Internet Explorer is so slow that the meme it calls current is old, which tells the time travellers it is actually 2020.",
+  "notes": "Sr. Grafo comic #101."
+ },
+ {
+  "id": "bv2ulz",
+  "text": "What if You / Wanted to go to Heaven / But god said / stop using dead memes",
+  "template": "What if you wanted to go to Heaven",
+  "referents": [
+   "Dead memes"
+  ],
+  "premise": "God refuses you entry to Heaven because you use dead memes, delivered in a meme format that is itself dead.",
+  "notes": ""
+ },
+ {
+  "id": "d7i6r3",
+  "text": "How everyone expected the Area 51 raid to take place / What actually happened",
+  "template": "Expectation versus reality",
+  "referents": [
+   "Area 51 raid",
+   "King of the Hill"
+  ],
+  "premise": "The Area 51 raid was imagined as an epic battle but in reality was just a few guys standing around, like the King of the Hill crew by the fence.",
+  "notes": "Top image is Warhammer 40,000 battle art."
+ },
+ {
+  "id": "dfint9",
+  "text": "u/djangofuhrer / 2,647 Karma / 69 d Reddit age",
+  "template": "none",
+  "referents": [
+   "69 (sex number)"
+  ],
+  "premise": "The poster's Reddit account is exactly 69 days old.",
+  "notes": "Screenshot of a Reddit profile card with no caption."
+ },
+ {
+  "id": "cbx3jm",
+  "text": "NPCs when I kill a random hooker in GTA: / Holy shit you fucking killed her dude",
+  "template": "JonTron 'Holy shit you fucking killed her dude'",
+  "referents": [
+   "Grand Theft Auto",
+   "JonTron"
+  ],
+  "premise": "GTA bystanders react with shocked outrage when the player kills a random sex worker.",
+  "notes": ""
+ },
+ {
+  "id": "e3oyfo",
+  "text": "The homies / the one freind who finally got a girl",
+  "template": "Politicians applauding at White House desk signing (desk occupant photoshopped)",
+  "referents": [
+   "Yoda dab"
+  ],
+  "premise": "The friend group applauds the one friend who finally got a girlfriend, shown as a dabbing Yoda doll at the signing desk.",
+  "notes": ""
+ },
+ {
+  "id": "atri9q",
+  "text": "Mom Reunites with Daughter on Walmart Grocery Run / 8:24 / ellen",
+  "template": "none",
+  "referents": [
+   "The Ellen DeGeneres Show"
+  ],
+  "premise": "A YouTube thumbnail whose title makes it sound as if a mother and daughter separated by an ordinary Walmart grocery run needed a televised reunion.",
+  "notes": "Screenshot of a YouTube video listing with no added caption; joke is implied by the title."
+ },
+ {
+  "id": "e3smnj",
+  "text": "Ideology / You",
+  "template": "Motion-blurred orangutan grabbing/attacking another animal with red glowing eye",
+  "referents": [],
+  "premise": "An ideology violently seizes and overpowers you.",
+  "notes": "Heavily blurred, deep-fried image; small Peter Griffin face in the corner; meaning partly unclear."
+ },
+ {
+  "id": "aqwdv5",
+  "text": "NURSE: SIR, YOU'VE BEEN IN A COMA SINCE FEBRUARY 5, 2019 / PATIENT: I CAN'T WAIT TO SEE MY FAVORITE MARS ROVER",
+  "template": "Nurse telling patient he has been in a coma",
+  "referents": [
+   "Opportunity rover death"
+  ],
+  "premise": "A patient waking from a coma does not know the Opportunity Mars rover died in February 2019 and will be heartbroken.",
+  "notes": ""
+ },
+ {
+  "id": "av5amk",
+  "text": "Związek Socjalistycznych Republik ... / MAKING MEMES / STEALING MEMES / MAKING MEMES ABOUT STEALING MEMES / STEALING MEMES ABOUT STEALING MEMES / ultra steal / Dajcie jakieś meme / Ultra steal / Odpowiedz / Lubię to! / Dodaj komentarz / Więcej / Edytuj",
+  "template": "Expanding brain",
+  "referents": [
+   "Reposting"
+  ],
+  "premise": "A meme about stealing memes has itself been screenshotted and restolen many times, nesting screenshots inside screenshots.",
+  "notes": "Recursive layered screenshots of Polish Facebook UI; much text blurred and overlapping."
+ },
+ {
+  "id": "af51u8",
+  "text": "Where are you / And I'm so sorry / I cannot sleep I cannot dream tonight",
+  "template": "Big Mouth Billy Bass",
+  "referents": [
+   "I Miss You (blink-182)"
+  ],
+  "premise": "The singing Billy Bass novelty fish is captioned with the opening lyrics of blink-182's 'I Miss You'.",
+  "notes": ""
+ },
+ {
+  "id": "ee7nqs",
+  "text": "Me: Posts dead memes because the decade it's almost over / Everyone: downvotes it / Me:",
+  "template": "Surprised Pikachu",
+  "referents": [
+   "End of the decade",
+   "Dead memes"
+  ],
+  "premise": "Posting dead memes to mark the end of the decade gets downvoted, and the poster is predictably surprised.",
+  "notes": ""
+ },
+ {
+  "id": "btcq3w",
+  "text": "what do you hope to get out of this meme?",
+  "template": "Metro Man (Megamind) holding microphone and papers, image upside down",
+  "referents": [
+   "Megamind"
+  ],
+  "premise": "An upside-down Metro Man still asks what you hope to get out of this meme, as an absurd meta joke.",
+  "notes": "Image deliberately rotated 180 degrees; joke unclear."
+ },
+ {
+  "id": "ddunr2",
+  "text": "",
+  "template": "Smiling man in red button-up shirt, phone screenshot",
+  "referents": [],
+  "premise": "A low-quality phone screenshot of a smiling man in a red shirt, posted as an uncaptioned image.",
+  "notes": "No caption; intended joke not identifiable."
+ },
+ {
+  "id": "aiox5n",
+  "text": "Arguments in the shower / Arguments when arguing",
+  "template": "Lamborghini versus cheap yellow microcar comparison",
+  "referents": [
+   "Shower arguments"
+  ],
+  "premise": "The arguments you rehearse in the shower are brilliant, but the ones you make in a real argument are feeble.",
+  "notes": ""
+ },
+ {
+  "id": "cdtiio",
+  "text": "Oh yeah, baby! Tell me what you want! / Talk to me like you're a fucking idiot! / I like Area 51 memes / That's perfect!",
+  "template": "Cyanide and Happiness 'talk to me like you're a fucking idiot'",
+  "referents": [
+   "Area 51 raid"
+  ],
+  "premise": "Saying you like Area 51 memes is the perfect example of talking like an idiot.",
+  "notes": ""
+ },
+ {
+  "id": "e71do1",
+  "text": "I CANT STAND YOU NIGGAS",
+  "template": "Joe Swanson in wheelchair (Family Guy)",
+  "referents": [
+   "Family Guy"
+  ],
+  "premise": "Joe, who uses a wheelchair, says he 'can't stand' everyone, a pun on his paraplegia.",
+  "notes": "Contains a racial slur; reaction image."
+ },
+ {
+  "id": "bsfnee",
+  "text": "What about Thor? / Off world / Captain Marvel? / Unavailable / Peanut butter sandwich? / shit negro, that's all you had to say",
+  "template": "Spider-Man: Far From Home 'What about Thor? Off world' (Peter and Fury)",
+  "referents": [
+   "Spider-Man: Far From Home trailer",
+   "Samuel L. Jackson"
+  ],
+  "premise": "When Peter offers a peanut butter sandwich instead of a hero, Nick Fury, as another Samuel L. Jackson character, eagerly agrees.",
+  "notes": "Last panel contains a racial slur from the reaction image."
+ },
+ {
+  "id": "bw1inh",
+  "text": "Oh yeah, baby! Tell me what you want! / Talk to me like you're a fucking idiot! / ME AND THE BOYS.. / That's perfect!",
+  "template": "Cyanide and Happiness 'talk to me like you're a fucking idiot'",
+  "referents": [
+   "Me and the boys"
+  ],
+  "premise": "Saying 'me and the boys' counts as talking like an idiot, with the faces swapped for an Electro mask and Spider-Man.",
+  "notes": "Faces edited with Electro mask and Spider-Man mask."
+ },
+ {
+  "id": "b88uqf",
+  "text": "10 yrs old me / Girl *touches me*",
+  "template": "Snake playing dead with mouth open when poked by finger",
+  "referents": [],
+  "premise": "At ten, being touched by a girl made you freeze and act dead like a hognose snake.",
+  "notes": ""
+ },
+ {
+  "id": "cx9llt",
+  "text": "Mods / What've you got for me? / Mods / INTERNET / I'll take all of it. / Mods",
+  "template": "Trench coat seller comic (inkyrickshaw)",
+  "referents": [
+   "Ricardo Milos",
+   "Subreddit moderators"
+  ],
+  "premise": "The subreddit moderators eagerly take every Ricardo Milos meme the internet offers.",
+  "notes": ""
+ },
+ {
+  "id": "d7r88a",
+  "text": "People who know Obama's last name / You're weak. / People who know the phone number to 911 / I'm you.",
+  "template": "Nebula 'You're weak' / 'I'm you' (Avengers: Endgame)",
+  "referents": [
+   "Obama's last name",
+   "Avengers: Endgame"
+  ],
+  "premise": "Knowing Obama's last name is nothing compared to the harder trivia of knowing the phone number to 911.",
+  "notes": ""
+ },
+ {
+  "id": "cuyxsa",
+  "text": "When as a 8 year old you change the batteries in the Xbox controller / THE ENGINEER",
+  "template": "Team Fortress 2 'The Engineer' title card",
+  "referents": [
+   "Team Fortress 2"
+  ],
+  "premise": "A child changing controller batteries feels like a skilled engineer.",
+  "notes": ""
+ },
+ {
+  "id": "dph5xx",
+  "text": "Donating the most money to team trees / Elon Musk / Mars / Tobi Lutke / @Dynogone",
+  "template": "Distracted boyfriend",
+  "referents": [
+   "Team Trees",
+   "Elon Musk",
+   "Tobi Lütke"
+  ],
+  "premise": "Elon Musk turned from Mars to topping Team Trees donations, only for Shopify's Tobi Lütke to outdonate him.",
+  "notes": "Two-panel extended version of the template."
+ },
+ {
+  "id": "dxl2gq",
+  "text": "I worked at McDonald's for two and a half years and I put 11 nuggets in almost every 10-piece I made / Me opening reddit for the first time today / u/Jbxcy / 6.4k / 32 / Share / r/memes / Posted by u/Wipi03 • 4h • i.redd.it / You are a good man, thank you! / Cody Bondarchuk @codybondarchuk / I worked at McDonald's for two and a half years and I put 11 nuggets in almost every 10-piece I made",
+  "template": "Rainbow Six Siege soldier diving onto crawling woman",
+  "referents": [
+   "McDonald's 11 nuggets tweet",
+   "Reposting"
+  ],
+  "premise": "The same viral McDonald's nugget tweet keeps leaping at the user from everywhere the moment they open Reddit.",
+  "notes": "Screenshot of a meme plus a Reddit post repeating the same tweet."
+ },
+ {
+  "id": "c842v2",
+  "text": "Me while driving: *sees harmless piece of trash in the road* / Every instinct in my entire body: / PEPPY / Do a barrel roll (Z or R twice)! / Cooked extra Toast-E",
+  "template": "Star Fox 64 Peppy 'Do a barrel roll!'",
+  "referents": [
+   "Do a barrel roll",
+   "Star Fox 64"
+  ],
+  "premise": "Seeing harmless trash on the road makes every instinct urge a dramatic evasive barrel roll.",
+  "notes": ""
+ },
+ {
+  "id": "bo9us6",
+  "text": "Have u tried speaking to the manager ......within?",
+  "template": "Have you tried ... within? (vaporwave meditating woman)",
+  "referents": [
+   "Speak to the manager",
+   "Karen"
+  ],
+  "premise": "A spiritual-advice parody suggests finding the entitled customer's 'speak to the manager' urge within yourself.",
+  "notes": ""
+ },
+ {
+  "id": "dpb2k7",
+  "text": "r/memes • u/TheGamingMemeLord • Now / Kidnapped from a friend / r/memes • DatOneBook • 19 m / Kidnapped from a friend / When someone tries to repost my reposted meme / You're trying to kidnap what I've rightfully stolen / Vote / Comment / Share",
+  "template": "Princess Bride 'You're trying to kidnap what I've rightfully stolen'",
+  "referents": [
+   "Reposting",
+   "The Princess Bride"
+  ],
+  "premise": "A meme about defending one's reposted meme has itself been reposted repeatedly, layering screenshots over each other.",
+  "notes": "Recursive overlapping phone screenshots; some text garbled."
+ },
+ {
+  "id": "e2w9x0",
+  "text": "DUDE... OK... / Baby Yoda Meme / *Redditors* / *Redditors*",
+  "template": "Sr. Grafo 'Dude... ok...' reluctant upvote comic",
+  "referents": [
+   "Baby Yoda"
+  ],
+  "premise": "Redditors are sick of Baby Yoda memes but still reluctantly upvote them.",
+  "notes": ""
+ },
+ {
+  "id": "crigrs",
+  "text": "What about Thor? / Offworld. / Captain Marvel? / Unavailable. / 諾布大師? / Winning videogames",
+  "template": "Spider-Man: Far From Home 'What about Thor? Off world' (Peter and Fury)",
+  "referents": [
+   "Spider-Man: Far From Home trailer",
+   "NoobMaster69",
+   "Avengers: Endgame"
+  ],
+  "premise": "Asked about 'Noob Master' (written in Chinese characters), Fury says he is busy winning video games, referencing NoobMaster69 from Endgame.",
+  "notes": "One caption in Chinese, read phonetically as 'Noob master'."
+ },
+ {
+  "id": "da5ghl",
+  "text": "Successful People / Unsuccessful People / People who lend you their phone chargers",
+  "template": "Plain coffin versus golden pharaoh sarcophagus",
+  "referents": [],
+  "premise": "People who lend you their phone charger deserve a pharaoh's burial, unlike everyone else.",
+  "notes": ""
+ },
+ {
+  "id": "e0yuon",
+  "text": "We had some trouble getting to Reddit. / Let me in. / We had some trouble getting to Reddit. / LET ME IIIIIIIIIIN! / [adult swim]",
+  "template": "Eric Andre 'Let me in'",
+  "referents": [
+   "Reddit outage"
+  ],
+  "premise": "When Reddit fails to load, the user desperately begs to be let in.",
+  "notes": ""
+ },
+ {
+  "id": "bhw5ta",
+  "text": "",
+  "template": "none",
+  "referents": [],
+  "premise": "The back of a bald man's neck folds are edited into a face with buck teeth and a conical straw hat, as an East Asian caricature.",
+  "notes": "No text; relies on an ethnic caricature."
+ },
+ {
+  "id": "ddcgz6",
+  "text": "Parents / Yelling about bad grades / Me",
+  "template": "Thanos knocking Iron Man's helmet off (Avengers: Infinity War)",
+  "referents": [
+   "Avengers: Infinity War"
+  ],
+  "premise": "Parents yelling about bad grades hits you like Thanos smashing Iron Man's helmet off.",
+  "notes": ""
+ },
+ {
+  "id": "d206bn",
+  "text": "pop listeners / rap listeners / rock listeners / metal listeners",
+  "template": "Church pew assassination chain (people holding guns to heads)",
+  "referents": [],
+  "premise": "Fans of each music genre look down on the one before, with metal fans topping the chain.",
+  "notes": ""
+ },
+ {
+  "id": "ba7kc9",
+  "text": "YOU: A KID / YOUR PARENT: LET'S YOU SCRATCH LOTTERY TICKET / YOU: WINS FIVE DOLLARS / ALSO YOU:",
+  "template": "Charlie Day in red hood with goggles headgear, shouting",
+  "referents": [],
+  "premise": "A kid who wins five dollars on a scratch ticket instantly gets a crazed gambler's excitement.",
+  "notes": "Still frame from a GIF; the reaction may depend on motion."
+ },
+ {
+  "id": "b945hk",
+  "text": "Irrational self-thought / But there is time. Time enough to finish this meme and still study. / Reality / Time? What time do you think you have? This meme has consumed you. You will fail. lol",
+  "template": "Gandalf and Saruman 'Time? What time do you think you have?' (Lord of the Rings)",
+  "referents": [
+   "The Lord of the Rings"
+  ],
+  "premise": "You tell yourself there is time to finish the meme and still study, but in reality the meme has eaten your study time and you will fail.",
+  "notes": ""
+ },
+ {
+  "id": "dapfki",
+  "text": "r/AskReddit • Posted by u/iyamfazer 6 hours ago / What is a badass quote from history that sticks out to you? / 992 Comments / TheNerdChaplain • Score hidden • 46 minutes ago / \"Eventually, all our graves go unattended.\" - Conan O'Brien. / *SAD GHOST NOISES*",
+  "template": "Sad pink ghost '*sad ghost noises*'",
+  "referents": [
+   "r/AskReddit",
+   "Conan O'Brien"
+  ],
+  "premise": "A bleak Conan O'Brien quote that everyone is forgotten after death draws a sad ghost reaction.",
+  "notes": "Reddit comment screenshot plus reaction image."
+ },
+ {
+  "id": "atv5ic",
+  "text": "When you are losing an argument on reddit but your opponent makes a spelling mistake: / Looks like you're going to the Shadow Realm, Jimbo.",
+  "template": "Looks like you're going to the Shadow Realm, Jimbo",
+  "referents": [
+   "Grammar Nazi"
+  ],
+  "premise": "When losing an online argument, a spelling mistake from the opponent becomes the winning card to play.",
+  "notes": ""
+ },
+ {
+  "id": "d3kmlb",
+  "text": "Reddit / Instagram memes / Reddit memes",
+  "template": "Thanos knocking Iron Man's helmet off (Avengers: Infinity War)",
+  "referents": [
+   "Reddit versus Instagram memes",
+   "Reposting"
+  ],
+  "premise": "Reddit tears the Instagram-meme mask off and reveals what are really Reddit memes underneath, stolen by Instagram.",
+  "notes": ""
+ },
+ {
+  "id": "azkk3r",
+  "text": "HAHAH / LMAO / End task",
+  "template": "Stick figure shoots another, then gets attacked from behind",
+  "referents": [
+   "Skype",
+   "Task Manager"
+  ],
+  "premise": "Skype laughs off the close button by just minimizing, until Task Manager kills it with 'End task'.",
+  "notes": ""
+ },
+ {
+  "id": "ebcf94",
+  "text": "7 year old me looking at the moon when it's day / made with mematic",
+  "template": "Baby Yoda looking up",
+  "referents": [
+   "Baby Yoda",
+   "The Mandalorian"
+  ],
+  "premise": "As a child, seeing the moon in the daytime filled you with innocent wonder, like Baby Yoda gazing up.",
+  "notes": ""
+ },
+ {
+  "id": "e2tpt1",
+  "text": "BEING THANKFUL ALL YEAR / BEING THANKFUL ON THE LAST THURSDAY OF NOVEMBER",
+  "template": "Drake Hotline Bling",
+  "referents": [
+   "Thanksgiving"
+  ],
+  "premise": "People skip being thankful all year and only do it on Thanksgiving.",
+  "notes": "Thanksgiving is actually the fourth Thursday of November."
+ },
+ {
+  "id": "bvbgxd",
+  "text": "Epic Bug Facts / Typing the word \"skepticism\" is like playing ping pong with your keyboard",
+  "template": "Epic bug facts (3D boxing-glove bug)",
+  "referents": [],
+  "premise": "Typing 'skepticism' makes your hands alternate between sides of the keyboard like a ping pong rally.",
+  "notes": ""
+ },
+ {
+  "id": "aqncun",
+  "text": "I BET HE'S THINKING ABOUT OTHER WOMEN / IF MAGIN BUU SPLIT INTO GOOD AND EVIL AND EVIL BUU ATE GOOD BUU TO TURN INTO SUPER BUU, AND WHEN THEY TOOK OUT GOOD BUU INSIDE SUPER BUU TURNING HIM INTO KID BUU, SHOULDN'T KID BUU AND EVIL BUU BE THE SAME?",
+  "template": "I bet he's thinking about other women",
+  "referents": [
+   "Dragon Ball Z",
+   "Majin Buu"
+  ],
+  "premise": "The suspicious girlfriend thinks he's thinking of other women while he is puzzling over Majin Buu's transformations in Dragon Ball Z.",
+  "notes": ""
+ },
+ {
+  "id": "bv5roy",
+  "text": "r/SuicideWatch / Posted by u/Silent_Sorrow_V2 • 5h / Why can't I just fucking die / 12 / 4 / Share / r/memes / Posted by u/Huerta123 • 12h • i.redd.it / Hey you, yeah you / You forgot to upvote that post you laughed at",
+  "template": "none",
+  "referents": [
+   "r/SuicideWatch",
+   "Upvote begging"
+  ],
+  "premise": "A Reddit feed screenshot juxtaposes a suicidal post with a meme villager scolding the viewer to upvote, creating accidental dark humor.",
+  "notes": "Screenshot of Reddit feed; embedded meme uses a Minecraft villager image."
+ },
+ {
+  "id": "c7fioj",
+  "text": "WHO WOULD WIN? / My boyfriend Kyle / The drywall my Dad just put up, oh please Kyle can't we talk this out it's not that big a deal!",
+  "template": "Who would win?",
+  "referents": [
+   "Kyle (Monster Energy stereotype)"
+  ],
+  "premise": "The stereotypical angry Monster-energy 'Kyle' is about to punch through the newly installed drywall.",
+  "notes": ""
+ },
+ {
+  "id": "cgrxo2",
+  "text": "when you're the first person in your village to find out about porn",
+  "template": "none",
+  "referents": [],
+  "premise": "A child with one hugely swollen arm is framed as having masturbated excessively after discovering porn first in his village.",
+  "notes": "Uses a photo of a child with an apparent medical condition (limb overgrowth)."
+ },
+ {
+  "id": "dvyp6z",
+  "text": "using the Julian calendar so that you get 13 extra days of the 2010s / Modern problems require modern solutions",
+  "template": "Modern problems require modern solutions (Dave Chappelle)",
+  "referents": [
+   "End of the decade",
+   "Julian calendar"
+  ],
+  "premise": "Switching to the Julian calendar would stretch the 2010s by 13 more days.",
+  "notes": ""
+ },
+ {
+  "id": "ahpqk2",
+  "text": "when u ignore the main quest for a sidequest",
+  "template": "none",
+  "referents": [
+   "9/11"
+  ],
+  "premise": "A UPS deliveryman carries on with his delivery while the World Trade Center burns behind him, like a gamer doing a side quest instead of the main quest.",
+  "notes": "Real 9/11 photograph."
+ },
+ {
+  "id": "d488ns",
+  "text": "I fucked a cat. – René Descartes",
+  "template": "Fake inspirational quote with historical portrait",
+  "referents": [
+   "René Descartes"
+  ],
+  "premise": "A crude fake quote is attributed to René Descartes in the style of an inspirational quote card.",
+  "notes": ""
+ },
+ {
+  "id": "c9nowq",
+  "text": "anti-vaxxer mom love is the best love",
+  "template": "Medieval manuscript illumination of spotted sick person in bed being handed a bowl",
+  "referents": [
+   "Anti-vaxxers"
+  ],
+  "premise": "An anti-vaxxer mother lovingly nurses the child who is covered in spots from a preventable disease.",
+  "notes": "Medieval Latin inscription in the image is not legible."
+ },
+ {
+  "id": "dnkn3l",
+  "text": "Chicken nuggets only imply the existence of a whole chicken",
+  "template": "Anime close-up of terrified tearful wide eyes (JoJo-style)",
+  "referents": [],
+  "premise": "A pseudo-deep shower thought that nuggets merely 'imply' a whole chicken provokes horrified existential tears.",
+  "notes": ""
+ },
+ {
+  "id": "ac62zq",
+  "text": "",
+  "template": "Blurry close-up of smirking cartoon sausage-like face",
+  "referents": [],
+  "premise": "An uncaptioned blurry reaction face with a creepy smirk.",
+  "notes": "No text; reaction image with no evident joke."
+ },
+ {
+  "id": "dadbbi",
+  "text": "My adopted daughter, 6, was an adult dwarf / THE SPY",
+  "template": "Team Fortress 2 'The Spy' title card",
+  "referents": [
+   "Adopted girl who was an adult dwarf",
+   "Team Fortress 2"
+  ],
+  "premise": "A tabloid story about an adopted 'child' who was actually an adult with dwarfism is framed as the work of a master spy.",
+  "notes": "Top half is a tabloid/news thumbnail."
+ },
+ {
+  "id": "dbkx3m",
+  "text": "Seeing Spooktober memes on September 30th",
+  "template": "Spooky skeleton (angry skeleton raising arms)",
+  "referents": [
+   "Spooktober"
+  ],
+  "premise": "Spooktober memes appearing a day before October is a premature, but exciting, spooky moment.",
+  "notes": ""
+ },
+ {
+  "id": "bgtz58",
+  "text": "PETA / lies and just accusing innocent companys about animal cruelty / their brain dead followers",
+  "template": "Gordon Ramsay squeezing lemon / Patrick squeezing over his head",
+  "referents": [
+   "PETA"
+  ],
+  "premise": "PETA feeds its lies about animal cruelty to followers who soak them up uncritically.",
+  "notes": ""
+ },
+ {
+  "id": "cjsq8v",
+  "text": "Buy ✓! / But Sire, Adidas is better! / Just ✓ It!",
+  "template": "Thanos 'Rain fire' / 'But sire' (Avengers: Endgame)",
+  "referents": [
+   "Nike 'Just Do It'",
+   "Nike versus Adidas",
+   "Avengers: Endgame"
+  ],
+  "premise": "Thanos orders his army to buy Nike, using the swoosh as a check mark, and overrules an Adidas fan with 'Just do it'.",
+  "notes": ""
+ },
+ {
+  "id": "dw2wkp",
+  "text": "shat_splat / Account: 13+ / [shat_splat]: Baldi sinks / [puddy_tat12]: in a bath tub / [shat_splat]: ## ## itched / [shat_splat]: ####### a little bit / Round in progress / 54 / Suicide a little bit / Players / Rulers / Notebooks / Get it Now!",
+  "template": "none",
+  "referents": [
+   "Roblox",
+   "Baldi's Basics",
+   "Roblox chat filter"
+  ],
+  "premise": "In a Roblox game the chat filter censors harmless words while a 'Suicide a little bit' message gets through, as players build an absurd chat story.",
+  "notes": "Gameplay screenshot; joke unclear."
+ },
+ {
+  "id": "ef7sx4",
+  "text": "17year old me being happy because he is happy / My brother being happy because it is Christmas",
+  "template": "Joker dancing on the stairs (Joaquin Phoenix)",
+  "referents": [
+   "Joker (2019 film)",
+   "Christmas"
+  ],
+  "premise": "The older sibling is happy simply because the younger brother is happy at Christmas.",
+  "notes": ""
+ },
+ {
+  "id": "e6ump2",
+  "text": "#1 ON TRENDING / YouTube Rewind 2019: For the Record | #YouTubeRewind / 12M views / 942K / 1.7M / Share / Save / YouTube / 28.4M subscribers / SUBSCRIBE",
+  "template": "none",
+  "referents": [
+   "YouTube Rewind 2019"
+  ],
+  "premise": "YouTube Rewind 2019 is again overwhelmingly disliked, with almost twice as many dislikes as likes.",
+  "notes": "Plain screenshot of a YouTube video page."
+ },
+ {
+  "id": "eamufx",
+  "text": "\"this isn't an assignment that you can do the night before\" / Bet",
+  "template": "Bet key (finger pressing blue 'Bet' keyboard key)",
+  "referents": [
+   "Bet"
+  ],
+  "premise": "When a teacher says an assignment can't be done the night before, the student takes that as a challenge.",
+  "notes": "Image letterboxed as if from a video frame."
+ },
+ {
+  "id": "c5vheh",
+  "text": "*Cartoon Network now* / *Cartoon Network in the early 2000s*",
+  "template": "Golden retriever next to snarling werewolf statue",
+  "referents": [
+   "Cartoon Network"
+  ],
+  "premise": "Early-2000s Cartoon Network was fierce and edgy while today's Cartoon Network is tame and soft.",
+  "notes": ""
+ },
+ {
+  "id": "b5x9ea",
+  "text": "KEEM @KEEMSTAR / Following / I just hit a dog going 70mph on my truck. Such a shitty xmas eve RN. It ran right up on the highway. I hate this year so much. / 8:53 PM - 24 Dec 2016 / 934 Retweets 3,922 Likes",
+  "template": "none",
+  "referents": [
+   "Keemstar"
+  ],
+  "premise": "A Keemstar tweet about hitting a dog on Christmas Eve is reposted as a meme, presumably mocking him.",
+  "notes": "Plain tweet screenshot with no caption; intended joke not stated."
+ },
+ {
+  "id": "d6opkh",
+  "text": "Abigail / Everybody in Salem",
+  "template": "Monika T-posing over defeated girl (Doki Doki Literature Club)",
+  "referents": [
+   "The Crucible",
+   "Salem witch trials",
+   "T-pose"
+  ],
+  "premise": "Abigail asserts dominance over everyone in Salem by getting them accused, as in The Crucible.",
+  "notes": ""
+ },
+ {
+  "id": "bl0cwe",
+  "text": "",
+  "template": "Blurry close-up of boy with tongue out, head tilted",
+  "referents": [],
+  "premise": "An uncaptioned blurry reaction face of a boy making a goofy expression.",
+  "notes": "No text; reaction image with no evident joke."
+ },
+ {
+  "id": "d5ohty",
+  "text": "make a cake day meme / but sire your one day late / just do it",
+  "template": "Thanos 'Rain fire' / 'But sire' (Avengers: Endgame)",
+  "referents": [
+   "Reddit cake day",
+   "Avengers: Endgame"
+  ],
+  "premise": "The poster insists on making a cake day meme even though their cake day was yesterday.",
+  "notes": ""
+ },
+ {
+  "id": "dzd9x4",
+  "text": "DON'T WATCH YOUTUBE REWIND 2019 UNTIL IT'S BEEN POSTED FOR 24 HOURS. JUST TO FUCK WITH THEM. / 5.8k / 80 / Share / 58 / 3 / Vote / 3 / 669 / 16 / Vote / Comment / 982 / 22 / 7.0k / 71",
+  "template": "none",
+  "referents": [
+   "YouTube Rewind 2019",
+   "Reposting"
+  ],
+  "premise": "A call to delay watching YouTube Rewind 2019 to mess with its trending stats has been reposted many times, shown by stacked vote bars.",
+  "notes": "Stacked Reddit vote bars show repeated reposting."
+ },
+ {
+  "id": "adowd4",
+  "text": "When u bout to cum / made with mematic",
+  "template": "Evil Patrick",
+  "referents": [],
+  "premise": "The face you make when about to orgasm looks like Patrick's sinister grin.",
+  "notes": ""
+ },
+ {
+  "id": "e946y5",
+  "text": "Me: Breaks enemy's neck to save ammo. / Everybody else at the lazertag: / made with mematic",
+  "template": "Shocked Detective Pikachu",
+  "referents": [
+   "Detective Pikachu"
+  ],
+  "premise": "Bringing video-game logic to laser tag by snapping an opponent's neck horrifies everyone else.",
+  "notes": ""
+ },
+ {
+  "id": "bfyb2q",
+  "text": "When you want to revive dead memes but know you won't get any upvotes for it / *ANGRY AS FUK*",
+  "template": "Angry black cat standing on hind legs ('angry as fuk')",
+  "referents": [
+   "Dead memes"
+  ],
+  "premise": "Wanting to revive dead memes while knowing they won't earn upvotes is infuriating.",
+  "notes": ""
+ }
+]

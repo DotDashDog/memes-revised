@@ -1,0 +1,19 @@
+{
+  "seed": 42,
+  "radius": 4,
+  "n_seed": 100,
+  "n_bg": 500,
+  "cap": 6,
+  "seed_mode": "families",
+  "n_units_total": 797,
+  "n_family_stratum": 297,
+  "n_background": 500,
+  "n_seeded_families": 100,
+  "seeded_family_size_hist": {
+    "2": 58,
+    "3": 15,
+    "4": 10,
+    "5": 6,
+    "6": 11
+  }
+}

@@ -1,0 +1,30 @@
+{
+ "template_id": {
+  "same_pairs_A": 608,
+  "same_pairs_B": 604,
+  "same_pairs_both": 597,
+  "share_of_A_pairs_B_agrees": 0.982,
+  "share_of_B_pairs_A_agrees": 0.988,
+  "pair_jaccard": 0.971,
+  "items_grouped_by_A": 376,
+  "items_grouped_by_B": 376,
+  "items_grouped_by_both": 368,
+  "items_grouped_by_exactly_one": 16,
+  "bcubed_B_vs_A_precision_all": 0.993,
+  "bcubed_B_vs_A_recall_on_A_multi": 0.984
+ },
+ "family_id": {
+  "same_pairs_A": 745,
+  "same_pairs_B": 733,
+  "same_pairs_both": 687,
+  "share_of_A_pairs_B_agrees": 0.922,
+  "share_of_B_pairs_A_agrees": 0.937,
+  "pair_jaccard": 0.869,
+  "items_grouped_by_A": 223,
+  "items_grouped_by_B": 230,
+  "items_grouped_by_both": 203,
+  "items_grouped_by_exactly_one": 47,
+  "bcubed_B_vs_A_precision_all": 0.972,
+  "bcubed_B_vs_A_recall_on_A_multi": 0.922
+ }
+}
