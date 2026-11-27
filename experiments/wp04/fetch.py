@@ -65,6 +65,9 @@ TERMINAL = {
     "ok",
     "http_404",
     "http_410",
+    # 403 from these image hosts is a permanent content block, not rate
+    # limiting — retrying it on every resume just trips the throttle tripwire
+    "http_403",
     "removed",
     "unsupported_url",
     "non_image",
