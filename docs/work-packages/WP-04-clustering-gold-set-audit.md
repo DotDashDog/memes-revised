@@ -158,6 +158,47 @@ grades from the plots; no self-certified pass (AGENTS.md).
 
 <!-- Newest at top. -->
 
+- 2026-11-27 — **User pair check done (100 pairs): template labels validated, family
+  (meaning) labels fail the pre-set criterion.** Files: `experiments/WP-04/sample-001/user_check/`
+  (`user_agreement.json`, `pairs_scored.csv`). Against the primary label set:
+  *Template layer:* the user agreed on 41 of 41 pairs the agents call same (95% interval
+  91–100%) and 15 of 15 hard negatives (80–100%); passes. 26 of the 100 pairs are
+  near-identical images (hash distance ≤ 4), which the user also pointed out; without them
+  the same-pair agreement is 15 of 15.
+  *Family layer:* the user agreed on 37 of 40 pairs the agents call same (93%, interval
+  80–97%; passes part a) but on only 31 of 39 hard negatives the agents call different (79%,
+  interval 65–89%; fails part b, which needed 85% with the interval above 75%). All 20 random
+  pairs agreed. Per the protocol the family-layer scores are therefore **unvalidated**.
+  *What the disagreements are* (contact sheets in `user_check/disagree/`): in 8 pairs the
+  user says same meme where the agents say different, and these are mostly posts sharing a
+  franchise or subject (four are Avengers: Endgame / Infinity War jokes with different
+  premises, one is two "dead memes" posts, one is two cake-day posts, one is the same
+  Doctor Strange template with unrelated captions); one is an exact repost the primary
+  labeller missed (the second labeller caught it). In 3 pairs the user says different where
+  the agents say same: two are fill-in-the-caption formats the agents treated as one meme
+  ("ah yes, enslaved X"; TF2 "The Engineer"), and one is a pair of identical reposts, which
+  may be a mis-click. So the user's sense of "same meme" is broader than the protocol's
+  (shared subject counts) and does not accept the protocol's template-as-joke exception.
+  The label noise is not random: it sits exactly on the definition of the unit. That
+  definition is a project-level decision now queued for the user in `docs/02-state.md`.
+- 2026-11-27 — **Scored run (author-only until reviewed).** Labels: two independent agent
+  resolutions of all 797 images agree on 98% of same-template pairs and 92–94% of
+  same-family pairs (`stage2/labeller_agreement.json`); 54 families of two or more cover 223
+  images, 113 templates cover 376. Primary number (share of each family kept together at 90%
+  cluster purity, family layer): image plus text 0.37 (95% interval 0.28–0.49), image only
+  0.37 (0.28–0.51), perceptual hash 0.29 (0.22–0.40), every image alone 0.24 (0.19–0.31).
+  Background stratum: image plus text minus hash = 0.04 (−0.01 to 0.10). Template layer:
+  image plus text 0.56, image only 0.77, hash 0.82. Same pattern with the second label set
+  and with uncertain labels removed (`scores*.json`). This matches the failure description
+  registered above: within the interval of the hash in the background stratum, and text adds
+  nothing at that operating point. Not registered in advance, so exploratory: an image's
+  nearest neighbour is in its own family for 59% (image plus text) and 51% (image only) of
+  images that have a family, against under 1% by chance, and at looser purity the
+  image-plus-text curve is above image-only (`plots/precision_recall.png`,
+  `neighbours.json`). Also measured: text extraction ran at about 2 images/s and embedding
+  at 10–13 images/s while the GPU was shared, far too slow for a full corpus; to be
+  re-measured.
+
 - 2026-11-27 — **Scoring plan and expectations, written while labelling is in progress and
   before any label or cluster has been compared.**
   *Claim under test:* clustering the embedding recovers meme families as judged by meaning,

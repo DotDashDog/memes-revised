@@ -1,0 +1,28 @@
+image + text precision loss at t=0.31 {'P': np.float64(0.9028), 'share of loss on gold-singleton items': 0.78, 'n gold-singleton items placed in a cluster of 2+': 85, 'n clusters of 2+': 62, 'n clusters of 2+ with no two items sharing a gold family': 31}
+image + text false-merge clusters (all members in different gold families) 31 [['ccwaq1', 'dpwy3d', 'ectjjb', 'bg0w4z'], ['dvpa5k', 'b542u3', 'cdtiio', 'ajmi92', 'bw1inh'], ['dsw57y', 'dkqnov', 'anyce6', 'cx9llt'], ['ea0mr8', 'ee0cjc'], ['alnzti', 'bxvsqt'], ['dpp4jh', 'bvnvgs', 'akywod'], ['d75m0c', 'dpwtm2'], ['b5gvn6', 'bpcbpu', 'dmxhyi', 'bl0cwe', 'bab0at', 'da6xyc', 'dwu9kx', 'b7wr3b', 'ebvjbi', 'ac62zq', 'ajrzvx', 'bhw5ta', 'bbt6ok', 'bdjgd0', 'd5mvce', 'bpy5di', 'bi7s07'], ['d149xo', 'cv1dl7'], ['dhefwp', 'cjyen7'], ['dsc7kc', 'adzu14'], ['d5ohty', 'dbp75i'], ['be5pxa', 'bjuy9x'], ['axcsjv', 'bv2ulz'], ['b7s3f1', 'e1cukq', 'defbv2', 'ee25cr', 'ds16xn', 'eh331x']]
+image only precision loss at t=0.3 {'P': np.float64(0.9027), 'share of loss on gold-singleton items': 0.781, 'n gold-singleton items placed in a cluster of 2+': 92, 'n clusters of 2+': 63, 'n clusters of 2+ with no two items sharing a gold family': 36}
+text only precision loss at t=0.22 {'P': np.float64(0.9022), 'share of loss on gold-singleton items': 0.865, 'n gold-singleton items placed in a cluster of 2+': 92, 'n clusters of 2+': 59, 'n clusters of 2+ with no two items sharing a gold family': 27}
+image + text minus image only R@P90 [pooled] {'point': np.float64(-0.003), 'ci95': [np.float64(-0.034), np.float64(0.021)]}
+text only minus image only R@P90 [pooled] {'point': np.float64(0.003), 'ci95': [np.float64(-0.065), np.float64(0.057)]}
+R@P90 [pooled] per arm {'image + text': (np.float64(0.367), [np.float64(0.282), np.float64(0.488)]), 'image only': (np.float64(0.37), [np.float64(0.279), np.float64(0.503)]), 'text only': (np.float64(0.374), [np.float64(0.292), np.float64(0.481)])}
+image + text minus image only R@P80 [pooled] {'point': np.float64(0.027), 'ci95': [np.float64(-0.019), np.float64(0.062)]}
+text only minus image only R@P80 [pooled] {'point': np.float64(0.024), 'ci95': [np.float64(-0.093), np.float64(0.112)]}
+R@P80 [pooled] per arm {'image + text': (np.float64(0.454), [np.float64(0.359), np.float64(0.588)]), 'image only': (np.float64(0.427), [np.float64(0.324), np.float64(0.576)]), 'text only': (np.float64(0.451), [np.float64(0.356), np.float64(0.567)])}
+image + text minus image only R@P70 [pooled] {'point': np.float64(0.059), 'ci95': [np.float64(0.015), np.float64(0.103)]}
+text only minus image only R@P70 [pooled] {'point': np.float64(0.041), 'ci95': [np.float64(-0.077), np.float64(0.14)]}
+R@P70 [pooled] per arm {'image + text': (np.float64(0.508), [np.float64(0.407), np.float64(0.642)]), 'image only': (np.float64(0.449), [np.float64(0.344), np.float64(0.593)]), 'text only': (np.float64(0.49), [np.float64(0.393), np.float64(0.618)])}
+image + text minus image only R@P50 [pooled] {'point': np.float64(0.117), 'ci95': [np.float64(0.052), np.float64(0.185)]}
+text only minus image only R@P50 [pooled] {'point': np.float64(0.11), 'ci95': [np.float64(-0.015), np.float64(0.216)]}
+R@P50 [pooled] per arm {'image + text': (np.float64(0.595), [np.float64(0.498), np.float64(0.72)]), 'image only': (np.float64(0.477), [np.float64(0.37), np.float64(0.618)]), 'text only': (np.float64(0.587), [np.float64(0.487), np.float64(0.705)])}
+image + text minus image only R@P90 [background] {'point': np.float64(-0.011), 'ci95': [np.float64(-0.06), np.float64(0.035)]}
+text only minus image only R@P90 [background] {'point': np.float64(-0.002), 'ci95': [np.float64(-0.079), np.float64(0.079)]}
+R@P90 [background] per arm {'image + text': (np.float64(0.278), [np.float64(0.206), np.float64(0.394)]), 'image only': (np.float64(0.289), [np.float64(0.205), np.float64(0.416)]), 'text only': (np.float64(0.287), [np.float64(0.218), np.float64(0.387)])}
+image + text minus image only R@P80 [background] {'point': np.float64(0.038), 'ci95': [np.float64(-0.015), np.float64(0.092)]}
+text only minus image only R@P80 [background] {'point': np.float64(0.053), 'ci95': [np.float64(-0.038), np.float64(0.135)]}
+R@P80 [background] per arm {'image + text': (np.float64(0.341), [np.float64(0.263), np.float64(0.458)]), 'image only': (np.float64(0.303), [np.float64(0.218), np.float64(0.427)]), 'text only': (np.float64(0.356), [np.float64(0.272), np.float64(0.473)])}
+image + text minus image only R@P70 [background] {'point': np.float64(0.073), 'ci95': [np.float64(0.017), np.float64(0.139)]}
+text only minus image only R@P70 [background] {'point': np.float64(0.088), 'ci95': [np.float64(-0.004), np.float64(0.18)]}
+R@P70 [background] per arm {'image + text': (np.float64(0.39), [np.float64(0.302), np.float64(0.528)]), 'image only': (np.float64(0.317), [np.float64(0.232), np.float64(0.441)]), 'text only': (np.float64(0.405), [np.float64(0.312), np.float64(0.54)])}
+image + text minus image only R@P50 [background] {'point': np.float64(0.179), 'ci95': [np.float64(0.074), np.float64(0.28)]}
+text only minus image only R@P50 [background] {'point': np.float64(0.154), 'ci95': [np.float64(0.038), np.float64(0.277)]}
+R@P50 [background] per arm {'image + text': (np.float64(0.535), [np.float64(0.42), np.float64(0.674)]), 'image only': (np.float64(0.356), [np.float64(0.261), np.float64(0.489)]), 'text only': (np.float64(0.509), [np.float64(0.403), np.float64(0.663)])}

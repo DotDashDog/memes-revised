@@ -1,0 +1,486 @@
+{
+ "image + text precision loss at t=0.31": {
+  "P": 0.9028,
+  "share of loss on gold-singleton items": 0.78,
+  "n gold-singleton items placed in a cluster of 2+": 85,
+  "n clusters of 2+": 62,
+  "n clusters of 2+ with no two items sharing a gold family": 31
+ },
+ "image + text false-merge clusters (all members in different gold families)": [
+  [
+   "ccwaq1",
+   "dpwy3d",
+   "ectjjb",
+   "bg0w4z"
+  ],
+  [
+   "dvpa5k",
+   "b542u3",
+   "cdtiio",
+   "ajmi92",
+   "bw1inh"
+  ],
+  [
+   "dsw57y",
+   "dkqnov",
+   "anyce6",
+   "cx9llt"
+  ],
+  [
+   "ea0mr8",
+   "ee0cjc"
+  ],
+  [
+   "alnzti",
+   "bxvsqt"
+  ],
+  [
+   "dpp4jh",
+   "bvnvgs",
+   "akywod"
+  ],
+  [
+   "d75m0c",
+   "dpwtm2"
+  ],
+  [
+   "b5gvn6",
+   "bpcbpu",
+   "dmxhyi",
+   "bl0cwe",
+   "bab0at",
+   "da6xyc",
+   "dwu9kx",
+   "b7wr3b",
+   "ebvjbi",
+   "ac62zq",
+   "ajrzvx",
+   "bhw5ta",
+   "bbt6ok",
+   "bdjgd0",
+   "d5mvce",
+   "bpy5di",
+   "bi7s07"
+  ],
+  [
+   "d149xo",
+   "cv1dl7"
+  ],
+  [
+   "dhefwp",
+   "cjyen7"
+  ],
+  [
+   "dsc7kc",
+   "adzu14"
+  ],
+  [
+   "d5ohty",
+   "dbp75i"
+  ],
+  [
+   "be5pxa",
+   "bjuy9x"
+  ],
+  [
+   "axcsjv",
+   "bv2ulz"
+  ],
+  [
+   "b7s3f1",
+   "e1cukq",
+   "defbv2",
+   "ee25cr",
+   "ds16xn",
+   "eh331x"
+  ],
+  [
+   "efmjud",
+   "efckmv",
+   "dpg8gf",
+   "duvu2u"
+  ],
+  [
+   "d381p7",
+   "cie62o",
+   "e6h4ud",
+   "bnknio"
+  ],
+  [
+   "edaw5y",
+   "crhazs",
+   "dwj2gy"
+  ],
+  [
+   "ayb7uu",
+   "ebn66m"
+  ],
+  [
+   "bg1qtl",
+   "edp8ig"
+  ],
+  [
+   "cyg25z",
+   "aj30zy",
+   "by97a2",
+   "ctizbn",
+   "aphxi7"
+  ],
+  [
+   "c8wv6n",
+   "c80cp6",
+   "e75jfa",
+   "e88zwf"
+  ],
+  [
+   "cwqeoe",
+   "bm5xbf"
+  ],
+  [
+   "e7jtfs",
+   "cvcpv3",
+   "cwnk1b"
+  ],
+  [
+   "bvn3ak",
+   "c7ffnu",
+   "d3kmlb"
+  ],
+  [
+   "bm8p01",
+   "clo1g5"
+  ],
+  [
+   "bzfnv8",
+   "c8ni9w"
+  ],
+  [
+   "crigrs",
+   "c956vh",
+   "bsfnee"
+  ],
+  [
+   "deu4cv",
+   "ak6zr8"
+  ],
+  [
+   "cg7wnu",
+   "cgtrjc",
+   "ce9ukl"
+  ],
+  [
+   "bnyviq",
+   "coyyj0"
+  ]
+ ],
+ "image only precision loss at t=0.3": {
+  "P": 0.9027,
+  "share of loss on gold-singleton items": 0.781,
+  "n gold-singleton items placed in a cluster of 2+": 92,
+  "n clusters of 2+": 63,
+  "n clusters of 2+ with no two items sharing a gold family": 36
+ },
+ "text only precision loss at t=0.22": {
+  "P": 0.9022,
+  "share of loss on gold-singleton items": 0.865,
+  "n gold-singleton items placed in a cluster of 2+": 92,
+  "n clusters of 2+": 59,
+  "n clusters of 2+ with no two items sharing a gold family": 27
+ },
+ "image + text minus image only R@P90 [pooled]": {
+  "point": -0.003,
+  "ci95": [
+   -0.034,
+   0.021
+  ]
+ },
+ "text only minus image only R@P90 [pooled]": {
+  "point": 0.003,
+  "ci95": [
+   -0.065,
+   0.057
+  ]
+ },
+ "R@P90 [pooled] per arm": {
+  "image + text": [
+   0.367,
+   [
+    0.282,
+    0.488
+   ]
+  ],
+  "image only": [
+   0.37,
+   [
+    0.279,
+    0.503
+   ]
+  ],
+  "text only": [
+   0.374,
+   [
+    0.292,
+    0.481
+   ]
+  ]
+ },
+ "image + text minus image only R@P80 [pooled]": {
+  "point": 0.027,
+  "ci95": [
+   -0.019,
+   0.062
+  ]
+ },
+ "text only minus image only R@P80 [pooled]": {
+  "point": 0.024,
+  "ci95": [
+   -0.093,
+   0.112
+  ]
+ },
+ "R@P80 [pooled] per arm": {
+  "image + text": [
+   0.454,
+   [
+    0.359,
+    0.588
+   ]
+  ],
+  "image only": [
+   0.427,
+   [
+    0.324,
+    0.576
+   ]
+  ],
+  "text only": [
+   0.451,
+   [
+    0.356,
+    0.567
+   ]
+  ]
+ },
+ "image + text minus image only R@P70 [pooled]": {
+  "point": 0.059,
+  "ci95": [
+   0.015,
+   0.103
+  ]
+ },
+ "text only minus image only R@P70 [pooled]": {
+  "point": 0.041,
+  "ci95": [
+   -0.077,
+   0.14
+  ]
+ },
+ "R@P70 [pooled] per arm": {
+  "image + text": [
+   0.508,
+   [
+    0.407,
+    0.642
+   ]
+  ],
+  "image only": [
+   0.449,
+   [
+    0.344,
+    0.593
+   ]
+  ],
+  "text only": [
+   0.49,
+   [
+    0.393,
+    0.618
+   ]
+  ]
+ },
+ "image + text minus image only R@P50 [pooled]": {
+  "point": 0.117,
+  "ci95": [
+   0.052,
+   0.185
+  ]
+ },
+ "text only minus image only R@P50 [pooled]": {
+  "point": 0.11,
+  "ci95": [
+   -0.015,
+   0.216
+  ]
+ },
+ "R@P50 [pooled] per arm": {
+  "image + text": [
+   0.595,
+   [
+    0.498,
+    0.72
+   ]
+  ],
+  "image only": [
+   0.477,
+   [
+    0.37,
+    0.618
+   ]
+  ],
+  "text only": [
+   0.587,
+   [
+    0.487,
+    0.705
+   ]
+  ]
+ },
+ "image + text minus image only R@P90 [background]": {
+  "point": -0.011,
+  "ci95": [
+   -0.06,
+   0.035
+  ]
+ },
+ "text only minus image only R@P90 [background]": {
+  "point": -0.002,
+  "ci95": [
+   -0.079,
+   0.079
+  ]
+ },
+ "R@P90 [background] per arm": {
+  "image + text": [
+   0.278,
+   [
+    0.206,
+    0.394
+   ]
+  ],
+  "image only": [
+   0.289,
+   [
+    0.205,
+    0.416
+   ]
+  ],
+  "text only": [
+   0.287,
+   [
+    0.218,
+    0.387
+   ]
+  ]
+ },
+ "image + text minus image only R@P80 [background]": {
+  "point": 0.038,
+  "ci95": [
+   -0.015,
+   0.092
+  ]
+ },
+ "text only minus image only R@P80 [background]": {
+  "point": 0.053,
+  "ci95": [
+   -0.038,
+   0.135
+  ]
+ },
+ "R@P80 [background] per arm": {
+  "image + text": [
+   0.341,
+   [
+    0.263,
+    0.458
+   ]
+  ],
+  "image only": [
+   0.303,
+   [
+    0.218,
+    0.427
+   ]
+  ],
+  "text only": [
+   0.356,
+   [
+    0.272,
+    0.473
+   ]
+  ]
+ },
+ "image + text minus image only R@P70 [background]": {
+  "point": 0.073,
+  "ci95": [
+   0.017,
+   0.139
+  ]
+ },
+ "text only minus image only R@P70 [background]": {
+  "point": 0.088,
+  "ci95": [
+   -0.004,
+   0.18
+  ]
+ },
+ "R@P70 [background] per arm": {
+  "image + text": [
+   0.39,
+   [
+    0.302,
+    0.528
+   ]
+  ],
+  "image only": [
+   0.317,
+   [
+    0.232,
+    0.441
+   ]
+  ],
+  "text only": [
+   0.405,
+   [
+    0.312,
+    0.54
+   ]
+  ]
+ },
+ "image + text minus image only R@P50 [background]": {
+  "point": 0.179,
+  "ci95": [
+   0.074,
+   0.28
+  ]
+ },
+ "text only minus image only R@P50 [background]": {
+  "point": 0.154,
+  "ci95": [
+   0.038,
+   0.277
+  ]
+ },
+ "R@P50 [background] per arm": {
+  "image + text": [
+   0.535,
+   [
+    0.42,
+    0.674
+   ]
+  ],
+  "image only": [
+   0.356,
+   [
+    0.261,
+    0.489
+   ]
+  ],
+  "text only": [
+   0.509,
+   [
+    0.403,
+    0.663
+   ]
+  ]
+ }
+}

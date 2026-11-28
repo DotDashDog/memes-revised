@@ -1,0 +1,82 @@
+{
+ "family_id": {
+  "items in multi": 91,
+  "multi groups": 23,
+  "every item alone": 0.253,
+  "image + text": {
+   "R@P90": 0.323,
+   "R@P80": 0.382
+  },
+  "image + text, empty zeroed": {
+   "R@P90": 0.351,
+   "R@P80": 0.405
+  },
+  "image only": {
+   "R@P90": 0.328,
+   "R@P80": 0.352
+  },
+  "text only": {
+   "R@P90": 0.33,
+   "R@P80": 0.389
+  },
+  "perceptual hash": {
+   "R@P90": 0.278,
+   "P_curve": [
+    1.0,
+    1.0,
+    0.998,
+    0.994,
+    0.966,
+    0.901
+   ],
+   "R_curve": [
+    0.253,
+    0.253,
+    0.253,
+    0.264,
+    0.264,
+    0.278
+   ]
+  }
+ },
+ "template_id": {
+  "items in multi": 77,
+  "multi groups": 28,
+  "every item alone": 0.364,
+  "image + text": {
+   "R@P90": 0.377,
+   "R@P80": 0.413
+  },
+  "image + text, empty zeroed": {
+   "R@P90": 0.391,
+   "R@P80": 0.418
+  },
+  "image only": {
+   "R@P90": 0.462,
+   "R@P80": 0.501
+  },
+  "text only": {
+   "R@P90": 0.364,
+   "R@P80": 0.377
+  },
+  "perceptual hash": {
+   "R@P90": 0.462,
+   "P_curve": [
+    1.0,
+    1.0,
+    1.0,
+    0.998,
+    0.978,
+    0.907
+   ],
+   "R_curve": [
+    0.364,
+    0.364,
+    0.369,
+    0.395,
+    0.435,
+    0.462
+   ]
+  }
+ }
+}

@@ -1,0 +1,694 @@
+{
+ "alignment": {
+  "n_ids": 797,
+  "n_labels": 797,
+  "same_set": true,
+  "emb_shapes": [
+   [
+    797,
+    1024
+   ],
+   [
+    797,
+    512
+   ]
+  ],
+  "max_abs_diff_image_half_vs_image_only": 0.0,
+  "labels_parquet_equals_labels_A_json_family": true,
+  "labels_parquet_equals_labels_A_json_template": true,
+  "n_empty_ocr": 29,
+  "text_half_identical_for_empty_ocr": 0.0
+ },
+ "recompute": {
+  "family_id": {
+   "image + text [pooled]": {
+    "R@P90_mine": 0.3695,
+    "R@P90_theirs": 0.3695,
+    "pairwise_recall@P90 (self excluded)": 0.2126,
+    "max_curve_abs_diff_P": 4.8264324550517657e-05
+   },
+   "image + text [background]": {
+    "R@P90_mine": 0.2818,
+    "R@P90_theirs": 0.2818,
+    "pairwise_recall@P90 (self excluded)": 0.1075,
+    "max_curve_abs_diff_P": 4.130094043885979e-05
+   },
+   "image + text [family-seeded]": {
+    "R@P90_mine": 0.4501,
+    "R@P90_theirs": 0.4501,
+    "pairwise_recall@P90 (self excluded)": 0.3142,
+    "max_curve_abs_diff_P": 4.577152661433548e-05
+   },
+   "image only [pooled]": {
+    "R@P90_mine": 0.3703,
+    "R@P90_theirs": 0.3703,
+    "pairwise_recall@P90 (self excluded)": 0.2107,
+    "max_curve_abs_diff_P": 4.5294855708921666e-05
+   },
+   "image only [background]": {
+    "R@P90_mine": 0.2872,
+    "R@P90_theirs": 0.2872,
+    "pairwise_recall@P90 (self excluded)": 0.1101,
+    "max_curve_abs_diff_P": 4.406730490281313e-05
+   },
+   "image only [family-seeded]": {
+    "R@P90_mine": 0.4745,
+    "R@P90_theirs": 0.4745,
+    "pairwise_recall@P90 (self excluded)": 0.3481,
+    "max_curve_abs_diff_P": 4.8597081930501496e-05
+   },
+   "perceptual hash [pooled]": {
+    "R@P90_mine": 0.2938,
+    "R@P90_theirs": 0.2938,
+    "pairwise_recall@P90 (self excluded)": 0.0897,
+    "max_curve_abs_diff_P": 4.270179841081578e-05
+   },
+   "perceptual hash [background]": {
+    "R@P90_mine": 0.2419,
+    "R@P90_theirs": 0.2419,
+    "pairwise_recall@P90 (self excluded)": 0.04,
+    "max_curve_abs_diff_P": 3.3333333333440684e-05
+   },
+   "perceptual hash [family-seeded]": {
+    "R@P90_mine": 0.3287,
+    "R@P90_theirs": 0.3287,
+    "pairwise_recall@P90 (self excluded)": 0.0992,
+    "max_curve_abs_diff_P": 4.646464646462789e-05
+   },
+   "every item alone [pooled]": {
+    "R@P90_mine": 0.2422,
+    "R@P90_theirs": 0.2422,
+    "pairwise_recall@P90 (self excluded)": 0.0,
+    "max_curve_abs_diff_P": 0.0
+   },
+   "every item alone [background]": {
+    "R@P90_mine": 0.2097,
+    "R@P90_theirs": 0.2097,
+    "pairwise_recall@P90 (self excluded)": 0.0,
+    "max_curve_abs_diff_P": 0.0
+   },
+   "every item alone [family-seeded]": {
+    "R@P90_mine": 0.27,
+    "R@P90_theirs": 0.27,
+    "pairwise_recall@P90 (self excluded)": 0.0,
+    "max_curve_abs_diff_P": 0.0
+   }
+  },
+  "template_id": {
+   "image + text [pooled]": {
+    "R@P90_mine": 0.5551,
+    "R@P90_theirs": 0.5551,
+    "pairwise_recall@P90 (self excluded)": 0.3722,
+    "max_curve_abs_diff_P": 4.408966574853679e-05
+   },
+   "image + text [background]": {
+    "R@P90_mine": 0.3551,
+    "R@P90_theirs": 0.3551,
+    "pairwise_recall@P90 (self excluded)": 0.0608,
+    "max_curve_abs_diff_P": 4.285714285712228e-05
+   },
+   "image + text [family-seeded]": {
+    "R@P90_mine": 0.6495,
+    "R@P90_theirs": 0.6495,
+    "pairwise_recall@P90 (self excluded)": 0.5117,
+    "max_curve_abs_diff_P": 4.6728725160316564e-05
+   },
+   "image only [pooled]": {
+    "R@P90_mine": 0.7663,
+    "R@P90_theirs": 0.7663,
+    "pairwise_recall@P90 (self excluded)": 0.6651,
+    "max_curve_abs_diff_P": 4.6844290982395176e-05
+   },
+   "image only [background]": {
+    "R@P90_mine": 0.4672,
+    "R@P90_theirs": 0.4672,
+    "pairwise_recall@P90 (self excluded)": 0.2109,
+    "max_curve_abs_diff_P": 4.285714285712228e-05
+   },
+   "image only [family-seeded]": {
+    "R@P90_mine": 0.8715,
+    "R@P90_theirs": 0.8715,
+    "pairwise_recall@P90 (self excluded)": 0.8223,
+    "max_curve_abs_diff_P": 4.466891133569906e-05
+   },
+   "perceptual hash [pooled]": {
+    "R@P90_mine": 0.8238,
+    "R@P90_theirs": 0.8238,
+    "pairwise_recall@P90 (self excluded)": 0.7489,
+    "max_curve_abs_diff_P": 4.9184441656247024e-05
+   },
+   "perceptual hash [background]": {
+    "R@P90_mine": 0.4526,
+    "R@P90_theirs": 0.4526,
+    "pairwise_recall@P90 (self excluded)": 0.1822,
+    "max_curve_abs_diff_P": 4.173354735237389e-06
+   },
+   "perceptual hash [family-seeded]": {
+    "R@P90_mine": 0.9374,
+    "R@P90_theirs": 0.9374,
+    "pairwise_recall@P90 (self excluded)": 0.9222,
+    "max_curve_abs_diff_P": 3.40067340066641e-05
+   },
+   "every item alone [pooled]": {
+    "R@P90_mine": 0.3005,
+    "R@P90_theirs": 0.3005,
+    "pairwise_recall@P90 (self excluded)": 0.0,
+    "max_curve_abs_diff_P": 0.0
+   },
+   "every item alone [background]": {
+    "R@P90_mine": 0.3153,
+    "R@P90_theirs": 0.3153,
+    "pairwise_recall@P90 (self excluded)": 0.0,
+    "max_curve_abs_diff_P": 0.0
+   },
+   "every item alone [family-seeded]": {
+    "R@P90_mine": 0.296,
+    "R@P90_theirs": 0.296,
+    "pairwise_recall@P90 (self excluded)": 0.0,
+    "max_curve_abs_diff_P": 0.0
+   }
+  }
+ },
+ "floor": {
+  "family_id [pooled]": {
+   "mean 1/|g| over multi items (= all-alone recall)": 0.2422,
+   "share of items in multi groups": 0.28,
+   "multi group size distribution": {
+    "3": 45,
+    "2": 46,
+    "17": 17,
+    "6": 18,
+    "11": 11,
+    "8": 16,
+    "4": 16,
+    "7": 21,
+    "23": 23,
+    "10": 10
+   }
+  },
+  "family_id [background]": {
+   "mean 1/|g| over multi items (= all-alone recall)": 0.2097,
+   "share of items in multi groups": 0.206,
+   "multi group size distribution": {
+    "3": 21,
+    "17": 13,
+    "11": 7,
+    "2": 14,
+    "7": 12,
+    "23": 14,
+    "6": 6,
+    "10": 5,
+    "4": 8,
+    "8": 3
+   }
+  },
+  "family_id [family-seeded]": {
+   "mean 1/|g| over multi items (= all-alone recall)": 0.27,
+   "share of items in multi groups": 0.404,
+   "multi group size distribution": {
+    "2": 32,
+    "6": 12,
+    "8": 13,
+    "4": 8,
+    "3": 24,
+    "23": 9,
+    "10": 5,
+    "7": 9,
+    "11": 4,
+    "17": 4
+   }
+  },
+  "template_id [pooled]": {
+   "mean 1/|g| over multi items (= all-alone recall)": 0.3005,
+   "share of items in multi groups": 0.472,
+   "multi group size distribution": {
+    "2": 104,
+    "7": 28,
+    "4": 56,
+    "6": 54,
+    "3": 72,
+    "11": 11,
+    "5": 35,
+    "8": 16
+   }
+  },
+  "template_id [background]": {
+   "mean 1/|g| over multi items (= all-alone recall)": 0.3153,
+   "share of items in multi groups": 0.176,
+   "multi group size distribution": {
+    "7": 8,
+    "2": 28,
+    "3": 17,
+    "6": 9,
+    "5": 8,
+    "4": 13,
+    "11": 1,
+    "8": 4
+   }
+  },
+  "template_id [family-seeded]": {
+   "mean 1/|g| over multi items (= all-alone recall)": 0.296,
+   "share of items in multi groups": 0.97,
+   "multi group size distribution": {
+    "2": 76,
+    "4": 43,
+    "6": 45,
+    "3": 55,
+    "7": 20,
+    "11": 10,
+    "5": 27,
+    "8": 12
+   }
+  }
+ },
+ "alternative_metrics": {
+  "family_id | image + text [pooled]": {
+   "R@P90": 0.37,
+   "R@P80": 0.45,
+   "R@P70": 0.497,
+   "R@P50": 0.595,
+   "pairR@P90": 0.213,
+   "pairR@P80": 0.323,
+   "max_F1(P all, R multi)": 0.582,
+   "max_F1 standard bcubed (all items)": 0.892,
+   "pair-counting max F1": 0.169
+  },
+  "family_id | image + text [background]": {
+   "R@P90": 0.282,
+   "R@P80": 0.341,
+   "R@P70": 0.389,
+   "R@P50": 0.535,
+   "pairR@P90": 0.107,
+   "pairR@P80": 0.178,
+   "max_F1(P all, R multi)": 0.526,
+   "max_F1 standard bcubed (all items)": 0.911,
+   "pair-counting max F1": null
+  },
+  "family_id | image only [pooled]": {
+   "R@P90": 0.37,
+   "R@P80": 0.429,
+   "R@P70": 0.449,
+   "R@P50": 0.478,
+   "pairR@P90": 0.211,
+   "pairR@P80": 0.292,
+   "max_F1(P all, R multi)": 0.565,
+   "max_F1 standard bcubed (all items)": 0.893,
+   "pair-counting max F1": 0.167
+  },
+  "family_id | image only [background]": {
+   "R@P90": 0.287,
+   "R@P80": 0.299,
+   "R@P70": 0.316,
+   "R@P50": 0.366,
+   "pairR@P90": 0.11,
+   "pairR@P80": 0.124,
+   "max_F1(P all, R multi)": 0.435,
+   "max_F1 standard bcubed (all items)": 0.911,
+   "pair-counting max F1": null
+  },
+  "family_id | text only [pooled]": {
+   "R@P90": 0.373,
+   "R@P80": 0.448,
+   "R@P70": 0.494,
+   "R@P50": 0.581,
+   "pairR@P90": 0.212,
+   "pairR@P80": 0.309,
+   "max_F1(P all, R multi)": 0.578,
+   "max_F1 standard bcubed (all items)": 0.877,
+   "pair-counting max F1": 0.155
+  },
+  "family_id | text only [background]": {
+   "R@P90": 0.29,
+   "R@P80": 0.356,
+   "R@P70": 0.404,
+   "R@P50": 0.503,
+   "pairR@P90": 0.105,
+   "pairR@P80": 0.194,
+   "max_F1(P all, R multi)": 0.52,
+   "max_F1 standard bcubed (all items)": 0.892,
+   "pair-counting max F1": null
+  },
+  "template_id | image + text [pooled]": {
+   "R@P90": 0.555,
+   "R@P80": 0.624,
+   "R@P70": 0.655,
+   "R@P50": 0.687,
+   "pairR@P90": 0.372,
+   "pairR@P80": 0.464,
+   "max_F1(P all, R multi)": 0.701,
+   "max_F1 standard bcubed (all items)": 0.843,
+   "pair-counting max F1": 0.356
+  },
+  "template_id | image + text [background]": {
+   "R@P90": 0.355,
+   "R@P80": 0.371,
+   "R@P70": 0.405,
+   "R@P50": 0.46,
+   "pairR@P90": 0.061,
+   "pairR@P80": 0.082,
+   "max_F1(P all, R multi)": 0.516,
+   "max_F1 standard bcubed (all items)": 0.936,
+   "pair-counting max F1": null
+  },
+  "template_id | image only [pooled]": {
+   "R@P90": 0.766,
+   "R@P80": 0.796,
+   "R@P70": 0.816,
+   "R@P50": 0.84,
+   "pairR@P90": 0.665,
+   "pairR@P80": 0.709,
+   "max_F1(P all, R multi)": 0.831,
+   "max_F1 standard bcubed (all items)": 0.909,
+   "pair-counting max F1": 0.73
+  },
+  "template_id | image only [background]": {
+   "R@P90": 0.467,
+   "R@P80": 0.504,
+   "R@P70": 0.528,
+   "R@P50": 0.575,
+   "pairR@P90": 0.211,
+   "pairR@P80": 0.275,
+   "max_F1(P all, R multi)": 0.623,
+   "max_F1 standard bcubed (all items)": 0.937,
+   "pair-counting max F1": null
+  },
+  "template_id | text only [pooled]": {
+   "R@P90": 0.391,
+   "R@P80": 0.414,
+   "R@P70": 0.437,
+   "R@P50": 0.478,
+   "pairR@P90": 0.146,
+   "pairR@P80": 0.182,
+   "max_F1(P all, R multi)": 0.547,
+   "max_F1 standard bcubed (all items)": 0.808,
+   "pair-counting max F1": 0.103
+  },
+  "template_id | text only [background]": {
+   "R@P90": 0.315,
+   "R@P80": 0.336,
+   "R@P70": 0.353,
+   "R@P50": 0.39,
+   "pairR@P90": 0.0,
+   "pairR@P80": 0.036,
+   "max_F1(P all, R multi)": 0.474,
+   "max_F1 standard bcubed (all items)": 0.915,
+   "pair-counting max F1": null
+  }
+ },
+ "alternative_methods": {
+  "image + text | average linkage (fine grid)": {
+   "family [pooled] R@P90": 0.367,
+   "family [pooled] R@P80": 0.449,
+   "family [background] R@P90": 0.278,
+   "family [background] R@P80": 0.34,
+   "template [pooled] R@P90": 0.567,
+   "template [pooled] R@P80": 0.625,
+   "template [background] R@P90": 0.354,
+   "template [background] R@P80": 0.37
+  },
+  "image + text | complete linkage (fine grid)": {
+   "family [pooled] R@P90": 0.371,
+   "family [pooled] R@P80": 0.427,
+   "family [background] R@P90": 0.264,
+   "family [background] R@P80": 0.317,
+   "template [pooled] R@P90": 0.535,
+   "template [pooled] R@P80": 0.602,
+   "template [background] R@P90": 0.351,
+   "template [background] R@P80": 0.37
+  },
+  "image + text | single linkage (fine grid)": {
+   "family [pooled] R@P90": 0.364,
+   "family [pooled] R@P80": 0.459,
+   "family [background] R@P90": 0.303,
+   "family [background] R@P80": 0.386,
+   "template [pooled] R@P90": 0.558,
+   "template [pooled] R@P80": 0.611,
+   "template [background] R@P90": 0.357,
+   "template [background] R@P80": 0.386
+  },
+  "image only | average linkage (fine grid)": {
+   "family [pooled] R@P90": 0.37,
+   "family [pooled] R@P80": 0.428,
+   "family [background] R@P90": 0.289,
+   "family [background] R@P80": 0.31,
+   "template [pooled] R@P90": 0.763,
+   "template [pooled] R@P80": 0.805,
+   "template [background] R@P90": 0.466,
+   "template [background] R@P80": 0.503
+  },
+  "image only | complete linkage (fine grid)": {
+   "family [pooled] R@P90": 0.369,
+   "family [pooled] R@P80": 0.419,
+   "family [background] R@P90": 0.286,
+   "family [background] R@P80": 0.293,
+   "template [pooled] R@P90": 0.73,
+   "template [pooled] R@P80": 0.782,
+   "template [background] R@P90": 0.441,
+   "template [background] R@P80": 0.501
+  },
+  "image only | single linkage (fine grid)": {
+   "family [pooled] R@P90": 0.373,
+   "family [pooled] R@P80": 0.419,
+   "family [background] R@P90": 0.287,
+   "family [background] R@P80": 0.354,
+   "template [pooled] R@P90": 0.726,
+   "template [pooled] R@P80": 0.747,
+   "template [background] R@P90": 0.439,
+   "template [background] R@P80": 0.522
+  },
+  "text only | average linkage (fine grid)": {
+   "family [pooled] R@P90": 0.371,
+   "family [pooled] R@P80": 0.451,
+   "family [background] R@P90": 0.28,
+   "family [background] R@P80": 0.356,
+   "template [pooled] R@P90": 0.39,
+   "template [pooled] R@P80": 0.414,
+   "template [background] R@P90": 0.315,
+   "template [background] R@P80": 0.328
+  },
+  "text only | complete linkage (fine grid)": {
+   "family [pooled] R@P90": 0.368,
+   "family [pooled] R@P80": 0.424,
+   "family [background] R@P90": 0.272,
+   "family [background] R@P80": 0.332,
+   "template [pooled] R@P90": 0.393,
+   "template [pooled] R@P80": 0.406,
+   "template [background] R@P90": 0.316,
+   "template [background] R@P80": 0.336
+  },
+  "text only | single linkage (fine grid)": {
+   "family [pooled] R@P90": 0.356,
+   "family [pooled] R@P80": 0.46,
+   "family [background] R@P90": 0.29,
+   "family [background] R@P80": 0.372,
+   "template [pooled] R@P90": 0.383,
+   "template [pooled] R@P80": 0.42,
+   "template [background] R@P90": 0.319,
+   "template [background] R@P80": 0.329
+  },
+  "concat image + 0.25*text | average (fine grid)": {
+   "family [pooled] R@P90": 0.37,
+   "family [pooled] R@P80": 0.436,
+   "family [background] R@P90": 0.29,
+   "family [background] R@P80": 0.316,
+   "template [pooled] R@P90": 0.755,
+   "template [pooled] R@P80": 0.793,
+   "template [background] R@P90": 0.459,
+   "template [background] R@P80": 0.484
+  },
+  "concat image + 0.5*text | average (fine grid)": {
+   "family [pooled] R@P90": 0.375,
+   "family [pooled] R@P80": 0.442,
+   "family [background] R@P90": 0.292,
+   "family [background] R@P80": 0.307,
+   "template [pooled] R@P90": 0.722,
+   "template [pooled] R@P80": 0.77,
+   "template [background] R@P90": 0.427,
+   "template [background] R@P80": 0.48
+  },
+  "concat image + 0.75*text | average (fine grid)": {
+   "family [pooled] R@P90": 0.382,
+   "family [pooled] R@P80": 0.449,
+   "family [background] R@P90": 0.297,
+   "family [background] R@P80": 0.344,
+   "template [pooled] R@P90": 0.646,
+   "template [pooled] R@P80": 0.709,
+   "template [background] R@P90": 0.37,
+   "template [background] R@P80": 0.434
+  },
+  "concat image + 1.0*text | average (fine grid)": {
+   "family [pooled] R@P90": 0.367,
+   "family [pooled] R@P80": 0.449,
+   "family [background] R@P90": 0.278,
+   "family [background] R@P80": 0.34,
+   "template [pooled] R@P90": 0.567,
+   "template [pooled] R@P80": 0.625,
+   "template [background] R@P90": 0.354,
+   "template [background] R@P80": 0.37
+  },
+  "concat image + 1.5*text | average (fine grid)": {
+   "family [pooled] R@P90": 0.359,
+   "family [pooled] R@P80": 0.456,
+   "family [background] R@P90": 0.294,
+   "family [background] R@P80": 0.363,
+   "template [pooled] R@P90": 0.455,
+   "template [pooled] R@P80": 0.541,
+   "template [background] R@P90": 0.342,
+   "template [background] R@P80": 0.359
+  },
+  "image + text | mutual 1-NN graph components, sim threshold swept": {
+   "family [pooled] R@P90": 0.348,
+   "family [pooled] R@P80": 0.348,
+   "family [background] R@P90": 0.247,
+   "family [background] R@P80": 0.247,
+   "template [pooled] R@P90": 0.415,
+   "template [pooled] R@P80": 0.415,
+   "template [background] R@P90": 0.345,
+   "template [background] R@P80": 0.345
+  },
+  "image + text | mutual 3-NN graph components, sim threshold swept": {
+   "family [pooled] R@P90": 0.39,
+   "family [pooled] R@P80": 0.436,
+   "family [background] R@P90": 0.282,
+   "family [background] R@P80": 0.325,
+   "template [pooled] R@P90": 0.554,
+   "template [pooled] R@P80": 0.587,
+   "template [background] R@P90": 0.354,
+   "template [background] R@P80": 0.371
+  },
+  "image only | mutual 1-NN graph components, sim threshold swept": {
+   "family [pooled] R@P90": 0.343,
+   "family [pooled] R@P80": 0.343,
+   "family [background] R@P90": 0.243,
+   "family [background] R@P80": 0.243,
+   "template [pooled] R@P90": 0.461,
+   "template [pooled] R@P80": 0.461,
+   "template [background] R@P90": 0.369,
+   "template [background] R@P80": 0.369
+  },
+  "image only | mutual 3-NN graph components, sim threshold swept": {
+   "family [pooled] R@P90": 0.377,
+   "family [pooled] R@P80": 0.406,
+   "family [background] R@P90": 0.266,
+   "family [background] R@P80": 0.301,
+   "template [pooled] R@P90": 0.686,
+   "template [pooled] R@P80": 0.713,
+   "template [background] R@P90": 0.462,
+   "template [background] R@P80": 0.485
+  }
+ },
+ "neighbours": {
+  "family_id | image + text": {
+   "nn1 hit (as reported)": 0.592,
+   "nn1 hit among background items": 0.476,
+   "share of nn1 hits that are same hash-r4 group": 0.53,
+   "share of nn1 hits that are exact hash (r0) dup": 0.098,
+   "nn1 hit excluding same-hash-r4 candidates (items with an eligible member)": 0.436,
+   "n eligible (hash)": 181,
+   "nn1 hit excluding same-template candidates (items with a cross-template member)": 0.433,
+   "n eligible (cross-template)": 171,
+   "chance for cross-template eligible": 0.0097
+  },
+  "family_id | image only": {
+   "nn1 hit (as reported)": 0.507,
+   "nn1 hit among background items": 0.369,
+   "share of nn1 hits that are same hash-r4 group": 0.619,
+   "share of nn1 hits that are exact hash (r0) dup": 0.115,
+   "nn1 hit excluding same-hash-r4 candidates (items with an eligible member)": 0.348,
+   "n eligible (hash)": 181,
+   "nn1 hit excluding same-template candidates (items with a cross-template member)": 0.333,
+   "n eligible (cross-template)": 171,
+   "chance for cross-template eligible": 0.0097
+  },
+  "family_id | text only": {
+   "nn1 hit (as reported)": 0.592,
+   "nn1 hit among background items": 0.476,
+   "share of nn1 hits that are same hash-r4 group": 0.447,
+   "share of nn1 hits that are exact hash (r0) dup": 0.083,
+   "nn1 hit excluding same-hash-r4 candidates (items with an eligible member)": 0.47,
+   "n eligible (hash)": 181,
+   "nn1 hit excluding same-template candidates (items with a cross-template member)": 0.485,
+   "n eligible (cross-template)": 171,
+   "chance for cross-template eligible": 0.0097
+  },
+  "template_id | image + text": {
+   "nn1 hit (as reported)": 0.665,
+   "nn1 hit among background items": 0.307,
+   "share of nn1 hits that are same hash-r4 group": 0.848,
+   "share of nn1 hits that are exact hash (r0) dup": 0.104,
+   "nn1 hit excluding same-hash-r4 candidates (items with an eligible member)": 0.399,
+   "n eligible (hash)": 158,
+   "nn1 hit excluding same-template candidates (items with a cross-template member)": null,
+   "n eligible (cross-template)": 0,
+   "chance for cross-template eligible": null
+  },
+  "template_id | image only": {
+   "nn1 hit (as reported)": 0.819,
+   "nn1 hit among background items": 0.455,
+   "share of nn1 hits that are same hash-r4 group": 0.831,
+   "share of nn1 hits that are exact hash (r0) dup": 0.104,
+   "nn1 hit excluding same-hash-r4 candidates (items with an eligible member)": 0.557,
+   "n eligible (hash)": 158,
+   "nn1 hit excluding same-template candidates (items with a cross-template member)": null,
+   "n eligible (cross-template)": 0,
+   "chance for cross-template eligible": null
+  },
+  "template_id | text only": {
+   "nn1 hit (as reported)": 0.332,
+   "nn1 hit among background items": 0.148,
+   "share of nn1 hits that are same hash-r4 group": 0.832,
+   "share of nn1 hits that are exact hash (r0) dup": 0.096,
+   "nn1 hit excluding same-hash-r4 candidates (items with an eligible member)": 0.177,
+   "n eligible (hash)": 158,
+   "nn1 hit excluding same-template candidates (items with a cross-template member)": null,
+   "n eligible (cross-template)": 0,
+   "chance for cross-template eligible": null
+  }
+ },
+ "family_vs_template": {
+  "family same-pairs": 745,
+  "of which also same template": 84,
+  "of which also same hash r4 group": 73,
+  "multi families": 54,
+  "multi families entirely within one template": 20,
+  "items in multi families": 223,
+  "items in multi families whose family has a cross-template partner": 171,
+  "template same-pairs": 608,
+  "template pairs that are same family": 84,
+  "largest families": {
+   "area-51-raid": 23,
+   "69-nice": 17,
+   "minecraft-vs-fortnite-2019": 11,
+   "team-trees": 10,
+   "spooktober": 8,
+   "ah-yes-enslaved": 8,
+   "me-and-the-boys": 7,
+   "keanu-reeves-2019": 7,
+   "baby-yoda": 7,
+   "mematic-watermark": 6,
+   "reddit-cake-day": 6,
+   "sharing-is-communism": 6
+  }
+ },
+ "background_cross_stratum": {
+  "family_id": {
+   "bg items in multi groups": 103,
+   "of which group has a family-stratum member": 79,
+   "bg items in multi groups counting bg members only": 91,
+   "multi groups within bg only": 23
+  },
+  "template_id": {
+   "bg items in multi groups": 88,
+   "of which group has a family-stratum member": 28,
+   "bg items in multi groups counting bg members only": 77,
+   "multi groups within bg only": 28
+  }
+ },
+ "labellers": {
+  "descriptions identical A vs B": 717,
+  "of": 797,
+  "item family-neighbourhood identical A vs B, shared descriptions": 0.88,
+  "same, differing descriptions": 0.912,
+  "n differing descriptions": 80
+ }
+}

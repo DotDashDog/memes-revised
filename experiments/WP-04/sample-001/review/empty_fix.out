@@ -1,0 +1,33 @@
+n_empty_ocr 29
+family_id | image + text (as audited) | pooled | R@P90 0.367
+family_id | image + text (as audited) | pooled | R@P80 0.454
+family_id | image + text (as audited) | background | R@P90 0.278
+family_id | image + text (as audited) | background | R@P80 0.341
+family_id | image + text, empty-OCR text half zeroed | pooled | R@P90 0.392
+family_id | image + text, empty-OCR text half zeroed | pooled | R@P80 0.47
+family_id | image + text, empty-OCR text half zeroed | background | R@P90 0.318
+family_id | image + text, empty-OCR text half zeroed | background | R@P80 0.364
+family_id | image only | pooled | R@P90 0.37
+family_id | image only | pooled | R@P80 0.427
+family_id | image only | background | R@P90 0.289
+family_id | image only | background | R@P80 0.303
+family_id | zeroed minus image only | pooled | R@P90 {'point': 0.022, 'ci95': [-0.012, 0.047]}
+family_id | zeroed minus image only | pooled | R@P80 {'point': 0.043, 'ci95': [-0.005, 0.079]}
+family_id | zeroed minus image only | background | R@P90 {'point': 0.029, 'ci95': [-0.033, 0.081]}
+family_id | zeroed minus image only | background | R@P80 {'point': 0.06, 'ci95': [0.01, 0.118]}
+template_id | image + text (as audited) | pooled | R@P90 0.566
+template_id | image + text (as audited) | pooled | R@P80 0.625
+template_id | image + text (as audited) | background | R@P90 0.354
+template_id | image + text (as audited) | background | R@P80 0.371
+template_id | image + text, empty-OCR text half zeroed | pooled | R@P90 0.592
+template_id | image + text, empty-OCR text half zeroed | pooled | R@P80 0.635
+template_id | image + text, empty-OCR text half zeroed | background | R@P90 0.361
+template_id | image + text, empty-OCR text half zeroed | background | R@P80 0.377
+template_id | image only | pooled | R@P90 0.763
+template_id | image only | pooled | R@P80 0.805
+template_id | image only | background | R@P90 0.466
+template_id | image only | background | R@P80 0.508
+template_id | zeroed minus image only | pooled | R@P90 {'point': -0.172, 'ci95': [-0.22, -0.123]}
+template_id | zeroed minus image only | pooled | R@P80 {'point': -0.17, 'ci95': [-0.225, -0.115]}
+template_id | zeroed minus image only | background | R@P90 {'point': -0.105, 'ci95': [-0.179, -0.033]}
+template_id | zeroed minus image only | background | R@P80 {'point': -0.131, 'ci95': [-0.202, -0.055]}
