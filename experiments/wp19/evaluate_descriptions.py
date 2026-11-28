@@ -15,9 +15,12 @@ and compared, with the same statistics used to diagnose the image embeddings:
                 member from a unique image's closest neighbour (0.5 = no).
   P(tpl>meme)   how often a different-meme/same-template pair is more similar
                 than a same-meme/different-template pair (lower is better).
-  pairs@P90     share of same-family pairs kept together by agglomerative
-                clustering at the setting where B-cubed precision is 0.90
-                (self-pairs excluded, so no clustering scores 0).
+  kept@P90      for an image with a family, the share of its other family members
+                that land in its cluster, averaged over images, with agglomerative
+                clustering at the setting where B-cubed precision is 0.90 (no
+                clustering scores 0). This is the figure the independent review
+                reported as 0.21 for the accepted pipeline. pairs@P90 is the same
+                idea counted over pairs, where the largest families dominate.
 
 Expectations. The agent-written descriptions (Opus) are the ceiling, and are
 favoured on everything except user AUC because the labels were built from them.
@@ -80,14 +83,19 @@ def evaluate(name: str, X: np.ndarray, lab: pd.DataFrame, pairs: pd.DataFrame, r
     # condensed cosine distance by hand: an all-zero row (no description) is at distance 1 from everything
     D = np.clip(1.0 - Sm, 0.0, 2.0)
     Z = linkage(D[iu], method="average")
-    Ps, Rb, Rp = [], [], []
+    Ps, Rb, Rp, Ri = [], [], [], []
     n_same = sf.sum()
+    fsize = pd.Series(fam).map(pd.Series(fam).value_counts()).to_numpy()
     for t in THR:
         cl = fcluster(Z, t=t, criterion="distance")
         pi, ri = per_item_pr(fam, cl)
         Ps.append(pi.mean()); Rb.append(ri[in_fam].mean())
         Rp.append(((cl[:, None] == cl[None, :])[iu] & sf).sum() / n_same)
-    Ps, Rb, Rp = map(np.array, (Ps, Rb, Rp))
+        # per image: share of its OTHER family members that share its cluster (the figure
+        # reported from the independent review; every family member counts equally, so
+        # large families do not dominate as they do in the pair count above)
+        Ri.append(((ri * fsize - 1) / np.maximum(fsize - 1, 1))[in_fam].mean())
+    Ps, Rb, Rp, Ri = map(np.array, (Ps, Rb, Rp, Ri))
     # user pairs
     y = (pairs.family == "yes").to_numpy(); near = pairs.near_identical.to_numpy()
     us = np.array([Xn[ix[a]] @ Xn[ix[b]] for a, b in zip(pairs.a, pairs.b)])
@@ -108,6 +116,8 @@ def evaluate(name: str, X: np.ndarray, lab: pd.DataFrame, pairs: pd.DataFrame, r
             np.r_[np.ones((~sf & stp).sum()), np.zeros((sf & ~stp).sum())], np.r_[s[~sf & stp], s[sf & ~stp]])),
         "pairs_kept_at_p90": recall_at_precision(Ps, Rp), "bcubed_recall_at_p90": recall_at_precision(Ps, Rb),
         "pairs_kept_at_p70": recall_at_precision(Ps, Rp, 0.70),
+        "family_members_kept_at_p90": recall_at_precision(Ps, Ri),
+        "family_members_kept_at_p70": recall_at_precision(Ps, Ri, 0.70),
         "curve": {"precision": Ps.round(4).tolist(), "pairs_kept": Rp.round(4).tolist()},
     }
 
@@ -152,7 +162,8 @@ def main() -> None:
     df = pd.DataFrame({k: {"user AUC": v["user_auc"], "lo": v["user_auc_ci95"][0], "hi": v["user_auc_ci95"][1],
                            "pair AUC": v["pair_auc"], "NN x-tpl": v["nn_same_family_cross_template"],
                            "link AUC": v["link_auc"], "P(tpl>meme)": v["p_template_beats_meme"],
-                           "pairs@P90": v["pairs_kept_at_p90"], "pairs@P70": v["pairs_kept_at_p70"]} for k, v in res.items()}).T.round(3)
+                           "kept@P90": v["family_members_kept_at_p90"], "kept@P70": v["family_members_kept_at_p70"],
+                           "pairs@P90": v["pairs_kept_at_p90"]} for k, v in res.items()}).T.round(3)
     print(df.to_string())
     print(json.dumps(screen, indent=1))
 

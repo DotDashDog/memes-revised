@@ -42,7 +42,7 @@ SCHEMA = {
 }
 
 
-def build_body(model, img_b64, max_tokens, schema):
+def build_body(model, img_b64, max_tokens, schema, sampling=None):
     body = {
         "model": model,
         "messages": [
@@ -58,6 +58,8 @@ def build_body(model, img_b64, max_tokens, schema):
         "max_tokens": max_tokens,
         "seed": 0,
     }
+    if sampling:  # used for the retry pass: greedy decoding would just repeat a failure
+        body.update(sampling)
     if schema:
         body["response_format"] = {
             "type": "json_schema",
@@ -66,9 +68,9 @@ def build_body(model, img_b64, max_tokens, schema):
     return body
 
 
-async def one(client, url, sem, model, mid, max_tokens, schema, fh, lock):
+async def one(client, url, sem, model, mid, max_tokens, schema, fh, lock, sampling=None):
     img_b64 = base64.b64encode((IMG_DIR / f"{mid}.jpg").read_bytes()).decode()
-    body = build_body(model, img_b64, max_tokens, schema)
+    body = build_body(model, img_b64, max_tokens, schema, sampling)
     async with sem:
         t0 = time.perf_counter()
         rec = {"id": mid, "t_send": t0}
@@ -104,6 +106,8 @@ async def main():
     ap.add_argument("--schema", action="store_true")
     ap.add_argument("--port", type=int, default=8000)
     ap.add_argument("--no-resume", action="store_true")
+    ap.add_argument("--sample", action="store_true",
+                    help="Qwen3-VL model-card VL sampling (T=0.7, top_p=0.8, top_k=20, presence 1.5) instead of greedy")
     a = ap.parse_args()
 
     if a.ids_file:
@@ -119,6 +123,8 @@ async def main():
     todo = [i for i in ids if i not in done]
     print(f"{len(ids)} ids, {len(done)} already done, {len(todo)} to do", flush=True)
 
+    sampling = ({"temperature": 0.7, "top_p": 0.8, "top_k": 20, "presence_penalty": 1.5}
+                if a.sample else None)
     url = f"http://localhost:{a.port}/v1/chat/completions"
     sem = asyncio.Semaphore(a.concurrency)
     lock = asyncio.Lock()
@@ -128,16 +134,28 @@ async def main():
             load_start = os.getloadavg()
             t0 = time.perf_counter()
             recs = await asyncio.gather(
-                *(one(client, url, sem, a.model, i, a.max_tokens, a.schema, fh, lock) for i in todo)
+                *(one(client, url, sem, a.model, i, a.max_tokens, a.schema, fh, lock, sampling) for i in todo)
             )
             wall = time.perf_counter() - t0
             load_end = os.getloadavg()
 
     ok = [r for r in recs if "content" in r]
+    # Steady-state rate: completions between the 10th and 90th percentile of finish
+    # times, which excludes ramp-up and the tail where the batch drains.
+    fin = sorted(r["t_recv"] - t0 for r in recs)
+    steady = None
+    if len(fin) >= 20:
+        lo, hi = int(0.1 * len(fin)), int(0.9 * len(fin))
+        steady = (hi - lo) / (fin[hi] - fin[lo]) if fin[hi] > fin[lo] else None
+    lat = sorted(r["latency_s"] for r in recs)
     timing = {
+        "images_per_s_steady_p10_p90": steady,
+        "latency_p50_s": lat[len(lat) // 2] if lat else None,
+        "latency_p95_s": lat[int(0.95 * (len(lat) - 1))] if lat else None,
         "model": a.model,
         "concurrency": a.concurrency,
         "schema": a.schema,
+        "sampling": sampling or "greedy",
         "max_tokens": a.max_tokens,
         "n_requests": len(recs),
         "n_http_ok": len(ok),
