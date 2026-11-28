@@ -158,6 +158,42 @@ grades from the plots; no self-certified pass (AGENTS.md).
 
 <!-- Newest at top. -->
 
+- 2026-11-28 — **Local description models tested (follow-up to the diagnostic; author-only,
+  not independently reviewed).** Question: can a vision-language model that fits on the
+  3090 write "what is this meme about" descriptions good enough, fast enough? Files:
+  `experiments/WP-19/` (`vlm_report.md`, `descriptions_*.json`, `timing_*.json`,
+  `description_eval.json`, `description_followup.json`, `setup.md`); code
+  `experiments/wp19/`; pass/fail expectations written beforehand in the docstring of
+  `evaluate_descriptions.py`. Models: Qwen3-VL 8B (full precision, and with weights
+  quantised to 8-bit at load) and 4B, served with vLLM in an isolated environment.
+  *Speed (lower bounds: about 15 of 16 CPU cores were busy with other jobs):* 8B 2.3
+  images/s, 8B 8-bit 3.5, 4B 5.0 (5–9 across runs); 51, 33 and 23 GPU-days for ten million
+  images on the one card. For comparison the current text-extraction step measured 1–2
+  images/s twice on 2026-11-27. Usable descriptions after one retry: 790, 791 and 775 of
+  797.
+  *Quality, against the user's 99 pair answers (the only reference independent of any
+  description; AUC, 1 = perfect):* accepted pipeline 0.68; extracted text with a sentence
+  model 0.77; 4B 0.83; 8B 0.86; 8B plus its own transcription 0.88; Opus descriptions 0.92.
+  Paired differences: 8B minus extracted text +0.09 (0.02 to 0.17); Opus minus 8B +0.06
+  (−0.00 to 0.12).
+  *Quality, against the agent labels (which were built from the Opus descriptions and so
+  favour them):* share of an image's family kept in its cluster at 90% purity: pipeline
+  0.21, extracted text with a sentence model 0.28, 8B 0.28, 8B plus transcription 0.30,
+  Opus 0.49. Appending the image embedding to any description lowers every score.
+  *Reading:* by the bar set beforehand this is not a clear pass. The 8B model is clearly
+  better than extracted text on the user's answers and not clearly worse than Opus there,
+  but ties extracted text on the agent labels. The two references disagree and the user
+  reference has only 99 pairs. 8-bit quantisation costs nothing measurable. Even the Opus
+  descriptions keep under half of each family together at 90% purity, so descriptions
+  improve the representation without making a clean partition possible.
+  *Why the local model trails (from reading outputs):* inconsistent names for the same
+  referent ("Area 51", "raid" versus "Area 51 raid": named in 18 of 23 posts against 23 of
+  23), missed implied jokes, stray referents; and the Opus agents were told the subreddit
+  and year while the local models were not, which is a prompt difference, not a model
+  limit. *Contamination screen:* popularity-related words in 13 of 797 descriptions (8B)
+  and 12 of 797 (Opus). *Not tested:* memes newer than the models' training data; prompt
+  variants; a second set of user pairs.
+
 - 2026-11-27 — **Diagnostic: why clustering fails on meaning (exploratory, author-only).**
   Scripts `experiments/wp04/diagnose_failure.py`, `diagnose_vs_user.py`,
   `explore_temporal_shape.py`; outputs `sample-001/diagnose_failure.json`,

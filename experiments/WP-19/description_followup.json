@@ -1,0 +1,185 @@
+{
+ "representations": {
+  "extracted text (EasyOCR)": {
+   "user_auc": 0.7726337448559671,
+   "user_auc_ci95": [
+    0.6753752739040456,
+    0.8580541028492594
+   ],
+   "user_auc_without_near_identical": 0.8185975609756099,
+   "pair_auc": 0.859063804399363,
+   "nn_same_family": 0.6367713004484304,
+   "nn_same_family_cross_template": 0.4080717488789238,
+   "link_auc": 0.6698176590990765,
+   "p_template_beats_meme": 0.38268122553152173,
+   "pairs_kept_at_p90": 0.11224702263819725,
+   "bcubed_recall_at_p90": 0.42024744879191545,
+   "pairs_kept_at_p70": 0.243126416530784,
+   "family_members_kept_at_p90": 0.28185102600716494,
+   "family_members_kept_at_p70": 0.3993573784224859
+  },
+  "8B transcription only": {
+   "user_auc": 0.7948559670781893,
+   "user_auc_ci95": [
+    0.7042481402950287,
+    0.8805245877311765
+   ],
+   "user_auc_without_near_identical": 0.8285060975609757,
+   "pair_auc": 0.7996356114494341,
+   "nn_same_family": 0.6143497757847534,
+   "nn_same_family_cross_template": 0.4080717488789238,
+   "link_auc": 0.6618646583647131,
+   "p_template_beats_meme": 0.4442450716587174,
+   "pairs_kept_at_p90": 0.12021189731742776,
+   "bcubed_recall_at_p90": 0.423873712472151,
+   "pairs_kept_at_p70": 0.2096120086729174,
+   "family_members_kept_at_p90": 0.28048132789619934,
+   "family_members_kept_at_p70": 0.3435854943676478
+  },
+  "8B description": {
+   "user_auc": 0.8641975308641976,
+   "user_auc_ci95": [
+    0.7916632059800665,
+    0.9255246913580246
+   ],
+   "user_auc_without_near_identical": 0.8963414634146342,
+   "pair_auc": 0.795921522100256,
+   "nn_same_family": 0.6412556053811659,
+   "nn_same_family_cross_template": 0.4125560538116592,
+   "link_auc": 0.6269589537663474,
+   "p_template_beats_meme": 0.42190441269877926,
+   "pairs_kept_at_p90": 0.10490086114431062,
+   "bcubed_recall_at_p90": 0.42076301357636786,
+   "pairs_kept_at_p70": 0.20960998611634657,
+   "family_members_kept_at_p90": 0.28396851721252786,
+   "family_members_kept_at_p70": 0.4030435638018554
+  },
+  "8B description + its transcription": {
+   "user_auc": 0.8802469135802469,
+   "user_auc_ci95": [
+    0.813010206307926,
+    0.9390368603115005
+   ],
+   "user_auc_without_near_identical": 0.9085365853658536,
+   "pair_auc": 0.8159067662079675,
+   "nn_same_family": 0.6636771300448431,
+   "nn_same_family_cross_template": 0.4439461883408072,
+   "link_auc": 0.6716379431571382,
+   "p_template_beats_meme": 0.41933486159069644,
+   "pairs_kept_at_p90": 0.12625001768102448,
+   "bcubed_recall_at_p90": 0.433025706893354,
+   "pairs_kept_at_p70": 0.25578776451311735,
+   "family_members_kept_at_p90": 0.3001280262138871,
+   "family_members_kept_at_p70": 0.44553121430563347
+  },
+  "4B description + its transcription": {
+   "user_auc": 0.8674897119341562,
+   "user_auc_ci95": [
+    0.7877860128771862,
+    0.9344297713013561
+   ],
+   "user_auc_without_near_identical": 0.885670731707317,
+   "pair_auc": 0.7939391325063136,
+   "nn_same_family": 0.6098654708520179,
+   "nn_same_family_cross_template": 0.3991031390134529,
+   "link_auc": 0.6457516288807986,
+   "p_template_beats_meme": 0.464540194708457,
+   "pairs_kept_at_p90": 0.10533549038138106,
+   "bcubed_recall_at_p90": 0.4072925608938016,
+   "pairs_kept_at_p70": 0.23251956014068986,
+   "family_members_kept_at_p90": 0.25898964633299,
+   "family_members_kept_at_p70": 0.3889700561663368
+  },
+  "Opus transcription only": {
+   "user_auc": 0.7948559670781893,
+   "user_auc_ci95": [
+    0.7003846232722203,
+    0.8755109304291172
+   ],
+   "user_auc_without_near_identical": 0.8346036585365854,
+   "pair_auc": 0.8773467786747008,
+   "nn_same_family": 0.6233183856502242,
+   "nn_same_family_cross_template": 0.40358744394618834,
+   "link_auc": 0.6799815627880814,
+   "p_template_beats_meme": 0.37375420078299126,
+   "pairs_kept_at_p90": 0.11898488563689535,
+   "bcubed_recall_at_p90": 0.42312289905989653,
+   "pairs_kept_at_p70": 0.2178632902184733,
+   "family_members_kept_at_p90": 0.28532398835606965,
+   "family_members_kept_at_p70": 0.3564900383471454
+  },
+  "Opus description": {
+   "user_auc": 0.9205761316872427,
+   "user_auc_ci95": [
+    0.8624871671451111,
+    0.9688269073010664
+   ],
+   "user_auc_without_near_identical": 0.9268292682926829,
+   "pair_auc": 0.9665106098190922,
+   "nn_same_family": 0.8565022421524664,
+   "nn_same_family_cross_template": 0.6457399103139013,
+   "link_auc": 0.8130966703645255,
+   "p_template_beats_meme": 0.12004134378861545,
+   "pairs_kept_at_p90": 0.30603475675963665,
+   "bcubed_recall_at_p90": 0.5777643955568286,
+   "pairs_kept_at_p70": 0.6410188846462715,
+   "family_members_kept_at_p90": 0.4880922115562174,
+   "family_members_kept_at_p70": 0.7121010512009742
+  },
+  "Opus description + its transcription": {
+   "user_auc": 0.9164609053497942,
+   "user_auc_ci95": [
+    0.853108445505862,
+    0.9676116516373992
+   ],
+   "user_auc_without_near_identical": 0.9298780487804879,
+   "pair_auc": 0.9581855236294161,
+   "nn_same_family": 0.8789237668161435,
+   "nn_same_family_cross_template": 0.6591928251121076,
+   "link_auc": 0.8299635943188388,
+   "p_template_beats_meme": 0.17371897772285805,
+   "pairs_kept_at_p90": 0.27532312073735576,
+   "bcubed_recall_at_p90": 0.5564492617263739,
+   "pairs_kept_at_p70": 0.5643178028258846,
+   "family_members_kept_at_p90": 0.46339063276126036,
+   "family_members_kept_at_p70": 0.6504784991148305
+  }
+ },
+ "user_auc_paired_differences": {
+  "8B description minus extracted text (EasyOCR)": [
+   0.092,
+   [
+    0.022,
+    0.169
+   ]
+  ],
+  "Opus description minus 8B description": [
+   0.056,
+   [
+    -0.001,
+    0.124
+   ]
+  ],
+  "8B description + its transcription minus extracted text (EasyOCR)": [
+   0.108,
+   [
+    0.039,
+    0.184
+   ]
+  ],
+  "Opus description minus 8B description + its transcription": [
+   0.04,
+   [
+    -0.014,
+    0.105
+   ]
+  ],
+  "8B transcription only minus extracted text (EasyOCR)": [
+   0.022,
+   [
+    -0.017,
+    0.063
+   ]
+  ]
+ }
+}
