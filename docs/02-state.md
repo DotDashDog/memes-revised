@@ -25,6 +25,12 @@ agent recommends, and what is blocked meanwhile. Remove an entry once it is answ
   templates it is clearly worse than image alone (0.56 against 0.77); for meaning it helps
   at looser purity. Depends on the answer above. A bug in it (text-free images share one
   text vector) needs fixing either way.
+- **Where should WSL live?** It was moved to the portable hard disk (D:) on 2026-11-27
+  after C: filled. That works but makes everything slower (small-file writes about 14 times
+  slower than the NVMe) and voids the fast-tier/archive-tier split of ADR 0015. Moving it
+  back needs roughly 150 GB freed on C:, which only the user can do, and a size cap on the
+  WSL disk so it cannot fill C: again. Agent recommendation: move back when convenient;
+  nothing is blocked meanwhile. Details in `03-environment.md`.
 - **Review of the submissions ingest (WP-16).** 11,782,247 posts ingested with exact
   reconciliation; the outcome has not been reviewed by anyone but the agent that produced
   it. Report: `experiments/WP-16/report.md`. Blocks nothing right now.

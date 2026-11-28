@@ -86,11 +86,36 @@ PyTorch, EasyOCR, and PaddleOCR do have native-Windows CUDA builds; it is specif
 
 ### Verified desktop setup (2026-07-26)
 
-Windows host `GAMING-PC` → WSL2 Ubuntu 26.04. 16 cores, 62 GB RAM, ~955 GB free.
+Windows host `GAMING-PC` → WSL2 Ubuntu 26.04. 16 cores, 62 GB RAM. (An earlier version of this line said "~955 GB free"; that was the WSL virtual disk's nominal size, not real space. See "Where WSL lives" below.)
 
 - **No CUDA toolkit is installed in WSL, and none is needed.** The `gpu` group's pip wheels (`nvidia-cublas-cu12`, `nvidia-cudnn-cu12`, `nvidia-cuda-nvcc-cu12`, …) supply the whole CUDA runtime. Only the Windows-host NVIDIA driver is required (591.86 here, CUDA 13.1-capable). Do not `apt install cuda-toolkit`; it is a multi-GB no-op and invites version conflicts.
 - **Nothing in the setup needs root.** `sudo` requires a password in this distro; uv installs to `~/.local/bin`.
 - Repo lives at `~/memes-revised` on the WSL ext4 filesystem, not `/mnt/c`.
+
+### Where WSL lives, and real free space (2026-11-27)
+
+`df /` inside WSL reports the virtual disk's nominal size (1007 GB) regardless of how much
+room the Windows drive holding it has. The storage table below repeated that mistake for
+the NVMe row: C: is a 930 GB drive that was nearly full of other things. On 2026-11-27 the
+WSL disk grew from about 39 GB to 67 GB in a day (17.5 GB of model weights, about 8 GB of
+serving environment, the rest experiment data), C: ran out, and WSL would not start. The
+user moved the WSL disk to `D:\WSL\Ubuntu`, on the portable drive.
+
+Consequences while it stays there:
+
+- **The repo, the Python environment and all working data now sit on the portable hard
+  disk.** The two-tier layout of ADR 0015 (fast working set on the NVMe, archive on the
+  portable drive) no longer holds; both tiers are the same slow disk. Measured inside WSL
+  after the move: 488 small files/s written and synced, against roughly 7,000 on the NVMe
+  in July. (Sequential writes measured 541 MB/s, which is Windows write caching, not the
+  disk; the platter's real ceiling is the 95 MB/s measured in July.)
+- **Unplugging the drive stops WSL** and risks corrupting its disk.
+- Space is no longer tight: 3.6 TB free on D:, so the 1 TB virtual disk cannot fill it by
+  itself. C: has 67 GB free.
+
+Real numbers: `tools/host_disk.sh`. Before a large write: `tools/host_disk.sh --need <GB>`.
+A user-level Claude Code hook (`~/.claude/hooks/host_disk.sh --hook`) blocks shell commands
+when either the drive holding the WSL disk or C: has under 10 GB free.
 
 ### Storage: two tiers, measured (2026-07-26)
 
@@ -98,7 +123,7 @@ Two devices, with very different characteristics. **Numbers below are measured o
 
 | Device | Path | Filesystem | Capacity | Free |
 | --- | --- | --- | --- | --- |
-| Samsung 970 EVO 1 TB (NVMe) | `/` → `~/memes-revised` | ext4 (native) | 1007 GB | 931 GB |
+| Samsung 970 EVO 1 TB (NVMe) | C: (WSL lived here until 2026-11-27) | ext4 inside a virtual disk | 930 GB real | **not** 931 GB: that was the virtual disk's nominal figure; real free space was a few tens of GB |
 | Seagate Portable 4 TB (USB, 5400 rpm) | `/mnt/d` | NTFS over 9p/drvfs | 3726 GB | 3725 GB |
 
 Benchmarked with the real WP-01 image cache (2296 JPEGs, 392 MB, 175 KB/image avg):
@@ -184,6 +209,7 @@ Do not bypass uv with `uv pip install` for anything you want kept. If you find y
 
 ## Log
 
+- 2026-11-27 — **C: filled and WSL would not start; WSL disk moved to D: by the user.** Cause: agents trusted `df /`, which reports the virtual disk's nominal size, and downloaded 26 GB of model weights plus a serving environment. Added `tools/host_disk.sh` (real free space, `--need` check, hook mode), a user-level hook that blocks shell commands below 10 GB free, and a rule in `AGENTS.md`. Corrected the free-space figures above. The WSL idle-shutdown settings (`.wslconfig`, both timeouts −1) were also set today after the distro kept stopping when idle.
 - 2026-07-26 — Added `zstandard` (reading the archive dumps) and `libtorrent` (fetching new archive cuts). `libtorrent` is a **tooling** dependency, not a runtime one: no torrent client exists on this machine and installing one needs root, so the Python bindings are how new Academic Torrents cuts get pulled — see `experiments/wp16/fetch_archive.py`. Kept rather than removed because further cuts are planned; `uv remove libtorrent` is a one-liner if that changes. Raw archives now live at `/mnt/d/reddit_archive/` per ADR 0015; download to the NVMe first, since torrent clients write pieces out of order and random writes on the platter over 9p are punishing.
 - 2026-07-26 — Mounted the 4 TB Seagate portable drive at `/mnt/d` (`mount -t drvfs D: /mnt/d -o metadata,uid=1000,gid=1000`; needs a password, so it is a user step, and WSL only auto-mounts drives attached before it starts) and **benchmarked both storage tiers with the real WP-01 image cache**. Headline: small-file writes are 47× slower on the portable drive, and drvfs reads get no page-cache benefit on a second pass, so loose-file image storage there costs full price every epoch. Sequential throughput (95 MB/s) identifies it as a 5400 rpm HDD; that also means reformatting to ext4 would not rescue random small reads, since the platter caps them near 100 IOPS. Table and extrapolations above. Feeds ADR 0015 (storage layout).
 - 2026-07-26 — Stood up the WSL2 desktop environment and **verified GPU JAX end to end**: `jax.default_backend()` = `gpu`, `CudaDevice(id=0)`, 8192³ matmul at ~37 TFLOP/s (fp32 peak for a 3090), `tests/` 4 passed. Corrected the earlier setup guidance: the apt CUDA toolkit is *not* required, since the `gpu` group's pip wheels carry the CUDA runtime; only the Windows-host driver matters. No root needed anywhere. Claude Code 2.1.220 installed in the distro.

@@ -92,6 +92,12 @@ The user reads updates between other work, months of context away from the detai
   settle go in `docs/open-questions.md`.
 - **Subagents run on Opus 5.5** unless a task clearly needs a stronger model; many
   top-tier subagents use up the user's allowance quickly.
+- **Disk space: `df /` is wrong on this machine.** Inside WSL it reports the virtual disk's
+  nominal 1 TB whatever the Windows drive underneath has left. On 2026-11-27 a 27 GB model
+  download filled C: this way and WSL would not start. Before writing more than about 1 GB
+  (downloads, model weights, environments, caches, datasets) run
+  `tools/host_disk.sh --need <GB>` and stop if it fails; `tools/host_disk.sh` alone prints
+  the real numbers. A hook blocks shell commands when a host drive drops below 10 GB.
 - **Python goes through uv.** `uv run` for every invocation, `uv add` / `uv remove` for
   dependencies, so that results stay reproducible from the lockfile.
 - **`.env` holds `OPENAI_API_KEY`.** Keep its contents out of output, files, and commits.
