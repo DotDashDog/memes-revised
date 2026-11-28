@@ -1,6 +1,6 @@
 # 0017 — Exclude post title/body from the clustering embedding
 
-**Status:** accepted
+**Status:** accepted; amended by [0018](0018-separate-image-and-text-channels.md) (image and text are separate channels, not one concatenated vector; the exclusion of title and body stands)
 **Date:** 2026-07-26
 **Accepted:** 2026-07-26 — user, citing r/memes posting norms ("titles don't belong in the embedding")
 **Amends:** [0006-ocr-vs-vlm.md](0006-ocr-vs-vlm.md) (scopes its "post text signal" out of the clustering path)

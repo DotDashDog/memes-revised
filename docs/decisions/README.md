@@ -21,7 +21,7 @@ do not need one.
 | [0003](0003-reddit-only.md) | Reddit-only initial platform | accepted | — |
 | [0004](0004-embedding-contamination.md) | Embedding contamination via time-cutoff | accepted (principle) | specific model in 0006 |
 | [0005](0005-sir-initial-conditions.md) | SIR initial conditions $S(0)=1-I(0)$, $R(0)=0$ | accepted | — |
-| [0006](0006-ocr-vs-vlm.md) | OCR pipeline vs. VLM-native embedding | accepted | WP-01 |
+| [0006](0006-ocr-vs-vlm.md) | OCR pipeline vs. VLM-native embedding | accepted, amended by 0017 and 0018 | WP-01 |
 | [0007](0007-engagement-signal.md) | Posts → $I(t)$ signal construction | proposed | — |
 | [0008](0008-non-viral-source.md) | Where non-viral memes come from | proposed | — |
 | [0009](0009-clustering.md) | Clustering algorithm and granularity | proposed | embeddings exist |
@@ -32,6 +32,8 @@ do not need one.
 | [0014](0014-hawkes-track-scope.md) | Neural-Hawkes track: scope & architecture-critical decisions | proposed | informs WP-12…WP-15 |
 | [0015](0015-storage-layout.md) | Storage layout: NVMe working set, portable-drive archive + tar shards | accepted | — |
 | [0016](0016-multi-subreddit-corpus.md) | Multi-subreddit corpus with cross-community normalization | proposed | three preconditions in the ADR |
+| [0017](0017-no-title-in-clustering-embedding.md) | Post title/body excluded from the meme-identity embedding | accepted | — |
+| [0018](0018-separate-image-and-text-channels.md) | Separate image and text channels; sentence model for the text | accepted | — |
 
 ## Template
 

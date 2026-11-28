@@ -1,4 +1,13 @@
-"""Three WP-01 embedding pipelines: VLM-native, hybrid, OCR-status-quo."""
+"""Embedding compositions.
+
+Current (ADR 0018, 2026-11-28): `embed_channels` — an image channel and a text channel kept
+as two separate vectors, the text embedded with a sentence model.
+
+Superseded: `embed_pipeline` and `PIPELINES` — single concatenated vectors with the text
+embedded by the CLIP text tower (ADR 0006/0017). Kept unchanged, including the "[empty]"
+placeholder for text-free images, only so that recorded runs can be reproduced. Do not use
+them for new work.
+"""
 
 from __future__ import annotations
 
@@ -10,6 +19,64 @@ import numpy as np
 from memes_base.ocr_pipelines import run_pipeline
 
 from experiments.wp01.embedders import ClipBackend
+
+# Sentence model for the text channel (ADR 0018). The revision is pinned so that stored
+# vectors stay reproducible; changing either line means re-embedding.
+TEXT_MODEL = "BAAI/bge-base-en-v1.5"
+TEXT_MODEL_REVISION = "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+
+
+@dataclass(frozen=True)
+class MemeChannels:
+    """The two channels of ADR 0018, row-aligned.
+
+    image:    (n, d_img) unit rows, OpenCLIP image embedding. Template identity.
+    text:     (n, d_txt) unit rows from the sentence model; all-zero where has_text is False.
+    has_text: (n,) bool. False when the image has no extracted text, in which case the text
+              row carries no information and must not be compared with other rows.
+    """
+
+    image: np.ndarray
+    text: np.ndarray
+    has_text: np.ndarray
+
+
+def load_text_encoder(device: str | None = None):
+    from sentence_transformers import SentenceTransformer
+
+    return SentenceTransformer(TEXT_MODEL, revision=TEXT_MODEL_REVISION, device=device)
+
+
+def embed_text_channel(texts: Sequence[str], encoder: Any, batch_size: int = 64) -> tuple[np.ndarray, np.ndarray]:
+    """Embed in-image text with the sentence model. Returns (vectors, has_text)."""
+    clean = [(t or "").strip() for t in texts]
+    has_text = np.array([bool(t) for t in clean], dtype=bool)
+    dim = encoder.get_sentence_embedding_dimension()
+    out = np.zeros((len(clean), dim), dtype=np.float32)
+    if has_text.any():
+        vecs = encoder.encode([t for t in clean if t], batch_size=batch_size,
+                              normalize_embeddings=True, show_progress_bar=False)
+        out[has_text] = np.asarray(vecs, dtype=np.float32)
+    return out, has_text
+
+
+def embed_channels(
+    backend: ClipBackend,
+    images_bgr: Sequence[np.ndarray],
+    ocr_texts: Sequence[str],
+    *,
+    text_encoder: Any | None = None,
+) -> MemeChannels:
+    """ADR 0018 composition: image channel and text channel, not concatenated.
+
+    `ocr_texts` is the extracted in-image text, one string per image ("" for none). Post
+    title and body do not belong here (ADR 0017).
+    """
+    if len(images_bgr) != len(ocr_texts):
+        raise ValueError(f"{len(images_bgr)} images but {len(ocr_texts)} texts")
+    image = backend.encode_images(images_bgr)
+    text, has_text = embed_text_channel(ocr_texts, text_encoder or load_text_encoder())
+    return MemeChannels(image=image, text=text, has_text=has_text)
 
 
 @dataclass(frozen=True)

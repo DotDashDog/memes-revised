@@ -1,6 +1,6 @@
 # Project State
 
-**Last updated:** 2026-11-27 (project resumed after a four-month pause; rules and docs simplified)
+**Last updated:** 2026-11-28 (embedding composition changed by ADR 0018)
 
 The current snapshot. History is in [`changelog.md`](changelog.md).
 
@@ -19,12 +19,8 @@ agent recommends, and what is blocked meanwhile. Remove an entry once it is answ
   pairs together at 90% purity; (c) a *broad subject* (all Endgame memes), which is closer
   to several of your answers and has not been measured. Recommendation: none yet; the
   agent's lean is (a) as the unit that is measurable now, with (b) pursued as a
-  neighbour-graph or soft-membership problem. Blocks ADR 0009 (clustering method), the
-  embedding composition question below, and everything downstream of clusters.
-- **Is the accepted embedding (image plus extracted text, ADR 0006/0017) still right?** For
-  templates it is clearly worse than image alone (0.56 against 0.77); for meaning it helps
-  at looser purity. Depends on the answer above. A bug in it (text-free images share one
-  text vector) needs fixing either way.
+  neighbour-graph or soft-membership problem. Blocks ADR 0009 (clustering method) and
+  everything downstream of clusters.
 - **What should the model predict for each meme?** Two independent synthetic studies
   completed on 2026-11-27 (SIR curves, WP-02; the Hawkes point-process fitter, WP-12;
   neither independently reviewed yet) reach the same answer from different models: for a
@@ -57,14 +53,17 @@ agent recommends, and what is blocked meanwhile. Remove an entry once it is answ
 
 ## Active focus
 
-- [WP-04: clustering gold set and audit](work-packages/WP-04-clustering-gold-set-audit.md)
-  — in progress on draft PR #1 (branch `worktree-wp01-clustering-dedup`), not yet on `main`.
-  A 50,000-post sample from 2019 is drawn, its images fetched into `/mnt/d/memes/`, and
-  near-duplicate families computed (`experiments/WP-04/`). Next steps are the sample-size
-  derivation and labeling.
-- [WP-02: SIR identifiability on synthetic data](work-packages/WP-02-sir-identifiability-study.md)
-  — first pass complete; optional low-count follow-up open.
-- [WP-12: SIR-Hawkes replication](work-packages/WP-12-sir-hawkes-replication.md) — active.
+- [WP-04: clustering gold set and audit](work-packages/WP-04-clustering-gold-set-audit.md).
+  The audit itself is done and reviewed: templates can be recovered from the image,
+  meaning-level meme families cannot. What continues under it is the search for a
+  representation of meaning that works: extracted text through a sentence model (adopted,
+  ADR 0018), and descriptions written by a local vision-language model (under test;
+  outputs in `experiments/WP-19/`). Closing the package waits on the "one meme" question
+  above.
+- [WP-02: SIR identifiability](work-packages/WP-02-sir-identifiability-study.md) and
+  [WP-12: Hawkes replication](work-packages/WP-12-sir-hawkes-replication.md). November
+  passes complete, not yet independently reviewed. Both wait on the prediction-target
+  question above.
 
 ## What is decided
 
@@ -75,11 +74,12 @@ See `decisions/` for the full ADR set. Accepted at bootstrap:
 - 0003 — Reddit-only as initial platform; r/memes as first subreddit.
 - 0004 — Embedding contamination mitigated via time-cutoff evaluation; final cutoff window pending ADR 0011.
 - 0005 — SIR initial conditions fixed: $S(0) = 1 - I(0)$, $R(0) = 0$.
-- 0006 — Embedding pipeline: hybrid VLM image embedding + filtered EasyOCR text embedding.
+- 0006 — Embedding pipeline: hybrid VLM image embedding + filtered EasyOCR text embedding (text encoder and composition amended by 0018).
 - 0010 — SIR parameterization for prediction: primary targets are stable curve summaries; transformed SIR parameters are auxiliary diagnostic targets with identifiability metadata.
 - 0013 — JAX as the primary numerical backend for new research code; predictor framework choice remains open.
 - 0015 — Storage layout: tiered NVMe (working set) / portable drive (archive + shards), with the image corpus in uncompressed 1.5 GB tar shards plus a parquet index. Format validated by measurement.
-- 0017 — Clustering/meme-identity embedding is image ⊕ OCR only; post title/body excluded (kept available as a predictor-side ablation).
+- 0017 — Post title/body excluded from meme identity (kept available as a predictor-side ablation).
+- 0018 — Image and text are two separate channels, not one concatenated vector; the extracted text is embedded with a sentence model (`bge-base-en-v1.5`), not the CLIP text tower. Accepted 2026-11-28. Code: `embed_channels` in `experiments/wp01/pipelines.py`.
 
 ## What is NOT decided
 
@@ -120,8 +120,8 @@ The legacy code in this repo (`memes_base/`, `train_script.py`, `test_ocr.py`, e
 
 | Model            | Status                | Version / weights                         | Notes                                                |
 | ---------------- | --------------------- | ----------------------------------------- | ---------------------------------------------------- |
-| Embedding model  | chosen for first pass | OpenCLIP ViT-B-16 + filtered EasyOCR      | ADR 0006 accepted hybrid image/OCR pipeline          |
-| Text embeddings  | under comparison      | MiniLM L6 v2, BGE base en v1.5, E5 base v2 | Cached on 1000 examples for semantic clustering work |
+| Image channel    | chosen for first pass | OpenCLIP ViT-B-16 (`laion2b_s34b_b88k`)   | ADR 0006; kept separate from the text channel (ADR 0018) |
+| Text channel     | chosen for first pass | filtered EasyOCR text → `BAAI/bge-base-en-v1.5` | ADR 0018. Descriptions written by a local vision-language model are under test as a better input (WP-04 log) |
 | Spread predictor | not yet trained       | —                                         | Architecture deferred until embedding pipeline lands |
 
 ## Eval set

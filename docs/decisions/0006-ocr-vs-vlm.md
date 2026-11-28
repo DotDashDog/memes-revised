@@ -1,6 +1,6 @@
 # 0006 — OCR pipeline vs. VLM-native embedding
 
-**Status:** accepted
+**Status:** accepted; amended by [0017](0017-no-title-in-clustering-embedding.md) (no post text in meme identity) and [0018](0018-separate-image-and-text-channels.md) (sentence model for the text; image and text kept as separate channels)
 **Date:** 2026-05-19
 **Gates:** [WP-01](../work-packages/WP-01-ocr-vs-vlm-benchmark.md)
 
