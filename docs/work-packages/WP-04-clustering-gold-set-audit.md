@@ -158,6 +158,38 @@ grades from the plots; no self-certified pass (AGENTS.md).
 
 <!-- Newest at top. -->
 
+- 2026-11-28 — **Revised prompt for the local description model: plan and expectations,
+  written before any revised description exists.** The first prompt
+  (`experiments/wp19/describe_prompt.md`) did not tell the model where or when the image was
+  posted, which the Opus describers were told, and its output names the same thing in
+  several ways and often describes the picture where it should state the joke. The revision
+  (`describe_prompt_v2.md`) gives the subreddit and posting month, asks for one
+  encyclopedia-style name per referent and for the source work behind a character, and asks
+  for the point of the joke instead of a description of the picture. Its examples are
+  deliberately not from 2019, so the prompt carries no hint about the families in this
+  sample, and the model is told not to repeat the date (a date in the text would make posts
+  from the same month look alike for the wrong reason). *Run:* Qwen3-VL 8B at 8-bit, same
+  server settings and decoding as the first run, all 797 images.
+  *Comparison:* revised against first prompt, same model and precision, both as
+  "referents. premise" and with the model's own transcription appended, scored by
+  `experiments/wp19/evaluate_prompt_v2.py`. Differences get paired intervals: resampling
+  the user's 99 pairs for the user score, resampling whole families for the scores against
+  agent labels. *Noise floor:* the first prompt run at full and at 8-bit precision differs
+  by 0.006 on the user score, 0.005 on the share of a family kept together at 90% purity,
+  and 0.013 on pair ranking; differences of that size mean nothing.
+  *Expectation:* a modest gain against the agent labels (pair ranking from 0.81 to roughly
+  0.83-0.87; share kept at 90% purity from 0.28 to roughly 0.30-0.35), because consistent
+  naming is what those scores reward. On the user's answers I expect no detectable change:
+  the first prompt already scores 0.86 and 99 pairs cannot resolve less than about 0.05.
+  *Counts as an improvement:* a paired interval that excludes zero on the user score, or on
+  both agent-label scores (pair ranking and share kept at 90% purity). *Counts as failure:*
+  no interval excludes zero, in which case wording is not what holds the local model back
+  and the remaining gap to Opus is capability; or the user score falls by more than its
+  interval. *Limits:* the user's 99 pairs have now been used to judge several description
+  sources, so a win on them alone would be weak; this is the only prompt revision that
+  will be scored against them. The popularity-word screen is rerun. Nothing here tests
+  memes newer than the model's training data.
+
 - 2026-11-28 — **Local description models tested (follow-up to the diagnostic; author-only,
   not independently reviewed).** Question: can a vision-language model that fits on the
   3090 write "what is this meme about" descriptions good enough, fast enough? Files:

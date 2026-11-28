@@ -28,6 +28,8 @@ import httpx
 REPO = pathlib.Path(__file__).resolve().parents[2]
 IMG_DIR = REPO / "experiments/WP-04/sample-001/label_images"
 PROMPT = (REPO / "experiments/wp19/describe_prompt.md").read_text()
+# Per-image context for prompts that contain "{when}" (the posting month); set in main().
+WHEN: dict[str, str] = {}
 
 SCHEMA = {
     "type": "object",
@@ -42,7 +44,8 @@ SCHEMA = {
 }
 
 
-def build_body(model, img_b64, max_tokens, schema, sampling=None):
+def build_body(model, img_b64, max_tokens, schema, sampling=None, mid=None):
+    prompt = PROMPT.replace("{when}", WHEN[mid]) if "{when}" in PROMPT else PROMPT
     body = {
         "model": model,
         "messages": [
@@ -50,7 +53,7 @@ def build_body(model, img_b64, max_tokens, schema, sampling=None):
                 "role": "user",
                 "content": [
                     {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{img_b64}"}},
-                    {"type": "text", "text": PROMPT},
+                    {"type": "text", "text": prompt},
                 ],
             }
         ],
@@ -70,7 +73,7 @@ def build_body(model, img_b64, max_tokens, schema, sampling=None):
 
 async def one(client, url, sem, model, mid, max_tokens, schema, fh, lock, sampling=None):
     img_b64 = base64.b64encode((IMG_DIR / f"{mid}.jpg").read_bytes()).decode()
-    body = build_body(model, img_b64, max_tokens, schema, sampling)
+    body = build_body(model, img_b64, max_tokens, schema, sampling, mid)
     async with sem:
         t0 = time.perf_counter()
         rec = {"id": mid, "t_send": t0}
@@ -108,7 +111,16 @@ async def main():
     ap.add_argument("--no-resume", action="store_true")
     ap.add_argument("--sample", action="store_true",
                     help="Qwen3-VL model-card VL sampling (T=0.7, top_p=0.8, top_k=20, presence 1.5) instead of greedy")
+    ap.add_argument("--prompt", default=None, help="prompt file (default describe_prompt.md)")
+    ap.add_argument("--when-file", default=None,
+                    help='JSON {id: "Month YYYY"}; required if the prompt contains "{when}"')
     a = ap.parse_args()
+
+    global PROMPT
+    if a.prompt:
+        PROMPT = pathlib.Path(a.prompt).read_text()
+    if "{when}" in PROMPT:
+        WHEN.update(json.loads(pathlib.Path(a.when_file).read_text()))
 
     if a.ids_file:
         ids = [l.strip() for l in open(a.ids_file) if l.strip()]
