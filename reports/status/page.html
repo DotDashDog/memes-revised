@@ -1,0 +1,207 @@
+<title>Meme Spread Status</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: one reading column. Decisions first, then findings, each finding = claim, plot, what the plot shows, how far to trust it. */
+:root{--bg:#f4f6f8;--surface:#ffffff;--fg:#18212b;--muted:#566373;--line:#d5dce4;--accent:#0f6e8c;--accent-soft:#e2f0f4;
+--ok:#1d7a4f;--warn:#9a6200;--open:#a23b32;--plot-bg:#ffffff;--mark:#257de0;--mark-new:#f47230;
+--display:"Space Grotesk",system-ui,sans-serif;--body:Inter,system-ui,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#11161b;--surface:#1a2129;--fg:#e6ebf0;--muted:#98a5b3;--line:#2c3742;--accent:#6fc3de;--accent-soft:#17303a;
+--ok:#5cc793;--warn:#e0b05a;--open:#ef8f85;--plot-bg:#ffffff;--mark:#338ced;--mark-new:#e76624;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11161b;--surface:#1a2129;--fg:#e6ebf0;--muted:#98a5b3;--line:#2c3742;--accent:#6fc3de;--accent-soft:#17303a;
+--ok:#5cc793;--warn:#e0b05a;--open:#ef8f85;--plot-bg:#ffffff;--mark:#338ced;--mark-new:#e76624;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:860px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:36px}
+header{display:flex;flex-direction:column;gap:10px}
+h1{font-family:var(--display);font-size:30px;font-weight:600;margin:0;line-height:1.15;text-wrap:balance}
+h2{font-family:var(--display);font-size:21px;font-weight:600;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-size:17px;font-weight:600;margin:0;text-wrap:balance}
+p{margin:0;max-width:68ch}
+.date{color:var(--muted);font-size:14px;letter-spacing:.02em}
+.lede{font-size:18px;line-height:1.5}
+section{display:flex;flex-direction:column;gap:16px}
+.sub{display:flex;flex-direction:column;gap:12px;padding-top:20px;border-top:1px solid var(--line)}
+.muted{color:var(--muted)}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:68ch}
+.chip{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:3px;border:1px solid currentColor;white-space:nowrap}
+.chip.ok{color:var(--ok)}.chip.warn{color:var(--warn)}.chip.open{color:var(--open)}
+.headrow{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.decisions{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.decision{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border-top:1px solid var(--line)}
+.decision:first-child{border-top:0}
+.decision .rec{background:var(--accent-soft);padding:8px 12px;border-radius:4px;max-width:none}
+.decision .meta{color:var(--muted);font-size:14px}
+figure{margin:0;display:flex;flex-direction:column;gap:8px}
+figure .plot{background:var(--plot-bg);border:1px solid var(--line);border-radius:4px;padding:6px;overflow-x:auto}
+figure img{display:block;max-width:100%;height:auto;margin:0 auto}
+figcaption{color:var(--muted);font-size:14px;max-width:68ch}
+figcaption b{color:var(--fg);font-weight:600}
+.tablebox{overflow-x:auto}
+table{border-collapse:collapse;font-size:14.5px;min-width:520px;width:100%}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:12.5px;letter-spacing:.03em;text-transform:uppercase}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr.hl td{background:var(--accent-soft)}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:14px 12px 8px;overflow-x:auto}
+.chart svg{display:block;min-width:560px;width:100%;height:auto;font-family:var(--body)}
+.chart text{fill:var(--fg);font-size:13px}
+.chart .t2{fill:var(--muted);font-size:12px}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .ci{stroke:var(--mark);stroke-width:2;stroke-linecap:round}
+.chart .dot{fill:var(--mark);stroke:var(--surface);stroke-width:2}
+.chart .new .ci{stroke:var(--mark-new)}.chart .new .dot{fill:var(--mark-new)}
+.chart g.row:hover .dot{r:7}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;background:var(--mark);vertical-align:-1px}
+.legend span.new::before{background:var(--mark-new)}
+code{font-size:.9em;background:var(--accent-soft);padding:1px 5px;border-radius:3px}
+a{color:var(--accent)}
+</style>
+<div class="wrap">
+<header>
+  <div class="date">Status as of 28 November 2026 &middot; r/memes spread-prediction project</div>
+  <h1>Templates can be recognised; meanings cannot yet, and only two things about a meme's spread can be measured reliably</h1>
+  <p class="lede">Two days of work since the project resumed. The picture that came out is less comfortable than the plan from the summer, but it is much better evidenced. Five decisions are waiting on you; none of them blocks the work now in progress.</p>
+</header>
+
+<section id="decisions">
+  <h2>Waiting on you</h2>
+  <div class="decisions">
+    <div class="decision">
+      <h3>1. What counts as "one meme"?</h3>
+      <p>The clustering audit cannot be closed, and nothing can be modelled, until the unit is fixed. Three candidates: <b>(a) a template</b>, the reused base image, which you and the agent labels agreed on in all 56 informative pairs and which can be recovered automatically today; <b>(b) a specific joke or trend</b>, whatever the picture, which is what the project wants but which no method tried so far can group cleanly; <b>(c) a broad subject</b> (all Endgame memes), which is closer to several of your own answers and has not been measured.</p>
+      <p class="rec"><b>My lean:</b> not either/or. Use the template as the hard unit that can be counted now, and treat meaning as a soft property of each post (its text channel, or a written description) that the predictor reads directly, with no clustering step in between. That also answers your earlier question about what replaces the cluster-centroid vector.</p>
+      <p class="meta">Blocks: the clustering method decision and everything built on clusters.</p>
+    </div>
+    <div class="decision">
+      <h3>2. What should the model predict for each meme?</h3>
+      <p>Two independent simulation studies, on the two curve models the project uses, agree: for a single meme only the <b>early growth rate</b> and the <b>final size</b> can be recovered, and final size only once the peak has been seen. Peak time, peak height and the other curve parameters come back with error bars that look tight and are wrong.</p>
+      <p class="rec"><b>Recommendation:</b> make growth rate and final size the targets, keep only memes whose peak falls inside the observed window, and fit with a noise model that allows for bursty counts.</p>
+      <p class="meta">Blocks: curve fitting on real data and the predictor. Amends a decision accepted in May (the choice of curve summaries as targets). Neither study has been independently reviewed yet; I can run those reviews on your word.</p>
+    </div>
+    <div class="decision">
+      <h3>3. Several subreddits, or r/memes alone?</h3>
+      <p>The three measurements this proposal was waiting on are done. They do not argue against widening the corpus, but one of the proposal's four safeguards does not work as written: counts of distinct authors jump in mid-2023 for a reason that has nothing to do with activity (see the plot below).</p>
+      <p class="rec"><b>Recommendation:</b> do not accept the proposal as written. I revise that safeguard and add a control for community, then bring it back.</p>
+      <p class="meta">Blocks: the train/test split decision.</p>
+    </div>
+    <div class="decision">
+      <h3>4. Where should the Linux environment live?</h3>
+      <p>It is on the portable hard disk since Friday's incident. That works, but small-file work is roughly 14 times slower than on the internal drive, and loading the description model took 4.6 minutes today.</p>
+      <p class="rec"><b>Recommendation:</b> move it back when convenient. That needs about 150 GB freed on C:, which only you can do. A guard now stops any agent from filling a drive again.</p>
+      <p class="meta">Blocks nothing.</p>
+    </div>
+    <div class="decision">
+      <h3>5. A memory test on the desktop</h3>
+      <p>A reviewer found one flipped bit in a file written on Friday. One event proves nothing, but an overnight memory test (Windows Memory Diagnostic or MemTest86) is cheap and only you can start it.</p>
+      <p class="meta">Blocks nothing. Agents now checksum important outputs.</p>
+    </div>
+  </div>
+  <p class="muted">Decided since the last update: the embedding change you approved today is in (details below).</p>
+</section>
+
+<section id="audit">
+  <div class="headrow"><h2>Can the embedding group memes the way a person would?</h2><span class="chip ok">independently reviewed</span><span class="chip ok">you checked 100 pairs</span></div>
+  <p>797 posts from 2019 were labelled twice over: by template (the base image) and by meaning (the specific joke or trend). Each candidate method then clusters the posts, and is scored on how much of each true group it keeps together while its clusters stay 90% pure.</p>
+  <figure>
+    <div class="plot"><img src="fig/audit_precision_recall.png" alt="Precision against recall curves for each clustering method, by meaning and by template" width="1560" height="1300"></div>
+    <figcaption><b>How to read it.</b> Each curve is one method swept from strict to loose. Up and to the right is better. Top row: judged by meaning. Bottom row: judged by template. <b>If things were fine</b> the top-row curves would reach the upper right as the bottom-row ones nearly do. <b>What it shows:</b> for templates, the image alone keeps 77% of each group together at 90% purity. For meaning, every method keeps about a fifth.</figcaption>
+  </figure>
+  <figure>
+    <div class="plot"><img src="fig/audit_why_fails.png" alt="Similarity distributions by pair type for three representations" width="1800" height="956"></div>
+    <figcaption><b>Why it fails.</b> Top row: how similar pairs of posts look to each representation. For meaning to be recoverable, blue (same meme, different picture) must sit to the right of red (different meme, same picture). With the image in the mix, red wins 72 to 89% of the time: the picture outvotes the meaning. Bottom row: no single similarity cut-off separates a real family link from an unrelated nearest neighbour. Five different clustering algorithms gave the same result, so the algorithm is not the problem.</figcaption>
+  </figure>
+  <p><b>Where your answers differed from the labels.</b> You agreed with the template labels on every informative pair. On meaning you agreed on 37 of 40 "same" pairs but on only 31 of 39 hard "different" pairs: you count a shared subject as the same meme more readily than the written protocol does. That is why decision 1 is yours.</p>
+</section>
+
+<section id="descriptions">
+  <div class="headrow"><h2>Can a better description of each meme fix it?</h2><span class="chip warn">author only, review under way</span></div>
+  <p>If the picture outvotes the meaning, describe the meaning in words and embed the words. Three sources were tried on the same 797 posts: the text already printed on the image, a description written by a vision-language model small enough to run on the 3090, and a description written by Opus. Each is scored on how well it predicts your own 99 same-meme answers.</p>
+  <figure>
+    <div class="chart"><svg viewBox="0 0 720 340" role="img" aria-label="How well each representation predicts your same-meme answers, with 95% intervals">
+<line class="grid" x1="290.0" y1="28" x2="290.0" y2="306"/>
+<text class="t2" x="290.0" y="322" text-anchor="middle">0.4</text>
+<line class="grid" x1="350.0" y1="28" x2="350.0" y2="306"/>
+<text class="t2" x="350.0" y="322" text-anchor="middle">0.5</text>
+<line class="grid" x1="410.0" y1="28" x2="410.0" y2="306"/>
+<text class="t2" x="410.0" y="322" text-anchor="middle">0.6</text>
+<line class="grid" x1="470.0" y1="28" x2="470.0" y2="306"/>
+<text class="t2" x="470.0" y="322" text-anchor="middle">0.7</text>
+<line class="grid" x1="530.0" y1="28" x2="530.0" y2="306"/>
+<text class="t2" x="530.0" y="322" text-anchor="middle">0.8</text>
+<line class="grid" x1="590.0" y1="28" x2="590.0" y2="306"/>
+<text class="t2" x="590.0" y="322" text-anchor="middle">0.9</text>
+<line class="grid" x1="650.0" y1="28" x2="650.0" y2="306"/>
+<text class="t2" x="650.0" y="322" text-anchor="middle">1.0</text>
+<text class="t2" x="350.0" y="22" text-anchor="middle">coin flip</text>
+<text class="t2" x="650.0" y="22" text-anchor="end">perfect</text>
+<g class="row"><title>Image alone: 0.58 (95% interval 0.46 to 0.69)</title><rect x="0" y="34.0" width="720" height="34" fill="transparent"/><text x="278" y="55.0" text-anchor="end">Image alone</text><line class="ci" x1="327.2" y1="51.0" x2="465.8" y2="51.0"/><circle class="dot" cx="399.9" cy="51.0" r="5.5"/><text x="664" y="55.0" style="font-variant-numeric:tabular-nums">0.58</text></g>
+<g class="row"><title>Old pipeline: image + extracted text: 0.68 (95% interval 0.57 to 0.78)</title><rect x="0" y="68.0" width="720" height="34" fill="transparent"/><text x="278" y="89.0" text-anchor="end">Old pipeline: image + extracted text</text><line class="ci" x1="389.4" y1="85.0" x2="515.2" y2="85.0"/><circle class="dot" cx="455.9" cy="85.0" r="5.5"/><text x="664" y="89.0" style="font-variant-numeric:tabular-nums">0.68</text></g>
+<g class="row new"><title>Extracted text, new text channel: 0.77 (95% interval 0.67 to 0.86)</title><rect x="0" y="102.0" width="720" height="34" fill="transparent"/><text x="278" y="123.0" text-anchor="end">Extracted text, new text channel</text><line class="ci" x1="453.7" y1="119.0" x2="565.5" y2="119.0"/><circle class="dot" cx="513.6" cy="119.0" r="5.5"/><text x="664" y="123.0" style="font-variant-numeric:tabular-nums">0.77</text></g>
+<g class="row"><title>Local 4B model&#x27;s description: 0.83 (95% interval 0.74 to 0.90)</title><rect x="0" y="136.0" width="720" height="34" fill="transparent"/><text x="278" y="157.0" text-anchor="end">Local 4B model&#x27;s description</text><line class="ci" x1="492.3" y1="153.0" x2="591.7" y2="153.0"/><circle class="dot" cx="545.6" cy="153.0" r="5.5"/><text x="664" y="157.0" style="font-variant-numeric:tabular-nums">0.83</text></g>
+<g class="row"><title>Local 8B model&#x27;s description: 0.86 (95% interval 0.78 to 0.92)</title><rect x="0" y="170.0" width="720" height="34" fill="transparent"/><text x="278" y="191.0" text-anchor="end">Local 8B model&#x27;s description</text><line class="ci" x1="515.4" y1="187.0" x2="604.4" y2="187.0"/><circle class="dot" cx="564.6" cy="187.0" r="5.5"/><text x="664" y="191.0" style="font-variant-numeric:tabular-nums">0.86</text></g>
+<g class="row"><title>Local 8B, revised prompt: 0.84 (95% interval 0.76 to 0.92)</title><rect x="0" y="204.0" width="720" height="34" fill="transparent"/><text x="278" y="225.0" text-anchor="end">Local 8B, revised prompt</text><line class="ci" x1="506.6" y1="221.0" x2="600.6" y2="221.0"/><circle class="dot" cx="556.7" cy="221.0" r="5.5"/><text x="664" y="225.0" style="font-variant-numeric:tabular-nums">0.84</text></g>
+<g class="row"><title>Local 8B description + its transcription: 0.88 (95% interval 0.81 to 0.94)</title><rect x="0" y="238.0" width="720" height="34" fill="transparent"/><text x="278" y="259.0" text-anchor="end">Local 8B description + its transcription</text><line class="ci" x1="534.6" y1="255.0" x2="613.7" y2="255.0"/><circle class="dot" cx="576.9" cy="255.0" r="5.5"/><text x="664" y="259.0" style="font-variant-numeric:tabular-nums">0.88</text></g>
+<g class="row"><title>Opus description (not local): 0.92 (95% interval 0.86 to 0.97)</title><rect x="0" y="272.0" width="720" height="34" fill="transparent"/><text x="278" y="293.0" text-anchor="end">Opus description (not local)</text><line class="ci" x1="566.7" y1="289.0" x2="630.2" y2="289.0"/><circle class="dot" cx="602.3" cy="289.0" r="5.5"/><text x="664" y="293.0" style="font-variant-numeric:tabular-nums">0.92</text></g>
+</svg></div>
+    <div class="legend"><span>score, with 95% range</span><span class="new">the change you approved today</span></div>
+    <figcaption><b>How to read it.</b> 0.5 is a coin flip, 1.0 is perfect agreement with you. Lines are 95% ranges; with 99 pairs they are wide, so neighbouring rows are often not distinguishable. <b>What it shows:</b> a steady climb from picture, to printed text, to written description. The local model lands between printed text and Opus.</figcaption>
+  </figure>
+  <div class="tablebox"><table>
+    <thead><tr><th>Source</th><th class="num">Predicts your answers</th><th class="num">Share of a meme family kept together*</th><th class="num">Speed on the 3090</th><th class="num">Ten million images</th></tr></thead>
+    <tbody>
+      <tr><td>Old pipeline (image + extracted text)</td><td class="num">0.68</td><td class="num">0.21</td><td class="num">1&ndash;2 / s (text extraction)</td><td class="num">&mdash;</td></tr>
+      <tr class="hl"><td>Extracted text, new text channel</td><td class="num">0.77</td><td class="num">0.28</td><td class="num">same extraction step</td><td class="num">&mdash;</td></tr>
+      <tr><td>Local 4B model</td><td class="num">0.83</td><td class="num">0.22</td><td class="num">5.0 / s</td><td class="num">about 23 days</td></tr>
+      <tr><td>Local 8B model (8-bit)</td><td class="num">0.86</td><td class="num">0.28</td><td class="num">3.5 / s</td><td class="num">about 33 days</td></tr>
+      <tr><td>Local 8B + its own transcription</td><td class="num">0.88</td><td class="num">0.29</td><td class="num">3.5 / s</td><td class="num">about 33 days</td></tr>
+      <tr><td>Opus</td><td class="num">0.92</td><td class="num">0.49</td><td class="num">not local</td><td class="num">paid</td></tr>
+    </tbody></table></div>
+  <p class="muted">*When clusters are tuned to be 90% pure, judged against the agent-made labels. Those labels were built from the Opus descriptions, so this column flatters Opus; your answers do not.</p>
+  <h3>The change you approved</h3>
+  <p>The image and the text are now two separate channels, and the text is embedded with a general sentence model in place of the image model's own text encoder. On your answers that moves the score from 0.68 to 0.77 (difference +0.10, range 0.00 to 0.19) at no extra cost. It is recorded as decision 0018, the code is in, and the new code reproduces the measured score exactly. One consequence to know about: the sentence model was released in September 2023, so the held-out evaluation period has to start about a year later than it would have with the image model alone.</p>
+  <h3>The second attempt at the local model did not help</h3>
+  <p>I rewrote its prompt to give it the subreddit and month and to ask for standard names. I expected a modest gain. There was none: every difference from the first prompt is inside the noise (for example &minus;0.01 on your answers, range &minus;0.07 to +0.05). The outputs show why wording is not the problem:</p>
+  <ul>
+    <li><b>It copies the prompt's examples.</b> The new prompt mentioned "Ice Bucket Challenge" as an example of a standard name; the model then reported an Ice Bucket Challenge reference in 7 images that have nothing to do with it. It called 14 images "Distracted Boyfriend" (another example in the prompt); one of them is.</li>
+    <li><b>It does not know what memes refer to.</b> A July 2019 post about Naruto-running at "the raid" is the Area 51 raid to Opus and to you. The local model, told the month, wrote "Naruto" and "raid".</li>
+  </ul>
+  <p><b>What this means.</b> A small local model gives a real but modest gain over the printed text, for about a month of GPU time per ten million images. Closing the rest of the gap needs a model that knows meme culture, which means a much larger local model or a paid one. And even Opus-quality descriptions keep under half of each family together, so descriptions improve the representation without making clean clusters possible. That is the main reason for my lean on decision 1: stop requiring clusters of meaning, and let the predictor read each post's representation directly.</p>
+</section>
+
+<section id="targets">
+  <div class="headrow"><h2>What can be measured about one meme's spread?</h2><span class="chip warn">author only, not yet reviewed</span></div>
+  <p>Before fitting real data, both curve models were tested on simulated memes where the true answer is known. The test is simple: when the fit says "95% sure the value is in this range", is it?</p>
+  <figure>
+    <div class="plot"><img src="fig/sir_trust_map.png" alt="Trust map for each fitted quantity of the epidemic-curve model" width="1800" height="736"></div>
+    <figcaption><b>Epidemic-curve model.</b> Each marker is 400 simulated memes of a given size (vertical) observed up to a given fraction of their eventual posts (horizontal). Green: the estimate is honest and usefully narrow. Yellow: honest but too wide to use. Red: the stated uncertainty is wrong. <b>If things were fine</b> every panel would be green. <b>What it shows:</b> growth rate is green nearly everywhere; final size, peak time and peak height turn green only after the peak has been observed.</figcaption>
+  </figure>
+  <figure>
+    <div class="plot"><img src="fig/hawkes_coverage.png" alt="Coverage of stated 95 percent intervals for the point-process model" width="1800" height="450"></div>
+    <figcaption><b>Point-process model.</b> How often a stated 95% range contains the truth (dashed line = 95%). Left panel: the published paper's setting, 300 starting posts. Other panels: meme-like cascades started by one post. Bars far below the line mean overconfidence. The summer's conclusion that one of this model's key parameters was recoverable has been withdrawn.</figcaption>
+  </figure>
+</section>
+
+<section id="data">
+  <div class="headrow"><h2>Is the data sound?</h2><span class="chip ok">ingest independently reviewed</span><span class="chip warn">multi-subreddit: author only</span></div>
+  <figure>
+    <div class="plot"><img src="fig/ingest_monthly.png" alt="Monthly r/memes post counts from the raw archive and the ingested table" width="1500" height="975"></div>
+    <figcaption><b>The archive was read in faithfully.</b> Posts per month counted two independent ways, with the difference below. A faithful ingest puts every difference at zero; all 188 months do. Two things remain open: r/memes posts drop by 46% in one step at February 2025, which is not explained yet, and the reading code would silently cut short an archive stored in several pieces (ours is not).</figcaption>
+  </figure>
+  <figure>
+    <div class="plot"><img src="fig/multi_deleted_authors.png" alt="Share of posts with a deleted author over time in seven communities" width="1800" height="855"></div>
+    <figcaption><b>Why author counts cannot be used as proposed.</b> The share of posts whose author shows as deleted falls from about a third to about 1% in mid-2023, in every community at once. That is a change in how the archive was collected, not in behaviour, and it puts a false jump into any count of distinct authors. Also measured: 8% of posts have a near-duplicate in another community, and a simple classifier names a meme's community half the time (chance is one in seven).</figcaption>
+  </figure>
+</section>
+
+<section id="running">
+  <h2>How the project now runs</h2>
+  <ul>
+    <li>One short rules file. You decide anything project-critical or costly; agents decide the rest, queue your decisions in one list, and keep working.</li>
+    <li>Every result carries a label for who has checked it. A result that enters the record gets a second agent that is handed the evidence, not the conclusion.</li>
+    <li>Sub-agents run on Opus 5.5 unless a task needs more.</li>
+    <li>A disk guard checks the real free space on the Windows drives before any large write, and blocks commands when a drive is nearly full.</li>
+  </ul>
+  <p class="muted">Known and not yet fixed: the text-extraction step is slow (1 to 2 images per second); the point-process fitter has an error in one likelihood term and often stops short of the best fit. Neither affects a result quoted above.</p>
+</section>
+</div>

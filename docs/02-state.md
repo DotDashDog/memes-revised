@@ -20,7 +20,18 @@ agent recommends, and what is blocked meanwhile. Remove an entry once it is answ
   to several of your answers and has not been measured. Recommendation: none yet; the
   agent's lean is (a) as the unit that is measurable now, with (b) pursued as a
   neighbour-graph or soft-membership problem. Blocks ADR 0009 (clustering method) and
-  everything downstream of clusters.
+  everything downstream of clusters. Bearing on it (2026-11-28): written descriptions of
+  each meme rank same-meme pairs better than any embedding tried, but even Opus-written
+  ones keep under half of each family together at 90% purity, and a local model small
+  enough for the 3090 gives only a modest gain over extracted text (0.88 against 0.77 on
+  the user's answers; about 33 GPU-days per ten million images; a revised prompt did not
+  help). So option (b) as a hard clustering looks out of reach at any cost tried; the
+  agent's suggestion is to keep the template as the countable unit and feed each post's
+  text channel to the predictor directly, with no clustering by meaning in between.
+  Whether to spend more on descriptions (a larger local model needing a 20 GB or larger
+  download, or a paid API for a subset) is also the user's call; the agent's advice is to
+  wait until a predictor exists that can show whether a better representation changes the
+  predictions.
 - **What should the model predict for each meme?** Two independent synthetic studies
   completed on 2026-11-27 (SIR curves, WP-02; the Hawkes point-process fitter, WP-12;
   neither independently reviewed yet) reach the same answer from different models: for a
