@@ -51,7 +51,9 @@ def embed_text_channel(texts: Sequence[str], encoder: Any, batch_size: int = 64)
     """Embed in-image text with the sentence model. Returns (vectors, has_text)."""
     clean = [(t or "").strip() for t in texts]
     has_text = np.array([bool(t) for t in clean], dtype=bool)
-    dim = encoder.get_sentence_embedding_dimension()
+    # renamed in recent sentence-transformers; fall back for older versions
+    dim = getattr(encoder, "get_embedding_dimension", None) or encoder.get_sentence_embedding_dimension
+    dim = dim()
     out = np.zeros((len(clean), dim), dtype=np.float32)
     if has_text.any():
         vecs = encoder.encode([t for t in clean if t], batch_size=batch_size,

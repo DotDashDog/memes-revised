@@ -1,0 +1,67 @@
+                                    user AUC  pair AUC  NN x-tpl  link AUC  P(tpl>meme)  kept@P90  kept@P70
+extracted text (EasyOCR)               0.773     0.859     0.408     0.670        0.383     0.282     0.399
+first prompt                           0.858     0.809     0.426     0.641        0.412     0.279     0.420
+revised prompt                         0.844     0.798     0.390     0.588        0.388     0.259     0.403
+first prompt + its transcription       0.878     0.821     0.457     0.668        0.422     0.292     0.425
+revised prompt + its transcription     0.868     0.809     0.430     0.659        0.407     0.302     0.468
+Opus description                       0.921     0.967     0.646     0.813        0.120     0.488     0.712
+{
+ "first prompt": {
+  "missing_or_error": 6,
+  "mentions_popularity_words": 13,
+  "popularity_examples": [
+   "b26oo8",
+   "cm8wpc",
+   "ajk5p3",
+   "dl6az7",
+   "bf7hnf",
+   "cls72p",
+   "b8rkgm",
+   "c05o3z"
+  ],
+  "mentions_2019_or_subreddit": 19,
+  "mean_referents": 1.6787954830614806,
+  "images_with_no_referent": 235,
+  "distinct_referent_strings": 944,
+  "referent_strings": 1338
+ },
+ "revised prompt": {
+  "missing_or_error": 4,
+  "mentions_popularity_words": 14,
+  "popularity_examples": [
+   "amijb8",
+   "b26oo8",
+   "cm8wpc",
+   "bnj50o",
+   "crtfno",
+   "e2w9x0",
+   "c8wv6n",
+   "e6ump2"
+  ],
+  "mentions_2019_or_subreddit": 14,
+  "mean_referents": 1.302383939774153,
+  "images_with_no_referent": 283,
+  "distinct_referent_strings": 694,
+  "referent_strings": 1038
+ }
+}
+revised prompt minus first prompt
+   user AUC   -0.013  95% interval [-0.074, 0.045]
+   pair AUC   -0.010  95% interval [-0.039, 0.011]
+   kept@P90   -0.021  95% interval [-0.082, 0.023]
+   kept@P70   -0.017  95% interval [-0.102, 0.06]
+revised prompt + its transcription minus first prompt + its transcription
+   user AUC   -0.010  95% interval [-0.055, 0.032]
+   pair AUC   -0.012  95% interval [-0.033, 0.011]
+   kept@P90   +0.010  95% interval [-0.047, 0.058]
+   kept@P70   +0.043  95% interval [-0.034, 0.118]
+revised prompt minus extracted text (EasyOCR)
+   user AUC   +0.072  95% interval [-0.002, 0.151]
+   pair AUC   -0.061  95% interval [-0.262, 0.08]
+   kept@P90   -0.023  95% interval [-0.076, 0.024]
+   kept@P70   +0.004  95% interval [-0.088, 0.131]
+Opus description minus revised prompt
+   user AUC   +0.076  95% interval [0.012, 0.15]
+   pair AUC   +0.168  95% interval [0.037, 0.361]
+   kept@P90   +0.230  95% interval [0.133, 0.326]
+   kept@P70   +0.309  95% interval [0.166, 0.438]

@@ -26,7 +26,7 @@ def test_build_candidates_has_true_label():
 class _FakeEncoder:
     """Stands in for the sentence model: no download, no GPU."""
 
-    def get_sentence_embedding_dimension(self):
+    def get_embedding_dimension(self):
         return 4
 
     def encode(self, texts, **_):

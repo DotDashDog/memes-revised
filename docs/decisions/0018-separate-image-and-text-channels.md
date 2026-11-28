@@ -94,4 +94,6 @@ Implemented as `embed_channels` in `experiments/wp01/pipelines.py`. The old
   `experiments/WP-19/description_eval.json` and `description_followup.json`.
 - Confidence: the encoder comparison is author-computed and has not been independently
   reviewed; the user-answer comparison rests on 99 pairs (0.77, interval 0.67-0.86, against
-  0.68, interval 0.57-0.78). The direction is consistent across every reference used.
+  0.68, interval 0.57-0.78; paired difference +0.096, interval 0.003 to 0.188, so positive
+  but only just clear of zero on this reference alone). The direction is the same on every
+  reference used.

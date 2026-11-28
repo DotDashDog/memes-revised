@@ -158,6 +158,53 @@ grades from the plots; no self-certified pass (AGENTS.md).
 
 <!-- Newest at top. -->
 
+- 2026-11-28 — **Revised prompt scored: no improvement; failure by the criterion set
+  beforehand. Author-only, review requested.** Revised minus first prompt, same model
+  (Qwen3-VL 8B, 8-bit), 797 images: user score -0.013 (95% interval -0.074 to 0.045), pair
+  ranking against agent labels -0.010 (-0.039 to 0.011), share of a family kept together
+  at 90% purity -0.021 (-0.082 to 0.023). With the model's transcription appended the
+  picture is the same (user score -0.010; share kept +0.010, interval -0.047 to 0.058).
+  No interval excludes zero and most point estimates are slightly negative. My expectation
+  of a modest gain against the agent labels was wrong. The revised prompt did cut the
+  number of distinct referent strings from 944 to 694, so naming became more uniform, but
+  that did not make same-meme posts more alike. Against Opus descriptions the revised
+  prompt is clearly behind on every measure (user score -0.076, interval -0.150 to -0.012;
+  share kept -0.230, interval -0.326 to -0.133).
+  *What the outputs show about why.* (1) **The model copies the prompt's examples.** The
+  revised prompt names "Ice Bucket Challenge" as an example referent; the model then
+  reported it as a referent for 7 images, none of which has anything to do with it. The
+  first prompt's example templates were "Drake Hotline Bling" and "Surprised Pikachu" and
+  the model used those names for 7 and 8 images (Opus: 5 and 5); the revised prompt's
+  examples were "Distracted Boyfriend" and "Two Buttons" and it used those for 14 and 4
+  (Opus: 1 and 0), and "Drake Hotline Bling" for none. A named template from this model
+  is therefore not evidence about the image. (2) **It does not recognise what a meme refers
+  to, even when told the month.** A July 2019 post about Naruto-running at "the raid" gets
+  the referents "Naruto", "raid", "r/memes" from both prompts; Opus writes "Area 51 raid".
+  So the gap to Opus is knowledge of meme culture, which wording cannot supply.
+  *Formatting.* With the revised prompt 75 of 797 replies stopped one character early,
+  before the closing brace (3 with the first prompt). `collect_descriptions.py` now repairs
+  exactly that case, which changes no content; after it, 790 parsed at the first pass and
+  793 after the retry pass. The date instruction held: 14 descriptions mention 2019 or the
+  subreddit, fewer than with the first prompt (19). Popularity words: 14 of 797 (first
+  prompt 13). Speed unchanged at 3.4 to 3.6 images per second; start-up took 4.6 minutes
+  with the weights now on the portable disk.
+  *Where this leaves the local model.* Standing result from the first prompt: description
+  plus its own transcription scores 0.88 on the user's answers against 0.77 for extracted
+  text (+0.108, interval 0.039 to 0.184), ties extracted text against agent labels, and
+  costs about 33 GPU-days per ten million images. As promised, no further prompt will be
+  scored against the user's 99 pairs. Options, all the user's call: accept the modest gain;
+  try a larger local model (a download of 20 GB or more, and slower); price an API model
+  for a subset; or stop pursuing descriptions and let the predictor read the text channel
+  directly. Files: `experiments/WP-19/descriptions_qwen3vl8bfp8_v2.json`,
+  `prompt_v2_eval.json`, `eval_prompt_v2.log`; scorer `experiments/wp19/evaluate_prompt_v2.py`.
+- 2026-11-28 — **ADR 0018 accepted and implemented** (image and text as separate channels;
+  extracted text through `bge-base-en-v1.5`). `embed_channels` in
+  `experiments/wp01/pipelines.py`; run on this sample's stored extracted text it reproduces
+  the scores recorded in the diagnostic (user score 0.773, pair ranking 0.859, share kept
+  0.282), with 29 text-free images flagged and given no text vector. Paired on the user's 99
+  answers, the new text channel beats the old concatenated pipeline by +0.096 (interval
+  0.003 to 0.188) and the image alone by +0.190 (0.078 to 0.307).
+
 - 2026-11-28 — **Revised prompt for the local description model: plan and expectations,
   written before any revised description exists.** The first prompt
   (`experiments/wp19/describe_prompt.md`) did not tell the model where or when the image was

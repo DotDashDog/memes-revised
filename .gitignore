@@ -208,3 +208,6 @@ experiments/WP-04/derive_n_t4.log
 
 # Local vision-language model test (WP-19): keep descriptions, timings and reports; ignore raw responses and logs
 experiments/WP-19/raw/
+
+# status report page: plots are copies of experiment outputs
+reports/status/fig/

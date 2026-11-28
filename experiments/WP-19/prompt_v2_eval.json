@@ -1,0 +1,278 @@
+{
+ "representations": {
+  "extracted text (EasyOCR)": {
+   "user_auc": 0.7726337448559671,
+   "user_auc_ci95": [
+    0.6697938203070309,
+    0.8621265876433835
+   ],
+   "user_auc_without_near_identical": 0.8185975609756099,
+   "pair_auc": 0.859063804399363,
+   "nn_same_family": 0.6367713004484304,
+   "nn_same_family_cross_template": 0.4080717488789238,
+   "link_auc": 0.6698176590990765,
+   "p_template_beats_meme": 0.38268122553152173,
+   "pairs_kept_at_p90": 0.11224702263819725,
+   "bcubed_recall_at_p90": 0.42024744879191545,
+   "pairs_kept_at_p70": 0.243126416530784,
+   "family_members_kept_at_p90": 0.28185102600716494,
+   "family_members_kept_at_p70": 0.3993573784224859
+  },
+  "first prompt": {
+   "user_auc": 0.8576131687242798,
+   "user_auc_ci95": [
+    0.7756048644947835,
+    0.9239970276931998
+   ],
+   "user_auc_without_near_identical": 0.9108231707317074,
+   "pair_auc": 0.8088419496075824,
+   "nn_same_family": 0.6502242152466368,
+   "nn_same_family_cross_template": 0.4260089686098655,
+   "link_auc": 0.6409782659645942,
+   "p_template_beats_meme": 0.4117084916446282,
+   "pairs_kept_at_p90": 0.09877421888541019,
+   "bcubed_recall_at_p90": 0.4155015464380593,
+   "pairs_kept_at_p70": 0.2133768608072202,
+   "family_members_kept_at_p90": 0.2791762713382296,
+   "family_members_kept_at_p70": 0.4203373501539959
+  },
+  "revised prompt": {
+   "user_auc": 0.8444444444444446,
+   "user_auc_ci95": [
+    0.7610687930956689,
+    0.9175874901941573
+   ],
+   "user_auc_without_near_identical": 0.8582317073170731,
+   "pair_auc": 0.7983635779499235,
+   "nn_same_family": 0.6278026905829597,
+   "nn_same_family_cross_template": 0.3901345291479821,
+   "link_auc": 0.5884087748628928,
+   "p_template_beats_meme": 0.38792426464644125,
+   "pairs_kept_at_p90": 0.09167785234899327,
+   "bcubed_recall_at_p90": 0.400896426251601,
+   "pairs_kept_at_p70": 0.23740248718550427,
+   "family_members_kept_at_p90": 0.25857685600398606,
+   "family_members_kept_at_p70": 0.40343622216101716
+  },
+  "first prompt + its transcription": {
+   "user_auc": 0.8781893004115227,
+   "user_auc_ci95": [
+    0.807620098090771,
+    0.9395501621701312
+   ],
+   "user_auc_without_near_identical": 0.9298780487804877,
+   "pair_auc": 0.8209466357263315,
+   "nn_same_family": 0.672645739910314,
+   "nn_same_family_cross_template": 0.45739910313901344,
+   "link_auc": 0.6676965984906487,
+   "p_template_beats_meme": 0.42236202376690424,
+   "pairs_kept_at_p90": 0.11636127978409853,
+   "bcubed_recall_at_p90": 0.4276308490885635,
+   "pairs_kept_at_p70": 0.23121858205205803,
+   "family_members_kept_at_p90": 0.2920780121221433,
+   "family_members_kept_at_p70": 0.42537176093703394
+  },
+  "revised prompt + its transcription": {
+   "user_auc": 0.868312757201646,
+   "user_auc_ci95": [
+    0.7888754443532952,
+    0.9357712765957447
+   ],
+   "user_auc_without_near_identical": 0.8841463414634146,
+   "pair_auc": 0.8092312741697509,
+   "nn_same_family": 0.6502242152466368,
+   "nn_same_family_cross_template": 0.4304932735426009,
+   "link_auc": 0.6589232980734676,
+   "p_template_beats_meme": 0.40710350960261454,
+   "pairs_kept_at_p90": 0.1250675498997646,
+   "bcubed_recall_at_p90": 0.43446063642316496,
+   "pairs_kept_at_p70": 0.29990751033528534,
+   "family_members_kept_at_p90": 0.30161037975703686,
+   "family_members_kept_at_p70": 0.4684030508952733
+  },
+  "Opus description": {
+   "user_auc": 0.9205761316872427,
+   "user_auc_ci95": [
+    0.8644870281445911,
+    0.9648754559963519
+   ],
+   "user_auc_without_near_identical": 0.9268292682926829,
+   "pair_auc": 0.9665106098190922,
+   "nn_same_family": 0.8565022421524664,
+   "nn_same_family_cross_template": 0.6457399103139013,
+   "link_auc": 0.8130966703645255,
+   "p_template_beats_meme": 0.12004134378861545,
+   "pairs_kept_at_p90": 0.30603475675963665,
+   "bcubed_recall_at_p90": 0.5777643955568286,
+   "pairs_kept_at_p70": 0.6410188846462715,
+   "family_members_kept_at_p90": 0.4880922115562174,
+   "family_members_kept_at_p70": 0.7121010512009742
+  }
+ },
+ "screen": {
+  "first prompt": {
+   "missing_or_error": 6,
+   "mentions_popularity_words": 13,
+   "popularity_examples": [
+    "b26oo8",
+    "cm8wpc",
+    "ajk5p3",
+    "dl6az7",
+    "bf7hnf",
+    "cls72p",
+    "b8rkgm",
+    "c05o3z"
+   ],
+   "mentions_2019_or_subreddit": 19,
+   "mean_referents": 1.6787954830614806,
+   "images_with_no_referent": 235,
+   "distinct_referent_strings": 944,
+   "referent_strings": 1338
+  },
+  "revised prompt": {
+   "missing_or_error": 4,
+   "mentions_popularity_words": 14,
+   "popularity_examples": [
+    "amijb8",
+    "b26oo8",
+    "cm8wpc",
+    "bnj50o",
+    "crtfno",
+    "e2w9x0",
+    "c8wv6n",
+    "e6ump2"
+   ],
+   "mentions_2019_or_subreddit": 14,
+   "mean_referents": 1.302383939774153,
+   "images_with_no_referent": 283,
+   "distinct_referent_strings": 694,
+   "referent_strings": 1038
+  }
+ },
+ "paired_differences": {
+  "revised prompt minus first prompt": {
+   "user AUC": [
+    -0.013,
+    [
+     -0.074,
+     0.045
+    ]
+   ],
+   "pair AUC": [
+    -0.01,
+    [
+     -0.039,
+     0.011
+    ]
+   ],
+   "kept@P90": [
+    -0.021,
+    [
+     -0.082,
+     0.023
+    ]
+   ],
+   "kept@P70": [
+    -0.017,
+    [
+     -0.102,
+     0.06
+    ]
+   ]
+  },
+  "revised prompt + its transcription minus first prompt + its transcription": {
+   "user AUC": [
+    -0.01,
+    [
+     -0.055,
+     0.032
+    ]
+   ],
+   "pair AUC": [
+    -0.012,
+    [
+     -0.033,
+     0.011
+    ]
+   ],
+   "kept@P90": [
+    0.01,
+    [
+     -0.047,
+     0.058
+    ]
+   ],
+   "kept@P70": [
+    0.043,
+    [
+     -0.034,
+     0.118
+    ]
+   ]
+  },
+  "revised prompt minus extracted text (EasyOCR)": {
+   "user AUC": [
+    0.072,
+    [
+     -0.002,
+     0.151
+    ]
+   ],
+   "pair AUC": [
+    -0.061,
+    [
+     -0.262,
+     0.08
+    ]
+   ],
+   "kept@P90": [
+    -0.023,
+    [
+     -0.076,
+     0.024
+    ]
+   ],
+   "kept@P70": [
+    0.004,
+    [
+     -0.088,
+     0.131
+    ]
+   ]
+  },
+  "Opus description minus revised prompt": {
+   "user AUC": [
+    0.076,
+    [
+     0.012,
+     0.15
+    ]
+   ],
+   "pair AUC": [
+    0.168,
+    [
+     0.037,
+     0.361
+    ]
+   ],
+   "kept@P90": [
+    0.23,
+    [
+     0.133,
+     0.326
+    ]
+   ],
+   "kept@P70": [
+    0.309,
+    [
+     0.166,
+     0.438
+    ]
+   ]
+  }
+ },
+ "n_boot": {
+  "user_pairs": 4000,
+  "families": 400
+ }
+}

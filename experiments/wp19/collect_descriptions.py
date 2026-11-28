@@ -39,12 +39,18 @@ def parse(content):
     except json.JSONDecodeError:
         strict = False
         i, j = s.find("{"), s.rfind("}")
-        if i < 0 or j <= i:
-            return None, False
         try:
+            if i < 0 or j <= i:
+                raise json.JSONDecodeError("no object", s, 0)
             obj = json.loads(s[i : j + 1])
         except json.JSONDecodeError:
-            return None, False
+            # The model sometimes stops one character early, after the last field and
+            # before the closing brace (common with the revised prompt). Appending the
+            # brace changes no content; anything else stays a failure.
+            try:
+                obj = json.loads(s[max(i, 0):].rstrip().rstrip(",") + "}")
+            except json.JSONDecodeError:
+                return None, False
     return obj, strict
 
 
