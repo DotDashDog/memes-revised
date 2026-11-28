@@ -1,0 +1,383 @@
+{
+ "definitions": {
+  "active_posts": 1000,
+  "near_zero": 100,
+  "step": 2.0,
+  "deleted_tokens": [
+   "[deleted]",
+   "[removed]",
+   "<null>"
+  ]
+ },
+ "data_dir": "/home/linus/memes-revised/dataset_saves/reddit/submissions-2025-12",
+ "communities": [
+  {
+   "subreddit": "memes",
+   "active_from": "2012-02",
+   "active_months": 167,
+   "min_n_named": 508,
+   "min_n_named_month": "2012-06",
+   "max_n_named": 121722,
+   "max_n_named_month": "2020-03",
+   "n_named_2025_12": 6243,
+   "near_zero_months": [],
+   "months_under_1000": 28,
+   "steps_ge_2x": [],
+   "median_abs_monthly_change_pct": 7.44,
+   "months_abs_robust_z_gt_5": [],
+   "deleted_share_min_pct": 0.53,
+   "deleted_share_max_pct": 40.06,
+   "deleted_share_by_year_pct": {
+    "2012": 30.83,
+    "2013": 32.53,
+    "2014": 31.11,
+    "2015": 23.03,
+    "2016": 19.75,
+    "2017": 22.66,
+    "2018": 31.68,
+    "2019": 30.34,
+    "2020": 34.84,
+    "2021": 32.88,
+    "2022": 29.69,
+    "2023": 14.3,
+    "2024": 1.87,
+    "2025": 1.35
+   },
+   "removed_share_by_year_pct": {
+    "2012": 0.0,
+    "2013": 0.0,
+    "2014": 0.0,
+    "2015": 0.0,
+    "2016": 0.0,
+    "2017": 0.0,
+    "2018": 0.0,
+    "2019": 8.35,
+    "2020": 57.59,
+    "2021": 50.6,
+    "2022": 54.42,
+    "2023": 69.9,
+    "2024": 62.99,
+    "2025": 27.2
+   },
+   "loglog_slope_n_vs_posts": 0.857,
+   "loglog_r2_n_vs_posts": 0.9957
+  },
+  {
+   "subreddit": "dankmemes",
+   "active_from": "2016-04",
+   "active_months": 117,
+   "min_n_named": 511,
+   "min_n_named_month": "2016-04",
+   "max_n_named": 74603,
+   "max_n_named_month": "2019-08",
+   "n_named_2025_12": 1159,
+   "near_zero_months": [],
+   "months_under_1000": 4,
+   "steps_ge_2x": [],
+   "median_abs_monthly_change_pct": 11.65,
+   "months_abs_robust_z_gt_5": [],
+   "deleted_share_min_pct": 0.91,
+   "deleted_share_max_pct": 49.1,
+   "deleted_share_by_year_pct": {
+    "2016": 18.05,
+    "2017": 33.82,
+    "2018": 35.6,
+    "2019": 31.13,
+    "2020": 41.65,
+    "2021": 39.12,
+    "2022": 35.81,
+    "2023": 22.26,
+    "2024": 2.56,
+    "2025": 1.32
+   },
+   "removed_share_by_year_pct": {
+    "2016": 0.0,
+    "2017": 0.0,
+    "2018": 0.0,
+    "2019": 6.83,
+    "2020": 65.7,
+    "2021": 53.96,
+    "2022": 49.35,
+    "2023": 50.64,
+    "2024": 31.18,
+    "2025": 30.32
+   },
+   "loglog_slope_n_vs_posts": 0.857,
+   "loglog_r2_n_vs_posts": 0.9899
+  },
+  {
+   "subreddit": "meirl",
+   "active_from": "2015-12",
+   "active_months": 121,
+   "min_n_named": 502,
+   "min_n_named_month": "2015-12",
+   "max_n_named": 3950,
+   "max_n_named_month": "2023-01",
+   "n_named_2025_12": 1410,
+   "near_zero_months": [],
+   "months_under_1000": 8,
+   "steps_ge_2x": [
+    {
+     "month": "2016-01",
+     "factor": 2.839,
+     "n_prev": 502,
+     "n": 1425
+    }
+   ],
+   "median_abs_monthly_change_pct": 6.91,
+   "months_abs_robust_z_gt_5": [
+    {
+     "month": "2016-01",
+     "factor": 2.839,
+     "z": 11.0
+    }
+   ],
+   "deleted_share_min_pct": 0.61,
+   "deleted_share_max_pct": 47.56,
+   "deleted_share_by_year_pct": {
+    "2015": 26.05,
+    "2016": 29.19,
+    "2017": 29.19,
+    "2018": 27.47,
+    "2019": 32.35,
+    "2020": 36.88,
+    "2021": 36.44,
+    "2022": 35.41,
+    "2023": 21.49,
+    "2024": 3.66,
+    "2025": 1.02
+   },
+   "removed_share_by_year_pct": {
+    "2015": 0.0,
+    "2016": 0.0,
+    "2017": 0.0,
+    "2018": 0.0,
+    "2019": 4.15,
+    "2020": 47.76,
+    "2021": 42.36,
+    "2022": 48.3,
+    "2023": 38.09,
+    "2024": 26.42,
+    "2025": 17.37
+   },
+   "loglog_slope_n_vs_posts": 0.922,
+   "loglog_r2_n_vs_posts": 0.8034
+  },
+  {
+   "subreddit": "comedyheaven",
+   "active_from": "2018-09",
+   "active_months": 88,
+   "min_n_named": 334,
+   "min_n_named_month": "2023-12",
+   "max_n_named": 13801,
+   "max_n_named_month": "2019-12",
+   "n_named_2025_12": 1724,
+   "near_zero_months": [],
+   "months_under_1000": 20,
+   "steps_ge_2x": [
+    {
+     "month": "2024-05",
+     "factor": 3.002,
+     "n_prev": 464,
+     "n": 1393
+    }
+   ],
+   "median_abs_monthly_change_pct": 11.36,
+   "months_abs_robust_z_gt_5": [
+    {
+     "month": "2024-05",
+     "factor": 3.002,
+     "z": 6.8
+    }
+   ],
+   "deleted_share_min_pct": 0.0,
+   "deleted_share_max_pct": 49.92,
+   "deleted_share_by_year_pct": {
+    "2018": 26.23,
+    "2019": 24.76,
+    "2020": 38.68,
+    "2021": 33.5,
+    "2022": 23.73,
+    "2023": 21.39,
+    "2024": 4.47,
+    "2025": 1.19
+   },
+   "removed_share_by_year_pct": {
+    "2018": 0.0,
+    "2019": 14.73,
+    "2020": 98.36,
+    "2021": 96.15,
+    "2022": 95.55,
+    "2023": 99.02,
+    "2024": 21.24,
+    "2025": 13.29
+   },
+   "loglog_slope_n_vs_posts": 0.857,
+   "loglog_r2_n_vs_posts": 0.9769
+  },
+  {
+   "subreddit": "whenthe",
+   "active_from": "2021-09",
+   "active_months": 52,
+   "min_n_named": 407,
+   "min_n_named_month": "2021-09",
+   "max_n_named": 2703,
+   "max_n_named_month": "2022-03",
+   "n_named_2025_12": 1983,
+   "near_zero_months": [],
+   "months_under_1000": 5,
+   "steps_ge_2x": [
+    {
+     "month": "2021-10",
+     "factor": 2.002,
+     "n_prev": 407,
+     "n": 815
+    }
+   ],
+   "median_abs_monthly_change_pct": 9.25,
+   "months_abs_robust_z_gt_5": [
+    {
+     "month": "2021-10",
+     "factor": 2.002,
+     "z": 5.1
+    }
+   ],
+   "deleted_share_min_pct": 0.68,
+   "deleted_share_max_pct": 39.09,
+   "deleted_share_by_year_pct": {
+    "2021": 34.24,
+    "2022": 32.05,
+    "2023": 14.25,
+    "2024": 1.18,
+    "2025": 1.33
+   },
+   "removed_share_by_year_pct": {
+    "2021": 32.57,
+    "2022": 45.24,
+    "2023": 23.43,
+    "2024": 5.39,
+    "2025": 4.38
+   },
+   "loglog_slope_n_vs_posts": 0.914,
+   "loglog_r2_n_vs_posts": 0.9494
+  },
+  {
+   "subreddit": "196",
+   "active_from": "2020-09",
+   "active_months": 64,
+   "min_n_named": 2,
+   "min_n_named_month": "2023-07",
+   "max_n_named": 43294,
+   "max_n_named_month": "2021-04",
+   "n_named_2025_12": 1328,
+   "near_zero_months": [
+    "2023-07"
+   ],
+   "months_under_1000": 2,
+   "steps_ge_2x": [
+    {
+     "month": "2020-10",
+     "factor": 9.951,
+     "n_prev": 506,
+     "n": 5035
+    },
+    {
+     "month": "2020-12",
+     "factor": 3.592,
+     "n_prev": 7631,
+     "n": 27412
+    },
+    {
+     "month": "2023-07",
+     "factor": 0.0,
+     "n_prev": 6100,
+     "n": 2
+    },
+    {
+     "month": "2023-08",
+     "factor": 4714.5,
+     "n_prev": 2,
+     "n": 9429
+    }
+   ],
+   "median_abs_monthly_change_pct": 10.75,
+   "months_abs_robust_z_gt_5": [
+    {
+     "month": "2020-10",
+     "factor": 9.951,
+     "z": 15.3
+    },
+    {
+     "month": "2020-12",
+     "factor": 3.592,
+     "z": 8.5
+    },
+    {
+     "month": "2023-07",
+     "factor": 0.0,
+     "z": -53.0
+    },
+    {
+     "month": "2023-08",
+     "factor": 4714.5,
+     "z": 56.0
+    }
+   ],
+   "deleted_share_min_pct": 0.0,
+   "deleted_share_max_pct": 26.4,
+   "deleted_share_by_year_pct": {
+    "2020": 21.21,
+    "2021": 18.87,
+    "2022": 15.46,
+    "2023": 9.25,
+    "2024": 4.56,
+    "2025": 1.35
+   },
+   "removed_share_by_year_pct": {
+    "2020": 18.85,
+    "2021": 15.25,
+    "2022": 23.63,
+    "2023": 18.61,
+    "2024": 21.13,
+    "2025": 16.0
+   },
+   "loglog_slope_n_vs_posts": 0.985,
+   "loglog_r2_n_vs_posts": 0.9952
+  },
+  {
+   "subreddit": "shitposting",
+   "active_from": "2020-03",
+   "active_months": 70,
+   "min_n_named": 459,
+   "min_n_named_month": "2020-05",
+   "max_n_named": 19228,
+   "max_n_named_month": "2022-04",
+   "n_named_2025_12": 2710,
+   "near_zero_months": [],
+   "months_under_1000": 8,
+   "steps_ge_2x": [],
+   "median_abs_monthly_change_pct": 8.43,
+   "months_abs_robust_z_gt_5": [],
+   "deleted_share_min_pct": 0.75,
+   "deleted_share_max_pct": 38.61,
+   "deleted_share_by_year_pct": {
+    "2020": 25.69,
+    "2021": 32.08,
+    "2022": 28.15,
+    "2023": 17.39,
+    "2024": 2.94,
+    "2025": 1.11
+   },
+   "removed_share_by_year_pct": {
+    "2020": 24.08,
+    "2021": 36.63,
+    "2022": 43.56,
+    "2023": 47.57,
+    "2024": 29.01,
+    "2025": 20.13
+   },
+   "loglog_slope_n_vs_posts": 0.954,
+   "loglog_r2_n_vs_posts": 0.9788
+  }
+ ]
+}

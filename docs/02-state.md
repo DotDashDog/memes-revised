@@ -45,8 +45,15 @@ agent recommends, and what is blocked meanwhile. Remove an entry once it is answ
   written on 2026-11-27 (details in the WP-16 review). One event is not proof, but a memory
   test (Windows Memory Diagnostic, or MemTest86 overnight) is cheap and only the user can
   run it. Nothing is blocked; agents now checksum important artifacts.
-- **ADR 0016 (use several subreddits instead of r/memes alone).** Proposed; three cheap
-  measurements it depends on have not been run. Blocks the train/test split (ADR 0011).
+- **ADR 0016 (use several subreddits instead of r/memes alone).** Its three preconditions
+  are now measured (results in the ADR; not independently reviewed). They do not argue
+  against widening the corpus but they do break one of its four mitigations: the
+  unique-author denominator has a built-in jump at mid-2023 and cannot be used as written.
+  Cross-community duplicates are 8% of posts, so pooling needs de-duplication, and a
+  classifier can name a meme's community half the time from content. Agent recommendation:
+  do not accept as written; revise mitigation 2 (post volume, or a corrected author count)
+  and add a community control to the split, then decide. Blocks ADR 0011 (train/test
+  split).
 
 ## Active focus
 

@@ -95,6 +95,41 @@ This ADR should not be accepted until:
    alone? Strong performance means "community" is a leak available to the model and the factorial
    split's off-diagonal cells will read optimistically.
 
+### Precondition results (2026-11-27/28, UNCERTIFIED)
+
+Run by an Opus agent; checked by that agent, with the orchestrator reading the two main
+plots; no independent review yet. Full report `experiments/WP-18/report.md`, expectations
+written beforehand in `experiments/WP-18/expectations.md`, code `experiments/wp18/`. All
+six other archives were verified complete against independent line counts.
+
+1. **Unique authors per community-month: not usable as specified.** Never near zero in the
+   long-running set (lowest month 334 accounts), but it fails two of three pre-set tests.
+   The share of posts whose author shows as "[deleted]" falls from 30–38% to about 1%
+   between May and July 2023 in all seven communities at once
+   (`m1_deleted_author_share.png`), which looks like a change in how the archive was
+   collected and puts a built-in jump of up to about 1.4–2.2x in the denominator where the
+   evaluation window begins. There are also steps of 2x or more unrelated to a community
+   starting (r/comedyheaven triples in May 2024; r/196 has 2 accounts in the month it was
+   closed). The count adds little over post volume (log-log R² 0.95–0.996).
+2. **Cross-posting: pooling needs de-duplication; the natural experiment is thin.** Over
+   3–30 Nov 2025, 8.3% (7.7–8.9%) of downloadable image posts have a near-duplicate in
+   another community, against 0.4% by chance; about 6.5% when judged the same meme by eye.
+   r/dankmemes 27.6%, mostly shared with r/memes (10.7%). 74% of exact-match pairs are one
+   account posting the same file twice; only 48 of 285 exact pairs in the long-running set
+   come from different accounts. 34% of links were dead after a year.
+3. **Community is readable from content.** A linear classifier names the right community
+   for 50.7% (49.1–52.4%) of held-out memes from the image-plus-text embedding, against
+   14.3% by chance (`m3_confusion_matrix.png`); image only 49.5%. r/whenthe 91% (97% of its
+   posts are GIFs), r/comedyheaven and r/meirl about 63%, r/memes and r/dankmemes mutually
+   confused. Long-running versus newer communities are 69% separable (chance 50%).
+
+Reading: none of this argues against widening the corpus. It does count against mitigation
+2 as written (the unique-author denominator needs a mid-2023 correction, a rule for removed
+posts, and special handling for two communities, or replacement by post volume), supports
+the ADR's rejection of naive pooling, weakens the cross-posting identification idea outside
+the r/memes–r/dankmemes pair, and means the "new community" cells of the factorial split
+will read optimistically unless community is controlled for.
+
 ## Alternatives considered
 
 - **Stay r/memes-only.** Pros: no composition change; every existing result stays comparable; ADR

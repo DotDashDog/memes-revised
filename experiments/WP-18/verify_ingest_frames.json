@@ -1,0 +1,182 @@
+{
+ "dankmemes": {
+  "nonblank_lines": 6076698,
+  "unparseable_lines": 0,
+  "frames_completed": 1,
+  "trailing_incomplete_frame": false,
+  "last_record_created_utc": 1767224800,
+  "max_created_utc": 1767224800,
+  "unterminated_tail": false,
+  "parquet_rows": 6076698,
+  "parquet_max_created_utc": 1767224800,
+  "parquet_last_row_created_utc": 1767224800,
+  "frame_walk": {
+   "file": "/home/linus/reddit_dl_wp18/reddit/subreddits25/dankmemes_submissions.zst",
+   "bytes": 1411528702,
+   "n_frames": 1,
+   "ends_exactly_at_eof": true,
+   "frames": [
+    {
+     "type": "zstd",
+     "start": 0,
+     "end": 1411528702,
+     "blocks": 119452,
+     "frame_content_size": null,
+     "has_checksum": false
+    }
+   ]
+  },
+  "rows_match": true,
+  "max_ts_match": true
+ },
+ "meirl": {
+  "nonblank_lines": 619586,
+  "unparseable_lines": 0,
+  "frames_completed": 1,
+  "trailing_incomplete_frame": false,
+  "last_record_created_utc": 1767225410,
+  "max_created_utc": 1767225410,
+  "unterminated_tail": false,
+  "parquet_rows": 619586,
+  "parquet_max_created_utc": 1767225410,
+  "parquet_last_row_created_utc": 1767225410,
+  "frame_walk": {
+   "file": "/home/linus/reddit_dl_wp18/reddit/subreddits25/meirl_submissions.zst",
+   "bytes": 176431860,
+   "n_frames": 1,
+   "ends_exactly_at_eof": true,
+   "frames": [
+    {
+     "type": "zstd",
+     "start": 0,
+     "end": 176431860,
+     "blocks": 13280,
+     "frame_content_size": null,
+     "has_checksum": false
+    }
+   ]
+  },
+  "rows_match": true,
+  "max_ts_match": true
+ },
+ "comedyheaven": {
+  "nonblank_lines": 597629,
+  "unparseable_lines": 0,
+  "frames_completed": 1,
+  "trailing_incomplete_frame": false,
+  "last_record_created_utc": 1767224155,
+  "max_created_utc": 1767224155,
+  "unterminated_tail": false,
+  "parquet_rows": 597629,
+  "parquet_max_created_utc": 1767224155,
+  "parquet_last_row_created_utc": 1767224155,
+  "frame_walk": {
+   "file": "/home/linus/reddit_dl_wp18/reddit/subreddits25/comedyheaven_submissions.zst",
+   "bytes": 104731310,
+   "n_frames": 1,
+   "ends_exactly_at_eof": true,
+   "frames": [
+    {
+     "type": "zstd",
+     "start": 0,
+     "end": 104731310,
+     "blocks": 11775,
+     "frame_content_size": null,
+     "has_checksum": false
+    }
+   ]
+  },
+  "rows_match": true,
+  "max_ts_match": true
+ },
+ "whenthe": {
+  "nonblank_lines": 199960,
+  "unparseable_lines": 0,
+  "frames_completed": 1,
+  "trailing_incomplete_frame": false,
+  "last_record_created_utc": 1767225587,
+  "max_created_utc": 1767225587,
+  "unterminated_tail": false,
+  "parquet_rows": 199960,
+  "parquet_max_created_utc": 1767225587,
+  "parquet_last_row_created_utc": 1767225587,
+  "frame_walk": {
+   "file": "/home/linus/reddit_dl_wp18/reddit/subreddits25/whenthe_submissions.zst",
+   "bytes": 111424665,
+   "n_frames": 1,
+   "ends_exactly_at_eof": true,
+   "frames": [
+    {
+     "type": "zstd",
+     "start": 0,
+     "end": 111424665,
+     "blocks": 7349,
+     "frame_content_size": null,
+     "has_checksum": false
+    }
+   ]
+  },
+  "rows_match": true,
+  "max_ts_match": true
+ },
+ "196": {
+  "nonblank_lines": 1699704,
+  "unparseable_lines": 0,
+  "frames_completed": 1,
+  "trailing_incomplete_frame": false,
+  "last_record_created_utc": 1767224918,
+  "max_created_utc": 1767224918,
+  "unterminated_tail": false,
+  "parquet_rows": 1699704,
+  "parquet_max_created_utc": 1767224918,
+  "parquet_last_row_created_utc": 1767224918,
+  "frame_walk": {
+   "file": "/home/linus/reddit_dl_wp18/reddit/subreddits25/196_submissions.zst",
+   "bytes": 672898102,
+   "n_frames": 1,
+   "ends_exactly_at_eof": true,
+   "frames": [
+    {
+     "type": "zstd",
+     "start": 0,
+     "end": 672898102,
+     "blocks": 46248,
+     "frame_content_size": null,
+     "has_checksum": false
+    }
+   ]
+  },
+  "rows_match": true,
+  "max_ts_match": true
+ },
+ "shitposting": {
+  "nonblank_lines": 1349071,
+  "unparseable_lines": 0,
+  "frames_completed": 1,
+  "trailing_incomplete_frame": false,
+  "last_record_created_utc": 1767225454,
+  "max_created_utc": 1767225454,
+  "unterminated_tail": false,
+  "parquet_rows": 1349071,
+  "parquet_max_created_utc": 1767225454,
+  "parquet_last_row_created_utc": 1767225454,
+  "frame_walk": {
+   "file": "/home/linus/reddit_dl_wp18/reddit/subreddits25/shitposting_submissions.zst",
+   "bytes": 531179996,
+   "n_frames": 1,
+   "ends_exactly_at_eof": true,
+   "frames": [
+    {
+     "type": "zstd",
+     "start": 0,
+     "end": 531179996,
+     "blocks": 40786,
+     "frame_content_size": null,
+     "has_checksum": false
+    }
+   ]
+  },
+  "rows_match": true,
+  "max_ts_match": true
+ }
+}

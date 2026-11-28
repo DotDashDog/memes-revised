@@ -1,0 +1,1333 @@
+{
+ "pilot_images_reclassified_too_large": 10,
+ "size_cap_bytes": 10485760,
+ "window": "2025-11-03..2025-11-30 UTC",
+ "primary_radius": 4,
+ "seed": 18016,
+ "n_boot": 2000,
+ "fetch_accounting": {
+  "memes": {
+   "http_403": 0,
+   "http_404": 2984,
+   "non_image": 0,
+   "ok": 4772,
+   "too_large": 31,
+   "image_posts": 7787,
+   "usable": 4772,
+   "usable_pct": 61.28162321818415
+  },
+  "dankmemes": {
+   "http_403": 0,
+   "http_404": 730,
+   "non_image": 1,
+   "ok": 1130,
+   "too_large": 19,
+   "image_posts": 1880,
+   "usable": 1130,
+   "usable_pct": 60.1063829787234
+  },
+  "meirl": {
+   "http_403": 0,
+   "http_404": 1779,
+   "non_image": 1,
+   "ok": 1943,
+   "too_large": 1,
+   "image_posts": 3724,
+   "usable": 1943,
+   "usable_pct": 52.17508055853921
+  },
+  "comedyheaven": {
+   "http_403": 0,
+   "http_404": 943,
+   "non_image": 0,
+   "ok": 1448,
+   "too_large": 0,
+   "image_posts": 2391,
+   "usable": 1448,
+   "usable_pct": 60.56043496445002
+  },
+  "whenthe": {
+   "http_403": 2,
+   "http_404": 752,
+   "non_image": 1,
+   "ok": 2325,
+   "too_large": 421,
+   "image_posts": 3501,
+   "usable": 2325,
+   "usable_pct": 66.40959725792631
+  },
+  "196": {
+   "http_403": 0,
+   "http_404": 320,
+   "non_image": 0,
+   "ok": 2197,
+   "too_large": 11,
+   "image_posts": 2528,
+   "usable": 2197,
+   "usable_pct": 86.90664556962025
+  },
+  "shitposting": {
+   "http_403": 0,
+   "http_404": 1269,
+   "non_image": 0,
+   "ok": 2411,
+   "too_large": 4,
+   "image_posts": 3684,
+   "usable": 2411,
+   "usable_pct": 65.44516829533116
+  }
+ },
+ "removed_by_category_vs_status": {
+  "<none>": {
+   "http_403": 0,
+   "http_404": 6566,
+   "non_image": 1,
+   "ok": 14490,
+   "too_large": 482
+  },
+  "automod_filtered": {
+   "http_403": 0,
+   "http_404": 7,
+   "non_image": 0,
+   "ok": 6,
+   "too_large": 0
+  },
+  "deleted": {
+   "http_403": 0,
+   "http_404": 427,
+   "non_image": 0,
+   "ok": 1,
+   "too_large": 0
+  },
+  "moderator": {
+   "http_403": 2,
+   "http_404": 1547,
+   "non_image": 2,
+   "ok": 1429,
+   "too_large": 5
+  },
+  "reddit": {
+   "http_403": 0,
+   "http_404": 230,
+   "non_image": 0,
+   "ok": 300,
+   "too_large": 0
+  }
+ },
+ "background_pool_size": 26134,
+ "by_radius": {
+  "0": {
+   "pooled": {
+    "n": 16226,
+    "cross_any_other": 0.04874892148403796,
+    "cross_any_other_ci95": [
+     0.04453688315726597,
+     0.05294746545619576
+    ],
+    "same_community_repost": 0.027548379144582767,
+    "same_community_repost_ci95": [
+     0.02417249896549709,
+     0.031284890666425404
+    ],
+    "background_2019_pool": 0.0003081474177246395,
+    "background_2019_pool_ci95": [
+     6.246671956928142e-05,
+     0.0005596692981054465
+    ]
+   },
+   "per_community": {
+    "memes": {
+     "n": 4772,
+     "n_candidates_in_other_communities": 11454,
+     "cross_any_other": 0.06014249790444258,
+     "cross_any_other_ci95": [
+      0.05309903535199978,
+      0.06700129965342573
+     ],
+     "cross_count": 287,
+     "same_community_repost": 0.03604358759430008,
+     "background_2019_pool": 0.0
+    },
+    "dankmemes": {
+     "n": 1130,
+     "n_candidates_in_other_communities": 15096,
+     "cross_any_other": 0.19469026548672566,
+     "cross_any_other_ci95": [
+      0.17595301435679633,
+      0.21460450014117238
+     ],
+     "cross_count": 220,
+     "same_community_repost": 0.03716814159292035,
+     "background_2019_pool": 0.0
+    },
+    "meirl": {
+     "n": 1943,
+     "n_candidates_in_other_communities": 14283,
+     "cross_any_other": 0.03705609881626351,
+     "cross_any_other_ci95": [
+      0.029457325639447803,
+      0.04470786868217677
+     ],
+     "cross_count": 72,
+     "same_community_repost": 0.03757076685537828,
+     "background_2019_pool": 0.0
+    },
+    "comedyheaven": {
+     "n": 1448,
+     "n_candidates_in_other_communities": 14778,
+     "cross_any_other": 0.017955801104972375,
+     "cross_any_other_ci95": [
+      0.010943725437209489,
+      0.025176590590335324
+     ],
+     "cross_count": 26,
+     "same_community_repost": 0.015883977900552487,
+     "background_2019_pool": 0.0
+    },
+    "whenthe": {
+     "n": 2325,
+     "n_candidates_in_other_communities": 13901,
+     "cross_any_other": 0.00989247311827957,
+     "cross_any_other_ci95": [
+      0.005731168198273461,
+      0.014097748387683863
+     ],
+     "cross_count": 23,
+     "same_community_repost": 0.00903225806451613,
+     "background_2019_pool": 0.0012903225806451613
+    },
+    "196": {
+     "n": 2197,
+     "n_candidates_in_other_communities": 14029,
+     "cross_any_other": 0.02230314064633591,
+     "cross_any_other_ci95": [
+      0.01651293875935553,
+      0.028110959101382487
+     ],
+     "cross_count": 49,
+     "same_community_repost": 0.018206645425580335,
+     "background_2019_pool": 0.0004551661356395084
+    },
+    "shitposting": {
+     "n": 2411,
+     "n_candidates_in_other_communities": 13815,
+     "cross_any_other": 0.04728328494400664,
+     "cross_any_other_ci95": [
+      0.042294651116277907,
+      0.05297754979487535
+     ],
+     "cross_count": 114,
+     "same_community_repost": 0.03152218996267109,
+     "background_2019_pool": 0.00041476565740356696
+    }
+   },
+   "matrix_row_has_dup_in_col": {
+    "memes": {
+     "memes": 0.03604358759430008,
+     "dankmemes": 0.04170159262363789,
+     "meirl": 0.0075440067057837385,
+     "comedyheaven": 0.0008382229673093043,
+     "whenthe": 0.0014668901927912825,
+     "196": 0.0018860016764459346,
+     "shitposting": 0.010896898575020955
+    },
+    "dankmemes": {
+     "memes": 0.16902654867256636,
+     "dankmemes": 0.03716814159292035,
+     "meirl": 0.01415929203539823,
+     "comedyheaven": 0.0035398230088495575,
+     "whenthe": 0.004424778761061947,
+     "196": 0.006194690265486726,
+     "shitposting": 0.01504424778761062
+    },
+    "meirl": {
+     "memes": 0.0195573854863613,
+     "dankmemes": 0.007720020586721565,
+     "meirl": 0.03757076685537828,
+     "comedyheaven": 0.002058672156459084,
+     "whenthe": 0.000514668039114771,
+     "196": 0.001544004117344313,
+     "shitposting": 0.00977869274318065
+    },
+    "comedyheaven": {
+     "memes": 0.0027624309392265192,
+     "dankmemes": 0.0027624309392265192,
+     "meirl": 0.0027624309392265192,
+     "comedyheaven": 0.015883977900552487,
+     "whenthe": 0.0,
+     "196": 0.0013812154696132596,
+     "shitposting": 0.010359116022099447
+    },
+    "whenthe": {
+     "memes": 0.003010752688172043,
+     "dankmemes": 0.002150537634408602,
+     "meirl": 0.00043010752688172043,
+     "comedyheaven": 0.0,
+     "whenthe": 0.00903225806451613,
+     "196": 0.004731182795698925,
+     "shitposting": 0.0017204301075268817
+    },
+    "196": {
+     "memes": 0.004551661356395084,
+     "dankmemes": 0.0036413290851160674,
+     "meirl": 0.0013654984069185253,
+     "comedyheaven": 0.0009103322712790169,
+     "whenthe": 0.005461993627674101,
+     "196": 0.018206645425580335,
+     "shitposting": 0.010468821119708694
+    },
+    "shitposting": {
+     "memes": 0.021567814184985483,
+     "dankmemes": 0.007051016175860639,
+     "meirl": 0.007880547490667772,
+     "comedyheaven": 0.006221484861053505,
+     "whenthe": 0.0008295313148071339,
+     "196": 0.009954375777685608,
+     "shitposting": 0.03152218996267109
+    }
+   },
+   "backbone_only": {
+    "n": 9293,
+    "cross_other_backbone": 0.05401915420208759,
+    "cross_other_backbone_ci95": [
+     0.04793860706471326,
+     0.0596462515355176
+    ],
+    "cross_count": 502
+   }
+  },
+  "2": {
+   "pooled": {
+    "n": 16226,
+    "cross_any_other": 0.06483421668926415,
+    "cross_any_other_ci95": [
+     0.059862894721986776,
+     0.07005955694267203
+    ],
+    "same_community_repost": 0.044373228152348086,
+    "same_community_repost_ci95": [
+     0.04077376295454237,
+     0.048179613605908576
+    ],
+    "background_2019_pool": 0.0008628127696289905,
+    "background_2019_pool_ci95": [
+     0.000434969103041744,
+     0.001311074278650473
+    ]
+   },
+   "per_community": {
+    "memes": {
+     "n": 4772,
+     "n_candidates_in_other_communities": 11454,
+     "cross_any_other": 0.08109807208717519,
+     "cross_any_other_ci95": [
+      0.07338631840191416,
+      0.08873588949134698
+     ],
+     "cross_count": 387,
+     "same_community_repost": 0.06202849958088852,
+     "background_2019_pool": 0.0010477787091366304
+    },
+    "dankmemes": {
+     "n": 1130,
+     "n_candidates_in_other_communities": 15096,
+     "cross_any_other": 0.2327433628318584,
+     "cross_any_other_ci95": [
+      0.20994903442379148,
+      0.2577421677264719
+     ],
+     "cross_count": 263,
+     "same_community_repost": 0.05575221238938053,
+     "background_2019_pool": 0.0017699115044247787
+    },
+    "meirl": {
+     "n": 1943,
+     "n_candidates_in_other_communities": 14283,
+     "cross_any_other": 0.0514668039114771,
+     "cross_any_other_ci95": [
+      0.04124223129737334,
+      0.0622407172617523
+     ],
+     "cross_count": 100,
+     "same_community_repost": 0.057128152341739576,
+     "background_2019_pool": 0.000514668039114771
+    },
+    "comedyheaven": {
+     "n": 1448,
+     "n_candidates_in_other_communities": 14778,
+     "cross_any_other": 0.03383977900552486,
+     "cross_any_other_ci95": [
+      0.025405668939802777,
+      0.04211327104837707
+     ],
+     "cross_count": 49,
+     "same_community_repost": 0.028314917127071824,
+     "background_2019_pool": 0.0
+    },
+    "whenthe": {
+     "n": 2325,
+     "n_candidates_in_other_communities": 13901,
+     "cross_any_other": 0.01032258064516129,
+     "cross_any_other_ci95": [
+      0.0064097784405624195,
+      0.014700339887900682
+     ],
+     "cross_count": 24,
+     "same_community_repost": 0.016344086021505378,
+     "background_2019_pool": 0.0017204301075268817
+    },
+    "196": {
+     "n": 2197,
+     "n_candidates_in_other_communities": 14029,
+     "cross_any_other": 0.028220300409649523,
+     "cross_any_other_ci95": [
+      0.0210376725315869,
+      0.035348959314589964
+     ],
+     "cross_count": 62,
+     "same_community_repost": 0.02594446973145198,
+     "background_2019_pool": 0.0004551661356395084
+    },
+    "shitposting": {
+     "n": 2411,
+     "n_candidates_in_other_communities": 13815,
+     "cross_any_other": 0.06926586478639568,
+     "cross_any_other_ci95": [
+      0.0606312621315901,
+      0.07794296563253107
+     ],
+     "cross_count": 167,
+     "same_community_repost": 0.04728328494400664,
+     "background_2019_pool": 0.00041476565740356696
+    }
+   },
+   "matrix_row_has_dup_in_col": {
+    "memes": {
+     "memes": 0.06202849958088852,
+     "dankmemes": 0.051969823973176864,
+     "meirl": 0.015297569153394803,
+     "comedyheaven": 0.0014668901927912825,
+     "whenthe": 0.0018860016764459346,
+     "196": 0.004610226320201173,
+     "shitposting": 0.016764459346186086
+    },
+    "dankmemes": {
+     "memes": 0.20619469026548673,
+     "dankmemes": 0.05575221238938053,
+     "meirl": 0.018584070796460177,
+     "comedyheaven": 0.0035398230088495575,
+     "whenthe": 0.004424778761061947,
+     "196": 0.009734513274336283,
+     "shitposting": 0.017699115044247787
+    },
+    "meirl": {
+     "memes": 0.029336078229541946,
+     "dankmemes": 0.00977869274318065,
+     "meirl": 0.057128152341739576,
+     "comedyheaven": 0.004632012352032939,
+     "whenthe": 0.000514668039114771,
+     "196": 0.002058672156459084,
+     "shitposting": 0.013381369016984045
+    },
+    "comedyheaven": {
+     "memes": 0.004834254143646409,
+     "dankmemes": 0.0027624309392265192,
+     "meirl": 0.0055248618784530384,
+     "comedyheaven": 0.028314917127071824,
+     "whenthe": 0.0,
+     "196": 0.0027624309392265192,
+     "shitposting": 0.020718232044198894
+    },
+    "whenthe": {
+     "memes": 0.0034408602150537634,
+     "dankmemes": 0.002150537634408602,
+     "meirl": 0.00043010752688172043,
+     "comedyheaven": 0.0,
+     "whenthe": 0.016344086021505378,
+     "196": 0.004731182795698925,
+     "shitposting": 0.0017204301075268817
+    },
+    "196": {
+     "memes": 0.0063723258989531175,
+     "dankmemes": 0.005006827492034593,
+     "meirl": 0.0018206645425580337,
+     "comedyheaven": 0.0018206645425580337,
+     "whenthe": 0.005461993627674101,
+     "196": 0.02594446973145198,
+     "shitposting": 0.014110150204824761
+    },
+    "shitposting": {
+     "memes": 0.031107424305267525,
+     "dankmemes": 0.00829531314807134,
+     "meirl": 0.010783907092492741,
+     "comedyheaven": 0.012857735379510576,
+     "whenthe": 0.0008295313148071339,
+     "196": 0.012857735379510576,
+     "shitposting": 0.04728328494400664
+    }
+   },
+   "backbone_only": {
+    "n": 9293,
+    "cross_other_backbone": 0.0694070805982998,
+    "cross_other_backbone_ci95": [
+     0.06296897616087084,
+     0.07602292534495762
+    ],
+    "cross_count": 645
+   }
+  },
+  "4": {
+   "pooled": {
+    "n": 16226,
+    "cross_any_other": 0.0830765438185628,
+    "cross_any_other_ci95": [
+     0.07744466543137075,
+     0.08850331142146392
+    ],
+    "same_community_repost": 0.06483421668926415,
+    "same_community_repost_ci95": [
+     0.06087584682662396,
+     0.06942747519753577
+    ],
+    "background_2019_pool": 0.004252434364600025,
+    "background_2019_pool_ci95": [
+     0.003234385722297866,
+     0.00543888954980063
+    ]
+   },
+   "per_community": {
+    "memes": {
+     "n": 4772,
+     "n_candidates_in_other_communities": 11454,
+     "cross_any_other": 0.10645431684828165,
+     "cross_any_other_ci95": [
+      0.09712080436988098,
+      0.11604653079300456
+     ],
+     "cross_count": 508,
+     "same_community_repost": 0.09828164291701592,
+     "background_2019_pool": 0.00586756077116513
+    },
+    "dankmemes": {
+     "n": 1130,
+     "n_candidates_in_other_communities": 15096,
+     "cross_any_other": 0.2761061946902655,
+     "cross_any_other_ci95": [
+      0.25263112048413716,
+      0.299413404332782
+     ],
+     "cross_count": 312,
+     "same_community_repost": 0.07964601769911504,
+     "background_2019_pool": 0.004424778761061947
+    },
+    "meirl": {
+     "n": 1943,
+     "n_candidates_in_other_communities": 14283,
+     "cross_any_other": 0.06896551724137931,
+     "cross_any_other_ci95": [
+      0.057412545636631,
+      0.08038172166278988
+     ],
+     "cross_count": 134,
+     "same_community_repost": 0.07102418939783839,
+     "background_2019_pool": 0.0066906845084920225
+    },
+    "comedyheaven": {
+     "n": 1448,
+     "n_candidates_in_other_communities": 14778,
+     "cross_any_other": 0.04350828729281768,
+     "cross_any_other_ci95": [
+      0.03338061070063114,
+      0.05453303525776781
+     ],
+     "cross_count": 63,
+     "same_community_repost": 0.04212707182320442,
+     "background_2019_pool": 0.0013812154696132596
+    },
+    "whenthe": {
+     "n": 2325,
+     "n_candidates_in_other_communities": 13901,
+     "cross_any_other": 0.011182795698924731,
+     "cross_any_other_ci95": [
+      0.006750912545093603,
+      0.015830843179829843
+     ],
+     "cross_count": 26,
+     "same_community_repost": 0.035698924731182795,
+     "background_2019_pool": 0.0017204301075268817
+    },
+    "196": {
+     "n": 2197,
+     "n_candidates_in_other_communities": 14029,
+     "cross_any_other": 0.04369594902139281,
+     "cross_any_other_ci95": [
+      0.03486796150868928,
+      0.05226508315105684
+     ],
+     "cross_count": 96,
+     "same_community_repost": 0.03322712790168411,
+     "background_2019_pool": 0.0036413290851160674
+    },
+    "shitposting": {
+     "n": 2411,
+     "n_candidates_in_other_communities": 13815,
+     "cross_any_other": 0.0866860223973455,
+     "cross_any_other_ci95": [
+      0.07734627775700761,
+      0.09649748251867807
+     ],
+     "cross_count": 209,
+     "same_community_repost": 0.05723766072169224,
+     "background_2019_pool": 0.0037328909166321027
+    }
+   },
+   "matrix_row_has_dup_in_col": {
+    "memes": {
+     "memes": 0.09828164291701592,
+     "dankmemes": 0.06810561609388097,
+     "meirl": 0.02137468566638726,
+     "comedyheaven": 0.0020955574182732607,
+     "whenthe": 0.0023051131601005866,
+     "196": 0.008382229673093043,
+     "shitposting": 0.022632020117351215
+    },
+    "dankmemes": {
+     "memes": 0.24955752212389382,
+     "dankmemes": 0.07964601769911504,
+     "meirl": 0.021238938053097345,
+     "comedyheaven": 0.0035398230088495575,
+     "whenthe": 0.004424778761061947,
+     "196": 0.012389380530973451,
+     "shitposting": 0.020353982300884955
+    },
+    "meirl": {
+     "memes": 0.03654143077714874,
+     "dankmemes": 0.011322696860524962,
+     "meirl": 0.07102418939783839,
+     "comedyheaven": 0.0066906845084920225,
+     "whenthe": 0.002058672156459084,
+     "196": 0.0066906845084920225,
+     "shitposting": 0.02161605764282038
+    },
+    "comedyheaven": {
+     "memes": 0.006906077348066298,
+     "dankmemes": 0.0027624309392265192,
+     "meirl": 0.006906077348066298,
+     "comedyheaven": 0.04212707182320442,
+     "whenthe": 0.0,
+     "196": 0.006906077348066298,
+     "shitposting": 0.024861878453038673
+    },
+    "whenthe": {
+     "memes": 0.005161290322580645,
+     "dankmemes": 0.002150537634408602,
+     "meirl": 0.0017204301075268817,
+     "comedyheaven": 0.0,
+     "whenthe": 0.035698924731182795,
+     "196": 0.004731182795698925,
+     "shitposting": 0.002150537634408602
+    },
+    "196": {
+     "memes": 0.013654984069185253,
+     "dankmemes": 0.0063723258989531175,
+     "meirl": 0.004096495220755576,
+     "comedyheaven": 0.005006827492034593,
+     "whenthe": 0.005461993627674101,
+     "196": 0.03322712790168411,
+     "shitposting": 0.019116977696859355
+    },
+    "shitposting": {
+     "memes": 0.040647034425549566,
+     "dankmemes": 0.00953961012028204,
+     "meirl": 0.01493156366652841,
+     "comedyheaven": 0.014516798009124844,
+     "whenthe": 0.001244296972210701,
+     "196": 0.01783492326835338,
+     "shitposting": 0.05723766072169224
+    }
+   },
+   "backbone_only": {
+    "n": 9293,
+    "cross_other_backbone": 0.08683955665554718,
+    "cross_other_backbone_ci95": [
+     0.0796525967516148,
+     0.09428050394825906
+    ],
+    "cross_count": 807
+   }
+  },
+  "6": {
+   "pooled": {
+    "n": 16226,
+    "cross_any_other": 0.11327499075557747,
+    "cross_any_other_ci95": [
+     0.10627155115576829,
+     0.1200639564743829
+    ],
+    "same_community_repost": 0.09497103414273389,
+    "same_community_repost_ci95": [
+     0.08970480417150001,
+     0.10061511242034803
+    ],
+    "background_2019_pool": 0.017379514359669664,
+    "background_2019_pool_ci95": [
+     0.015161882950858605,
+     0.01948782247344397
+    ]
+   },
+   "per_community": {
+    "memes": {
+     "n": 4772,
+     "n_candidates_in_other_communities": 11454,
+     "cross_any_other": 0.1431265716680637,
+     "cross_any_other_ci95": [
+      0.1327640951691009,
+      0.15316410611664855
+     ],
+     "cross_count": 683,
+     "same_community_repost": 0.1454316848281643,
+     "background_2019_pool": 0.024098910310142496
+    },
+    "dankmemes": {
+     "n": 1130,
+     "n_candidates_in_other_communities": 15096,
+     "cross_any_other": 0.30973451327433627,
+     "cross_any_other_ci95": [
+      0.2848093878901772,
+      0.3342178641137652
+     ],
+     "cross_count": 350,
+     "same_community_repost": 0.10353982300884956,
+     "background_2019_pool": 0.01592920353982301
+    },
+    "meirl": {
+     "n": 1943,
+     "n_candidates_in_other_communities": 14283,
+     "cross_any_other": 0.092125579001544,
+     "cross_any_other_ci95": [
+      0.07768926969123613,
+      0.10579950654700632
+     ],
+     "cross_count": 179,
+     "same_community_repost": 0.09315491507977354,
+     "background_2019_pool": 0.02110138960370561
+    },
+    "comedyheaven": {
+     "n": 1448,
+     "n_candidates_in_other_communities": 14778,
+     "cross_any_other": 0.0856353591160221,
+     "cross_any_other_ci95": [
+      0.07049067035245335,
+      0.10117447476842471
+     ],
+     "cross_count": 124,
+     "same_community_repost": 0.05939226519337017,
+     "background_2019_pool": 0.014502762430939226
+    },
+    "whenthe": {
+     "n": 2325,
+     "n_candidates_in_other_communities": 13901,
+     "cross_any_other": 0.02021505376344086,
+     "cross_any_other_ci95": [
+      0.014036235349904249,
+      0.026478809755508783
+     ],
+     "cross_count": 47,
+     "same_community_repost": 0.07655913978494623,
+     "background_2019_pool": 0.00946236559139785
+    },
+    "196": {
+     "n": 2197,
+     "n_candidates_in_other_communities": 14029,
+     "cross_any_other": 0.07419208010923987,
+     "cross_any_other_ci95": [
+      0.06227106227106227,
+      0.08598035622234271
+     ],
+     "cross_count": 163,
+     "same_community_repost": 0.05097860719162494,
+     "background_2019_pool": 0.012289485662266727
+    },
+    "shitposting": {
+     "n": 2411,
+     "n_candidates_in_other_communities": 13815,
+     "cross_any_other": 0.12111157196184157,
+     "cross_any_other_ci95": [
+      0.10730431673804011,
+      0.13513594335962759
+     ],
+     "cross_count": 292,
+     "same_community_repost": 0.0717544587308171,
+     "background_2019_pool": 0.015761094981335544
+    }
+   },
+   "matrix_row_has_dup_in_col": {
+    "memes": {
+     "memes": 0.1454316848281643,
+     "dankmemes": 0.08696563285834032,
+     "meirl": 0.030176026823134954,
+     "comedyheaven": 0.006077116512992456,
+     "whenthe": 0.005238893545683152,
+     "196": 0.016135792120704106,
+     "shitposting": 0.036881810561609385
+    },
+    "dankmemes": {
+     "memes": 0.2761061946902655,
+     "dankmemes": 0.10353982300884956,
+     "meirl": 0.02654867256637168,
+     "comedyheaven": 0.004424778761061947,
+     "whenthe": 0.006194690265486726,
+     "196": 0.019469026548672566,
+     "shitposting": 0.02654867256637168
+    },
+    "meirl": {
+     "memes": 0.048893463715903245,
+     "dankmemes": 0.014925373134328358,
+     "meirl": 0.09315491507977354,
+     "comedyheaven": 0.010293360782295419,
+     "whenthe": 0.0051466803911477095,
+     "196": 0.014925373134328358,
+     "shitposting": 0.030365414307771486
+    },
+    "comedyheaven": {
+     "memes": 0.020027624309392266,
+     "dankmemes": 0.003453038674033149,
+     "meirl": 0.012430939226519336,
+     "comedyheaven": 0.05939226519337017,
+     "whenthe": 0.008287292817679558,
+     "196": 0.025552486187845305,
+     "shitposting": 0.04074585635359116
+    },
+    "whenthe": {
+     "memes": 0.008602150537634409,
+     "dankmemes": 0.003010752688172043,
+     "meirl": 0.0025806451612903226,
+     "comedyheaven": 0.004301075268817204,
+     "whenthe": 0.07655913978494623,
+     "196": 0.006021505376344086,
+     "shitposting": 0.005161290322580645
+    },
+    "196": {
+     "memes": 0.025034137460172964,
+     "dankmemes": 0.009103322712790168,
+     "meirl": 0.009103322712790168,
+     "comedyheaven": 0.015020482476103778,
+     "whenthe": 0.007282658170232135,
+     "196": 0.05097860719162494,
+     "shitposting": 0.030496131087847066
+    },
+    "shitposting": {
+     "memes": 0.059311489008710076,
+     "dankmemes": 0.013687266694317711,
+     "meirl": 0.021153048527581916,
+     "comedyheaven": 0.024056408129406886,
+     "whenthe": 0.004977187888842804,
+     "196": 0.02903359601824969,
+     "shitposting": 0.0717544587308171
+    }
+   },
+   "backbone_only": {
+    "n": 9293,
+    "cross_other_backbone": 0.1098676423114172,
+    "cross_other_backbone_ci95": [
+     0.10125203838275171,
+     0.11829028420193305
+    ],
+    "cross_count": 1021
+   }
+  },
+  "8": {
+   "pooled": {
+    "n": 16226,
+    "cross_any_other": 0.1902502157031924,
+    "cross_any_other_ci95": [
+     0.1826224772080917,
+     0.19835120959479952
+    ],
+    "same_community_repost": 0.14704794773819796,
+    "same_community_repost_ci95": [
+     0.13993408236630284,
+     0.15389493897617343
+    ],
+    "background_2019_pool": 0.05220017256255392,
+    "background_2019_pool_ci95": [
+     0.048543553731907226,
+     0.05595825095171832
+    ]
+   },
+   "per_community": {
+    "memes": {
+     "n": 4772,
+     "n_candidates_in_other_communities": 11454,
+     "cross_any_other": 0.2196144174350377,
+     "cross_any_other_ci95": [
+      0.20637236416693644,
+      0.23373237434989633
+     ],
+     "cross_count": 1048,
+     "same_community_repost": 0.20850796311818945,
+     "background_2019_pool": 0.0683151718357083
+    },
+    "dankmemes": {
+     "n": 1130,
+     "n_candidates_in_other_communities": 15096,
+     "cross_any_other": 0.384070796460177,
+     "cross_any_other_ci95": [
+      0.3621257872535823,
+      0.4072169730122602
+     ],
+     "cross_count": 434,
+     "same_community_repost": 0.12477876106194691,
+     "background_2019_pool": 0.04601769911504425
+    },
+    "meirl": {
+     "n": 1943,
+     "n_candidates_in_other_communities": 14283,
+     "cross_any_other": 0.1811631497683994,
+     "cross_any_other_ci95": [
+      0.16303205922325642,
+      0.1997882773258211
+     ],
+     "cross_count": 352,
+     "same_community_repost": 0.14616572310859496,
+     "background_2019_pool": 0.06690684508492023
+    },
+    "comedyheaven": {
+     "n": 1448,
+     "n_candidates_in_other_communities": 14778,
+     "cross_any_other": 0.19475138121546962,
+     "cross_any_other_ci95": [
+      0.17142857142857143,
+      0.21808303534309276
+     ],
+     "cross_count": 282,
+     "same_community_repost": 0.12016574585635359,
+     "background_2019_pool": 0.057320441988950276
+    },
+    "whenthe": {
+     "n": 2325,
+     "n_candidates_in_other_communities": 13901,
+     "cross_any_other": 0.05978494623655914,
+     "cross_any_other_ci95": [
+      0.050434058280556436,
+      0.06954774121913117
+     ],
+     "cross_count": 139,
+     "same_community_repost": 0.13849462365591397,
+     "background_2019_pool": 0.016344086021505378
+    },
+    "196": {
+     "n": 2197,
+     "n_candidates_in_other_communities": 14029,
+     "cross_any_other": 0.15566681838871188,
+     "cross_any_other_ci95": [
+      0.1409420713133537,
+      0.1698733660130719
+     ],
+     "cross_count": 342,
+     "same_community_repost": 0.08784706417842512,
+     "background_2019_pool": 0.04460628129267182
+    },
+    "shitposting": {
+     "n": 2411,
+     "n_candidates_in_other_communities": 13815,
+     "cross_any_other": 0.20323517212774783,
+     "cross_any_other_ci95": [
+      0.1892007569465866,
+      0.21770227236501719
+     ],
+     "cross_count": 490,
+     "same_community_repost": 0.11489008710078806,
+     "background_2019_pool": 0.04977187888842804
+    }
+   },
+   "matrix_row_has_dup_in_col": {
+    "memes": {
+     "memes": 0.20850796311818945,
+     "dankmemes": 0.1173512154233026,
+     "meirl": 0.055532271584241406,
+     "comedyheaven": 0.024727577535624476,
+     "whenthe": 0.01760268231349539,
+     "196": 0.04463537300922045,
+     "shitposting": 0.06705783738474434
+    },
+    "dankmemes": {
+     "memes": 0.3247787610619469,
+     "dankmemes": 0.12477876106194691,
+     "meirl": 0.04601769911504425,
+     "comedyheaven": 0.023893805309734513,
+     "whenthe": 0.022123893805309734,
+     "196": 0.03716814159292035,
+     "shitposting": 0.05309734513274336
+    },
+    "meirl": {
+     "memes": 0.09469891919711786,
+     "dankmemes": 0.024189397838394237,
+     "meirl": 0.14616572310859496,
+     "comedyheaven": 0.03860010293360782,
+     "whenthe": 0.02007205352547607,
+     "196": 0.048893463715903245,
+     "shitposting": 0.06587750900669069
+    },
+    "comedyheaven": {
+     "memes": 0.08218232044198895,
+     "dankmemes": 0.017265193370165747,
+     "meirl": 0.05110497237569061,
+     "comedyheaven": 0.12016574585635359,
+     "whenthe": 0.022790055248618785,
+     "196": 0.07113259668508287,
+     "shitposting": 0.10082872928176796
+    },
+    "whenthe": {
+     "memes": 0.02795698924731183,
+     "dankmemes": 0.00946236559139785,
+     "meirl": 0.00946236559139785,
+     "comedyheaven": 0.012903225806451613,
+     "whenthe": 0.13849462365591397,
+     "196": 0.01763440860215054,
+     "shitposting": 0.02193548387096774
+    },
+    "196": {
+     "memes": 0.0700955848884843,
+     "dankmemes": 0.021392808375056895,
+     "meirl": 0.03868912152935822,
+     "comedyheaven": 0.048247610377787895,
+     "whenthe": 0.02275830678197542,
+     "196": 0.08784706417842512,
+     "shitposting": 0.06736458807464725
+    },
+    "shitposting": {
+     "memes": 0.10618000829531314,
+     "dankmemes": 0.025715470759021152,
+     "meirl": 0.04852758191621734,
+     "comedyheaven": 0.05806719203649938,
+     "whenthe": 0.022397345499792616,
+     "196": 0.06428867689755288,
+     "shitposting": 0.11489008710078806
+    }
+   },
+   "backbone_only": {
+    "n": 9293,
+    "cross_other_backbone": 0.17002044549661036,
+    "cross_other_backbone_ci95": [
+     0.16100212153498195,
+     0.17921137467704232
+    ],
+    "cross_count": 1580
+   }
+  },
+  "10": {
+   "pooled": {
+    "n": 16226,
+    "cross_any_other": 0.39603106125970666,
+    "cross_any_other_ci95": [
+     0.3871980121767726,
+     0.4052521922562919
+    ],
+    "same_community_repost": 0.272648835202761,
+    "same_community_repost_ci95": [
+     0.2642824823996717,
+     0.28108157994756305
+    ],
+    "background_2019_pool": 0.13244176013805004,
+    "background_2019_pool_ci95": [
+     0.12725095356271046,
+     0.13764890508248592
+    ]
+   },
+   "per_community": {
+    "memes": {
+     "n": 4772,
+     "n_candidates_in_other_communities": 11454,
+     "cross_any_other": 0.40360435875943,
+     "cross_any_other_ci95": [
+      0.3855160827572604,
+      0.42088493127875326
+     ],
+     "cross_count": 1926,
+     "same_community_repost": 0.34283319362950543,
+     "background_2019_pool": 0.14647946353730093
+    },
+    "dankmemes": {
+     "n": 1130,
+     "n_candidates_in_other_communities": 15096,
+     "cross_any_other": 0.5681415929203539,
+     "cross_any_other_ci95": [
+      0.5381148857244943,
+      0.5976067086174798
+     ],
+     "cross_count": 642,
+     "same_community_repost": 0.18495575221238938,
+     "background_2019_pool": 0.12920353982300886
+    },
+    "meirl": {
+     "n": 1943,
+     "n_candidates_in_other_communities": 14283,
+     "cross_any_other": 0.41945445187853836,
+     "cross_any_other_ci95": [
+      0.3970338424076836,
+      0.441771508524534
+     ],
+     "cross_count": 815,
+     "same_community_repost": 0.2645393721049923,
+     "background_2019_pool": 0.16417910447761194
+    },
+    "comedyheaven": {
+     "n": 1448,
+     "n_candidates_in_other_communities": 14778,
+     "cross_any_other": 0.4488950276243094,
+     "cross_any_other_ci95": [
+      0.42981776038531005,
+      0.46899001497393955
+     ],
+     "cross_count": 650,
+     "same_community_repost": 0.26312154696132595,
+     "background_2019_pool": 0.16367403314917128
+    },
+    "whenthe": {
+     "n": 2325,
+     "n_candidates_in_other_communities": 13901,
+     "cross_any_other": 0.23053763440860214,
+     "cross_any_other_ci95": [
+      0.2112474038687898,
+      0.25010782853448293
+     ],
+     "cross_count": 536,
+     "same_community_repost": 0.28817204301075267,
+     "background_2019_pool": 0.05204301075268817
+    },
+    "196": {
+     "n": 2197,
+     "n_candidates_in_other_communities": 14029,
+     "cross_any_other": 0.3887118798361402,
+     "cross_any_other_ci95": [
+      0.37418159522749717,
+      0.4025912392353871
+     ],
+     "cross_count": 854,
+     "same_community_repost": 0.22303140646335912,
+     "background_2019_pool": 0.14383249886208466
+    },
+    "shitposting": {
+     "n": 2411,
+     "n_candidates_in_other_communities": 13815,
+     "cross_any_other": 0.4160099543757777,
+     "cross_any_other_ci95": [
+      0.39728799377565244,
+      0.43476441500279905
+     ],
+     "cross_count": 1003,
+     "same_community_repost": 0.2173372044794691,
+     "background_2019_pool": 0.12899211945250932
+    }
+   },
+   "matrix_row_has_dup_in_col": {
+    "memes": {
+     "memes": 0.34283319362950543,
+     "dankmemes": 0.17309304274937135,
+     "meirl": 0.13411567476948869,
+     "comedyheaven": 0.09870075440067058,
+     "whenthe": 0.07816429170159263,
+     "196": 0.12971500419111484,
+     "shitposting": 0.1567476948868399
+    },
+    "dankmemes": {
+     "memes": 0.4283185840707965,
+     "dankmemes": 0.18495575221238938,
+     "meirl": 0.13185840707964602,
+     "comedyheaven": 0.09026548672566372,
+     "whenthe": 0.07964601769911504,
+     "196": 0.12743362831858407,
+     "shitposting": 0.14778761061946902
+    },
+    "meirl": {
+     "memes": 0.2444673185795162,
+     "dankmemes": 0.0782295419454452,
+     "meirl": 0.2645393721049923,
+     "comedyheaven": 0.13072568193515183,
+     "whenthe": 0.07565620174987134,
+     "196": 0.15131240349974268,
+     "shitposting": 0.17447246525990737
+    },
+    "comedyheaven": {
+     "memes": 0.25,
+     "dankmemes": 0.07803867403314917,
+     "meirl": 0.16988950276243095,
+     "comedyheaven": 0.26312154696132595,
+     "whenthe": 0.10013812154696132,
+     "196": 0.22513812154696133,
+     "shitposting": 0.23480662983425415
+    },
+    "whenthe": {
+     "memes": 0.12946236559139784,
+     "dankmemes": 0.04774193548387097,
+     "meirl": 0.057634408602150536,
+     "comedyheaven": 0.05032258064516129,
+     "whenthe": 0.28817204301075267,
+     "196": 0.06709677419354838,
+     "shitposting": 0.07827956989247312
+    },
+    "196": {
+     "memes": 0.21074192080109239,
+     "dankmemes": 0.07828857532999545,
+     "meirl": 0.1292671825216204,
+     "comedyheaven": 0.15430131998179336,
+     "whenthe": 0.08192990441511151,
+     "196": 0.22303140646335912,
+     "shitposting": 0.1843422849340009
+    },
+    "shitposting": {
+     "memes": 0.25798423890501865,
+     "dankmemes": 0.08419742845292409,
+     "meirl": 0.13604313562836998,
+     "comedyheaven": 0.14890087100788055,
+     "whenthe": 0.08129406885109913,
+     "196": 0.16839485690584818,
+     "shitposting": 0.2173372044794691
+    }
+   },
+   "backbone_only": {
+    "n": 9293,
+    "cross_other_backbone": 0.32626708275045735,
+    "cross_other_backbone_ci95": [
+     0.3141634097056586,
+     0.33837542229914364
+    ],
+    "cross_count": 3032
+   }
+  }
+ },
+ "dead_link_bounds_at_primary": {
+  "memes": {
+   "image_posts": 7787,
+   "not_usable": 3015,
+   "lower_if_no_dead_is_dup": 0.06523693335045588,
+   "upper_if_all_dead_are_dup": 0.4524207011686144
+  },
+  "dankmemes": {
+   "image_posts": 1880,
+   "not_usable": 750,
+   "lower_if_no_dead_is_dup": 0.16595744680851063,
+   "upper_if_all_dead_are_dup": 0.5648936170212766
+  },
+  "meirl": {
+   "image_posts": 3724,
+   "not_usable": 1781,
+   "lower_if_no_dead_is_dup": 0.0359828141783029,
+   "upper_if_all_dead_are_dup": 0.5142320085929108
+  },
+  "comedyheaven": {
+   "image_posts": 2391,
+   "not_usable": 943,
+   "lower_if_no_dead_is_dup": 0.026348808030112924,
+   "upper_if_all_dead_are_dup": 0.4207444583856127
+  },
+  "whenthe": {
+   "image_posts": 3501,
+   "not_usable": 1176,
+   "lower_if_no_dead_is_dup": 0.007426449585832619,
+   "upper_if_all_dead_are_dup": 0.34333047700656955
+  },
+  "196": {
+   "image_posts": 2528,
+   "not_usable": 331,
+   "lower_if_no_dead_is_dup": 0.0379746835443038,
+   "upper_if_all_dead_are_dup": 0.16890822784810128
+  },
+  "shitposting": {
+   "image_posts": 3684,
+   "not_usable": 1273,
+   "lower_if_no_dead_is_dup": 0.056731813246471224,
+   "upper_if_all_dead_are_dup": 0.4022801302931596
+  },
+  "pooled": {
+   "image_posts": 25495,
+   "not_usable": 9269,
+   "lower_if_no_dead_is_dup": 0.05287311237497549,
+   "upper_if_all_dead_are_dup": 0.4164345950186311
+  }
+ },
+ "groups_at_primary": {
+  "near_dup_pairs_total": 1860,
+  "cross_community_pairs": 961,
+  "cross_community_pairs_backbone_only": 554,
+  "groups_spanning_2plus_communities": 542,
+  "groups_spanning_2plus_backbone_communities": 323,
+  "largest_component_size": 36,
+  "posts_in_largest_cross_groups": [
+   36,
+   21,
+   17,
+   12,
+   9,
+   8,
+   8,
+   8,
+   7,
+   7
+  ]
+ },
+ "cross_pairs_at_primary": {
+  "n": 961,
+  "same_author_share": 0.38189386056191466,
+  "byte_identical_share": 0.34547346514047866,
+  "lag_hours_quantiles": {
+   "0.1": 0.01972222222222222,
+   "0.25": 0.16916666666666666,
+   "0.5": 23.086666666666666,
+   "0.75": 174.85472222222222,
+   "0.9": 375.9658333333333
+  },
+  "dist_counts": {
+   "0": 468,
+   "1": 111,
+   "2": 106,
+   "3": 108,
+   "4": 168
+  },
+  "by_pair": {
+   "memes|dankmemes": 382,
+   "memes|shitposting": 120,
+   "memes|meirl": 113,
+   "meirl|shitposting": 47,
+   "memes|196": 44,
+   "196|shitposting": 44,
+   "comedyheaven|shitposting": 38,
+   "dankmemes|meirl": 26,
+   "dankmemes|shitposting": 23,
+   "memes|comedyheaven": 16,
+   "dankmemes|196": 16,
+   "meirl|196": 14,
+   "whenthe|196": 14,
+   "memes|whenthe": 13,
+   "meirl|comedyheaven": 13,
+   "comedyheaven|196": 11,
+   "meirl|whenthe": 10,
+   "whenthe|shitposting": 8,
+   "dankmemes|whenthe": 5,
+   "dankmemes|comedyheaven": 4
+  }
+ },
+ "degenerate_hash_share": {
+  "popcount_lt8_or_gt56": 0.0033279921114261063,
+  "most_common_hash_count": 10
+ },
+ "sensitivity_excluding_degenerate_hashes": {
+  "cross_any_other_at_primary": 0.08211723967350977,
+  "n": 16172
+ },
+ "exact_url_shared_in_window": {
+  "pooled": 0.00031378701706216906,
+  "per_community": {
+   "memes": 0.0006420958006934634,
+   "dankmemes": 0.0015957446808510637,
+   "meirl": 0.0,
+   "comedyheaven": 0.0,
+   "whenthe": 0.0,
+   "196": 0.0,
+   "shitposting": 0.0
+  },
+  "among_usable": 0.0003697769012695674,
+  "among_not_usable": 0.00021577300679684973
+ }
+}
