@@ -9,9 +9,22 @@ The current snapshot. History is in [`changelog.md`](changelog.md).
 Decisions and reviews only the user can give. Each entry says what is being asked, what the
 agent recommends, and what is blocked meanwhile. Remove an entry once it is answered.
 
-- **Who labels the clustering gold set (WP-04)?** The plan has the user hand-label on the
-  order of 1,000 memes into families. Blocks the clustering audit and everything after it
-  (ADR 0009, WP-06). No recommendation recorded yet.
+- **What counts as "one meme" in this project?** The clustering audit (WP-04) cannot be
+  finished without it, and the modelling depends on it. Three candidates, from the audit's
+  evidence: (a) a *template*, the reused base image: you and the agent labels agreed on
+  every one of 56 informative pairs, and an image-only embedding or a plain perceptual hash
+  keeps about 80% of each template together at 90% purity; (b) a *specific joke or trend*
+  (the protocol's definition): agents agree with each other, but you disagreed on 8 of 39
+  hard cases, and one global clustering threshold keeps only about a fifth of same-meme
+  pairs together at 90% purity; (c) a *broad subject* (all Endgame memes), which is closer
+  to several of your answers and has not been measured. Recommendation: none yet; the
+  agent's lean is (a) as the unit that is measurable now, with (b) pursued as a
+  neighbour-graph or soft-membership problem. Blocks ADR 0009 (clustering method), the
+  embedding composition question below, and everything downstream of clusters.
+- **Is the accepted embedding (image plus extracted text, ADR 0006/0017) still right?** For
+  templates it is clearly worse than image alone (0.56 against 0.77); for meaning it helps
+  at looser purity. Depends on the answer above. A bug in it (text-free images share one
+  text vector) needs fixing either way.
 - **Review of the submissions ingest (WP-16).** 11,782,247 posts ingested with exact
   reconciliation; the outcome has not been reviewed by anyone but the agent that produced
   it. Report: `experiments/WP-16/report.md`. Blocks nothing right now.

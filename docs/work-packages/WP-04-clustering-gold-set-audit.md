@@ -158,6 +158,42 @@ grades from the plots; no self-certified pass (AGENTS.md).
 
 <!-- Newest at top. -->
 
+- 2026-11-27 — **Independent review of the scored run (fresh agent, given artifacts and not
+  the conclusion): numbers reproduce, two of my readings were wrong, one pipeline bug
+  found.** Full text: `experiments/WP-04/sample-001/review/review.md`. Status of the scored
+  run is now `agent-reviewed`, with the family layer still unvalidated by the user check.
+  *Reproduced:* all 24 primary values to four decimals with separate code; row alignment
+  correct; a finer sweep moves numbers by at most 0.012; other linkages, a mutual-neighbour
+  graph and other image-to-text weightings all give 0.34–0.39, so the result is not an
+  artefact of the clustering method.
+  *Corrected reading 1:* "text adds nothing" is true only at the 0.90 operating point. At
+  precision 0.70 image plus text beats image only by 0.06 (0.02–0.10) pooled and 0.07
+  (0.02–0.14) in the background, and by more at 0.50; the 2-D map shows the same. At 0.90,
+  78% of the precision loss falls on images labelled unique, so a few false merges set the
+  number. The plot disagreed with my summary; the plot was right.
+  *Corrected reading 2:* "as good as a perceptual hash on templates" holds for image only
+  and is false for image plus text, the accepted composition (0.56 against 0.82). Plot title
+  fixed.
+  *Bug:* `embed_pipeline` in `experiments/wp01/pipelines.py` encodes an image with no
+  extracted text as the literal string "[empty]", so the 29 such images share an identical
+  text half and 17 unrelated ones form one cluster. Zeroing the text half for them lifts
+  image plus text from 0.37 to 0.39 pooled and 0.28 to 0.32 in the background. At corpus
+  scale every text-free image would fall into one cluster. Not yet fixed in the pipeline.
+  *Metric:* B-cubed recall counts an image as together with itself, which is why leaving
+  everything alone scores 0.24. Counting only pairs of different images, the share of
+  same-family pairs kept together at 90% purity is 0.21 pooled and 0.11 in the background
+  for both embedding arms, 0.09 and 0.04 for the hash, 0 for no clustering.
+  *Sample:* 79 of the 103 grouped background images have a family member in the hash-seeded
+  stratum; clustering the 500 background images alone leaves 23 multi-member families,
+  which is the registered "not enough families to tell" outcome for comparing arms there.
+  *Labels:* fill-in formats are treated inconsistently (two are split across families while
+  "me and the boys" is one), which charges the clustering with false merges.
+  *What stands:* at 90% purity one global threshold keeps few meaning-level families
+  together; pooled, the embedding beats the hash (+0.08, 0.04–0.12); the embedding does
+  carry meaning (nearest neighbour from the same family 43% of the time even excluding
+  same-template neighbours, text alone 45%, chance 1%). *What does not:* that text adds
+  nothing, that the embedding misses meaning, or any ranking of arms in the background.
+
 - 2026-11-27 — **User pair check done (100 pairs): template labels validated, family
   (meaning) labels fail the pre-set criterion.** Files: `experiments/WP-04/sample-001/user_check/`
   (`user_agreement.json`, `pairs_scored.csv`). Against the primary label set:

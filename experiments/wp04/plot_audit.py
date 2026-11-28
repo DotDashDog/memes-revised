@@ -92,8 +92,9 @@ def main() -> None:
             ax.set_xlim(0, 1); ax.set_ylim(0, 1.02); ax.grid(alpha=0.3)
             if r == 1: ax.set_xlabel("Share of each true group kept together (recall, images in groups of 2+)")
             if c == 0: ax.set_ylabel("Purity of clusters (precision, all images)")
-    fig.suptitle("Clustering audit: the embedding recovers templates about as well as a perceptual hash,\n"
-                 "and recovers meaning-level meme families only slightly better than not clustering at all\n"
+    fig.suptitle("Clustering audit. Top (meaning): at 90% purity little of each meme family stays together in any arm; "
+                 "at looser purity, adding text helps.\n"
+                 "Bottom (templates): image-only is about as good as a perceptual hash; image + text is clearly worse.\n"
                  "(lines: fine-to-coarse sweep; crosses: HDBSCAN; star: every image left alone; up and right is better)",
                  fontsize=11)
     fig.tight_layout()
