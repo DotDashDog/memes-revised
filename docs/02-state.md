@@ -25,12 +25,16 @@ agent recommends, and what is blocked meanwhile. Remove an entry once it is answ
   templates it is clearly worse than image alone (0.56 against 0.77); for meaning it helps
   at looser purity. Depends on the answer above. A bug in it (text-free images share one
   text vector) needs fixing either way.
-- **Do the prediction targets in ADR 0010 still stand?** The completed synthetic study
-  (WP-02, not yet independently reviewed) finds that final size, peak time and peak height
-  cannot be estimated for a meme caught at or before its peak, and that their stated
-  uncertainty is misleading there; only early growth rate and initial post rate are
-  recoverable. Options and the agent's recommendation are in the WP-02 log. Blocks the
-  choice of what the predictor is trained to predict (WP-08, WP-10).
+- **What should the model predict for each meme?** Two independent synthetic studies
+  completed on 2026-11-27 (SIR curves, WP-02; the Hawkes point-process fitter, WP-12;
+  neither independently reviewed yet) reach the same answer from different models: for a
+  single meme only the early growth rate and the final size are recoverable, final size
+  only once the peak has been seen, and the stated uncertainty on everything else is
+  misleadingly narrow. ADR 0010's primary targets (curve mass, peak time, peak height) are
+  not stable for memes caught before their peak, and the June Hawkes verdict that K*theta
+  is identifiable is withdrawn. Agent recommendation: make growth rate and final size the
+  targets on both tracks, use only fits that pass a peak-in-window check, and fit with an
+  overdispersed noise model. Blocks WP-08, WP-10 and the Hawkes track beyond WP-12.
 - **Where should WSL live?** It was moved to the portable hard disk (D:) on 2026-11-27
   after C: filled. That works but makes everything slower (small-file writes about 14 times
   slower than the NVMe) and voids the fast-tier/archive-tier split of ADR 0015. Moving it
