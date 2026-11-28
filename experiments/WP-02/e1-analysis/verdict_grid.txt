@@ -1,0 +1,342 @@
+v
+growth_rate
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    w    w    G    G    R    R
+      1.0xpeak    w    w    R    G    G    G
+      1.5xpeak    w    R    w    G    G    G
+      full        w    w    G    G    G    G
+B     0.7xpeak    w    w    G    G    R    R
+      1.0xpeak    w    w    R    G    G    G
+      1.5xpeak    w    R    R    G    G    G
+      full        w    R    G    G    G    G
+C     0.7xpeak    w    w    G    R    R    G
+      1.0xpeak    w    w    R    G    G    G
+      1.5xpeak    w    w    w    G    G    G
+      full        w    w    w    G    G    G
+D     full        R    R    w    w    w    w
+E     full        w    w    w    w    w    R
+log_init_rate
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    w    w    w    G    R    R
+      1.0xpeak    w    w    w    w    G    G
+      1.5xpeak    w    w    w    w    G    G
+      full        w    w    w    w    G    G
+B     0.7xpeak    w    w    G    G    R    R
+      1.0xpeak    w    w    w    G    G    G
+      1.5xpeak    w    w    R    G    G    G
+      full        w    R    R    G    G    G
+C     0.7xpeak    w    w    w    G    R    G
+      1.0xpeak    w    w    w    w    G    G
+      1.5xpeak    w    w    w    w    w    G
+      full        w    w    w    w    w    G
+D     full        R    R    R    w    w    w
+E     full        R    w    w    w    G    G
+peak_time
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    w    w    R    R    R    R
+      1.0xpeak    w    R    R    R    G    G
+      1.5xpeak    w    G    G    G    G    G
+      full        G    G    G    G    G    G
+B     0.7xpeak    w    w    R    R    R    R
+      1.0xpeak    w    R    R    R    R    R
+      1.5xpeak    w    w    G    G    G    G
+      full        R    R    G    G    G    G
+C     0.7xpeak    w    w    w    w    G    G
+      1.0xpeak    w    w    w    G    G    G
+      1.5xpeak    w    w    G    G    G    G
+      full        w    G    G    G    G    G
+D     full        w    w    w    w    G    G
+E     full        R    w    w    R    R    R
+log_peak_rate
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    w    w    w    R    R    R
+      1.0xpeak    w    R    R    G    G    G
+      1.5xpeak    w    G    G    G    G    G
+      full        w    G    G    G    G    G
+B     0.7xpeak    w    w    R    R    R    R
+      1.0xpeak    w    w    R    R    R    R
+      1.5xpeak    w    w    G    G    G    G
+      full        w    G    G    G    G    G
+C     0.7xpeak    w    w    w    R    R    G
+      1.0xpeak    w    w    w    G    G    G
+      1.5xpeak    w    G    G    G    G    G
+      full        w    G    G    G    G    G
+D     full        w    G    G    G    G    G
+E     full        w    G    R    R    G    G
+log_total
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    w    w    R    R    R    R
+      1.0xpeak    w    R    R    w    w    w
+      1.5xpeak    R    R    R    G    G    G
+      full        w    G    G    G    G    G
+B     0.7xpeak    w    R    R    R    R    R
+      1.0xpeak    R    R    R    R    R    R
+      1.5xpeak    R    R    R    R    G    G
+      full        w    G    G    G    G    G
+C     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    w    w    w    w    w
+      1.5xpeak    w    w    w    w    G    G
+      full        G    G    G    G    G    G
+D     full        G    G    G    G    G    G
+E     full        G    G    G    G    G    G
+log_R0
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    w    w    w    w    w
+      1.5xpeak    w    w    R    w    G    G
+      full        w    w    G    G    G    G
+B     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    R    w    w    w    R
+      1.5xpeak    w    R    R    w    G    G
+      full        w    R    G    G    G    G
+C     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    w    w    w    w    w
+      1.5xpeak    w    w    w    w    w    R
+      full        w    w    G    G    G    G
+D     full        w    w    w    w    w    w
+E     full        w    w    w    R    R    R
+log_beta
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    w    w    w    w    G    w
+      1.0xpeak    w    w    w    w    G    G
+      1.5xpeak    w    w    G    G    G    G
+      full        w    R    G    R    G    G
+B     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    w    R    R    w    R
+      1.5xpeak    w    w    w    w    w    G
+      full        w    w    w    w    G    G
+C     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    w    w    G    G    G
+      1.5xpeak    w    w    G    G    G    G
+      full        w    w    G    G    G    G
+D     full        w    w    w    w    w    w
+E     full        w    w    w    w    R    R
+log_gamma
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    w    w    w    w    w
+      1.5xpeak    w    w    R    w    w    G
+      full        w    w    w    G    G    G
+B     0.7xpeak    R    R    w    w    w    w
+      1.0xpeak    R    R    w    w    w    R
+      1.5xpeak    R    R    R    w    w    w
+      full        R    R    w    w    w    G
+C     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    w    w    w    w    w
+      1.5xpeak    w    w    w    w    w    G
+      full        w    G    G    G    G    G
+D     full        R    R    R    R    R    w
+E     full        R    R    R    R    R    R
+log_scale
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    w    w    w    w    w
+      1.5xpeak    w    w    R    w    w    G
+      full        w    w    w    G    G    G
+B     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    w    w    w    w    R
+      1.5xpeak    w    R    R    w    w    w
+      full        w    R    w    w    w    w
+C     0.7xpeak    w    w    R    R    R    w
+      1.0xpeak    w    w    w    w    w    G
+      1.5xpeak    w    w    w    G    G    R
+      full        w    G    G    G    G    G
+D     full        w    w    w    w    w    w
+E     full        w    w    w    R    R    R
+logit_i0
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    w    w    w    w    w
+      1.5xpeak    w    w    w    w    G    G
+      full        w    R    w    w    G    G
+B     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    w    w    w    w    R
+      1.5xpeak    w    w    w    w    w    w
+      full        w    w    w    w    w    w
+C     0.7xpeak    R    R    R    R    R    w
+      1.0xpeak    w    w    w    w    w    G
+      1.5xpeak    w    w    w    w    G    G
+      full        w    w    w    w    w    G
+D     full        w    w    w    w    w    w
+E     full        w    w    w    w    R    R
+lv
+growth_rate
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    R    R    R    R    G    G
+      1.0xpeak    R    w    G    G    G    R
+      1.5xpeak    w    w    G    G    G    G
+      full        w    w    G    G    G    G
+B     0.7xpeak    R    R    R    R    G    G
+      1.0xpeak    R    R    G    G    G    G
+      1.5xpeak    w    w    w    G    R    G
+      full        w    w    G    G    G    G
+C     0.7xpeak    R    R    R    G    G    G
+      1.0xpeak    R    w    G    G    R    G
+      1.5xpeak    R    R    w    G    G    G
+      full        R    w    w    G    G    G
+D     full        R    R    R    R    R    R
+E     full        R    R    w    w    w    w
+log_init_rate
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    R    w    R    R    G    G
+      1.0xpeak    R    w    w    w    G    G
+      1.5xpeak    w    w    w    w    G    G
+      full        w    w    w    w    G    G
+B     0.7xpeak    R    R    R    G    G    G
+      1.0xpeak    R    w    w    G    G    G
+      1.5xpeak    w    w    w    G    G    G
+      full        w    w    w    G    G    G
+C     0.7xpeak    R    w    w    w    G    G
+      1.0xpeak    R    w    w    w    G    G
+      1.5xpeak    w    w    w    w    G    G
+      full        w    w    w    w    w    G
+D     full        R    R    R    R    R    R
+E     full        R    w    G    R    G    G
+peak_time
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    R    R    R    R    w    G
+      1.0xpeak    R    R    w    w    R    R
+      1.5xpeak    R    R    G    G    G    G
+      full        R    R    G    G    G    G
+B     0.7xpeak    R    R    R    R    G    G
+      1.0xpeak    R    R    w    G    G    G
+      1.5xpeak    R    R    G    G    R    G
+      full        R    R    G    G    G    G
+C     0.7xpeak    R    R    R    R    R    R
+      1.0xpeak    R    R    R    R    R    R
+      1.5xpeak    R    R    G    G    G    G
+      full        R    R    G    G    G    G
+D     full        R    R    R    R    R    R
+E     full        R    R    R    R    R    R
+log_peak_rate
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    R    R    R    R    w    G
+      1.0xpeak    R    G    G    G    G    G
+      1.5xpeak    w    G    G    G    G    G
+      full        w    G    G    G    G    G
+B     0.7xpeak    R    R    R    R    w    G
+      1.0xpeak    R    G    G    G    G    G
+      1.5xpeak    w    G    G    G    G    G
+      full        w    G    G    G    G    G
+C     0.7xpeak    R    R    R    R    R    R
+      1.0xpeak    R    G    G    G    G    G
+      1.5xpeak    R    G    G    G    G    G
+      full        w    G    G    G    G    G
+D     full        R    R    R    R    R    R
+E     full        R    R    R    R    G    R
+log_total
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    R    R    R    R    w    w
+      1.0xpeak    R    R    R    R    R    R
+      1.5xpeak    w    G    G    G    G    G
+      full        G    G    G    G    G    G
+B     0.7xpeak    R    R    R    R    w    w
+      1.0xpeak    R    w    w    w    G    R
+      1.5xpeak    w    G    G    G    G    G
+      full        G    G    G    G    G    G
+C     0.7xpeak    R    R    R    R    R    R
+      1.0xpeak    R    R    R    R    R    R
+      1.5xpeak    R    R    R    R    G    G
+      full        G    G    G    G    G    G
+D     full        R    R    R    R    R    R
+E     full        R    R    G    R    G    G
+log_R0
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    R    R    R    R    w    w
+      1.0xpeak    R    R    R    R    R    R
+      1.5xpeak    R    R    R    w    G    G
+      full        R    R    G    G    G    G
+B     0.7xpeak    w    R    w    w    w    w
+      1.0xpeak    R    R    R    R    R    R
+      1.5xpeak    R    R    R    R    R    G
+      full        R    R    R    R    G    G
+C     0.7xpeak    R    R    R    R    R    R
+      1.0xpeak    R    R    R    R    R    w
+      1.5xpeak    R    R    w    w    w    G
+      full        w    w    G    G    G    G
+D     full        R    R    R    R    R    R
+E     full        R    R    R    R    G    G
+log_beta
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    R    w    w    w    w    w
+      1.0xpeak    R    w    w    R    R    R
+      1.5xpeak    w    w    G    G    G    G
+      full        w    w    G    G    G    G
+B     0.7xpeak    w    w    R    R    R    w
+      1.0xpeak    w    w    R    R    R    R
+      1.5xpeak    w    w    R    R    R    R
+      full        w    w    R    R    G    G
+C     0.7xpeak    R    R    w    w    R    R
+      1.0xpeak    R    w    w    G    G    G
+      1.5xpeak    w    w    G    G    G    G
+      full        w    w    G    G    G    G
+D     full        R    R    R    R    R    R
+E     full        w    w    R    R    R    R
+log_gamma
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    R    w    w    w    w    w
+      1.0xpeak    R    w    w    R    R    R
+      1.5xpeak    w    w    w    w    G    G
+      full        w    R    G    G    G    G
+B     0.7xpeak    w    w    w    w    w    w
+      1.0xpeak    w    w    w    w    w    R
+      1.5xpeak    w    w    R    R    R    R
+      full        R    R    R    w    w    G
+C     0.7xpeak    R    w    R    R    R    R
+      1.0xpeak    w    w    w    R    w    w
+      1.5xpeak    w    w    w    w    w    G
+      full        w    G    G    G    G    G
+D     full        R    R    R    R    R    R
+E     full        R    R    R    R    R    R
+log_scale
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    R    R    R    w    w    w
+      1.0xpeak    R    R    R    R    R    R
+      1.5xpeak    R    R    R    R    G    G
+      full        R    R    w    G    G    G
+B     0.7xpeak    R    R    R    R    R    w
+      1.0xpeak    R    R    R    R    R    R
+      1.5xpeak    R    R    R    R    R    R
+      full        R    R    R    R    w    w
+C     0.7xpeak    R    R    w    w    R    R
+      1.0xpeak    R    w    w    w    w    w
+      1.5xpeak    w    w    w    G    G    G
+      full        w    G    G    G    G    G
+D     full        R    R    R    R    R    R
+E     full        R    R    R    R    R    R
+logit_i0
+n_exp          10   30   100  300  1000 3000
+shape window                                
+A     0.7xpeak    R    w    w    w    w    w
+      1.0xpeak    w    w    w    R    R    R
+      1.5xpeak    w    w    w    w    G    G
+      full        w    w    w    w    G    G
+B     0.7xpeak    w    R    R    R    R    w
+      1.0xpeak    w    w    R    R    R    R
+      1.5xpeak    w    w    w    R    R    R
+      full        w    w    w    w    w    G
+C     0.7xpeak    R    w    w    w    R    R
+      1.0xpeak    w    w    w    w    w    w
+      1.5xpeak    w    w    w    w    G    G
+      full        w    w    w    w    w    G
+D     full        R    R    R    R    R    R
+E     full        w    R    R    R    R    R

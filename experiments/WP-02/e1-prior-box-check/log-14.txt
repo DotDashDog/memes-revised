@@ -1,0 +1,6 @@
+/home/linus/memes-revised/experiments/wp02/calib.py:314: RuntimeWarning: overflow encountered in exp
+  gam = np.exp(p[..., 1])
+cell 53 ess stage1 med 942 frac<200 0.00 | v3 med 6633 frac<200 0.00 | 308s
+/home/linus/memes-revised/experiments/wp02/calib.py:315: RuntimeWarning: overflow encountered in exp
+  i0 = 1 / (1 + np.exp(-p[..., 2]))
+cell 4 ess stage1 med 1319 frac<200 0.00 | v3 med 16519 frac<200 0.00 | 312s

@@ -77,6 +77,48 @@ And a corresponding draft update to `0010-sir-parameterization.md` recording the
 
 <!-- Newest at top. -->
 
+- 2026-11-27 — **Completion pass (Opus agent; UNCERTIFIED: checked by its author, plus the
+  orchestrator reading the main plot; no independent review yet).** Pre-registration and
+  deviations: `experiments/WP-02/expectations-2026-11.md`. Main plot:
+  `experiments/WP-02/e1-analysis/e1_trust_map_posterior.png`; tables in the same folder.
+  Method: 84 combinations of curve shape (R0 = 3, 1.5, 10, 0.86, 1), observation window
+  (to 0.7x the peak time, to the peak, to 1.5x, full curve) and observed post count (10 to
+  3000), 400 simulated datasets each; count how often a stated 90% interval contains the
+  truth (below 85.5% is called misleading), for Hessian intervals and for the full posterior.
+  *Main finding:* for a meme caught at or before its peak, only the early growth rate and
+  the initial post rate can be estimated, from about 100 posts. Final size, peak time and
+  peak height cannot, and their stated 90% intervals contain the truth only 41–80% of the
+  time for R0 of 3 and 1.5: misleading, not merely wide. With the peak observed and at least
+  about 100 posts, final size, peak height, peak time and growth rate are trustworthy; R0
+  as well on complete curves. Raw beta, gamma, s, I0 need about 1000 posts on complete curves.
+  *Flag for an untrustworthy fit:* posterior probability that the peak lies inside the
+  observed window above 0.9. Among fits passing it, coverage is 89–90% pooled over growing
+  shapes; one gap (R0 = 1.5, just past the peak, 30–300 posts: final size 69–78%). May's
+  flag set (Hessian positive definite, off bounds, converged) is not enough: among the
+  pre-peak fits it passes, peak-time coverage fell to 50% in the worst cell.
+  *May conclusions:* "Hessian matches the posterior when well identified" held. "Low counts
+  break it" is half right: it depends on target and window more than count. The 12
+  non-positive Hessians were mostly fits still climbing a ridge or on a bound, not odd
+  maxima. The full posterior is not a safe fallback under the inherited flat prior: where
+  data do not pin a quantity down, the prior decides, and an arbitrary bound on I0 moved
+  pre-peak intervals by 53–65%.
+  *Noise:* with overdispersed (negative-binomial) counts, Poisson-based intervals are badly
+  overconfident and get worse with more data (final-size coverage 43% at 1000 posts for
+  moderate overdispersion, 16% for strong); fitting a negative-binomial likelihood restores
+  85–89%. Repost-style spikes bias final size up by 14–18% and neither likelihood is robust
+  to them for final size; peak height and time stay usable.
+  *Bearing on ADR 0010:* its instruction not to use raw parameters as labels stands. Its
+  premise that the chosen primary targets (curve mass, peak time, peak height) are stable
+  does not hold for memes caught before or at their peak. Agent's options: (a) keep the
+  targets but condition on the peak-in-window flag and fit with an overdispersed likelihood,
+  (b) evaluate only memes observed past their peak, (c) predict only growth rate and initial
+  rate for memes in progress; it recommends (a). Reopening the ADR is the user's decision.
+  *Limits:* synthetic curves are exactly SIR, so real data can only be harder; fits start
+  near the truth; decaying and at-threshold cells have rougher posterior numerics; not run:
+  overdispersion with truncated windows, a spike-robust fitter, a hierarchical prior.
+  The agent's full written report could not be saved as a file (the harness refuses report
+  files from subagents); this entry and the outputs above are the record.
+
 - 2026-05-19 — User accepted ADR 0010.
 - 2026-05-19 — Drafted ADR 0010 recommendation: use stable curve-level summaries as primary prediction/evaluation targets, and retain transformed SIR parameters only as auxiliary diagnostic targets with identifiability metadata.
 - 2026-05-19 — Recorded first-pass conclusion: JAX/diffrax SIR fitting works for synthetic binned Poisson curves, and MAP/NUTS posterior-predictive curves can fit well even when natural SIR parameters are not individually identifiable. Near-threshold cases such as `case-052` mostly identify net growth/decay and initial amplitude, not unique $(\beta,\gamma,s,I_0)$.
