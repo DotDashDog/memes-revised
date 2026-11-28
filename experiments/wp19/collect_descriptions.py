@@ -10,8 +10,8 @@ Classification of each raw response (first pass and, if given, the retry pass):
   truncated    finish_reason == "length"
   invalid_json content is not a JSON object even after removing a ```json fence
   bad_fields   JSON object missing a field or with a wrong type
-  refusal      parsed but every content field empty AND text matches a refusal phrase,
-               or unparseable content matching a refusal phrase
+  refusal      premise starts with a refusal phrase, or unparseable content matching one
+  empty_fields valid JSON whose text, premise and referents are all empty
   ok
 Strict JSON (no fence, no surrounding text) is counted separately as `strict_json_ok`,
 since a fenced reply is a formatting deviation even when recoverable.
@@ -64,8 +64,10 @@ def classify(rec):
             return "bad_fields", None, strict
     if isinstance(obj["referents"], list) and not all(isinstance(x, str) for x in obj["referents"]):
         return "bad_fields", None, strict
-    if not any([obj["text"].strip(), obj["premise"].strip(), obj["referents"]]) or REFUSAL.match(obj["premise"]):
+    if REFUSAL.match(obj["premise"]):
         return "refusal", obj, strict
+    if not any([obj["text"].strip(), obj["premise"].strip(), obj["referents"]]):
+        return "empty_fields", obj, strict  # valid JSON but nothing described
     return "ok", {k: obj[k] for k in FIELDS}, strict
 
 

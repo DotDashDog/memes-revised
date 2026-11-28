@@ -1,0 +1,16 @@
+{
+ "n_ids": 797,
+ "first_pass": {
+  "ok": 785,
+  "empty_fields": 6,
+  "invalid_json": 3,
+  "truncated": 3
+ },
+ "first_pass_strict_json_ok": 785,
+ "retry_pass": {
+  "empty_fields": 6,
+  "ok": 6
+ },
+ "final_ok": 791,
+ "final_failed": 6
+}

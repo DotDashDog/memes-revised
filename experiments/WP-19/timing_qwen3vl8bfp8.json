@@ -1,0 +1,361 @@
+{
+ "model_tag": "qwen3vl8bfp8",
+ "settings": {
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "server": "vLLM 0.34.0 OpenAI-compatible server, continuous batching, V1 engine, FLASH_ATTN backend, torch.compile + CUDA graphs (defaults)",
+  "precision": "online FP8 weight-only quantisation at load time (--quantization fp8, which vLLM 0.34 maps to fp8_per_tensor; on the 3090, which lacks FP8 compute, vLLM uses Marlin weight-only FP8 kernels with bf16 activations). The vision encoder's linear layers were quantised too. bf16 KV cache. Same downloaded bf16 checkpoint; no extra download.",
+  "image_pixels": "native resolution (no cap set): images are at most 768 px on the longest side, processor default limits min 65,536 px / max 16,777,216 px total; Qwen3-VL uses one token per 32x32 px, so at most 576 image tokens (median about 414); 8 of 797 images are under the minimum and get upscaled",
+  "max_output_tokens": 1024,
+  "max_model_len": 4096,
+  "gpu_memory_utilization": 0.9,
+  "max_num_seqs": 128,
+  "limit_mm_per_prompt": {
+   "image": 1,
+   "video": 0
+  },
+  "mm_processor_cache_gb": 0,
+  "generation_config": "vllm (model's generation_config.json ignored; sampling set per request)",
+  "first_pass_decoding": "greedy (temperature 0), seed 0, no structured output",
+  "retry_decoding": "model-card VL sampling (temperature 0.7, top_p 0.8, top_k 20, presence_penalty 1.5), seed 0, with structured output (response_format json_schema, xgrammar via backend auto)",
+  "prompt": "experiments/wp19/describe_prompt.md verbatim as the text part, image first in the user message, no system prompt",
+  "client": "experiments/wp19/describe_vlm.py, httpx async, base64 JPEG data URL",
+  "kv_cache_reported_by_vllm": "9.68 GiB available, 63,488 tokens (extensible KV cache)"
+ },
+ "startup": {
+  "launch_to_ready_s": 357.099987838,
+  "meta": [
+   "launch 2026-11-28T00:12:31-08:00 load: 40.86 40.50 38.13",
+   "pid 64509",
+   "ready 2026-11-28T00:18:28-08:00 startup_s 357.099987838 load: 38.89 39.09 38.20"
+  ],
+  "server_log_lines": [
+   "Loading weights took 7.56 seconds",
+   "Model loading took 9.48 GiB memory and 15.974382 seconds",
+   "[backbone] torch.compile took 139.05 s in total",
+   "Available KV cache memory: 9.68 GiB",
+   "Graph capturing finished in 17 secs, took 0.38 GiB",
+   "GPU KV cache size: 63,488 tokens, Maximum concurrency for 4,096 tokens per request: 15.50x",
+   "init engine (profile, create kv cache, warmup model) took 239.47 s (compilation: 139.05 s)"
+  ]
+ },
+ "peak_gpu_memory_mib_whole_card": 21369,
+ "peak_gpu_memory_note": "whole-GPU nvidia-smi reading at 1 Hz over the server's life (WSL2 cannot attribute memory per process); includes ~0.7 GB used by the Windows desktop. vLLM pre-allocates gpu_memory_utilization x 24 GB, so this reflects the setting, not the minimum needed.",
+ "warmup": {
+  "concurrency": 16,
+  "schema": false,
+  "sampling": "greedy",
+  "n_requests": 24,
+  "n_http_ok": 24,
+  "wall_s": 8.591348228999777,
+  "images_per_s": 2.7935079990110157,
+  "images_per_s_steady_p10_p90": 6.095372412192911,
+  "mean_prompt_tokens": 657.5416666666666,
+  "mean_completion_tokens": 97.375,
+  "output_tok_per_s": 272.0178414036976,
+  "latency_p50_s": 5.582269019001615,
+  "latency_p95_s": 7.731717926000783,
+  "finish_length": 0,
+  "loadavg_1_5_15_start": [
+   39.04150390625,
+   39.1162109375,
+   38.220703125
+  ],
+  "loadavg_1_5_15_end": [
+   38.34619140625,
+   38.9638671875,
+   38.18017578125
+  ],
+  "started_at": "2026-11-28T00:18:40",
+  "conditions_before_after": [
+   "before 2026-11-28T00:18:40-08:00",
+   " 00:18:40 up  3:31,  1 user,  load average: 39.04, 39.12, 38.22",
+   "20303 MiB, 0 %",
+   "65229, [Not Found], [N/A]",
+   "USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+   "linus      37889  781  0.6 4326028 445100 ?      RNl  Nov27 426:03 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_sensitivity",
+   "linus      37890  760  0.6 4328156 446608 ?      RNl  Nov27 414:20 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_probe",
+   "linus      65229 40.9  4.3 120203920 2888468 ?   SNl  00:13   2:01 VLLM::EngineCore",
+   "linus      64509  9.7  2.9 6919748 1948324 ?     SNl  00:12   0:36 /home/linus/tools/vlm-serve/.venv/bin/python /home/linus/tools/vlm-serve/.venv/bin/vllm serve",
+   "linus        850  4.7  0.8 5779020 531516 pts/4  SNsl+ Nov27   9:28 claude bg-spare --bg-spare /tmp/cc-daemon-1000/fbfd8147/spare/f271b04b.claim.sock",
+   "after 2026-11-28T00:18:49-08:00 rc=0",
+   " 00:18:49 up  3:31,  1 user,  load average: 38.35, 38.96, 38.18",
+   "20909 MiB, 9 %"
+  ]
+ },
+ "sweep_192_images": [
+  {
+   "concurrency": 16,
+   "schema": false,
+   "sampling": "greedy",
+   "n_requests": 192,
+   "n_http_ok": 192,
+   "wall_s": 69.87363636699956,
+   "images_per_s": 2.747817488581132,
+   "images_per_s_steady_p10_p90": 2.865945071812225,
+   "mean_prompt_tokens": 701.3020833333334,
+   "mean_completion_tokens": 91.08333333333333,
+   "output_tok_per_s": 250.2803762515981,
+   "latency_p50_s": 5.5909633619994565,
+   "latency_p95_s": 7.7902103119995445,
+   "finish_length": 0,
+   "loadavg_1_5_15_start": [
+    38.34619140625,
+    38.9638671875,
+    38.18017578125
+   ],
+   "loadavg_1_5_15_end": [
+    39.55224609375,
+    39.1396484375,
+    38.29345703125
+   ],
+   "started_at": "2026-11-28T00:18:50",
+   "conditions_before_after": [
+    "before 2026-11-28T00:18:49-08:00",
+    " 00:18:49 up  3:31,  1 user,  load average: 38.35, 38.96, 38.18",
+    "20909 MiB, 0 %",
+    "65229, [Not Found], [N/A]",
+    "USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+    "linus      37889  781  0.6 4326028 445100 ?      RNl  Nov27 427:20 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_sensitivity",
+    "linus      37890  759  0.6 4328156 446608 ?      RNl  Nov27 415:33 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_probe",
+    "linus      65229 40.6  4.4 120213636 2946252 ?   SNl  00:13   2:04 VLLM::EngineCore",
+    "linus      64509  9.7  3.0 7606268 1999380 ?     SNl  00:12   0:36 /home/linus/tools/vlm-serve/.venv/bin/python /home/linus/tools/vlm-serve/.venv/bin/vllm serve",
+    "linus        850  4.7  0.8 5779020 537420 pts/4  RNsl+ Nov27   9:28 claude bg-spare --bg-spare /tmp/cc-daemon-1000/fbfd8147/spare/f271b04b.claim.sock",
+    "after 2026-11-28T00:20:00-08:00 rc=0",
+    " 00:20:00 up  3:32,  1 user,  load average: 39.55, 39.14, 38.29",
+    "21319 MiB, 30 %"
+   ]
+  },
+  {
+   "concurrency": 32,
+   "schema": false,
+   "sampling": "greedy",
+   "n_requests": 192,
+   "n_http_ok": 192,
+   "wall_s": 59.123220577999746,
+   "images_per_s": 3.2474550290557893,
+   "images_per_s_steady_p10_p90": 3.491294551972899,
+   "mean_prompt_tokens": 701.3020833333334,
+   "mean_completion_tokens": 90.94791666666667,
+   "output_tok_per_s": 295.3492693613135,
+   "latency_p50_s": 9.528329845999906,
+   "latency_p95_s": 14.43686418499965,
+   "finish_length": 0,
+   "loadavg_1_5_15_start": [
+    39.55224609375,
+    39.1396484375,
+    38.29345703125
+   ],
+   "loadavg_1_5_15_end": [
+    38.70263671875,
+    39.05029296875,
+    38.3203125
+   ],
+   "started_at": "2026-11-28T00:20:01",
+   "conditions_before_after": [
+    "before 2026-11-28T00:20:00-08:00",
+    " 00:20:00 up  3:32,  1 user,  load average: 39.55, 39.14, 38.29",
+    "21319 MiB, 0 %",
+    "65229, [Not Found], [N/A]",
+    "USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+    "linus      37889  781  0.6 4326044 445116 ?      RNl  Nov27 436:36 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_sensitivity",
+    "linus      37890  759  0.6 4341404 459920 ?      RNl  Nov27 424:31 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_probe",
+    "linus      65229 40.0  4.4 120215912 2961480 ?   SNl  00:13   2:31 VLLM::EngineCore",
+    "linus      64509  9.3  3.0 7606268 2014296 ?     SNl  00:12   0:41 /home/linus/tools/vlm-serve/.venv/bin/python /home/linus/tools/vlm-serve/.venv/bin/vllm serve",
+    "linus        850  4.7  0.7 5779020 519880 pts/4  SNsl+ Nov27   9:29 claude bg-spare --bg-spare /tmp/cc-daemon-1000/fbfd8147/spare/f271b04b.claim.sock",
+    "after 2026-11-28T00:21:00-08:00 rc=0",
+    " 00:21:00 up  3:33,  1 user,  load average: 38.70, 39.05, 38.32",
+    "21319 MiB, 59 %"
+   ]
+  },
+  {
+   "concurrency": 64,
+   "schema": false,
+   "sampling": "greedy",
+   "n_requests": 192,
+   "n_http_ok": 192,
+   "wall_s": 73.07650330999968,
+   "images_per_s": 2.6273835132137062,
+   "images_per_s_steady_p10_p90": 4.664623337925664,
+   "mean_prompt_tokens": 701.3020833333334,
+   "mean_completion_tokens": 96.19791666666667,
+   "output_tok_per_s": 252.74882025550602,
+   "latency_p50_s": 17.422005893999085,
+   "latency_p95_s": 29.2827459300006,
+   "finish_length": 1,
+   "loadavg_1_5_15_start": [
+    38.70263671875,
+    39.05029296875,
+    38.3203125
+   ],
+   "loadavg_1_5_15_end": [
+    37.75244140625,
+    38.6748046875,
+    38.2431640625
+   ],
+   "started_at": "2026-11-28T00:21:01",
+   "conditions_before_after": [
+    "before 2026-11-28T00:21:00-08:00",
+    " 00:21:00 up  3:33,  1 user,  load average: 38.70, 39.05, 38.32",
+    "21319 MiB, 0 %",
+    "65229, [Not Found], [N/A]",
+    "USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+    "linus      37889  781  0.6 4326044 445116 ?      RNl  Nov27 444:23 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_sensitivity",
+    "linus      37890  760  0.6 4341404 459920 ?      RNl  Nov27 432:12 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_probe",
+    "linus      65229 39.7  4.5 120281448 3012064 ?   SNl  00:13   2:53 VLLM::EngineCore",
+    "linus      64509  9.1  3.1 7606268 2048708 ?     SNl  00:12   0:46 /home/linus/tools/vlm-serve/.venv/bin/python /home/linus/tools/vlm-serve/.venv/bin/vllm serve",
+    "linus        850  4.7  0.7 5779020 519440 pts/4  SNsl+ Nov27   9:30 claude bg-spare --bg-spare /tmp/cc-daemon-1000/fbfd8147/spare/f271b04b.claim.sock",
+    "after 2026-11-28T00:22:14-08:00 rc=0",
+    " 00:22:14 up  3:34,  1 user,  load average: 37.75, 38.67, 38.24",
+    "21319 MiB, 12 %"
+   ]
+  },
+  {
+   "concurrency": 128,
+   "schema": false,
+   "sampling": "greedy",
+   "n_requests": 192,
+   "n_http_ok": 192,
+   "wall_s": 67.16510022900002,
+   "images_per_s": 2.8586274619612606,
+   "images_per_s_steady_p10_p90": 3.8323031251202244,
+   "mean_prompt_tokens": 701.3020833333334,
+   "mean_completion_tokens": 90.48958333333333,
+   "output_tok_per_s": 258.6760079380986,
+   "latency_p50_s": 34.27062219800064,
+   "latency_p95_s": 53.587323622999975,
+   "finish_length": 0,
+   "loadavg_1_5_15_start": [
+    37.75244140625,
+    38.6748046875,
+    38.2431640625
+   ],
+   "loadavg_1_5_15_end": [
+    39.39404296875,
+    39.03759765625,
+    38.40087890625
+   ],
+   "started_at": "2026-11-28T00:22:15",
+   "conditions_before_after": [
+    "before 2026-11-28T00:22:14-08:00",
+    " 00:22:14 up  3:34,  1 user,  load average: 37.75, 38.67, 38.24",
+    "21319 MiB, 0 %",
+    "65229, [Not Found], [N/A]",
+    "USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+    "linus      37889  781  0.6 4326028 445100 ?      RNl  Nov27 453:48 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_sensitivity",
+    "linus      37890  760  0.6 4328212 446664 ?      RNl  Nov27 441:57 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_probe",
+    "linus      65229 38.6  4.5 120281716 2989612 ?   SNl  00:13   3:18 VLLM::EngineCore",
+    "linus      64509  8.8  3.2 7606268 2118476 ?     SNl  00:12   0:51 /home/linus/tools/vlm-serve/.venv/bin/python /home/linus/tools/vlm-serve/.venv/bin/vllm serve",
+    "linus        850  4.7  0.7 5779020 497676 pts/4  SNsl+ Nov27   9:31 claude bg-spare --bg-spare /tmp/cc-daemon-1000/fbfd8147/spare/f271b04b.claim.sock",
+    "after 2026-11-28T00:23:22-08:00 rc=0",
+    " 00:23:22 up  3:36,  1 user,  load average: 39.39, 39.04, 38.40",
+    "21319 MiB, 34 %"
+   ]
+  }
+ ],
+ "full_797": {
+  "concurrency": 64,
+  "schema": false,
+  "sampling": "greedy",
+  "n_requests": 797,
+  "n_http_ok": 797,
+  "wall_s": 229.31487733599897,
+  "images_per_s": 3.47557040022402,
+  "images_per_s_steady_p10_p90": 3.52004680570794,
+  "mean_prompt_tokens": 686.0489335006273,
+  "mean_completion_tokens": 92.60978670012547,
+  "output_tok_per_s": 321.8718334260162,
+  "latency_p50_s": 16.89720842299903,
+  "latency_p95_s": 28.454399340000236,
+  "finish_length": 3,
+  "loadavg_1_5_15_start": [
+   39.03857421875,
+   38.97119140625,
+   38.3857421875
+  ],
+  "loadavg_1_5_15_end": [
+   40.7763671875,
+   39.67578125,
+   38.77783203125
+  ],
+  "started_at": "2026-11-28T00:23:32",
+  "conditions_before_after": [
+   "before 2026-11-28T00:23:31-08:00",
+   " 00:23:31 up  3:36,  1 user,  load average: 39.04, 38.97, 38.39",
+   "21319 MiB, 0 %",
+   "65229, [Not Found], [N/A]",
+   "USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+   "linus      37889  781  0.6 4326044 445116 ?      RNl  Nov27 463:53 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_sensitivity",
+   "linus      37890  760  0.6 4341356 459872 ?      RNl  Nov27 451:47 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_probe",
+   "linus      65229 37.3  4.7 120347508 3100220 ?   SNl  00:13   3:39 VLLM::EngineCore",
+   "linus      64509  8.4  3.3 7682036 2179812 ?     SNl  00:12   0:55 /home/linus/tools/vlm-serve/.venv/bin/python /home/linus/tools/vlm-serve/.venv/bin/vllm serve",
+   "linus        850  4.7  0.8 5779020 539160 pts/4  SNsl+ Nov27   9:32 claude bg-spare --bg-spare /tmp/cc-daemon-1000/fbfd8147/spare/f271b04b.claim.sock",
+   "after 2026-11-28T00:27:21-08:00 rc=0",
+   " 00:27:22 up  3:39,  1 user,  load average: 40.78, 39.68, 38.78",
+   "21367 MiB, 0 %"
+  ]
+ },
+ "retry": {
+  "concurrency": 32,
+  "schema": true,
+  "sampling": {
+   "temperature": 0.7,
+   "top_p": 0.8,
+   "top_k": 20,
+   "presence_penalty": 1.5
+  },
+  "n_requests": 12,
+  "n_http_ok": 12,
+  "wall_s": 5.861381492999499,
+  "images_per_s": 2.047298919944405,
+  "images_per_s_steady_p10_p90": null,
+  "mean_prompt_tokens": 699.0,
+  "mean_completion_tokens": 58.5,
+  "output_tok_per_s": 119.76698681674772,
+  "latency_p50_s": 5.261893093000253,
+  "latency_p95_s": 5.581056293000074,
+  "finish_length": 0,
+  "loadavg_1_5_15_start": [
+   40.7763671875,
+   39.67578125,
+   38.77783203125
+  ],
+  "loadavg_1_5_15_end": [
+   40.04150390625,
+   39.5546875,
+   38.74755859375
+  ],
+  "started_at": "2026-11-28T00:27:22",
+  "conditions_before_after": [
+   "before 2026-11-28T00:27:22-08:00",
+   " 00:27:22 up  3:39,  1 user,  load average: 40.78, 39.68, 38.78",
+   "21367 MiB, 0 %",
+   "65229, [Not Found], [N/A]",
+   "USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+   "linus      37889  781  0.6 4326044 445116 ?      RNl  Nov27 493:45 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_sensitivity",
+   "linus      37890  761  0.6 4341324 459776 ?      RNl  Nov27 481:11 /home/linus/memes-revised/.venv/bin/python3 -m experiments.wp18.m3_probe",
+   "linus      65229 37.4  4.7 120358404 3111120 ?   SNl  00:13   5:07 VLLM::EngineCore",
+   "linus      64509  8.3  3.3 7629020 2220204 ?     SNl  00:12   1:14 /home/linus/tools/vlm-serve/.venv/bin/python /home/linus/tools/vlm-serve/.venv/bin/vllm serve",
+   "linus        850  4.6  0.8 5779020 552460 pts/4  DNsl+ Nov27   9:39 claude bg-spare --bg-spare /tmp/cc-daemon-1000/fbfd8147/spare/f271b04b.claim.sock",
+   "after 2026-11-28T00:27:29-08:00 rc=0",
+   " 00:27:29 up  3:40,  1 user,  load average: 40.04, 39.55, 38.75",
+   "21367 MiB, 11 %"
+  ]
+ },
+ "failures": {
+  "n_ids": 797,
+  "first_pass": {
+   "ok": 785,
+   "empty_fields": 6,
+   "invalid_json": 3,
+   "truncated": 3
+  },
+  "first_pass_strict_json_ok": 785,
+  "retry_pass": {
+   "empty_fields": 6,
+   "ok": 6
+  },
+  "final_ok": 791,
+  "final_failed": 6
+ }
+}
