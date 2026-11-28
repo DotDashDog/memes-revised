@@ -158,6 +158,37 @@ grades from the plots; no self-certified pass (AGENTS.md).
 
 <!-- Newest at top. -->
 
+- 2026-11-27 — **Diagnostic: why clustering fails on meaning (exploratory, author-only).**
+  Scripts `experiments/wp04/diagnose_failure.py`, `diagnose_vs_user.py`,
+  `explore_temporal_shape.py`; outputs `sample-001/diagnose_failure.json`,
+  `user_check/representation_vs_user.json`, plots `diagnose_failure.png`,
+  `temporal_shape.png`. Against agent family labels (unvalidated on hard pairs):
+  (1) *Picture outranks meaning.* In the image-only embedding a different-meme, same-template
+  pair is more similar than a same-meme, different-template pair 89% of the time; 72% in the
+  accepted image-plus-text embedding; 37–42% for text alone. 661 of 745 same-meme pairs are
+  cross-template, so this is the main case.
+  (2) *No absolute scale.* The similarity of an image to its closest family member is
+  indistinguishable from the similarity of a unique image to its closest neighbour: a
+  threshold separates them 52% of the time for image-only (medians 0.554 and 0.553), 63% for
+  the pipeline, 68% at best. Ranking works (closest neighbour is same-family for 51–64% of
+  images); a global cut-off does not.
+  (3) *The text encoder is the weak part of the text channel, not text extraction.* Same
+  extracted text: CLIP's text encoder gives pair AUC 0.77, a sentence-embedding model
+  (bge-base) 0.86; clean agent transcriptions with the same sentence model 0.88. Adding the
+  image half to sentence-model text lowers meaning AUC (0.86 to 0.85) and restores picture
+  dominance.
+  (4) *Against the user's own 99 answers* (independent of any description, but pairs were
+  chosen in strata defined by agent labels and are enriched in hard cases): image-only AUC
+  0.58 (0.46–0.69), pipeline 0.68 (0.57–0.78), sentence-model text 0.77 (0.67–0.86), agent
+  description of what the joke refers to plus a one-line premise 0.94 (0.88–0.98).
+  (5) *Timing:* templates are mostly in use all year (middle 80% of posts spans a median of
+  168 days for the 52 largest hash groups); event-driven families are bursts (19–70 days);
+  catchphrase families are year-round.
+  Reading: mostly a geometry problem (the embedding ranks neighbours usefully but distance
+  is dominated by the picture and has no common scale), partly an information problem (the
+  CLIP text encoder, and caption wording is not the same as what a meme is about), and not
+  an algorithm problem (five methods agreed, per the review).
+
 - 2026-11-27 — **Independent review of the scored run (fresh agent, given artifacts and not
   the conclusion): numbers reproduce, two of my readings were wrong, one pipeline bug
   found.** Full text: `experiments/WP-04/sample-001/review/review.md`. Status of the scored

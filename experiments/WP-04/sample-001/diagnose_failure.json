@@ -1,0 +1,134 @@
+{
+ "n_items": 797,
+ "pair_counts": {
+  "same meme, same template": 84,
+  "same meme, different template": 661,
+  "different meme, same template": 524,
+  "different meme, different template": 315937
+ },
+ "note_empty_text": {
+  "extracted": 29,
+  "clean": 31
+ },
+ "representations": {
+  "image only (CLIP)": {
+   "pair_auc_same_meme_vs_rest": 0.7281233186934473,
+   "pair_auc_cross_template_only": 0.6946190276535771,
+   "median_similarity_by_pair_type": {
+    "same meme, same template": 0.7529404194808782,
+    "same meme, different template": 0.3750198986275868,
+    "different meme, same template": 0.6220947588440076,
+    "different meme, different template": 0.30976869386956374
+   },
+   "prob_diffmeme_sametemplate_more_similar_than_samememe_difftemplate": 0.8914465706597684,
+   "nearest_neighbour_same_meme": 0.5067264573991032,
+   "nearest_neighbour_same_meme_excluding_same_template": 0.2556053811659193,
+   "same_meme_member_within_top5": 0.6905829596412556,
+   "link_auc_true_link_vs_unique_items_nearest": 0.5212184184622115,
+   "median_sim_true_nearest_link": 0.5540737475884111,
+   "median_sim_unique_item_nearest_neighbour": 0.5532429656006045
+  },
+  "extracted text, CLIP text encoder": {
+   "pair_auc_same_meme_vs_rest": 0.7662696394684936,
+   "pair_auc_cross_template_only": 0.7485224665403116,
+   "median_similarity_by_pair_type": {
+    "same meme, same template": 0.6483352274166468,
+    "same meme, different template": 0.5893133833098383,
+    "different meme, same template": 0.5364304752325888,
+    "different meme, different template": 0.4571712359910628
+   },
+   "prob_diffmeme_sametemplate_more_similar_than_samememe_difftemplate": 0.42385178598237694,
+   "nearest_neighbour_same_meme": 0.5919282511210763,
+   "nearest_neighbour_same_meme_excluding_same_template": 0.3721973094170404,
+   "same_meme_member_within_top5": 0.7488789237668162,
+   "link_auc_true_link_vs_unique_items_nearest": 0.6340135310385775,
+   "median_sim_true_nearest_link": 0.7371598487245365,
+   "median_sim_unique_item_nearest_neighbour": 0.6836805268444895
+  },
+  "image + extracted text (pipeline, bug fixed)": {
+   "pair_auc_same_meme_vs_rest": 0.7917294684933026,
+   "pair_auc_cross_template_only": 0.7663416130325721,
+   "median_similarity_by_pair_type": {
+    "same meme, same template": 0.6928902876249466,
+    "same meme, different template": 0.47611767620376544,
+    "different meme, same template": 0.5735531763386925,
+    "different meme, different template": 0.38132010483496864
+   },
+   "prob_diffmeme_sametemplate_more_similar_than_samememe_difftemplate": 0.7161310066866071,
+   "nearest_neighbour_same_meme": 0.5919282511210763,
+   "nearest_neighbour_same_meme_excluding_same_template": 0.33183856502242154,
+   "same_meme_member_within_top5": 0.7488789237668162,
+   "link_auc_true_link_vs_unique_items_nearest": 0.6254667895814128,
+   "median_sim_true_nearest_link": 0.6344963957879916,
+   "median_sim_unique_item_nearest_neighbour": 0.5833866230856677
+  },
+  "extracted text, sentence model": {
+   "pair_auc_same_meme_vs_rest": 0.8590637874332046,
+   "pair_auc_cross_template_only": 0.8478755150427666,
+   "median_similarity_by_pair_type": {
+    "same meme, same template": 0.7515792040313253,
+    "same meme, different template": 0.6032760695485808,
+    "different meme, same template": 0.5434114676436097,
+    "different meme, different template": 0.47117670110578025
+   },
+   "prob_diffmeme_sametemplate_more_similar_than_samememe_difftemplate": 0.38268122553152173,
+   "nearest_neighbour_same_meme": 0.6367713004484304,
+   "nearest_neighbour_same_meme_excluding_same_template": 0.4080717488789238,
+   "same_meme_member_within_top5": 0.7623318385650224,
+   "link_auc_true_link_vs_unique_items_nearest": 0.669770784831487,
+   "median_sim_true_nearest_link": 0.7295450850425073,
+   "median_sim_unique_item_nearest_neighbour": 0.6686947611766805
+  },
+  "image + extracted text, sentence model": {
+   "pair_auc_same_meme_vs_rest": 0.8484018546641106,
+   "pair_auc_cross_template_only": 0.8302524378208515,
+   "median_similarity_by_pair_type": {
+    "same meme, same template": 0.7226013716749751,
+    "same meme, different template": 0.4917972945141588,
+    "different meme, same template": 0.5851867119585127,
+    "different meme, different template": 0.3895568525653656
+   },
+   "prob_diffmeme_sametemplate_more_similar_than_samememe_difftemplate": 0.7278845376540286,
+   "nearest_neighbour_same_meme": 0.600896860986547,
+   "nearest_neighbour_same_meme_excluding_same_template": 0.37668161434977576,
+   "same_meme_member_within_top5": 0.7668161434977578,
+   "link_auc_true_link_vs_unique_items_nearest": 0.6347166450524211,
+   "median_sim_true_nearest_link": 0.6132637788718536,
+   "median_sim_unique_item_nearest_neighbour": 0.5704918620161886
+  },
+  "clean transcription, sentence model": {
+   "pair_auc_same_meme_vs_rest": 0.8773467744331612,
+   "pair_auc_cross_template_only": 0.8651276188237551,
+   "median_similarity_by_pair_type": {
+    "same meme, same template": 0.8119579734994802,
+    "same meme, different template": 0.6068367802242254,
+    "different meme, same template": 0.5473589647721044,
+    "different meme, different template": 0.4728829555718136
+   },
+   "prob_diffmeme_sametemplate_more_similar_than_samememe_difftemplate": 0.37375420078299126,
+   "nearest_neighbour_same_meme": 0.6233183856502242,
+   "nearest_neighbour_same_meme_excluding_same_template": 0.40358744394618834,
+   "same_meme_member_within_top5": 0.8116591928251121,
+   "link_auc_true_link_vs_unique_items_nearest": 0.6799815627880814,
+   "median_sim_true_nearest_link": 0.7462543420873686,
+   "median_sim_unique_item_nearest_neighbour": 0.6734253843750713
+  },
+  "image + clean transcription, sentence model": {
+   "pair_auc_same_meme_vs_rest": 0.8550815670342787,
+   "pair_auc_cross_template_only": 0.8376613528204078,
+   "median_similarity_by_pair_type": {
+    "same meme, same template": 0.7420740944188577,
+    "same meme, different template": 0.4944226575164815,
+    "different meme, same template": 0.5831413800165252,
+    "different meme, different template": 0.3902292816090128
+   },
+   "prob_diffmeme_sametemplate_more_similar_than_samememe_difftemplate": 0.7241197122102759,
+   "nearest_neighbour_same_meme": 0.6188340807174888,
+   "nearest_neighbour_same_meme_excluding_same_template": 0.38565022421524664,
+   "same_meme_member_within_top5": 0.7892376681614349,
+   "link_auc_true_link_vs_unique_items_nearest": 0.6377478476898799,
+   "median_sim_true_nearest_link": 0.6234626483636315,
+   "median_sim_unique_item_nearest_neighbour": 0.5748583026043105
+  }
+ }
+}

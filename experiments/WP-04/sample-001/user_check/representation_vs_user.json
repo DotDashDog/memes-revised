@@ -1,0 +1,82 @@
+{
+ "image only (CLIP)": {
+  "all_pairs": [
+   0.583,
+   [
+    0.462,
+    0.693
+   ]
+  ],
+  "without_near_identical": [
+   0.551,
+   [
+    0.423,
+    0.685
+   ]
+  ]
+ },
+ "image + extracted text (pipeline as built)": {
+  "all_pairs": [
+   0.677,
+   [
+    0.566,
+    0.776
+   ]
+  ],
+  "without_near_identical": [
+   0.692,
+   [
+    0.564,
+    0.808
+   ]
+  ]
+ },
+ "extracted text, sentence model": {
+  "all_pairs": [
+   0.773,
+   [
+    0.673,
+    0.859
+   ]
+  ],
+  "without_near_identical": [
+   0.819,
+   [
+    0.71,
+    0.909
+   ]
+  ]
+ },
+ "agent description: what the joke refers to + one-line premise, sentence model": {
+  "all_pairs": [
+   0.936,
+   [
+    0.884,
+    0.978
+   ]
+  ],
+  "without_near_identical": [
+   0.947,
+   [
+    0.896,
+    0.983
+   ]
+  ]
+ },
+ "agent description: referents only, sentence model": {
+  "all_pairs": [
+   0.846,
+   [
+    0.754,
+    0.929
+   ]
+  ],
+  "without_near_identical": [
+   0.923,
+   [
+    0.838,
+    0.985
+   ]
+  ]
+ }
+}
