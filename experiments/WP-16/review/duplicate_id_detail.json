@@ -1,0 +1,44 @@
+{
+ "duplicated_ids": [
+  "xfn9vg"
+ ],
+ "rows": [
+  {
+   "row": 10729411,
+   "is_comment": false,
+   "img_url": "https://reddit.com/r/memes/predictions?tournament=tnmt-3cad1a25-79e9-4d47-b2e1-85b8a3471421",
+   "created_utc": 1665336048,
+   "author": "elch3w",
+   "score": 35268,
+   "link": "/r/memes/comments/xfn9vg/rmemes_meme_quiz_2/",
+   "title": "R/MEMES MEME QUIZ #2",
+   "text": "",
+   "post_id": "xfn9vg",
+   "subreddit": "memes",
+   "num_comments": 99,
+   "removed_by_category": null,
+   "over_18": false
+  },
+  {
+   "row": 10782798,
+   "is_comment": false,
+   "img_url": "https://reddit.com/r/memes/predictions?tournament=tnmt-3cad1a25-79e9-4d47-b2e1-85b8a3471421",
+   "created_utc": 1668020416,
+   "author": "elch3w",
+   "score": 447898,
+   "link": "/r/memes/comments/xfn9vg/rmemes_meme_quiz_2/",
+   "title": "R/MEMES MEME QUIZ #2",
+   "text": "",
+   "post_id": "xfn9vg",
+   "subreddit": "memes",
+   "num_comments": 3226,
+   "removed_by_category": null,
+   "over_18": false
+  }
+ ],
+ "columns_that_differ": [
+  "created_utc",
+  "score",
+  "num_comments"
+ ]
+}

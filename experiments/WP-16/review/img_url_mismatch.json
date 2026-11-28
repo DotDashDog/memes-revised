@@ -1,0 +1,11 @@
+[
+ {
+  "row": 11280838,
+  "post_id": "1829zgu",
+  "raw_token": "\"https://www.reddit.com/r/memes/comments/1829zg5/anyone_know_what_this_means/\"",
+  "raw_repr": "'https://www.reddit.com/r/memes/comments/1829zg5/anyone_know_what_this_means/'",
+  "parquet_repr": "'https://www.reddit.com/r/memes/comments/1829zgu/anyone_know_what_this_means/'",
+  "raw_type": "str",
+  "parquet_type": "str"
+ }
+]

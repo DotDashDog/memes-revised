@@ -1,0 +1,178 @@
+{
+ "raw_json_types_per_field": {
+  "url": {
+   "str": 11767404,
+   "null": 14843
+  },
+  "created_utc": {
+   "str": 32179,
+   "float": 761217,
+   "int": 10988851
+  },
+  "author": {
+   "str": 11782247
+  },
+  "score": {
+   "int": 11782247
+  },
+  "permalink": {
+   "str": 11782247
+  },
+  "title": {
+   "str": 11782247
+  },
+  "selftext": {
+   "str": 11782247
+  },
+  "id": {
+   "str": 11782247
+  },
+  "subreddit": {
+   "str": 11782247
+  },
+  "num_comments": {
+   "int": 11782247
+  },
+  "removed_by_category": {
+   "<key missing>": 2391733,
+   "str": 4825291,
+   "null": 4565223
+  },
+  "over_18": {
+   "bool": 11782247
+  }
+ },
+ "range": {
+  "min_utc": "2008-07-11T08:04:26",
+  "max_utc": "2025-12-31T23:58:52",
+  "nonpositive": 0,
+  "outside_2008-07-01_to_2026-01-01": 0,
+  "rows_earlier_than_previous_row_in_file": 51696,
+  "largest_backward_step_s": 66636
+ },
+ "img_url_content": {
+  "kinds_total": {
+   "i.redd.it direct image": 10346214,
+   "other link": 787554,
+   "the post's own page (text post)": 298984,
+   "other direct image (imgur / image extension)": 210221,
+   "v.redd.it video": 123253,
+   "no URL (null)": 14843,
+   "reddit gallery page (images not in parquet)": 1178
+  },
+  "kinds_by_year": {
+   "2008": {
+    "other link": 4
+   },
+   "2009": {
+    "other link": 4
+   },
+   "2010": {
+    "other link": 3
+   },
+   "2011": {
+    "other link": 947,
+    "other direct image (imgur / image extension)": 262,
+    "the post's own page (text post)": 36
+   },
+   "2012": {
+    "other link": 13694,
+    "other direct image (imgur / image extension)": 4614,
+    "the post's own page (text post)": 265
+   },
+   "2013": {
+    "other link": 18128,
+    "other direct image (imgur / image extension)": 11514,
+    "the post's own page (text post)": 302
+   },
+   "2014": {
+    "other direct image (imgur / image extension)": 8687,
+    "other link": 9515
+   },
+   "2015": {
+    "other link": 9562,
+    "other direct image (imgur / image extension)": 5957,
+    "the post's own page (text post)": 3
+   },
+   "2016": {
+    "other link": 19858,
+    "other direct image (imgur / image extension)": 6217,
+    "i.redd.it direct image": 4263
+   },
+   "2017": {
+    "other link": 22146,
+    "i.redd.it direct image": 55115,
+    "other direct image (imgur / image extension)": 7198,
+    "the post's own page (text post)": 3,
+    "v.redd.it video": 373
+   },
+   "2018": {
+    "i.redd.it direct image": 376147,
+    "other link": 24713,
+    "other direct image (imgur / image extension)": 18407,
+    "v.redd.it video": 2862,
+    "the post's own page (text post)": 4
+   },
+   "2019": {
+    "i.redd.it direct image": 2746160,
+    "other link": 155537,
+    "other direct image (imgur / image extension)": 46095,
+    "v.redd.it video": 9990,
+    "the post's own page (text post)": 1213
+   },
+   "2020": {
+    "i.redd.it direct image": 4109595,
+    "other direct image (imgur / image extension)": 48808,
+    "v.redd.it video": 22244,
+    "other link": 123083,
+    "the post's own page (text post)": 479,
+    "reddit gallery page (images not in parquet)": 1145
+   },
+   "2021": {
+    "i.redd.it direct image": 1872129,
+    "other link": 108541,
+    "v.redd.it video": 30968,
+    "other direct image (imgur / image extension)": 31998,
+    "the post's own page (text post)": 118151,
+    "reddit gallery page (images not in parquet)": 17
+   },
+   "2022": {
+    "i.redd.it direct image": 616826,
+    "the post's own page (text post)": 39218,
+    "v.redd.it video": 11516,
+    "other link": 124642,
+    "other direct image (imgur / image extension)": 14228,
+    "reddit gallery page (images not in parquet)": 3,
+    "no URL (null)": 14843
+   },
+   "2023": {
+    "other link": 122559,
+    "i.redd.it direct image": 250765,
+    "other direct image (imgur / image extension)": 4391,
+    "v.redd.it video": 13324,
+    "the post's own page (text post)": 72881,
+    "reddit gallery page (images not in parquet)": 13
+   },
+   "2024": {
+    "i.redd.it direct image": 193309,
+    "other link": 29386,
+    "v.redd.it video": 21013,
+    "the post's own page (text post)": 65675,
+    "other direct image (imgur / image extension)": 1162
+   },
+   "2025": {
+    "i.redd.it direct image": 121905,
+    "the post's own page (text post)": 754,
+    "other link": 5232,
+    "v.redd.it video": 10963,
+    "other direct image (imgur / image extension)": 683
+   }
+  }
+ },
+ "author_counters_recomputed": {
+  "url_null": 14843,
+  "url_unparseable": 241,
+  "host_i.redd.it": 10346214,
+  "host_imgur_any": 252239
+ }
+}

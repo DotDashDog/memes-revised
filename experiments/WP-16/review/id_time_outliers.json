@@ -1,0 +1,35 @@
+{
+ "window": "50 posts either side in id order",
+ "later_than_neighbours_by_more_than_1h": 3,
+ "earlier_than_neighbours_by_more_than_1h": 2,
+ "later_than_neighbours_by_more_than_1d": 3,
+ "earlier_than_neighbours_by_more_than_1d": 1,
+ "later_than_neighbours_by_more_than_30d": 1,
+ "earlier_than_neighbours_by_more_than_30d": 0,
+ "more_than_1d_off_by_year_of_created_utc": {
+  "2021": 1,
+  "2022": 3
+ },
+ "examples": [
+  {
+   "post_id": "lm7wbx",
+   "created_utc": "2021-02-15T22:02:36",
+   "neighbour_median": "2021-02-17T23:30:36"
+  },
+  {
+   "post_id": "uc6gaq",
+   "created_utc": "2022-05-16T03:56:05",
+   "neighbour_median": "2022-04-26T06:49:08"
+  },
+  {
+   "post_id": "xfn9vg",
+   "created_utc": "2022-10-09T17:20:48",
+   "neighbour_median": "2022-09-16T10:08:59"
+  },
+  {
+   "post_id": "xfn9vg",
+   "created_utc": "2022-11-09T19:00:16",
+   "neighbour_median": "2022-09-16T10:09:00"
+  }
+ ]
+}

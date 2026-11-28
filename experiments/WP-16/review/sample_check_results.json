@@ -1,0 +1,14 @@
+{
+ "sample_size": 5000,
+ "seed": 20261127,
+ "parquet_rows_found_per_sampled_id": {
+  "1": 5000
+ },
+ "sampled_line_number_equals_parquet_row_position": 5000,
+ "cells_compared": 65000,
+ "mismatching_cells": 0,
+ "mismatches_by_column_and_class": {},
+ "examples": {},
+ "string_cells_compared_codepoint_for_codepoint": 24990,
+ "of_which_contain_non_ascii": 447
+}

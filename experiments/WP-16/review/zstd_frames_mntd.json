@@ -1,0 +1,16 @@
+{
+ "file": "/mnt/d/reddit_archive/subreddits25/memes_submissions.zst",
+ "bytes": 2820041962,
+ "n_frames": 1,
+ "ends_exactly_at_eof": true,
+ "frames": [
+  {
+   "type": "zstd",
+   "start": 0,
+   "end": 2820041962,
+   "blocks": 253866,
+   "frame_content_size": null,
+   "has_checksum": false
+  }
+ ]
+}

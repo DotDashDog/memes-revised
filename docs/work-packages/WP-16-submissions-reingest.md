@@ -1,9 +1,44 @@
 # WP-16 — Full submissions re-ingest
 
-**Status:** complete (2026-07-26) — outcome UNCERTIFIED, awaiting user review of `experiments/WP-16/report.md`
+**Status:** complete (2026-07-26) — outcome agent-reviewed 2026-11-27 (independent review: faithful, with caveats; `experiments/WP-16/review/review.md`)
 **Date opened:** 2026-07-26
 **Owner:** unassigned
 **Gates:** ~~the 2025-12 archive download~~ done 2026-07-26; ~~coverage-completeness gate~~ **PASSED** 2026-07-26
+
+
+## Independent review, 2026-11-27
+
+A fresh agent, told to find what was wrong, checked the claim that
+`submissions.parquet` is a complete and faithful copy of the r/memes submissions archive.
+Report: `experiments/WP-16/review/review.md`; main plot
+`experiments/WP-16/review/monthly_counts_parquet_vs_raw.png`. **Verdict: faithful, with
+caveats.** Status is `agent-reviewed`.
+
+- All 11,782,247 archive records are in the table, once each, in archive order; a full
+  pass with a different decompressor and JSON parser rebuilt every row and found 0
+  differences (with a negative control showing the comparison catches errors). Monthly
+  counts match in 188 of 188 months. Timestamps are the archive's own UTC seconds across
+  all three raw types, with no hour-sized jumps.
+- **Weak point in the ingester, harmless here:** its row-count check only adds counters
+  inside one loop. A multi-frame archive would be silently truncated; null text becomes an
+  empty string; fractional timestamps are truncated; a non-boolean `over_18` becomes null
+  uncounted. None occurs in this archive. The multi-frame case must be fixed before the
+  code is trusted on other archives (six were ingested with it on 2026-11-27 for the
+  multi-subreddit measurements; being verified).
+- **Possible hardware fault:** one bit was flipped in the first reviewer's reference
+  extract (`1829zg5` for `1829zgu`); the table and archive are correct. Single-bit errors
+  on this machine are therefore a live possibility; important artifacts should carry
+  checksums.
+- **Open findings about the archive itself:** monthly posts drop 46% in one step from
+  January to February 2025 (20,694 to 11,135) and stay flat, which the July coverage check
+  did not look at and which matters for any 2025 evaluation window; one post id
+  (`xfn9vg`) appears twice; 41% of posts carry a removal label; `img_url` is the post's
+  link and in 2022–2024 a quarter to almost half of posts are not images; 40,269 `img_url`
+  values contain `&amp;` and need unescaping before fetching; a missing and a null
+  `removed_by_category` are both stored as null.
+- The author's July "independent" recount used the same library, conversion and bucketing
+  as the ingest, so it was not independent. Not checked by anyone: completeness of the
+  archive relative to Reddit, and identity with the publisher's release.
 
 ## Outcome
 

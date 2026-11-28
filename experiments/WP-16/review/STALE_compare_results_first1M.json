@@ -1,0 +1,426 @@
+{
+ "parquet_rows": 11782247,
+ "raw_non_blank_lines": 1000000,
+ "parquet_row_groups": 48,
+ "parquet_schema": "is_comment: bool\nimg_url: string\ncreated_utc: int64\nauthor: string\nscore: int64\nlink: string\ntitle: string\ntext: string\npost_id: string\nsubreddit: string\nnum_comments: int64\nremoved_by_category: string\nover_18: bool",
+ "parquet_key_value_metadata": {
+  "ARROW:schema": "/////8ACAAAQAAAAAAAKAAwABgAFAAgACgAAAAABBAAMAAAACAAIAAAABAAIAAAABAAAAA0AAABgAgAAJAIAAOQBAAC4AQAAhAEAAFgBAAAsAQAAAAEAANQAAACkAAAAaAAAADAAAAAEAAAA5P3//wAAAQYQAAAAGAAAAAQAAAAAAAAABwAAAG92ZXJfMTgA0P3//wz+//8AAAEFEAAAACQAAAAEAAAAAAAAABMAAAByZW1vdmVkX2J5X2NhdGVnb3J5AAT+//9A/v//AAABAhAAAAAgAAAABAAAAAAAAAAM"
+ },
+ "parquet_rows_beyond_raw": 10782247,
+ "created_utc": {
+  "raw_types_by_year": {
+   "int": {
+    "2008": 4,
+    "2009": 4,
+    "2010": 3,
+    "2011": 1245,
+    "2012": 18573,
+    "2013": 29944,
+    "2015": 1545,
+    "2016": 30338,
+    "2017": 84835,
+    "2018": 422133,
+    "2019": 379197
+   },
+   "str": {
+    "2014": 18202,
+    "2015": 13977
+   }
+  },
+  "raw_values_with_fractional_seconds": {},
+  "raw_missing_null_bool_or_unparseable": {},
+  "rows_where_parquet_differs_from_raw": 0,
+  "distinct_nonzero_offsets_seconds": [],
+  "examples": [],
+  "raw_min_utc": "2008-07-11T08:04:26",
+  "raw_max_utc": "2019-03-11T05:12:39",
+  "parquet_min_utc": "1969-12-31T23:59:59",
+  "parquet_max_utc": "2019-03-11T05:12:39",
+  "parquet_nonpositive": 10782247,
+  "parquet_outside_2008-07-01_to_2026-01-01": 10782247
+ },
+ "ordering": {
+  "rows_earlier_than_previous_row": 50707,
+  "largest_backward_step_seconds": 1552281160
+ },
+ "post_id": {
+  "raw_types": {
+   "str": 1000000
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "author": {
+  "raw_types": {
+   "str": 1000000
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "subreddit": {
+  "raw_types": {
+   "str": 1000000
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "removed_by_category": {
+  "raw_types": {
+   "<missing>": 1000000
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "score": {
+  "raw_types": {
+   "int": 1000000
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "num_comments": {
+  "raw_types": {
+   "int": 1000000
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "over_18": {
+  "raw_types": {
+   "bool": 1000000
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "link": {
+  "raw_types": {
+   "str": 1000000
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "title": {
+  "raw_types": {
+   "str": 1000000
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "text": {
+  "raw_types": {
+   "str": 1000000
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "img_url": {
+  "raw_types": {
+   "str": 1000000
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "is_comment": {
+  "raw_types": {},
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "monthly": {
+  "months_with_data_raw": 107,
+  "months_with_data_parquet": 107,
+  "months_author_report": 188,
+  "months_parquet_differs_from_raw": 0,
+  "months_author_report_differs_from_raw": 82,
+  "max_abs_diff_parquet_vs_raw": 0,
+  "calendar_months_in_span": 129,
+  "empty_calendar_months_in_span": [
+   "2008-08",
+   "2008-09",
+   "2008-11",
+   "2008-12",
+   "2009-01",
+   "2009-02",
+   "2009-03",
+   "2009-05",
+   "2009-08",
+   "2009-10",
+   "2009-11",
+   "2009-12",
+   "2010-01",
+   "2010-02",
+   "2010-03",
+   "2010-04",
+   "2010-05",
+   "2010-06",
+   "2010-07",
+   "2010-09",
+   "2010-10",
+   "2010-12"
+  ],
+  "empty_calendar_months_from_2011_on": [],
+  "total_raw": 1000000,
+  "total_parquet": 1000000
+ },
+ "yearly_raw": {
+  "2008": 4,
+  "2009": 4,
+  "2010": 3,
+  "2011": 1245,
+  "2012": 18573,
+  "2013": 29944,
+  "2014": 18202,
+  "2015": 15522,
+  "2016": 30338,
+  "2017": 84835,
+  "2018": 422133,
+  "2019": 379197
+ },
+ "author_counters_recomputed": {
+  "reviewer": {
+   "host_is_i.redd.it": 769592,
+   "host_is_imgur(any subdomain)": 103232,
+   "url_unparseable": 215,
+   "created_utc_from_str": 32179
+  },
+  "author": {
+   "url_unparseable": 241,
+   "created_utc_from_str": 32179,
+   "url_null": 14843,
+   "created_utc_from_float": 761217
+  },
+  "author_yearly": {
+   "2008": 4,
+   "2009": 4,
+   "2010": 3,
+   "2011": 1245,
+   "2012": 18573,
+   "2013": 29944,
+   "2014": 18202,
+   "2015": 15522,
+   "2016": 30338,
+   "2017": 84835,
+   "2018": 422133,
+   "2019": 2958995,
+   "2020": 4305354,
+   "2021": 2161804,
+   "2022": 821276,
+   "2023": 463933,
+   "2024": 310545,
+   "2025": 139537
+  }
+ },
+ "duplicate_ids_parquet": {
+  "distinct_ids": 11782246,
+  "ids_appearing_more_than_once": 1,
+  "extra_rows": 1,
+  "examples": [
+   "xfn9vg"
+  ]
+ },
+ "null_or_empty_ids_parquet": 0,
+ "duplicate_ids_raw": {
+  "distinct_tokens": 1000000,
+  "ids_appearing_more_than_once": 0,
+  "extra_rows": 0
+ },
+ "duplicate_positions": {
+  "row_gap_between_copies_min": 53387,
+  "median": 53387.0,
+  "max": 53387,
+  "examples": {
+   "xfn9vg": [
+    10729411,
+    10782798
+   ]
+  }
+ },
+ "duplicate_detail": {
+  "ids_examined": 1,
+  "ids_whose_copies_are_identical_in_all_13_columns": 0,
+  "columns_that_differ_between_copies": {
+   "created_utc": 1,
+   "score": 1,
+   "num_comments": 1
+  },
+  "examples": {
+   "xfn9vg": [
+    {
+     "is_comment": false,
+     "img_url": "https://reddit.com/r/memes/predictions?tournament=tnmt-3cad1a25-79e9-4d47-b2e1-8",
+     "created_utc": 1665336048,
+     "author": "elch3w",
+     "score": 35268,
+     "link": "/r/memes/comments/xfn9vg/rmemes_meme_quiz_2/",
+     "title": "R/MEMES MEME QUIZ #2",
+     "text": "",
+     "post_id": "xfn9vg",
+     "subreddit": "memes",
+     "num_comments": 99,
+     "removed_by_category": null,
+     "over_18": false
+    },
+    {
+     "is_comment": false,
+     "img_url": "https://reddit.com/r/memes/predictions?tournament=tnmt-3cad1a25-79e9-4d47-b2e1-8",
+     "created_utc": 1668020416,
+     "author": "elch3w",
+     "score": 447898,
+     "link": "/r/memes/comments/xfn9vg/rmemes_meme_quiz_2/",
+     "title": "R/MEMES MEME QUIZ #2",
+     "text": "",
+     "post_id": "xfn9vg",
+     "subreddit": "memes",
+     "num_comments": 3226,
+     "removed_by_category": null,
+     "over_18": false
+    }
+   ]
+  }
+ },
+ "timestamp_vs_id_order": {
+  "rows_whose_created_utc_is_>1_day_earlier_than_some_lower_id": 10782247,
+  "rows_>30_days": 10782247
+ },
+ "img_url_content": {
+  "kinds_total": {
+   "i.redd.it direct image": 769592,
+   "other link": 152909,
+   "other direct image (imgur / image extension)": 70843,
+   "v.redd.it video": 4895,
+   "the post's own page (text post)": 1761
+  },
+  "kinds_by_year": {
+   "2008": {
+    "other link": 4
+   },
+   "2009": {
+    "other link": 4
+   },
+   "2010": {
+    "other link": 3
+   },
+   "2011": {
+    "other link": 947,
+    "other direct image (imgur / image extension)": 262,
+    "the post's own page (text post)": 36
+   },
+   "2012": {
+    "other link": 13694,
+    "other direct image (imgur / image extension)": 4614,
+    "the post's own page (text post)": 265
+   },
+   "2013": {
+    "other link": 18128,
+    "other direct image (imgur / image extension)": 11514,
+    "the post's own page (text post)": 302
+   },
+   "2014": {
+    "other direct image (imgur / image extension)": 8687,
+    "other link": 9515
+   },
+   "2015": {
+    "other link": 9562,
+    "other direct image (imgur / image extension)": 5957,
+    "the post's own page (text post)": 3
+   },
+   "2016": {
+    "other link": 19858,
+    "other direct image (imgur / image extension)": 6217,
+    "i.redd.it direct image": 4263
+   },
+   "2017": {
+    "other link": 22146,
+    "i.redd.it direct image": 55115,
+    "other direct image (imgur / image extension)": 7198,
+    "the post's own page (text post)": 3,
+    "v.redd.it video": 373
+   },
+   "2018": {
+    "i.redd.it direct image": 376147,
+    "other link": 24713,
+    "other direct image (imgur / image extension)": 18407,
+    "v.redd.it video": 2862,
+    "the post's own page (text post)": 4
+   },
+   "2019": {
+    "i.redd.it direct image": 334067,
+    "other link": 34335,
+    "other direct image (imgur / image extension)": 7987,
+    "v.redd.it video": 1660,
+    "the post's own page (text post)": 1148
+   }
+  },
+  "top_hosts": {
+   "i.redd.it": 769592,
+   "i.imgur.com": 54690,
+   "imgur.com": 47786,
+   "reddit.com": 31844,
+   "youtube.com": 15543,
+   "i.reddituploads.com": 11991,
+   "youtu.be": 8366,
+   "quickmeme.com": 7242,
+   "imgflip.com": 6216,
+   "v.redd.it": 4895,
+   "memegenerator.net": 3223,
+   "qkme.me": 2718,
+   "makeameme.org": 1324,
+   "memecrunch.com": 1221,
+   "instagram.com": 1185,
+   "livememe.com": 1152,
+   "facebook.com": 1147,
+   "i.imgflip.com": 1105,
+   "cdn.memegenerator.net": 735,
+   "mememaker.net": 732
+  },
+  "urls_containing_&amp;": {
+   "total": 19879,
+   "top_hosts": {
+    "i.reddituploads.com": 11991,
+    "youtube.com": 4864,
+    "facebook.com": 636,
+    "memegenerator.net": 222,
+    "instagram.com": 203,
+    "preview.redd.it": 196,
+    "reddit.com": 140,
+    "m.facebook.com": 100
+   }
+  },
+  "urls_with_leading_or_trailing_whitespace": 0,
+  "null_url": {}
+ },
+ "text_extra": {
+  "title_empty": 0,
+  "title_contains_NUL": 0,
+  "title_contains_&amp;/&lt;/&gt;": 3450,
+  "text_empty": 727585,
+  "text_[removed]": 1138,
+  "text_[deleted]": 270835,
+  "title_max_len_chars": 319,
+  "text_max_len_chars_parquet": 3642,
+  "text_max_len_chars_raw": 3642,
+  "titles_with_non_ascii": 81388
+ },
+ "retrieval_lag_days_median_by_year(1-in-37 subsample)": {
+  "2008": 3552.5,
+  "2012": 712.3,
+  "2013": 480.7,
+  "2014": 470.3,
+  "2015": 84.3,
+  "2016": 39.2,
+  "2017": 24.4,
+  "2018": 43.2,
+  "2019": 49.5
+ }
+}

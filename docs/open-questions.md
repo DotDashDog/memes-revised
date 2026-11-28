@@ -121,3 +121,7 @@ Owner: unowned. Status: **promoted to a phased track** — WP-12…WP-15, scoped
 - **Meme generation conditioned on target spread parameters.**
 Context: The aspirational long-term application. Out of scope until the prediction problem is solved.
 Owner: unowned. Status: parked.
+
+- **Is the 46% one-month drop in r/memes posts at February 2025 real or a collection artefact?**
+Context: found by the WP-16 independent review (2026-11-27). January 2025 has 20,694 posts, February 11,135, flat afterwards. The July coverage check only tested for a step at May 2023, and its one outside comparison day in 2025 falls after the drop. Comparing a few days either side of 2025-02-01 against Arctic Shift (`experiments/wp16/arctic_shift.py`) would settle it.
+Owner: unowned. Status: open. Touch points: ADR 0004, ADR 0011 (any 2025 evaluation window), ADR 0016.

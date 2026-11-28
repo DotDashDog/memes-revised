@@ -1,0 +1,95 @@
+{
+ "type_counts": {
+  "int": 10988851,
+  "str": 32179,
+  "float": 761217
+ },
+ "consecutive_in_id_order": {
+  "int->int": {
+   "n": 10965838,
+   "median_s": 7.0,
+   "p01_s": 0.0,
+   "p99_s": 323.0,
+   "share_backward_more_than_30min": 4.559615051763486e-07,
+   "share_forward_more_than_30min": 0.0016442883799669484
+  },
+  "int->str": {
+   "n": 1,
+   "median_s": 1870.0,
+   "p01_s": 1870.0,
+   "p99_s": 1870.0,
+   "share_backward_more_than_30min": 0.0,
+   "share_forward_more_than_30min": 1.0
+  },
+  "int->float": {
+   "n": 23012,
+   "median_s": 79.0,
+   "p01_s": 1.0,
+   "p99_s": 874.8899999999994,
+   "share_backward_more_than_30min": 0.0,
+   "share_forward_more_than_30min": 0.0004780114722753346
+  },
+  "str->int": {
+   "n": 1,
+   "median_s": 679.0,
+   "p01_s": 679.0,
+   "p99_s": 679.0,
+   "share_backward_more_than_30min": 0.0,
+   "share_forward_more_than_30min": 0.0
+  },
+  "str->str": {
+   "n": 32178,
+   "median_s": 1080.0,
+   "p01_s": 15.0,
+   "p99_s": 11254.069999999996,
+   "share_backward_more_than_30min": 0.0,
+   "share_forward_more_than_30min": 0.3413201566287526
+  },
+  "float->int": {
+   "n": 23011,
+   "median_s": 75.0,
+   "p01_s": 0.0,
+   "p99_s": 842.9000000000015,
+   "share_backward_more_than_30min": 0.0,
+   "share_forward_more_than_30min": 0.00021728738429446787
+  },
+  "float->float": {
+   "n": 738205,
+   "median_s": 55.0,
+   "p01_s": 0.0,
+   "p99_s": 755.0,
+   "share_backward_more_than_30min": 0.0,
+   "share_forward_more_than_30min": 0.0002993748349035837
+  }
+ },
+ "years_by_type": {
+  "int": {
+   "2008": 4,
+   "2009": 4,
+   "2010": 3,
+   "2011": 1245,
+   "2012": 18573,
+   "2013": 29944,
+   "2015": 1545,
+   "2016": 30338,
+   "2017": 84835,
+   "2018": 422133,
+   "2019": 2958995,
+   "2020": 4305354,
+   "2021": 2161804,
+   "2022": 821276,
+   "2023": 131734,
+   "2024": 15686,
+   "2025": 5378
+  },
+  "str": {
+   "2014": 18202,
+   "2015": 13977
+  },
+  "float": {
+   "2023": 332199,
+   "2024": 294859,
+   "2025": 134159
+  }
+ }
+}

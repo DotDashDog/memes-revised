@@ -1,0 +1,520 @@
+{
+ "parquet_rows": 11782247,
+ "raw_non_blank_lines": 11782247,
+ "parquet_row_groups": 48,
+ "parquet_schema": "is_comment: bool\nimg_url: string\ncreated_utc: int64\nauthor: string\nscore: int64\nlink: string\ntitle: string\ntext: string\npost_id: string\nsubreddit: string\nnum_comments: int64\nremoved_by_category: string\nover_18: bool",
+ "parquet_key_value_metadata": {
+  "ARROW:schema": "/////8ACAAAQAAAAAAAKAAwABgAFAAgACgAAAAABBAAMAAAACAAIAAAABAAIAAAABAAAAA0AAABgAgAAJAIAAOQBAAC4AQAAhAEAAFgBAAAsAQAAAAEAANQAAACkAAAAaAAAADAAAAAEAAAA5P3//wAAAQYQAAAAGAAAAAQAAAAAAAAABwAAAG92ZXJfMTgA0P3//wz+//8AAAEFEAAAACQAAAAEAAAAAAAAABMAAAByZW1vdmVkX2J5X2NhdGVnb3J5AAT+//9A/v//AAABAhAAAAAgAAAABAAAAAAAAAAM"
+ },
+ "parquet_rows_beyond_raw": 0,
+ "created_utc": {
+  "raw_types_by_year": {
+   "float": {
+    "2023": 332199,
+    "2024": 294859,
+    "2025": 134159
+   },
+   "int": {
+    "2008": 4,
+    "2009": 4,
+    "2010": 3,
+    "2011": 1245,
+    "2012": 18573,
+    "2013": 29944,
+    "2015": 1545,
+    "2016": 30338,
+    "2017": 84835,
+    "2018": 422133,
+    "2019": 2958995,
+    "2020": 4305354,
+    "2021": 2161804,
+    "2022": 821276,
+    "2023": 131734,
+    "2024": 15686,
+    "2025": 5378
+   },
+   "str": {
+    "2014": 18202,
+    "2015": 13977
+   }
+  },
+  "raw_values_with_fractional_seconds": {},
+  "raw_missing_null_bool_or_unparseable": {},
+  "rows_where_parquet_differs_from_raw": 0,
+  "distinct_nonzero_offsets_seconds": [],
+  "examples": [],
+  "raw_min_utc": "2008-07-11T08:04:26",
+  "raw_max_utc": "2025-12-31T23:58:52",
+  "parquet_min_utc": "2008-07-11T08:04:26",
+  "parquet_max_utc": "2025-12-31T23:58:52",
+  "parquet_nonpositive": 0,
+  "parquet_outside_2008-07-01_to_2026-01-01": 0
+ },
+ "ordering": {
+  "rows_earlier_than_previous_row": 51696,
+  "largest_backward_step_seconds": 66636
+ },
+ "post_id": {
+  "raw_types": {
+   "str": 11782247
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "author": {
+  "raw_types": {
+   "str": 11782247
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "subreddit": {
+  "raw_types": {
+   "str": 11782247
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "removed_by_category": {
+  "raw_types": {
+   "<missing>": 2391733,
+   "NoneType": 4565223,
+   "str": 4825291
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "score": {
+  "raw_types": {
+   "int": 11782247
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "num_comments": {
+  "raw_types": {
+   "int": 11782247
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "over_18": {
+  "raw_types": {
+   "bool": 11782247
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "link": {
+  "raw_types": {
+   "str": 11782247
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "title": {
+  "raw_types": {
+   "str": 11782247
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "text": {
+  "raw_types": {
+   "str": 11782247
+  },
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "img_url": {
+  "raw_types": {
+   "str": 11767404,
+   "NoneType": 14843
+  },
+  "mismatches": 1,
+  "mismatch_classes": {
+   "UNEXPLAINED": 1
+  },
+  "examples": {
+   "UNEXPLAINED": [
+    {
+     "row": 11280838,
+     "post_id": "1829zgu",
+     "raw_token": "\"https://www.reddit.com/r/memes/comments/1829zg5/anyone_know_what_this_means/\"",
+     "parquet": "'https://www.reddit.com/r/memes/comments/1829zgu/anyone_know_what_this_means/'"
+    }
+   ]
+  }
+ },
+ "is_comment": {
+  "raw_types": {},
+  "mismatches": 0,
+  "mismatch_classes": {},
+  "examples": {}
+ },
+ "monthly": {
+  "months_with_data_raw": 188,
+  "months_with_data_parquet": 188,
+  "months_author_report": 188,
+  "months_parquet_differs_from_raw": 0,
+  "months_author_report_differs_from_raw": 0,
+  "max_abs_diff_parquet_vs_raw": 0,
+  "calendar_months_in_span": 210,
+  "empty_calendar_months_in_span": [
+   "2008-08",
+   "2008-09",
+   "2008-11",
+   "2008-12",
+   "2009-01",
+   "2009-02",
+   "2009-03",
+   "2009-05",
+   "2009-08",
+   "2009-10",
+   "2009-11",
+   "2009-12",
+   "2010-01",
+   "2010-02",
+   "2010-03",
+   "2010-04",
+   "2010-05",
+   "2010-06",
+   "2010-07",
+   "2010-09",
+   "2010-10",
+   "2010-12"
+  ],
+  "empty_calendar_months_from_2011_on": [],
+  "total_raw": 11782247,
+  "total_parquet": 11782247
+ },
+ "yearly_raw": {
+  "2008": 4,
+  "2009": 4,
+  "2010": 3,
+  "2011": 1245,
+  "2012": 18573,
+  "2013": 29944,
+  "2014": 18202,
+  "2015": 15522,
+  "2016": 30338,
+  "2017": 84835,
+  "2018": 422133,
+  "2019": 2958995,
+  "2020": 4305354,
+  "2021": 2161804,
+  "2022": 821276,
+  "2023": 463933,
+  "2024": 310545,
+  "2025": 139537
+ },
+ "author_counters_recomputed": {
+  "reviewer": {
+   "host_is_i.redd.it": 10346214,
+   "host_is_imgur(any subdomain)": 252239,
+   "url_unparseable": 241,
+   "created_utc_from_str": 32179,
+   "url_null": 14843,
+   "created_utc_from_float": 761217
+  },
+  "author": {
+   "url_unparseable": 241,
+   "created_utc_from_str": 32179,
+   "url_null": 14843,
+   "created_utc_from_float": 761217
+  },
+  "author_yearly": {
+   "2008": 4,
+   "2009": 4,
+   "2010": 3,
+   "2011": 1245,
+   "2012": 18573,
+   "2013": 29944,
+   "2014": 18202,
+   "2015": 15522,
+   "2016": 30338,
+   "2017": 84835,
+   "2018": 422133,
+   "2019": 2958995,
+   "2020": 4305354,
+   "2021": 2161804,
+   "2022": 821276,
+   "2023": 463933,
+   "2024": 310545,
+   "2025": 139537
+  }
+ },
+ "duplicate_ids_parquet": {
+  "distinct_ids": 11782246,
+  "ids_appearing_more_than_once": 1,
+  "extra_rows": 1,
+  "examples": [
+   "xfn9vg"
+  ]
+ },
+ "null_or_empty_ids_parquet": 0,
+ "duplicate_ids_raw": {
+  "distinct_tokens": 11782246,
+  "ids_appearing_more_than_once": 1,
+  "extra_rows": 1
+ },
+ "duplicate_positions": {
+  "row_gap_between_copies_min": 53387,
+  "median": 53387.0,
+  "max": 53387,
+  "examples": {
+   "xfn9vg": [
+    10729411,
+    10782798
+   ]
+  }
+ },
+ "duplicate_detail": {
+  "ids_examined": 1,
+  "ids_whose_copies_are_identical_in_all_13_columns": 0,
+  "columns_that_differ_between_copies": {
+   "created_utc": 1,
+   "score": 1,
+   "num_comments": 1
+  },
+  "examples": {
+   "xfn9vg": [
+    {
+     "is_comment": false,
+     "img_url": "https://reddit.com/r/memes/predictions?tournament=tnmt-3cad1a25-79e9-4d47-b2e1-8",
+     "created_utc": 1665336048,
+     "author": "elch3w",
+     "score": 35268,
+     "link": "/r/memes/comments/xfn9vg/rmemes_meme_quiz_2/",
+     "title": "R/MEMES MEME QUIZ #2",
+     "text": "",
+     "post_id": "xfn9vg",
+     "subreddit": "memes",
+     "num_comments": 99,
+     "removed_by_category": null,
+     "over_18": false
+    },
+    {
+     "is_comment": false,
+     "img_url": "https://reddit.com/r/memes/predictions?tournament=tnmt-3cad1a25-79e9-4d47-b2e1-8",
+     "created_utc": 1668020416,
+     "author": "elch3w",
+     "score": 447898,
+     "link": "/r/memes/comments/xfn9vg/rmemes_meme_quiz_2/",
+     "title": "R/MEMES MEME QUIZ #2",
+     "text": "",
+     "post_id": "xfn9vg",
+     "subreddit": "memes",
+     "num_comments": 3226,
+     "removed_by_category": null,
+     "over_18": false
+    }
+   ]
+  }
+ },
+ "timestamp_vs_id_order": {
+  "rows_whose_created_utc_is_>1_day_earlier_than_some_lower_id": 137539,
+  "rows_>30_days": 44750
+ },
+ "img_url_content": {
+  "kinds_total": {
+   "i.redd.it direct image": 10346214,
+   "other link": 787554,
+   "the post's own page (text post)": 298984,
+   "other direct image (imgur / image extension)": 210221,
+   "v.redd.it video": 123253,
+   "no URL (null)": 14843,
+   "reddit gallery page (images not in parquet)": 1178
+  },
+  "kinds_by_year": {
+   "2008": {
+    "other link": 4
+   },
+   "2009": {
+    "other link": 4
+   },
+   "2010": {
+    "other link": 3
+   },
+   "2011": {
+    "other link": 947,
+    "other direct image (imgur / image extension)": 262,
+    "the post's own page (text post)": 36
+   },
+   "2012": {
+    "other link": 13694,
+    "other direct image (imgur / image extension)": 4614,
+    "the post's own page (text post)": 265
+   },
+   "2013": {
+    "other link": 18128,
+    "other direct image (imgur / image extension)": 11514,
+    "the post's own page (text post)": 302
+   },
+   "2014": {
+    "other direct image (imgur / image extension)": 8687,
+    "other link": 9515
+   },
+   "2015": {
+    "other link": 9562,
+    "other direct image (imgur / image extension)": 5957,
+    "the post's own page (text post)": 3
+   },
+   "2016": {
+    "other link": 19858,
+    "other direct image (imgur / image extension)": 6217,
+    "i.redd.it direct image": 4263
+   },
+   "2017": {
+    "other link": 22146,
+    "i.redd.it direct image": 55115,
+    "other direct image (imgur / image extension)": 7198,
+    "the post's own page (text post)": 3,
+    "v.redd.it video": 373
+   },
+   "2018": {
+    "i.redd.it direct image": 376147,
+    "other link": 24713,
+    "other direct image (imgur / image extension)": 18407,
+    "v.redd.it video": 2862,
+    "the post's own page (text post)": 4
+   },
+   "2019": {
+    "i.redd.it direct image": 2746160,
+    "other link": 155537,
+    "other direct image (imgur / image extension)": 46095,
+    "v.redd.it video": 9990,
+    "the post's own page (text post)": 1213
+   },
+   "2020": {
+    "i.redd.it direct image": 4109595,
+    "other direct image (imgur / image extension)": 48808,
+    "v.redd.it video": 22244,
+    "other link": 123083,
+    "the post's own page (text post)": 479,
+    "reddit gallery page (images not in parquet)": 1145
+   },
+   "2021": {
+    "i.redd.it direct image": 1872129,
+    "other link": 108541,
+    "v.redd.it video": 30968,
+    "other direct image (imgur / image extension)": 31998,
+    "the post's own page (text post)": 118151,
+    "reddit gallery page (images not in parquet)": 17
+   },
+   "2022": {
+    "i.redd.it direct image": 616826,
+    "the post's own page (text post)": 39218,
+    "v.redd.it video": 11516,
+    "other link": 124642,
+    "other direct image (imgur / image extension)": 14228,
+    "reddit gallery page (images not in parquet)": 3,
+    "no URL (null)": 14843
+   },
+   "2023": {
+    "other link": 122559,
+    "i.redd.it direct image": 250765,
+    "other direct image (imgur / image extension)": 4391,
+    "v.redd.it video": 13324,
+    "the post's own page (text post)": 72881,
+    "reddit gallery page (images not in parquet)": 13
+   },
+   "2024": {
+    "i.redd.it direct image": 193309,
+    "other link": 29386,
+    "v.redd.it video": 21013,
+    "the post's own page (text post)": 65675,
+    "other direct image (imgur / image extension)": 1162
+   },
+   "2025": {
+    "i.redd.it direct image": 121905,
+    "the post's own page (text post)": 754,
+    "other link": 5232,
+    "v.redd.it video": 10963,
+    "other direct image (imgur / image extension)": 683
+   }
+  },
+  "top_hosts": {
+   "i.redd.it": 10346214,
+   "reddit.com": 590361,
+   "i.imgur.com": 164624,
+   "<no host>": 131379,
+   "v.redd.it": 123253,
+   "imgur.com": 86453,
+   "youtube.com": 55846,
+   "youtu.be": 48133,
+   "discordapp.com": 35057,
+   "imgflip.com": 25973,
+   "i.reddituploads.com": 11991,
+   "swagarchitecturemusclecarsoul.tumblr.com": 11542,
+   "discord.com": 7255,
+   "quickmeme.com": 7242,
+   "i.imgflip.com": 6329,
+   "tellygupshup.com": 5619,
+   "mamg.makeameme.org": 3958,
+   "twitter.com": 3713,
+   "instagram.com": 3514,
+   "memegenerator.net": 3223
+  },
+  "urls_containing_&amp;": {
+   "total": 40269,
+   "top_hosts": {
+    "youtube.com": 13171,
+    "i.reddituploads.com": 11991,
+    "reddit.com": 4646,
+    "tellygupshup.com": 1362,
+    "facebook.com": 764,
+    "google.com": 580,
+    "preview.redd.it": 525,
+    "tiktok.com": 435
+   }
+  },
+  "urls_with_leading_or_trailing_whitespace": 0,
+  "null_url": {
+   "total": 14843,
+   "of which url_overridden_by_dest is set": 0,
+   "of which media_metadata present": 0,
+   "of which removed_by_category set": 14843,
+   "of which is_self true": 9
+  }
+ },
+ "text_extra": {
+  "title_empty": 0,
+  "title_contains_NUL": 2,
+  "title_contains_&amp;/&lt;/&gt;": 31272,
+  "text_empty": 8165227,
+  "text_[removed]": 381648,
+  "text_[deleted]": 3227792,
+  "title_max_len_chars": 457,
+  "text_max_len_chars_parquet": 6457,
+  "text_max_len_chars_raw": 6457,
+  "titles_with_non_ascii": 1022381
+ },
+ "retrieval_lag_days_median_by_year(1-in-37 subsample)": {
+  "2008": 3552.5,
+  "2012": 712.3,
+  "2013": 480.7,
+  "2014": 470.3,
+  "2015": 84.3,
+  "2016": 39.2,
+  "2017": 24.4,
+  "2018": 43.2,
+  "2019": 70.2,
+  "2020": 231.7,
+  "2021": 128.9,
+  "2022": 38.1,
+  "2023": 0.0,
+  "2024": 0.0,
+  "2025": 0.0
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "decompressor": "pyzstd 0.20.0 (libzstd 1.6.0)",
+ "parser": "orjson 3.13.0",
+ "decompressed_bytes": 33274645062,
+ "newlines": 11782247,
+ "rows": 11782247,
+ "max_line_bytes": 284945,
+ "sha256_decompressed": "f4abf3c4672cf748e2f98a36ebc8e9f45705a9f9bc42296e5ce527fa67ea1d4f",
+ "stats": {
+  "created_utc_type:float": 761217,
+  "created_utc_type:int": 10988851,
+  "created_utc_type:str": 32179
+ },
+ "elapsed_s": 1197
+}

@@ -37,9 +37,10 @@ agent recommends, and what is blocked meanwhile. Remove an entry once it is answ
   back needs roughly 150 GB freed on C:, which only the user can do, and a size cap on the
   WSL disk so it cannot fill C: again. Agent recommendation: move back when convenient;
   nothing is blocked meanwhile. Details in `03-environment.md`.
-- **Review of the submissions ingest (WP-16).** 11,782,247 posts ingested with exact
-  reconciliation; the outcome has not been reviewed by anyone but the agent that produced
-  it. Report: `experiments/WP-16/report.md`. Blocks nothing right now.
+- **Possible hardware fault on the desktop.** A review found one flipped bit in a file
+  written on 2026-11-27 (details in the WP-16 review). One event is not proof, but a memory
+  test (Windows Memory Diagnostic, or MemTest86 overnight) is cheap and only the user can
+  run it. Nothing is blocked; agents now checksum important artifacts.
 - **ADR 0016 (use several subreddits instead of r/memes alone).** Proposed; three cheap
   measurements it depends on have not been run. Blocks the train/test split (ADR 0011).
 

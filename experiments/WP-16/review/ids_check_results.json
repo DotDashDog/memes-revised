@@ -1,0 +1,17 @@
+{
+ "parquet_rows": 11782247,
+ "parquet_distinct_ids": 11782246,
+ "parquet_ids_seen_more_than_once": 1,
+ "parquet_null_ids": 0,
+ "parquet_empty_ids": 0,
+ "id_length_distribution": {
+  "5": 11853,
+  "6": 10855798,
+  "7": 914596
+ },
+ "raw_distinct_id_tokens": 11782246,
+ "raw_ids_seen_more_than_once": 1,
+ "subreddit_values": {
+  "memes": 11782247
+ }
+}

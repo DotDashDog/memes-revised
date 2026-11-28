@@ -1,0 +1,7 @@
+{
+ "parquet_rows": 11782247,
+ "raw_rows": 11782247,
+ "rows_whose_13_values_differ_from_expected": 0,
+ "rows_whose_created_utc_differs": 0,
+ "examples": []
+}
